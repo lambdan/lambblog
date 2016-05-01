@@ -1,12 +1,12 @@
-/* Go ahead and mock me, Gruber */
+    /* Go ahead and mock me, Gruber */
 
-.section-primary { /* Här ändrar man footer bakgrund */
-  background-color: #4a525a !important;
-  color: #ffffff;
-}
-.section-primary a { /* Link color i footer */
- /* color: fde273; */
-    color: white;
+    .section-primary { /* Här ändrar man footer bakgrund */
+      background-color: #4a525a !important;
+      color: #ffffff;
+  }
+  .section-primary a { /* Link color i footer */
+   /* color: fde273; */
+   color: white;
 }
 
 .section-primary a:hover {
@@ -110,20 +110,20 @@ blockquote * { /* font size for some reason */
 }
 
 blockquote {
-        font-size: 1em;
-            margin: 2em 2em 2em 1em;
-                padding: 0 .75em 0 1.25em;
-                    border-left: 1px solid #777;
-                        border-right: 0px solid #777;
-                                vertical-align: baseline;
-                                    background: transparent;
-                                        }
+    font-size: 1em;
+    margin: 2em 2em 2em 1em;
+    padding: 0 .75em 0 1.25em;
+    border-left: 1px solid #777;
+    border-right: 0px solid #777;
+    vertical-align: baseline;
+    background: transparent;
+}
 a:hover {
-        color: white;
-            text-decoration: none;
-                background-color: #606870;
-                    border-color: #606870;
-                        }
+    color: white;
+    text-decoration: none;
+    background-color: #606870;
+    border-color: #606870;
+}
 
 
 code, pre { /* code is for backticks and pre is for codeblocks */
@@ -135,8 +135,8 @@ code, pre { /* code is for backticks and pre is for codeblocks */
 
 /* Navbar mess */
 #customNavbar {
-                        border: 0px;
-                            border-radius: 0;
+    border: 0px;
+    border-radius: 0;
     background-color: #4a525a;
 
 }
