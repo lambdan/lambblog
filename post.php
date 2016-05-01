@@ -28,7 +28,7 @@ if(isset($_GET['post'])) {
 
     $title = getPostData($path[0], "title");
     if (getPostData($path[0], "isLinked")) {
-        $title = '>>> ' . getPostData($path[0], "title");
+        $title = $linkedSymbol . getPostData($path[0], "title");
     }
 
     $dateStamp = getPostData($path[0], "date");
