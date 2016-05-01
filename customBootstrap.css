@@ -1,0 +1,178 @@
+/* Go ahead and mock me, Gruber */
+
+.section-primary { /* Här ändrar man footer bakgrund */
+  background-color: #4a525a !important;
+  color: #ffffff;
+}
+.section-primary a { /* Link color i footer */
+ /* color: fde273; */
+    color: white;
+}
+
+.section-primary a:hover {
+    color: fde273;
+    background-color: #4a525a;
+}
+
+.section { /* Gör så att footern håller sig till botten, med marginal upptill */
+  position: relative;
+  padding: 35px 0;
+}
+
+.img-caption {
+    text-align: center;
+    font-size: 0.8em;
+    font-family: sans-serif;
+}
+
+.linkedPost {
+    text-transform: uppercase;
+    font-size: 1.5em;
+    text-decoration: underline;
+}
+
+.regularPost {
+    font-size: 1.8em;
+    color: white;
+}
+
+body { /* side color */
+    background-color: #4A525A;
+    color: white;
+}
+
+
+.panel {
+    background-color: #4a525a;
+    border:0;
+    color: #dedede;
+}
+
+.panel-body { /* post content bg */
+    background-color: #4A525A;
+    color: #DEDEDE; /* text color */
+}
+
+.panel-body h1, h2, h3, h4 { /* Headers in articles */
+    
+}
+
+.panel-body h1 {
+    font-size: 1.4em;
+}
+.panel-body h2 {
+    font-size: 1.2em;
+}
+.panel-body h3 {
+    font-size: 1.1em;
+}
+.panel-body h4 {
+    font-size: 1em;
+}
+
+
+.panel-body a {
+    color: #b0b0b0;
+}
+
+.panel-body a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+/* Global font settings */
+
+* {
+    font-size: 12pt;
+    font-family: "Helvetica Neue", Helvetica, Verdana, sans-serif;
+}
+
+/* Archive list view. */
+.archive a{
+    color: #dedede;
+}
+.archive {
+    margin-left: 2em;
+}
+
+/* Post title */
+.panel-title {
+    color: #dedede;
+    letter-spacing: 2px;
+
+}
+
+
+/* Blockquotes and codeblocks */
+
+blockquote * { /* font size for some reason */
+    font-size: 0.9em;
+}
+
+blockquote {
+        font-size: 1em;
+            margin: 2em 2em 2em 1em;
+                padding: 0 .75em 0 1.25em;
+                    border-left: 1px solid #777;
+                        border-right: 0px solid #777;
+                                vertical-align: baseline;
+                                    background: transparent;
+                                        }
+a:hover {
+        color: white;
+            text-decoration: none;
+                background-color: #606870;
+                    border-color: #606870;
+                        }
+
+
+code, pre { /* code is for backticks and pre is for codeblocks */
+    background-color: #5C656F;
+    font-family: monospace;
+    color: white;
+    font-size: 9pt;
+}
+
+/* Navbar mess */
+#customNavbar {
+                        border: 0px;
+                            border-radius: 0;
+    background-color: #4a525a;
+
+}
+
+#customNavbar li.active {
+
+}
+
+#customNavbar .navbar-brand {
+    color: #dedede;
+}
+
+#customNavbar a {
+    color: #dedede;
+}
+
+#customNavbar .dropdown-menu {
+    background-color: #4a525a;
+}
+
+hr {
+    max-width: 30%;
+}
+
+hr.ArticSep {
+    max-width: 40%;
+    border-top: dashed 2px #dedede;
+}
+
+.navbar-brand {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+    color: #b0b0b0;
+}
+
+.navbar-brand {
+    color: #b0b0b0;
+}
