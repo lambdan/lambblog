@@ -5,18 +5,24 @@ require_once 'class.PaginationLinks.php';
 require_once 'getPostData.php';
 
 $content = array_diff(scandir($dir), array('..', '.', '.htaccess'));
-natcasesort($content); // Sort content
-
+natcasesort($content);
+$totPosts = count($content);
 if (isset($_GET['p'])) {
     $currpage = intval(htmlspecialchars($_GET['p']));
 } else {
     $currpage = 1;
 }
 
-$totPosts = count($content);
-$i = $totPosts - (($currpage-1)*5);
-$stopLimit = ($i-5);
 
+$offset = $totPosts - ($postsOnPage*$currpage);
+
+while ($offset<0) {
+    $offset++;
+    $postsOnPage--;
+}
+
+
+$content = array_slice($content, $offset, $postsOnPage);
 // Header generation
 $pageTitle = "Home";
 $pageName = "Home";
@@ -24,24 +30,26 @@ $twitter = array($pageTitle, $indexDescriptionTwitter);
 require 'header.php';
 
     echo '<div class="section"><div class="container">';
-                while ($i>$stopLimit && $i>0) {
-                    $number = $i;
-                    $path = glob($dir . '' . $number . '*.txt');
-                    $firstline = fgets(fopen($path[0], 'r'));
+//                while ($i>$stopLimit && $i>0) {
+                    foreach(array_reverse($content) as $c) {
+                    $number = preg_split("/[\s,.]+/", $c);
+                    $path = $dir . $c;
+
+                    $firstline = fgets(fopen($path, 'r'));
                     
-                    $title = getPostData($path[0], "title");
-                    if (getPostData($path[0], "isLinked")) {
-                        $title = '' . getPostData($path[0], "title");
+                    $title = getPostData($path, "title");
+                    if (getPostData($path, "isLinked")) {
+                        $title = '' . getPostData($path, "title");
                     }
                     
-                    $dateStamp = getPostData($path[0], "date");
-                    $linkToPost = getPostData($path[0], "link");
-                    $isLinked = getPostData($path[0], "isLinked");
+                    $dateStamp = getPostData($path, "date");
+                    $linkToPost = getPostData($path, "link");
+                    $isLinked = getPostData($path, "isLinked");
                 echo '<div class="row">
                     <div class="col-md-12">
                         ';
                     if ($isLinked) {
-                        $url = getPostData($path[0], "linkedURL");
+                        $url = getPostData($path, "linkedURL");
                         echo '<div class="panel">
                         <div class="panel-heading">
                         <h3 class="panel-title"><a href="' . $url . '"><span class="linkedPost">' . $title . '</a>';
@@ -58,8 +66,8 @@ require 'header.php';
                             <div class="panel-body">';
                                 $output = "";
                     $Parsedown = new Parsedown();
-                                $images = getPostData($path[0], "images");
-                    $output .= $Parsedown->text(getPostData($path[0], "content"));
+                                $images = getPostData($path, "images");
+                    $output .= $Parsedown->text(getPostData($path, "content"));
 
                                 echo '<p>';
                                 echo $output;
@@ -70,7 +78,6 @@ require 'header.php';
                     </div>
                     </div>';
                                 echo '<hr class="ArticSep">';
-                $i--;
                 }
                 ?>
                 <div class="row">

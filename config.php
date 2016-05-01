@@ -15,6 +15,9 @@ $titleSuffix = " - lambdan.se";
 // Title of page/brand name. Showed on navbar to the left and is clicked to go to $rootURL
 $brandName = "lambdan.se";
 
+// How many posts to show on index.php?
+$postsOnPage = 5;
+
 // RSS feed <description>
 $rssDescription = 'Blog posts by David. Visit http://lambdan.se';
 
@@ -30,14 +33,13 @@ $placeholderImage = "http://lambdan.se/placeholder.png";
 // Custom CSS file. Included after bootstrap, so you can modify bootstrap.
 $customBootstrapCSS = 'http://lambdan.se/customBootstrap.css';
 
-// Text/symbol for a linked post, maybe ">>>" or a emoji. Personally I like it blank.
-$linkedSymbol = '';
+// Text/symbol for a linked post. Shows in <title> and Archive
+$linkedSymbol = '> ';
 
 // Navbar dropdown menu
 $navDropdownMenu = '
 <li><a href="http://lambdan.se/ps4settings">PS4 Equivalent Settings for PC Games</a></li>
-<li><a href="http://lambdan.se/d/tvesti.html">TV Show Intro Size Estimator</a></li>
-<li><a href="http://lambdan.se/d/gamescreensohts.php">Game Screenshots by Me</a></li>    
+<li><a href="http://lambdan.se/d/tvesti">TV Show Intro Size Estimator</a></li>
  
 <li role="separator" class="divider"></li>
 
