@@ -35,7 +35,7 @@ require 'header.php';
                 $title = $linkedSymbol . getPostData($path, "title") . ''; // Display linked symbol
             } else {
 
-                $title = '<b><i>' . getPostData($path, "title") . '</b></i>';
+                $title = '' . getPostData($path, "title") . '';
             }
             //$dateStamp = getPostData($path, "date");
             $link = getPostData($path, "link");
