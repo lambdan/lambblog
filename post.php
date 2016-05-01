@@ -18,7 +18,7 @@ if($_GET['mdown']=="true") {
 require_once 'compressImage.php';
 require_once 'Parsedown.php';
 require_once 'class.PaginationLinks.php';
-include_once 'getPostData.php';
+require_once 'getPostData.php';
 
 if(isset($_GET['post'])) {
     $Parsedown = new Parsedown();
