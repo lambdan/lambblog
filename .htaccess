@@ -3,10 +3,9 @@ RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
 RewriteEngine On
 
-RewriteRule ^([0-9-]+)/?(.*).text post.php?post=$1&mdown=true
+RewriteRule ^([0-9-]+)/?(.*)\.text post.php?post=$1&mdown=true
 RewriteRule ^([0-9-]+)/?(.*)$ post.php?post=$1
 
 RewriteRule ^sitemap\.xml sitemap.php
-
 
 IndexIgnore *
