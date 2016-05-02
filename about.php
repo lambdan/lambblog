@@ -1,8 +1,8 @@
 <?php
 require_once 'config.php';
-require_once 'Parsedown.php';
-require_once 'compressImage.php';
-require_once 'getPostData.php';
+require_once 'resources/Parsedown.php';
+require_once 'resources/compressImage.php';
+require_once 'resources/getPostData.php';
 
 $Parsedown = new Parsedown();
 

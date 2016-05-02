@@ -1,6 +1,6 @@
 <?php
-require_once 'config.php';
-require_once 'getPostData.php';
+require 'config.php';
+require_once 'resources/getPostData.php';
 
 // Header generation
 $pageTitle = "All Posts";

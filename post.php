@@ -15,10 +15,10 @@ if($_GET['mdown']=="true") {
 }
 }
 
-require_once 'compressImage.php';
-require_once 'Parsedown.php';
-require_once 'class.PaginationLinks.php';
-require_once 'getPostData.php';
+require_once 'resources/compressImage.php';
+require_once 'resources/Parsedown.php';
+require_once 'resources/class.PaginationLinks.php';
+require_once 'resources/getPostData.php';
 
 if(isset($_GET['post'])) {
     $Parsedown = new Parsedown();

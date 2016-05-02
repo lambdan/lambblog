@@ -1,5 +1,4 @@
 <?php
-
 // Root URL for blog, ex. http://yourpage.com/blog
 $rootURL = "http://lambdan.se";
 

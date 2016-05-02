@@ -1,5 +1,5 @@
 <?php
-require_once 'config.php';
+require_once '../config.php';
 require_once 'friendly-url.php';
 
 function getPostData($inputfile, $request) {

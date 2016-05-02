@@ -1,6 +1,6 @@
 <?php
-require_once 'config.php';
-require_once 'getPostData.php';
+require 'config.php';
+require_once 'resources/getPostData.php';
 header('Content-type: text/xml');
 echo '<?xml version="1.0" encoding="utf-8"?>';
 echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';

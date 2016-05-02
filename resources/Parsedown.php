@@ -14,7 +14,7 @@
 #
 # Minor edits by DJS to better suit lambdan.se and other blogs using same engine
 
-require_once 'config.php';
+require_once '../config.php';
 class Parsedown
 {
     # ~

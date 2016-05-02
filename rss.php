@@ -1,5 +1,5 @@
 <?php
-    require_once 'config.php';
+    require 'config.php';
     $output  = '<?xml version="1.0" encoding="UTF-8"?>';
     $output .= '<rss version="2.0">';
     $output .= '<channel>';
@@ -7,8 +7,8 @@
     $output .= '<link>' . $rootURL . '</link>';
     $output .= '<description>' . $rssDescription . '</description>';
     
-    require_once 'Parsedown.php';
-    require_once 'getPostData.php';
+    require_once 'resources/Parsedown.php';
+    require_once 'resources/getPostData.php';
 
     $content = array_diff(scandir($dir), array('..', '.', '.htaccess'));
     natcasesort($content);
