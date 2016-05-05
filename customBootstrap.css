@@ -1,20 +1,20 @@
-    /* Go ahead and mock me, Gruber */
-
-    .section-primary { /* Här ändrar man footer bakgrund */
-      background-color: #4a525a !important;
-      color: #ffffff;
-  }
-  .section-primary a { /* Link color i footer */
-   /* color: fde273; */
-   color: white;
+.section-primary { /* Footer background and text color */
+  background-color: #5a5a49 !important;
+  color: #ffffff;
+}
+.section-primary a { /* Link color in footer */
+ /* color: fde273; */
+    color: white;
 }
 
 .section-primary a:hover {
     color: fde273;
-    background-color: #4a525a;
+    background-color: #5a5a49;
 }
 
-.section { /* Gör så att footern håller sig till botten, med marginal upptill */
+
+.section { 
+    /* Makes the footer stick to the bottom, with some margin above */
   position: relative;
   padding: 35px 0;
 }
@@ -33,23 +33,22 @@
 
 .regularPost {
     font-size: 1.8em;
-    color: white;
 }
 
 body { /* side color */
-    background-color: #4A525A;
+    background-color: #5a5a49;
     color: white;
 }
 
 
 .panel {
-    background-color: #4a525a;
+    background-color: #5a5a49;
     border:0;
     color: #dedede;
 }
 
 .panel-body { /* post content bg */
-    background-color: #4A525A;
+    background-color: #5a5a49;
     color: #DEDEDE; /* text color */
 }
 
@@ -72,7 +71,7 @@ body { /* side color */
 
 
 .panel-body a {
-    color: #b0b0b0;
+    color: #fde273;
 }
 
 .panel-body a:hover {
@@ -102,6 +101,11 @@ body { /* side color */
 
 }
 
+.panel-title a:hover{
+    color: #fde273;
+    text-decoration: underline;
+}
+
 
 /* Blockquotes and codeblocks */
 
@@ -121,14 +125,13 @@ blockquote {
 a:hover {
     color: white;
     text-decoration: none;
-    background-color: #606870;
     border-color: #606870;
 }
 
 
 code, pre { /* code is for backticks and pre is for codeblocks */
-    background-color: #5C656F;
-    font-family: monospace;
+    background-color: #464639;
+    font-family: Monaco, Consolas,  monospace;
     color: white;
     font-size: 9pt;
 }
@@ -137,7 +140,7 @@ code, pre { /* code is for backticks and pre is for codeblocks */
 #customNavbar {
     border: 0px;
     border-radius: 0;
-    background-color: #4a525a;
+    background-color: #5a5a49;
 
 }
 
@@ -145,7 +148,7 @@ code, pre { /* code is for backticks and pre is for codeblocks */
 
 }
 
-#customNavbar .navbar-brand {
+#customNavbar .navbar-brand { /* Color for brand name in the top left of header */
     color: #dedede;
 }
 
@@ -154,17 +157,23 @@ code, pre { /* code is for backticks and pre is for codeblocks */
 }
 
 #customNavbar .dropdown-menu {
-    background-color: #4a525a;
+    background-color: #5a5a49;
+}
+
+#customNavbar .dropdown-menu a:hover {
+    background-color: #fbca04;
+    color: black;
 }
 
 hr {
     max-width: 30%;
 }
 
-hr.ArticSep {
+hr.ArticSep { /* The things that separate articles in index view */
     max-width: 40%;
     border-top: dashed 2px #dedede;
 }
+
 
 .navbar-brand {
     text-transform: uppercase;
@@ -175,4 +184,23 @@ hr.ArticSep {
 
 .navbar-brand {
     color: #b0b0b0;
+}
+
+
+/* IT'S SO FUCKING TRIVIAL TO TARGET BOOTSTRAP PAGINATION */
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover,
+.pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+        z-index: 3;
+        color: black;
+        background-color: #fbca04;
+        border-color: #fbca04;
+        cursor: default
+}
+
+.pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus,
+.pagination > li > span:focus {
+        z-index: 2;
+        color: black;
+        background-color: #fbca04;
+        border-color: #fbca04;
 }
