@@ -53,7 +53,6 @@ require 'header.php';
                         echo '<div class="panel">
                         <div class="panel-heading">
                         <h3 class="panel-title"><a href="' . $url . '"><span class="linkedPost">' . $title . '</a>';
-                        echo '<span class="panel-title">&nbsp;&nbsp;&nbsp;<a href="' . $linkToPost . '"><<<</a></span>';
                     } else {
                         echo '
                         <div class="panel">
@@ -61,7 +60,7 @@ require 'header.php';
                         <h3 class="panel-title"><a href="' . $linkToPost . '"><span class="regularPost">' . $title . '</a></a>';
                     }
 
-                            echo '<br><small>' . $dateStamp . '</small></h3>
+                            echo '<br><small><span class="dateUnderTitle"><a href="' . $linkToPost . '">' . $dateStamp . '</a></span></small></h3>
                             </div>
                             <div class="panel-body">';
                                 $output = "";

@@ -1,20 +1,18 @@
-.section-primary { /* Footer background and text color */
-  background-color: #5a5a49 !important;
+.section-primary { /* Här ändrar man footer bakgrund */
+  background-color: #4d4d4d !important;
   color: #ffffff;
 }
-.section-primary a { /* Link color in footer */
+.section-primary a { /* Link color i footer */
  /* color: fde273; */
     color: white;
 }
 
 .section-primary a:hover {
     color: fde273;
-    background-color: #5a5a49;
+    background-color: #4d4d4d;
 }
 
-
-.section { 
-    /* Makes the footer stick to the bottom, with some margin above */
+.section { /* Gör så att footern håller sig till botten, med marginal upptill */
   position: relative;
   padding: 35px 0;
 }
@@ -26,29 +24,47 @@
 }
 
 .linkedPost {
-    text-transform: uppercase;
     font-size: 1.5em;
+    color: #fbca04;
     text-decoration: underline;
+    font-family: Georgia, serif;
+    font-style: italic;
+}
+
+.linkedPost a:hover {
+    color: #a19f00;
 }
 
 .regularPost {
-    font-size: 1.8em;
+    font-size: 1.5em;
+    font-family: Georgia, serif;
+    font-style: italic;
+}
+
+.dateUnderTitle a {
+    color: #919297;
+    font-size: 0.8em;
+}
+
+.dateUnderTitle a:hover {
+    background-color: #fbca04;
+    color: black;
 }
 
 body { /* side color */
-    background-color: #5a5a49;
+    background-color: #313031;
     color: white;
 }
 
 
-.panel {
-    background-color: #5a5a49;
+.panel { /* panel title */
+    background-color: #313031;
     border:0;
     color: #dedede;
 }
 
 .panel-body { /* post content bg */
-    background-color: #5a5a49;
+    background-color: #313031;
     color: #DEDEDE; /* text color */
 }
 
@@ -71,12 +87,12 @@ body { /* side color */
 
 
 .panel-body a {
-    color: #fde273;
+    color: #fbca04;
 }
 
 .panel-body a:hover {
-    color: white;
-    text-decoration: none;
+    color: #fbca04;
+    text-decoration: underline;
 }
 
 /* Global font settings */
@@ -101,11 +117,6 @@ body { /* side color */
 
 }
 
-.panel-title a:hover{
-    color: #fde273;
-    text-decoration: underline;
-}
-
 
 /* Blockquotes and codeblocks */
 
@@ -114,33 +125,33 @@ blockquote * { /* font size for some reason */
 }
 
 blockquote {
-    font-size: 1em;
-    margin: 2em 2em 2em 1em;
-    padding: 0 .75em 0 1.25em;
-    border-left: 1px solid #777;
-    border-right: 0px solid #777;
-    vertical-align: baseline;
-    background: transparent;
-}
+        font-size: 1em;
+            margin: 2em 2em 2em 1em;
+                padding: 0 .75em 0 1.25em;
+                    border-left: 1px solid #777;
+                        border-right: 0px solid #777;
+                                vertical-align: baseline;
+                                    background: transparent;
+                                        }
 a:hover {
-    color: white;
-    text-decoration: none;
-    border-color: #606870;
-}
+        color: white;
+            text-decoration: none;
+                    border-color: #606870;
+                        }
 
 
 code, pre { /* code is for backticks and pre is for codeblocks */
-    background-color: #464639;
-    font-family: Monaco, Consolas,  monospace;
+    background-color: #262526;
+    font-family: Monaco, Consolas, monospace;
     color: white;
     font-size: 9pt;
 }
 
 /* Navbar mess */
 #customNavbar {
-    border: 0px;
-    border-radius: 0;
-    background-color: #5a5a49;
+                        border: 0px;
+                            border-radius: 0;
+    background-color: #4d4d4d;
 
 }
 
@@ -148,7 +159,7 @@ code, pre { /* code is for backticks and pre is for codeblocks */
 
 }
 
-#customNavbar .navbar-brand { /* Color for brand name in the top left of header */
+#customNavbar .navbar-brand {
     color: #dedede;
 }
 
@@ -157,7 +168,7 @@ code, pre { /* code is for backticks and pre is for codeblocks */
 }
 
 #customNavbar .dropdown-menu {
-    background-color: #5a5a49;
+    background-color: #4d4d4d;
 }
 
 #customNavbar .dropdown-menu a:hover {
@@ -169,11 +180,10 @@ hr {
     max-width: 30%;
 }
 
-hr.ArticSep { /* The things that separate articles in index view */
-    max-width: 40%;
-    border-top: dashed 2px #dedede;
-}
+hr.ArticSep {
+    max-width: 2%;
 
+}
 
 .navbar-brand {
     text-transform: uppercase;
@@ -185,7 +195,6 @@ hr.ArticSep { /* The things that separate articles in index view */
 .navbar-brand {
     color: #b0b0b0;
 }
-
 
 /* IT'S SO FUCKING TRIVIAL TO TARGET BOOTSTRAP PAGINATION */
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover,

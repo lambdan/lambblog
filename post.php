@@ -61,7 +61,6 @@ if ($isLinked) {
     echo '<div class="panel">
     <div class="panel-heading">
     <h3 class="panel-title"><a href="' . $url . '"><span class="linkedPost">' . $title . '</a>';
-    echo '<span class="panel-title">&nbsp;&nbsp;&nbsp;<a href="' . $linkToPost . '"><<<</a></span>';
 } else {
     echo '
     <div class="panel">
@@ -78,6 +77,7 @@ $images = getPostData($path[0], "images");
 $output .= $Parsedown->text(getPostData($path[0], "content"));
 echo $output;
 ?>
+</div>
 </div>
 </div>
 </div>
