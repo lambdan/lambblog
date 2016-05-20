@@ -7,8 +7,8 @@
     $output .= '<link>' . $rootURL . '</link>';
     $output .= '<description>' . $rssDescription . '</description>';
     
-    require_once 'resources/Parsedown.php';
-    require_once 'resources/getPostData.php';
+    require 'resources/Parsedown.php';
+    require 'resources/getPostData.php';
 
     $content = array_diff(scandir($dir), array('..', '.', '.htaccess'));
     natcasesort($content);
@@ -20,11 +20,13 @@
         $path = '' . $dir . '' . $c . '';
         $title = getPostData($path, "title");
 
-        $pubDate = getPostData($path, "date");
+        $pubDate = getPostData($path, "rss_date");
+
+
         $url = "";
         if (getPostData($path, "isLinked")) {
             $url = getPostData($path, "linkedURL");
-            $title = $linkedSymbol . $title . '';
+            $title = $linkedSymbol . $title;
         } else {
             $url = getPostData($path, "link");
         }
@@ -36,7 +38,7 @@
         $output .= '<title>' . $title . '</title>';
         $output .= '<description><![CDATA[' . $Parsedown->text(getPostData($path, "content")) . ']]></description>';
         $output .= '<link>' . $url . '</link>';
-        $output .= '<pubDate>' . date('r', strtotime($pubDate)) . '</pubDate>'; // we have to strtotime the nice format to make it rss compliant
+        $output .= '<pubDate>' . $pubDate . '</pubDate>'; // we have to strtotime the nice format to make it rss compliant
         $output .= '</item>';
         $i++;
         }

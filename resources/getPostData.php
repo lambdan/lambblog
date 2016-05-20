@@ -3,17 +3,21 @@ require_once '../config.php';
 require_once 'friendly-url.php';
 
 function getPostData($inputfile, $request) {
-	$acceptedRequests = array("title", "isLinked", "linkedURL", "content", "date", "link", "teaser", "images", "actualTeaser");
+	$acceptedRequests = array("title", "isLinked", "linkedURL", "content", "date", "link", "teaser", "images", "actualTeaser","rss_date");
 
 	if(in_array($request, $acceptedRequests)) {
 		$lines = file($inputfile); // Read file into lines (array)
 
 		if ($request=="date") {
-			date_default_timezone_set('UTC');
 			$unixtime = strtotime($lines[0]); // Parses first lines date (many formats) into unix time
 			$date = date('F j Y', $unixtime);
 			return $date;
-		}
+        }
+        if ($request=="rss_date") {
+            $unixtime = strtotime($lines[0]);
+            $date = date('r', $unixtime);
+            return $date;
+        }
 		if ($request=="title") {
 			// Removes # and whitespace from line with title
 			$title = preg_split("/[#\n]+/", $lines[1]);

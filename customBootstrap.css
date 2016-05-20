@@ -1,4 +1,4 @@
-.section-primary { /* Här ändrar man footer bakgrund */
+.section-primary { /* Footer background and text color */
   background-color: #4d4d4d !important;
   color: #ffffff;
 }
@@ -12,7 +12,8 @@
     background-color: #4d4d4d;
 }
 
-.section { /* Gör så att footern håller sig till botten, med marginal upptill */
+/* Makes footer stick to bottom, with some margin above */
+.section { 
   position: relative;
   padding: 35px 0;
 }
@@ -27,8 +28,6 @@
     font-size: 1.5em;
     color: #fbca04;
     text-decoration: underline;
-    font-family: Georgia, serif;
-    font-style: italic;
 }
 
 .linkedPost a:hover {
@@ -37,13 +36,11 @@
 
 .regularPost {
     font-size: 1.5em;
-    font-family: Georgia, serif;
-    font-style: italic;
 }
 
 .dateUnderTitle a {
     color: #919297;
-    font-size: 0.8em;
+    font-size: 1em;
 }
 
 .dateUnderTitle a:hover {
@@ -84,10 +81,17 @@ body { /* side color */
 .panel-body h4 {
     font-size: 1em;
 }
+.panel-body h5 {
+    font-size: 0.9em;
+}
 
 
 .panel-body a {
     color: #fbca04;
+}
+
+.panel-body sup {
+    font-size: 0.7em;
 }
 
 .panel-body a:hover {
@@ -98,8 +102,7 @@ body { /* side color */
 /* Global font settings */
 
 * {
-    font-size: 12pt;
-    font-family: "Helvetica Neue", Helvetica, Verdana, sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Tahoma, Verdana, sans-serif;
 }
 
 /* Archive list view. */
@@ -181,7 +184,8 @@ hr {
 }
 
 hr.ArticSep {
-    max-width: 2%;
+    max-width: 0%;
+    margin:20px;
 
 }
 

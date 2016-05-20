@@ -20,6 +20,9 @@ $postsOnPage = 5;
 // RSS feed <description>
 $rssDescription = 'Blog posts by David. Visit http://lambdan.se';
 
+// Timezone
+date_default_timezone_set("Europe/Stockholm");
+
 // Twitter usename. Skip the @
 $twitterUsername = 'djs__';
 
@@ -27,13 +30,13 @@ $twitterUsername = 'djs__';
 $aboutTextPath = "about_text.txt";
 
 // Placeholder image. Will be used to Twitter card if there isn't a image in your post.
-$placeholderImage = "http://lambdan.se/placeholder.png";
+$placeholderImage = "http://lambdan.se/placeholder_new.png";
 
 // Custom CSS file. Included after bootstrap, so you can modify bootstrap.
 $customBootstrapCSS = 'http://lambdan.se/customBootstrap.css';
 
 // Text/symbol for a linked post. Shows in <title> and Archive
-$linkedSymbol = '> ';
+$linkedSymbol = '->';
 
 // Navbar dropdown menu
 $navDropdownMenu = '
@@ -53,9 +56,9 @@ $additionalSitemap = '
 ';
 
 // Local dir where compressed images will be saved. Make sure to end with /
-$compressDestination = '/home/djs/public_html/compressimg/';
+$compressDestination = '/home/djs/public_html/img/compressed/';
 // URL to that dir. Make sure to end with /
-$compressURL = 'http://lambdan.se/compressimg/';
+$compressURL = 'http://lambdan.se/img/compressed/';
 
 // Local dir where mirorred images will be saved. Make sure to end with /
 $mirrorDestination = '/home/djs/public_html/img/mirrors/';
