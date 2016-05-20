@@ -44,6 +44,7 @@ if (isset($images)) {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+            <a href="#" class="pull-left"><img class="img-responsive navbar-logo" src="<?php echo $brandLogo;?>"></a>
             <a class="navbar-brand" href="<?php echo $rootURL;?>"><?php echo $brandName; ?></a>
         </div>
         <div class="collapse navbar-collapse" id="navbar-ex-collapse">

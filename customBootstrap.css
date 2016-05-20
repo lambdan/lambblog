@@ -194,10 +194,7 @@ hr.ArticSep {
     letter-spacing: 3px;
     font-weight: bold;
     color: #b0b0b0;
-}
 
-.navbar-brand {
-    color: #b0b0b0;
 }
 
 /* IT'S SO FUCKING TRIVIAL TO TARGET BOOTSTRAP PAGINATION */
@@ -216,4 +213,11 @@ hr.ArticSep {
         color: black;
         background-color: #fbca04;
         border-color: #fbca04;
+}
+
+.navbar-logo {
+    padding-left: 10px;
+    padding-right: 5px;
+    padding-top:15px;
+    height: 50px;
 }

@@ -12,7 +12,10 @@ $dir = 'posts/';
 $titleSuffix = " - lambdan.se";
 
 // Title of page/brand name. Showed on navbar to the left and is clicked to go to $rootURL
-$brandName = "lambdan.se";
+$brandName = 'lambdan.se';
+
+// URL to logo, will show in header. Put blank to not show any.
+$brandLogo = "http://lambdan.se/img/mirrors/8bd957ca46528eeccc709993b93c55fd_mirrored.png";
 
 // How many posts to show on index.php?
 $postsOnPage = 5;
@@ -36,7 +39,7 @@ $placeholderImage = "http://lambdan.se/placeholder_new.png";
 $customBootstrapCSS = 'http://lambdan.se/customBootstrap.css';
 
 // Text/symbol for a linked post. Shows in <title> and Archive
-$linkedSymbol = '->';
+$linkedSymbol = '-> ';
 
 // Navbar dropdown menu
 $navDropdownMenu = '
