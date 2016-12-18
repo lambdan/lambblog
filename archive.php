@@ -44,7 +44,7 @@ foreach($files as $txt) {
 }
 
 ?>
-
+</ul>
 <footer>
 <p>
 Running on <a href="https://github.com/lambdan/lambblog">lambblog</a><br>
