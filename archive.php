@@ -20,7 +20,7 @@ $starttime = $starttime[1] + $starttime[0];
 <body>
 	<div class="navigation">
 	<h1><a href="." class="logo">lambdan.se</a></h1>
-	<p>Archive ... <a href="rss.php">RSS</a> ... <a href="https://twitter.com/djs__">Twitter</a></p>
+	<p>Archive • <a href="rss.php">RSS</a> • <a href="https://twitter.com/djs__">Twitter</a></p>
 	</div> 
 	<h1>Archive</h1>
 
