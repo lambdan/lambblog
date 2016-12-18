@@ -49,27 +49,29 @@ if(isset($_GET['entry'])) {
 $filename = file_from_url($entry, $path_to_txts);
 
 echo '<h1 class="article_title">' . get_title($filename) . '</h1>';
-echo '<h2 class="article_date"><a href="?entry=' . get_display_filename($filename) . '">' . get_date($filename, "F j Y, H:m") . '</a></h2>';
+echo '<h2 class="article_date"><a href="?entry=' . get_display_filename($filename) . '">' . get_date($filename, "j M Y H:m") . '</a></h2>';
 echo '<div class="article">';
 $Parsedown = new Parsedown();
 echo $Parsedown->text(get_text($filename));
 echo '</div>';
 // Navigation between posts
-echo '<footer>';
+echo '<footer><ul>';
 
 $curr = get_number($filename);
 $prev = file_from_url($curr - 1, $path_to_txts);
 $next = file_from_url($curr + 1, $path_to_txts);
 
 if (file_exists($next)) {
-	print 'Next: <a href="?entry=' . get_display_filename($next) . '">' . get_title($next) . '</a><br>';
+	print '<li>Next: <a href="?entry=' . get_display_filename($next) . '">' . get_title($next) . '</a>';
 }
 
 if (file_exists($prev)) {
-	print 'Previous: <a href="?entry=' . get_display_filename($prev) . '">' . get_title($prev) . '</a>';
+	print '<li>Previous: <a href="?entry=' . get_display_filename($prev) . '">' . get_title($prev) . '</a>';
 }
 
-echo '</footer>';
+echo '<li><a href="archive.php">Archive</a>';
+
+echo '</ul></footer>';
 
 
 ?>
