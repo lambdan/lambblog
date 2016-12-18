@@ -33,3 +33,4 @@ To use:
 
 Sidenote:
 - The images/ folder are where images found in the Markdown files are mirrored to, to improve loading and future proofing (Dropbox is ending support for its Public folder links etc)
+- The filenames are the md5 hashes of the URL to the image
