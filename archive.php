@@ -1,6 +1,9 @@
 <?php
 require 'Parsedown.php';
 require 'helpers.php';
+
+$starttime = explode(' ', microtime());
+$starttime = $starttime[1] + $starttime[0];
 ?>
 
 
@@ -34,7 +37,7 @@ $prevMonth = "";
 foreach($files as $txt) {
 	$currMonth = get_date($txt, "F Y");
 	if ($currMonth != $prevMonth) {
-		print "<h2>" . $currMonth . "</h2>";
+		print "</ul><h2>" . $currMonth . "</h2><ul>";
 		$prevMonth = $currMonth;
 	}
 	print '<li><a href="index.php?entry=' . get_display_filename($txt) . '" style="text-decoration:none;">' . get_title($txt) . '</a> - ' . get_date($txt, "j M Y") . '</li>';
@@ -42,5 +45,15 @@ foreach($files as $txt) {
 
 ?>
 
+<footer>
+<p>
+Running on <a href="https://github.com/lambdan/lambblog">lambblog</a><br>
+<?php
+$mtime = explode(' ', microtime());
+$totaltime = $mtime[0] + $mtime[1] - $starttime;
+printf('Page generated in %.3f seconds', $totaltime);
+?>
+</p>
+</footer>
 </body>
 </html>
