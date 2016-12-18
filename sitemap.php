@@ -1,20 +1,23 @@
 <?php
-require 'config.php';
-require_once 'resources/getPostData.php';
+require 'helpers.php';
+
 header('Content-type: text/xml');
 echo '<?xml version="1.0" encoding="utf-8"?>';
 echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
-  
-        $dir = 'posts/';
-        $content = array_diff(scandir($dir), array('..', '.', '.htaccess'));
-        natcasesort($content); // Sort content
-        foreach (array_reverse($content) as $c) {
-            $number = preg_split("/[\s,.]+/", $c);
-            $path = $dir . $c;
-            echo '<url><loc>' . getPostData($path, "link") . '</loc></url>';
-        }
 
-        echo $additionalSitemap;
+// Add files to array, and natsort it, and reverse it (newest first)
+$files = glob('' . $path_to_txts . '*.{txt,md,markdown}', GLOB_BRACE);
+natsort($files);
+$files = array_reverse($files, false);
 
-        echo '</urlset>';
+
+foreach($files as $txt) {
+	echo '<url><loc>http://lambdan.se/?entry=' . get_display_filename($txt) . '</loc></url>';
+}
+
+// echo any additional urls you want here
+echo '<url><loc>http://lambdan.se/rss</loc></url>';
+
+echo '</urlset>';
+
 ?>

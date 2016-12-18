@@ -1,4 +1,0 @@
-May 1st 2016 17:34
-# Example blog post
-
-This is a normal blog post with just plain markdown.

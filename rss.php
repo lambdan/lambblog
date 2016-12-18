@@ -1,46 +1,37 @@
 <?php
-    require 'config.php';
     $output  = '<?xml version="1.0" encoding="UTF-8"?>';
     $output .= '<rss version="2.0">';
     $output .= '<channel>';
-    $output .= '<title>' . $brandName . '</title>';
-    $output .= '<link>' . $rootURL . '</link>';
-    $output .= '<description>' . $rssDescription . '</description>';
+    $output .= '<title>lambdan.se</title>';
+    $output .= '<link>http://lambdan.se</link>';
+    $output .= '<description>blog posts by DJS</description>';
     
-    require 'resources/Parsedown.php';
-    require 'resources/getPostData.php';
+    require 'Parsedown.php';
+    require 'helpers.php';
 
-    $content = array_diff(scandir($dir), array('..', '.', '.htaccess'));
-    natcasesort($content);
+    $files = glob('' . $path_to_txts . '*.{txt,md,markdown}', GLOB_BRACE);
+natsort($files);
+$files = array_reverse($files, false);
 
     $i = 0;
 
-    foreach (array_reverse($content) as $c) {
+    foreach ($files as $txt) {
         if ($i<=10) {
-        $path = '' . $dir . '' . $c . '';
-        $title = getPostData($path, "title");
+            $pubDate = get_date($txt, "r");
 
-        $pubDate = getPostData($path, "rss_date");
+            $url = 'http://lambdan.se/index.php?entry=' . get_number($txt);
+            $title = get_title($txt);
 
+            $Parsedown = new Parsedown();
 
-        $url = "";
-        if (getPostData($path, "isLinked")) {
-            $url = getPostData($path, "linkedURL");
-            $title = $linkedSymbol . $title;
-        } else {
-            $url = getPostData($path, "link");
-        }
+            $output .= '<item>';
 
-        $Parsedown = new Parsedown();
-
-        $output .= '<item>';
-
-        $output .= '<title>' . $title . '</title>';
-        $output .= '<description><![CDATA[' . $Parsedown->text(getPostData($path, "content")) . ']]></description>';
-        $output .= '<link>' . $url . '</link>';
-        $output .= '<pubDate>' . $pubDate . '</pubDate>'; // we have to strtotime the nice format to make it rss compliant
-        $output .= '</item>';
-        $i++;
+            $output .= '<title>'  . $title . '</title>';
+            $output .= '<description><![CDATA[' . $Parsedown->text(get_text($txt)) . ']]></description>';
+            $output .= '<link>' . $url . '</link>';
+            $output .= '<pubDate>' . $pubDate . '</pubDate>'; // we have to strtotime the nice format to make it rss compliant
+            $output .= '</item>';
+            $i++;
         }
     } 
 

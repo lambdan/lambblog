@@ -1,5 +1,8 @@
 <?php
 
+// URL to folder your mirrored images will be saved to
+$image_mirror_url_prefix = 'http://lambdan.se/images/';
+
 #
 #
 # Parsedown
@@ -12,14 +15,13 @@
 # with this source code.
 #
 #
-# Minor edits by DJS to better suit lambdan.se and other blogs using same engine
 
-require_once '../config.php';
 class Parsedown
 {
+
     # ~
 
-    const version = '1.5.4';
+    const version = '1.6.0';
 
     # ~
 
@@ -117,7 +119,7 @@ class Parsedown
     # Blocks
     #
 
-    private function lines(array $lines)
+    protected function lines(array $lines)
     {
         $CurrentBlock = null;
 
@@ -177,7 +179,7 @@ class Parsedown
                 }
                 else
                 {
-                    if (method_exists($this, 'block'.$CurrentBlock['type'].'Complete'))
+                    if ($this->isBlockCompletable($CurrentBlock['type']))
                     {
                         $CurrentBlock = $this->{'block'.$CurrentBlock['type'].'Complete'}($CurrentBlock);
                     }
@@ -218,7 +220,7 @@ class Parsedown
                         $Block['identified'] = true;
                     }
 
-                    if (method_exists($this, 'block'.$blockType.'Continue'))
+                    if ($this->isBlockContinuable($blockType))
                     {
                         $Block['continuable'] = true;
                     }
@@ -247,7 +249,7 @@ class Parsedown
 
         # ~
 
-        if (isset($CurrentBlock['continuable']) and method_exists($this, 'block'.$CurrentBlock['type'].'Complete'))
+        if (isset($CurrentBlock['continuable']) and $this->isBlockCompletable($CurrentBlock['type']))
         {
             $CurrentBlock = $this->{'block'.$CurrentBlock['type'].'Complete'}($CurrentBlock);
         }
@@ -278,6 +280,16 @@ class Parsedown
         # ~
 
         return $markup;
+    }
+
+    protected function isBlockContinuable($Type)
+    {
+        return method_exists($this, 'block'.$Type.'Continue');
+    }
+
+    protected function isBlockCompletable($Type)
+    {
+        return method_exists($this, 'block'.$Type.'Complete');
     }
 
     #
@@ -506,6 +518,16 @@ class Parsedown
                     'handler' => 'elements',
                 ),
             );
+
+            if($name === 'ol') 
+            {
+                $listStart = stristr($matches[0], '.', true);
+                
+                if($listStart !== '1')
+                {
+                    $Block['element']['attributes'] = array('start' => $listStart);
+                }
+            }
 
             $Block['li'] = array(
                 'name' => 'li',
@@ -1134,7 +1156,7 @@ class Parsedown
                 'extent' => 2,
             );
         }
-    }  
+    }
 
     protected function inlineImage($Excerpt)
     {
@@ -1151,42 +1173,30 @@ class Parsedown
         {
             return;
         }
-        
-        // Save picture to our server to make loading faster
-        global $rootURL; // dumb global variable php shit
-        global $mirrorDestination;
-        global $mirrorURL;
+
+        // Mirror image for future proofing and faster loading
+        global $image_mirror_url_prefix;
         $originalLocation = $Link['element']['attributes']['href'];
-        // Check if image is already on our server
-        $serverMatch = preg_replace('#^https?://#', '', $rootURL);
-        if(!preg_match('/' . $serverMatch . '/',$originalLocation)) {
-            $imgHash = md5($originalLocation);
-            $filename = $imgHash . '_mirrored.' . pathinfo($originalLocation, PATHINFO_EXTENSION);
-            $destination = $mirrorDestination . $filename;
-            $finalurl = $mirrorURL . $filename;
-            if(!file_exists($destination)) {
-                // Image doesnt exist
-                copy($originalLocation, $destination);
-            }
-
-
-            unset($originalLocation); unset($imgHash); unset($filename); unset($destination);
-        } else {
-            // It's already on our server
-            $finalurl = $originalLocation;
+        $imgHash = md5($originalLocation); // MD5 of URL
+        $newFilename = $imgHash . "." . pathinfo($originalLocation, PATHINFO_EXTENSION);
+        $destination = './images/' . $newFilename;
+        $finalURL = $image_mirror_url_prefix . $newFilename;
+        if(!file_exists($destination)) {
+            copy($originalLocation, $destination);
         }
+
+
         $Inline = array(
             'extent' => $Link['extent'] + 1,
             'element' => array(
                 'name' => 'img',
                 'attributes' => array(
-                    'class' => 'img-responsive center-block',
-                    'src' => $finalurl,
+                    'src' => $finalURL,
+                    //'src' => $Link['element']['attributes']['href'],
                     'alt' => $Link['element']['text'],
                 ),
             ),
         );
-        unset($finalurl);
 
         $Inline['element']['attributes'] += $Link['element']['attributes'];
 

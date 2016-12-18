@@ -1,103 +1,78 @@
 <?php
-require 'config.php';
-require_once 'resources/Parsedown.php';
-require_once 'resources/class.PaginationLinks.php';
-require_once 'resources/getPostData.php';
+require 'Parsedown.php';
+require 'helpers.php';
+?>
+<html>
+<head>
 
-$content = array_diff(scandir($dir), array('..', '.', '.htaccess'));
-natcasesort($content);
-$totPosts = count($content);
-if (isset($_GET['p'])) {
-    $currpage = intval(htmlspecialchars($_GET['p']));
+<?php
+// Set title of post to <title> if possible
+if(isset($_GET['entry'])) {
+	$entry = $_GET['entry'];
+	$filename = file_from_url($entry, $path_to_txts);
+	echo '<title>' . get_title($filename) . ' - lambdan.se</title>';
 } else {
-    $currpage = 1;
+	echo '<title>lambdan.se</title>';
+}
+?>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="http://lambdan.se/css.css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://lambdan.se/rss.php" />
+
+<meta charset="utf-8">
+
+</head>
+
+<body>
+	<div class="navigation">
+	<h1><a href="." class="logo">lambdan.se</a></h1>
+	<p><a href="archive.php">Archive</a> ... <a href="rss.php">RSS</a> ... <a href="https://twitter.com/djs__">Twitter</a></p>
+
+
+<?php
+// Add files to array, and natsort it, and reverse it (newest first)
+$files = glob('' . $path_to_txts . '*.{txt,md,markdown}', GLOB_BRACE);
+natsort($files);
+$files = array_reverse($files, false);
+?>
+
+</div>
+<?php
+
+// Maybe show one?
+if(isset($_GET['entry'])) {
+	$entry = $_GET['entry'];
+} else {
+	$entry = count($files); // latest entry if nothing is requested
 }
 
+$filename = file_from_url($entry, $path_to_txts);
 
-$offset = $totPosts - ($postsOnPage*$currpage);
+echo '<h1 class="article_title">' . get_title($filename) . '</h1>';
+echo '<h2 class="article_date"><a href="?entry=' . get_display_filename($filename) . '">' . get_date($filename, "F j Y, H:m") . '</a></h2>';
+echo '<div class="article">';
+$Parsedown = new Parsedown();
+echo $Parsedown->text(get_text($filename));
+echo '</div>';
+// Navigation between posts
+echo '<footer>';
 
-while ($offset<0) {
-    $offset++;
-    $postsOnPage--;
+$curr = get_number($filename);
+$prev = file_from_url($curr - 1, $path_to_txts);
+$next = file_from_url($curr + 1, $path_to_txts);
+
+if (file_exists($next)) {
+	print 'Next: <a href="?entry=' . get_display_filename($next) . '">' . get_title($next) . '</a><br>';
 }
 
+if (file_exists($prev)) {
+	print 'Previous: <a href="?entry=' . get_display_filename($prev) . '">' . get_title($prev) . '</a>';
+}
 
-$content = array_slice($content, $offset, $postsOnPage);
-// Header generation
-$pageTitle = "Home";
-$pageName = "Home";
-$twitter = array($pageTitle, $indexDescriptionTwitter);
-require 'header.php';
+echo '</footer>';
 
-    echo '<div class="section"><div class="container">';
-//                while ($i>$stopLimit && $i>0) {
-                    foreach(array_reverse($content) as $c) {
-                    $number = preg_split("/[\s,.]+/", $c);
-                    $path = $dir . $c;
 
-                    $firstline = fgets(fopen($path, 'r'));
-                    
-                    $title = getPostData($path, "title");
-                    if (getPostData($path, "isLinked")) {
-                        $title = '' . getPostData($path, "title");
-                    }
-                    
-                    $dateStamp = getPostData($path, "date");
-                    $linkToPost = getPostData($path, "link");
-                    $isLinked = getPostData($path, "isLinked");
-                echo '<div class="row">
-                    <div class="col-md-12">
-                        ';
-                    if ($isLinked) {
-                        $url = getPostData($path, "linkedURL");
-                        echo '<div class="panel">
-                        <div class="panel-heading">
-                        <h3 class="panel-title"><a href="' . $url . '"><span class="linkedPost">' . $title . '</a>';
-                    } else {
-                        echo '
-                        <div class="panel">
-                        <div class="panel-heading">
-                        <h3 class="panel-title"><a href="' . $linkToPost . '"><span class="regularPost">' . $title . '</a></a>';
-                    }
+?>
 
-                            echo '<br><small><span class="dateUnderTitle"><a href="' . $linkToPost . '">' . $dateStamp . '</a></span></small></h3>
-                            </div>
-                            <div class="panel-body">';
-                                $output = "";
-                    $Parsedown = new Parsedown();
-                                $images = getPostData($path, "images");
-                    $output .= $Parsedown->text(getPostData($path, "content"));
-
-                                echo '<p>';
-                                echo $output;
-                                echo '</p>';
-                                echo '
-                            </div>
-                        </div>
-                    </div>
-                    </div>';
-                                echo '<hr class="ArticSep">';
-                }
-                ?>
-                <div class="row">
-                    <div class="col-md-12">
-<center>
-                        <ul class="pagination">
-                            <?php
-                            if($currpage>1) {
-                                echo '<li><a href="?p=' . ($currpage-1) . '">Prev</a></li>';
-                            }
-                            
-                            echo PaginationLinks::create($currpage, ceil($totPosts/5), 2, '<li><a href="?p=%d">%d</a></li>','<li class="active"><a href="#">%d</a></li>','');
-                            
-                            if($currpage<ceil($totPosts/5)) {
-                                echo '<li><a href="?p=' . ($currpage+1) . '">Next</a></li>';
-                            }
-                            ?>
-                        </ul>
-</center>
-                    </div>
-                </div>
-            </div>
-
-<?php require 'footer.php'; ?>
+</body>
+</html>

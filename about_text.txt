@@ -1,4 +1,0 @@
-00000000
-# About
-
-Here you can write about yourself. It shows on the About page.

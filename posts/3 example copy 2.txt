@@ -1,0 +1,10 @@
+December 31 2016 23:59
+# Example Post 3
+
+This is yet another example post.
+
+For more info on how to write Markdown, please view one of these fine guides:
+
+https://daringfireball.net/projects/markdown/basics
+
+https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
