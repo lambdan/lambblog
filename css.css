@@ -46,6 +46,7 @@ blockquote{ background: #f9f9f9; /* quotes */
 a.logo {
 	color: #444;
 	text-decoration: none;
+	font-weight: bold;
 }
 
 footer {
@@ -62,6 +63,7 @@ footer a {
 .navigation {
 	background-color: #f9f9f9;
   	padding: 0.5em 10px;
+  	border-bottom: 10px solid #2f60b1;
 }
 
 .navigation a {
