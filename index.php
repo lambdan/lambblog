@@ -26,7 +26,7 @@ if(isset($_GET['entry'])) {
 <body>
 	<div class="navigation">
 	
-	<p><a href="." class="logo">lambdan.se</a> • <a href="archive.php">Archive</a> • <a href="rss.php">RSS</a> • <a href="https://twitter.com/djs__">Twitter</a></p>
+	<p><a href="." class="logo">lambdan.se</a> • <a href="archive.php">Archive</a> • <a href="stats.php">Stats</a> • <a href="rss.php">RSS</a> • <a href="https://twitter.com/djs__">Twitter</a></p>
 
 
 <?php
@@ -56,6 +56,8 @@ echo $Parsedown->text(get_text($filename));
 echo '</div>';
 // Navigation between posts
 echo '<footer><ul>';
+
+echo '<li><a href="stats.php?entry=' . get_display_filename($filename) . '">Stats For This Post</a></li>';
 
 $curr = get_number($filename);
 $prev = file_from_url($curr - 1, $path_to_txts);

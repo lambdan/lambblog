@@ -19,7 +19,7 @@ $starttime = $starttime[1] + $starttime[0];
 
 <body>
 	<div class="navigation">
-	<p><a href="." class="logo">lambdan.se</a> • Archive • <a href="rss.php">RSS</a> • <a href="https://twitter.com/djs__">Twitter</a></p>
+	<p><a href="." class="logo">lambdan.se</a> • Archive • <a href="stats.php">Stats</a> • <a href="rss.php">RSS</a> • <a href="https://twitter.com/djs__">Twitter</a></p>
 	</div> 
 	<h1>Archive</h1>
 
@@ -28,8 +28,6 @@ $starttime = $starttime[1] + $starttime[0];
 $files = glob('' . $path_to_txts . '*.{txt,md,markdown}', GLOB_BRACE);
 natsort($files);
 $files = array_reverse($files, false);
-
-echo '<p>There are ' . count($files) . ' posts.</p>';
 
 // List them
 $prevMonth = "";
@@ -46,7 +44,6 @@ foreach($files as $txt) {
 </ul>
 <footer>
 <p>
-Running on <a href="https://github.com/lambdan/lambblog">lambblog</a><br>
 <?php
 $mtime = explode(' ', microtime());
 $totaltime = $mtime[0] + $mtime[1] - $starttime;
