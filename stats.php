@@ -6,7 +6,7 @@ $starttime = explode(' ', microtime());
 $starttime = $starttime[1] + $starttime[0];
 
 // Words to filter out
-$common_words = array("a","an","and","the","this","at","in","or","of","is","for","to","it","i","you","me","my","on","that","but","me","as","so","quot","th","td");
+$common_words = array("a","an","and","the","this","at","in","or","of","is","for","to","it","i","you","me","my","on","that","but","me","as","so","quot","th","td","-");
 ?>
 <html>
 <head>
