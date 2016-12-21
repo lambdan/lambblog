@@ -26,7 +26,7 @@ $files = array_reverse($files, false);
 
             $output .= '<item>';
 
-            $output .= '<title>'  . $title . '</title>';
+            $output .= '<title>'  . htmlspecialchars($title) . '</title>';
             $output .= '<description><![CDATA[' . $Parsedown->text(get_text($txt)) . ']]></description>';
             $output .= '<link>' . $url . '</link>';
             $output .= '<pubDate>' . $pubDate . '</pubDate>'; // we have to strtotime the nice format to make it rss compliant
