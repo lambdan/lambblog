@@ -8,6 +8,7 @@ If you do decide to you use it, you should open every PHP-file in a text editor 
 ## Features
 
 - Reads blog posts from Markdown formatted txt-files saved in the `posts/` directory 
+- [Valid RSS Feed][rss]
 - Mirrors images and saves them locally for (probably) faster load times and future proofing (incase images disappear in the future)
 - Dynamic sitemap with every blog post
 - Doesn't use any 3rd party CSS/JS library. Only thing we use (that I haven't written) is [Parsedown][pd], and that is for converting Markdown into HTML using PHP
@@ -26,3 +27,4 @@ If you do decide to you use it, you should open every PHP-file in a text editor 
 
 [pd]: http://parsedown.org
 [strtotime]: http://php.net/manual/en/function.strtotime.php
+[rss]: https://validator.w3.org/feed/check.cgi?url=lambdan.se%2Frss
