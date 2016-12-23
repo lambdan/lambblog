@@ -37,10 +37,11 @@ function get_display_filename($txt) {
 		$number = get_number($txt);
 		$title = get_title($txt);
 		$combined = $number . "-" . $title;
-		return seo_friendly_url($combined);
+		$string = seo_friendly_url($combined);
 	} else { // ... otherwise just put filename in URL
-		return $filename;
+		$string = $filename;
 	}
+	return $string . "-" . get_date($txt, "Y-m-d");
 }
 
 function get_number($txt) {
