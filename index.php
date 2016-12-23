@@ -47,28 +47,33 @@ if(isset($_GET['entry'])) {
 }
 
 $filename = file_from_url($entry, $path_to_txts);
+if (file_exists($filename)) {
+	echo '<h1 class="article_title">' . get_title($filename) . '</h1>';
+	echo '<h2 class="article_date"><a href="?entry=' . get_display_filename($filename) . '">' . get_date($filename, "j M Y H:m") . '</a></h2>';
+	echo '<div class="article">';
+	$Parsedown = new Parsedown();
+	echo $Parsedown->text(get_text($filename));
+	echo '</div>';
+	// Navigation between posts
+	echo '<footer><ul>';
 
-echo '<h1 class="article_title">' . get_title($filename) . '</h1>';
-echo '<h2 class="article_date"><a href="?entry=' . get_display_filename($filename) . '">' . get_date($filename, "j M Y H:m") . '</a></h2>';
-echo '<div class="article">';
-$Parsedown = new Parsedown();
-echo $Parsedown->text(get_text($filename));
-echo '</div>';
-// Navigation between posts
-echo '<footer><ul>';
+	echo '<li><a href="stats.php?entry=' . get_display_filename($filename) . '">Stats For This Post</a></li>';
 
-echo '<li><a href="stats.php?entry=' . get_display_filename($filename) . '">Stats For This Post</a></li>';
+	$curr = get_number($filename);
+	$prev = file_from_url($curr - 1, $path_to_txts);
+	$next = file_from_url($curr + 1, $path_to_txts);
 
-$curr = get_number($filename);
-$prev = file_from_url($curr - 1, $path_to_txts);
-$next = file_from_url($curr + 1, $path_to_txts);
+	if (file_exists($next)) {
+		print '<li>Next: <a href="?entry=' . get_display_filename($next) . '">' . get_title($next) . '</a>';
+	}
 
-if (file_exists($next)) {
-	print '<li>Next: <a href="?entry=' . get_display_filename($next) . '">' . get_title($next) . '</a>';
-}
-
-if (file_exists($prev)) {
-	print '<li>Previous: <a href="?entry=' . get_display_filename($prev) . '">' . get_title($prev) . '</a>';
+	if (file_exists($prev)) {
+		print '<li>Previous: <a href="?entry=' . get_display_filename($prev) . '">' . get_title($prev) . '</a>';
+	}
+} else {
+	echo '<h3>Not found</h3>';
+	echo '<p>The post you wanted to see was not found. It has probably been removed or you changed the entry value in the URL to be invalid.</p>';
+	echo '<footer><ul>';
 }
 
 echo '<li><a href="archive.php">Archive</a>';
