@@ -30,14 +30,17 @@ function get_text($txt) {
 }
 
 function get_display_filename($txt) {
-	//$filename = basename($txt); // get just filename
-	//$filename = pathinfo($filename, PATHINFO_FILENAME); // remove .txt or whatever
-	//$filename = seo_friendly_url($filename);
-	//return $filename;
-	$number = get_number($txt);
-	$title = get_title($txt);
-	$combined = $number . "-" . $title;
-	return seo_friendly_url($combined);
+	$filename = basename($txt); // get just filename
+	$filename = pathinfo($filename, PATHINFO_FILENAME); // remove .txt or whatever
+	$filename = seo_friendly_url($filename);
+	if (is_numeric($filename)) { // If the filename is just a number, put title of post in URL
+		$number = get_number($txt);
+		$title = get_title($txt);
+		$combined = $number . "-" . $title;
+		return seo_friendly_url($combined);
+	} else { // ... otherwise just put filename in URL
+		return $filename;
+	}
 }
 
 function get_number($txt) {
