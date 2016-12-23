@@ -1,6 +1,18 @@
 <?php
 require 'Parsedown.php';
 require 'helpers.php';
+
+if (isset($_GET['view_raw'])) {
+	$filename = file_from_url(intval($_GET['view_raw']), $path_to_txts);
+	header('Content-type: text/plain');
+	if(file_exists($filename)) {
+		echo file_get_contents($filename);
+	} else {
+		echo "not found";
+	}
+	die();
+}
+
 ?>
 <html>
 <head>
@@ -48,6 +60,11 @@ if(isset($_GET['entry'])) {
 }
 
 if (file_exists($filename)) {
+	if ( substr($_SERVER['REQUEST_URI'], -5) == ".text")  {
+		header("Location: index.php?view_raw=" . get_number($filename));
+		die();
+	}
+
 	echo '<h1 class="article_title">' . get_title($filename) . '</h1>';
 	echo '<h2 class="article_date"><a href="?entry=' . get_display_filename($filename) . '">' . get_date($filename, "j M Y H:m") . '</a></h2>';
 	echo '<div class="article">';
