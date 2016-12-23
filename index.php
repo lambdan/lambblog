@@ -42,11 +42,11 @@ $files = array_reverse($files, false);
 // Maybe show one?
 if(isset($_GET['entry'])) {
 	$entry = $_GET['entry'];
+	$filename = file_from_url($entry, $path_to_txts);
 } else {
-	$entry = count($files); // latest entry if nothing is requested
+	$filename = $files[0]; // latest entry if nothing is requested
 }
 
-$filename = file_from_url($entry, $path_to_txts);
 if (file_exists($filename)) {
 	echo '<h1 class="article_title">' . get_title($filename) . '</h1>';
 	echo '<h2 class="article_date"><a href="?entry=' . get_display_filename($filename) . '">' . get_date($filename, "j M Y H:m") . '</a></h2>';
@@ -54,14 +54,33 @@ if (file_exists($filename)) {
 	$Parsedown = new Parsedown();
 	echo $Parsedown->text(get_text($filename));
 	echo '</div>';
-	// Navigation between posts
-	echo '<footer><ul>';
 
+	// Footer
+	echo '<footer><ul>';
 	echo '<li><a href="stats.php?entry=' . get_display_filename($filename) . '">Stats For This Post</a></li>';
 
 	$curr = get_number($filename);
-	$prev = file_from_url($curr - 1, $path_to_txts);
-	$next = file_from_url($curr + 1, $path_to_txts);
+
+	// We would just do $curr-1 and $curr+1 for previous/next, but if you remove a blog post that wont work
+	$i = 1;
+	$prev = file_from_url($curr - $i, $path_to_txts);
+	while(!file_exists($prev)) {
+		if ( ($curr-$i) < 0 ) {
+			break;
+		}
+		$i++;
+		$prev = file_from_url($curr - $i, $path_to_txts);
+	}
+
+	$i = 1;
+	$next = file_from_url($curr + $i, $path_to_txts);
+	while(!file_exists($next)) {
+		if ( ($curr+$i) > get_number($files[0]) ) {
+			break;
+		}
+		$i++;
+		$next = file_from_url($curr + $i, $path_to_txts);
+	}
 
 	if (file_exists($next)) {
 		print '<li>Next: <a href="?entry=' . get_display_filename($next) . '">' . get_title($next) . '</a>';
