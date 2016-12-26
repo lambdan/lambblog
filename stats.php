@@ -45,6 +45,11 @@ if(isset($_GET['entry'])) { // Stats for specific entry
 	// Read text file for that entry
 	$entry = $_GET['entry'];
 	$filename = file_from_url($entry, $path_to_txts);
+	if (!file_exists($filename)) {
+		echo '<p>I could not find that post.</p>';
+		echo '<footer><ul><a href="archive.php"><li>Archive</a></li></ul></footer>';
+		die();
+	}
 
 	// HTML version
 	$Parsedown = new Parsedown();
