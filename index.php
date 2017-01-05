@@ -23,6 +23,14 @@ if(isset($_GET['entry'])) {
 	$entry = $_GET['entry'];
 	$filename = file_from_url($entry, $path_to_txts);
 	echo '<title>' . get_title($filename) . ' - lambdan.se</title>';
+
+
+	// Twitter card
+	echo '<meta name="twitter:card" content="summary" />';
+	echo '<meta name="twitter:site" content="@djs__" />';
+	echo '<meta name="twitter:title" content="' . get_title($filename) . '" />';
+	$summary = substr(get_text($filename),0,100) . '...';
+	echo '<meta name="twitter:description" content="' . $summary . '" />';
 } else {
 	echo '<title>lambdan.se</title>';
 }
