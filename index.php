@@ -74,6 +74,7 @@ if (file_exists($filename)) {
 echo '<div class="article">';
 	echo '<h1 class="article_title">' . get_title($filename) . '</h1>';
 	echo '<h2 class="article_date"><a href="?entry=' . get_display_filename($filename) . '">' . get_date($filename, "j M Y H:i") . '</a></h2>';
+	echo '<div class="article">';
 	$Parsedown = new Parsedown();
 	echo $Parsedown->text(get_text($filename));
 	echo '</div>';
