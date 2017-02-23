@@ -54,8 +54,8 @@ function get_number($txt) {
 function file_from_url($entry, $dir) {
 	$pieces = explode("-", $entry); // separate number
 	$number = intval($pieces[0]); // consider it an int (idk if this is actually necessary as the glob kind of uses it as a string? whatever)
-	$filepath = glob($dir . $number . '*'); // get all files in $dir that starts with that number
-	return $filepath[0]; // return the 1 file that matches
+    $filepath = glob($dir . $number . '*'); // get all files in $dir that starts with that number
+	return @$filepath[0]; // return the 1 file that matches
 }
 
 function seo_friendly_url($string){

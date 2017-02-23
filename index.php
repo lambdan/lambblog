@@ -24,7 +24,6 @@ if(isset($_GET['entry'])) {
 	$filename = file_from_url($entry, $path_to_txts);
 	echo '<title>' . get_title($filename) . ' - lambdan.se</title>';
 
-
 	// Twitter card
 	echo '<meta name="twitter:card" content="summary" />';
 	echo '<meta name="twitter:site" content="@djs__" />';
@@ -36,7 +35,7 @@ if(isset($_GET['entry'])) {
 }
 ?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="http://lambdan.se/css.css">
+<link rel="stylesheet" type="text/css" href="https://lambdan.se/css.css">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="http://lambdan.se/rss.php" />
 
 <meta charset="utf-8">
@@ -46,7 +45,7 @@ if(isset($_GET['entry'])) {
 <body>
 	<div class="navigation">
 	
-	<p><a href="." class="logo">lambdan.se</a> • <a href="archive.php">Archive</a> • <a href="stats.php">Stats</a> • <a href="rss.php">RSS</a> • <a href="https://twitter.com/djs__">Twitter</a></p>
+	<p><a href="." class="logo">lambdan.se</a><br><a href="archive.php">Archive</a> • <a href="stats.php">Stats</a> • <a href="rss.php">RSS</a> • <a href="https://twitter.com/djs__">Twitter</a></p>
 
 
 <?php
@@ -72,17 +71,15 @@ if (file_exists($filename)) {
 		header("Location: index.php?view_raw=" . get_number($filename));
 		die();
 	}
-
+echo '<div class="article">';
 	echo '<h1 class="article_title">' . get_title($filename) . '</h1>';
-	echo '<h2 class="article_date"><a href="?entry=' . get_display_filename($filename) . '">' . get_date($filename, "j M Y H:m") . '</a></h2>';
-	echo '<div class="article">';
+	echo '<h2 class="article_date"><a href="?entry=' . get_display_filename($filename) . '">' . get_date($filename, "j M Y H:i") . '</a></h2>';
 	$Parsedown = new Parsedown();
 	echo $Parsedown->text(get_text($filename));
 	echo '</div>';
 
 	// Footer
-	echo '<footer><ul>';
-	echo '<li><a href="stats.php?entry=' . get_display_filename($filename) . '">Stats For This Post</a></li>';
+	echo '<footer>';
 
 	$curr = get_number($filename);
 
@@ -108,21 +105,25 @@ if (file_exists($filename)) {
 	}
 
 	if (file_exists($next)) {
-		print '<li>Next: <a href="?entry=' . get_display_filename($next) . '">' . get_title($next) . '</a>';
+		print 'Next: <a href="?entry=' . get_display_filename($next) . '">' . get_title($next) . '</a><br>';
 	}
 
 	if (file_exists($prev)) {
-		print '<li>Previous: <a href="?entry=' . get_display_filename($prev) . '">' . get_title($prev) . '</a>';
+		print 'Previous: <a href="?entry=' . get_display_filename($prev) . '">' . get_title($prev) . '</a>';
 	}
 } else {
 	echo '<h3>Not found</h3>';
 	echo '<p>The post you wanted to see was not found. It has probably been removed or you changed the entry value in the URL to be invalid.</p>';
-	echo '<footer><ul>';
+	echo '<footer>';
 }
 
-echo '<li><a href="archive.php">Archive</a>';
 
-echo '</ul></footer>';
+echo '<br><a href="stats.php?entry=' . get_display_filename($filename) . '">Stats For This Post</a>';
+
+echo '<br><a href="archive.php">Archive</a>';
+echo '<br><img class="logo" src="https://lambdan.se/avatar.png">';
+
+echo '</footer>';
 
 
 ?>

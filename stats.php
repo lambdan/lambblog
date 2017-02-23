@@ -22,8 +22,8 @@ if(isset($_GET['entry'])) {
 }
 ?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="http://lambdan.se/css.css">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="http://lambdan.se/rss.php" />
+<link rel="stylesheet" type="text/css" href="https://lambdan.se/css.css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="https://lambdan.se/rss.php" />
 
 <meta charset="utf-8">
 
@@ -31,7 +31,7 @@ if(isset($_GET['entry'])) {
 
 <body>
 	<div class="navigation">
-	<p><a href="." class="logo">lambdan.se</a> • <a href="archive.php">Archive</a> • Stats • <a href="rss.php">RSS</a> • <a href="https://twitter.com/djs__">Twitter</a></p>
+	<p><a href="." class="logo">lambdan.se</a><br><a href="archive.php">Archive</a> • <a href="stats.php">Stats</a> • <a href="rss.php">RSS</a> • <a href="https://twitter.com/djs__">Twitter</a></p>
 </div>
 
 <div class="article">
@@ -109,7 +109,7 @@ if(isset($_GET['entry'])) { // Stats for specific entry
 	natsort($post_word_counts);
 	$post_word_counts = array_reverse($post_word_counts, false);
 	foreach($post_word_counts as $filename => $words) {
-		if ($i < 10) {
+		if ($i < 20) {
 			echo '<li><b><a href="index.php?entry=' . get_display_filename($filename) . '" style="text-decoration:none;">' . get_title($filename) . '</a></b> = ' . $words . ' words <a href="stats.php?entry=' . get_display_filename($filename) . '" style="text-decoration:none;">(stats)</a></li>';
 			$i++;
 		} else {
@@ -125,8 +125,11 @@ echo '</div>';
 echo '<footer>';
 $mtime = explode(' ', microtime());
 $totaltime = $mtime[0] + $mtime[1] - $starttime;
-printf('<p>Page generated in %.3f seconds', $totaltime);
-echo '<br>Running on <a href="https://github.com/lambdan/lambblog">lambblog</a></p>';
+printf('Page generated in %.3f seconds', $totaltime);
+echo '<br>Running on <a href="https://github.com/lambdan/lambblog">lambblog</a>';
+
+
+echo '<br><img class="logo" src="https://lambdan.se/avatar.png">';
 echo '</footer>';
 
 

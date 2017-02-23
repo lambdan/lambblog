@@ -1,30 +1,35 @@
 body{
-	margin:40px auto;
-	max-width:650px;
 	line-height:1.6;
 	color:#444;
-	padding:0 10px;
-	font-family: 'Avenir Next', 'Ubuntu', 'Segoe UI',  Verdana, sans-serif; 
+	font-family: 'Avenir Next', 'Ubuntu', 'Helvetica', 'Segoe UI',  Verdana, sans-serif; 
 	font-size:1.125em;
 	word-wrap: break-word;
+    margin: 0;
+    padding: 0;
 }
 
 h1.article_title {
-	font-size: 2em;
+	font-size: 2.15em;
 	color: black;
+    text-align: center;
 }
 
 h2.article_date, h2.article_date a {
 	font-size: 1em;
-	text-decoration: none;
+    text-decoration: none;
+    text-align: center;
+    margin-top: -30px;
 }
 
 .article {
-
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 10px;
 }
 
 a, a:active, a:visited {
-    color: #2F60B1;
+    color: #B02507;
 }
 
 img{max-width:100%;max-height:auto}
@@ -44,30 +49,38 @@ blockquote{ background: #f9f9f9; /* quotes */
 }
 
 a.logo {
-	color: #444;
+	color: white;
 	text-decoration: none;
-	font-weight: bold;
+    font-size: 2em;
+}
+
+img.logo {
+margin-top: 10px;
+max-height:100px;
 }
 
 footer {
-	border-top: 10px solid #2F60B1;
-	background: #f9f9f9;
-	margin: 1.5em 10px;
-  	padding: 0.5em 10px;
+	background:#B02507;
+  	padding: 1em 10px;
+    text-align: center;
+    color: white;
+    max-width: 100%;
 }
 
-footer a {
-	text-decoration: none;
+footer a, footer a:visited {
+    color: white;
 }
 
 .navigation {
-	background-color: #f9f9f9;
-  	padding: 0.5em 10px;
-  	border-bottom: 10px solid #2f60b1;
+	background-color:#FEB912;
+  	padding: 1em 10px;
+    max-width: 100%;
+    text-align: center;
+    color: black;
 }
 
 .navigation a {
-	text-decoration: none;
+    color: black;
 }
 
 table {

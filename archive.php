@@ -11,7 +11,7 @@ $starttime = $starttime[1] + $starttime[0];
 <head>
 <title>Archive - lambdan.se</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="http://lambdan.se/css.css">
+<link rel="stylesheet" type="text/css" href="https://lambdan.se/css.css">
 
 <meta charset="utf-8">
 
@@ -19,8 +19,9 @@ $starttime = $starttime[1] + $starttime[0];
 
 <body>
 	<div class="navigation">
-	<p><a href="." class="logo">lambdan.se</a> • Archive • <a href="stats.php">Stats</a> • <a href="rss.php">RSS</a> • <a href="https://twitter.com/djs__">Twitter</a></p>
-	</div> 
+	<p><a href="." class="logo">lambdan.se</a><br><a href="archive.php">Archive</a> • <a href="stats.php">Stats</a> • <a href="rss.php">RSS</a> • <a href="https://twitter.com/djs__">Twitter</a></p>
+    </div> 
+<div class="article">
 	<h1>Archive</h1>
 
 <?php
@@ -42,14 +43,15 @@ foreach($files as $txt) {
 
 ?>
 </ul>
+</div>
 <footer>
-<p>
 <?php
 $mtime = explode(' ', microtime());
 $totaltime = $mtime[0] + $mtime[1] - $starttime;
 printf('Page generated in %.3f seconds', $totaltime);
 ?>
-</p>
+
+<br><img class="logo" src="https://lambdan.se/avatar.png">
 </footer>
 </body>
 </html>
