@@ -1,7 +1,7 @@
 <?php
 
 // URL to folder your mirrored images will be saved to
-$image_mirror_url_prefix = 'http://lambdan.se/images/';
+$image_mirror_url_prefix = 'https://lambdan.se/images/';
 
 #
 #
