@@ -45,7 +45,7 @@ if(isset($_GET['entry'])) {
 <body>
 	<div class="navigation">
 	
-	<p><a href="." class="logo">lambdan.se</a><br><a href="archive.php">Archive</a> • <a href="stats.php">Stats</a> • <a href="rss.php">RSS</a> • <a href="https://twitter.com/djs__">Twitter</a></p>
+	<p><a href="." class="logo">lambdan.se</a><br><a href="archive.php">Archive</a> • <a href="stats.php">Stats</a> • <a href="rss.php">RSS</a> • <a href="https://twitter.com/djs__">Twitter</a> • <a href="about.php">About</a></p>
 
 
 <?php
