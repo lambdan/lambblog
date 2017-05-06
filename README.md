@@ -24,6 +24,7 @@ If you do decide to you use it, you should open every PHP-file in a text editor 
 	- The second line must be a # followed by a space, and then the title of the blog post
 	- (See the `posts/` folder in this repository for examples)
 	- After that you can write whatever you want
+- Start writing and hope someone reads 😭
 
 [pd]: http://parsedown.org
 [strtotime]: http://php.net/manual/en/function.strtotime.php
