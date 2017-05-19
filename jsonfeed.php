@@ -4,7 +4,7 @@ $feed = array();
 $feed['version'] = 'https://jsonfeed.org/version/1';
 $feed['title'] = 'lambdan.se';
 $feed['home_page_url'] = 'https://lambdan.se/';
-$feed['feed_url'] = 'https://lambdan.se/jsonfeed';
+$feed['feed_url'] = 'https://lambdan.se/feed.json';
 $feed['icon'] = 'https://lambdan.se/avatar.png';
 
 $feed['author']['name'] = 'djs';
