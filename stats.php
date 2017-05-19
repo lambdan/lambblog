@@ -31,7 +31,7 @@ if(isset($_GET['entry'])) {
 
 <body>
 	<div class="navigation">
-	<p><a href="." class="logo">lambdan.se</a><br><a href="archive.php">Archive</a> • <a href="stats.php">Stats</a> • <a href="rss.php">RSS</a> • <a href="https://twitter.com/djs__">Twitter</a> • <a href="about.php">About</a></p>
+	<p><a href="." class="logo">lambdan.se</a><br><a href="archive.php">Archive</a> • <a href="stats.php">Stats</a> • <a href="feeds.php">Feeds</a> • <a href="https://twitter.com/djs__">Twitter</a> • <a href="about.php">About</a></p>
 </div>
 
 <div class="article">
@@ -93,17 +93,21 @@ if(isset($_GET['entry'])) { // Stats for specific entry
 
 	$post_word_counts = array();
 	$total_words = 0;
+	$total_characters = 0;
 	foreach($files as $filename) {
 		$Parsedown = new Parsedown();
 		$html_text = $Parsedown->text(get_text($filename));
 		$words = str_word_count(strip_tags($html_text));
+		$chars = strlen(strip_tags($html_text));
 
 		$total_words = $total_words + $words;
+		$total_characters = $total_characters + $chars;
 		$post_name = get_title($filename);
 		$post_word_counts[$filename] = $words; // add to array with title as key
 	}
 
 	echo '<p>Words in total: ' . $total_words . '</p>';
+	echo '<p>Characters in total: ' . $total_characters . '</p>';
 	echo '<h2>Posts With Most Words</h2><ol>';
 	$i = 0;
 	natsort($post_word_counts);

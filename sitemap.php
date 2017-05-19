@@ -19,6 +19,7 @@ foreach($files as $txt) {
 echo '<url><loc>http://lambdan.se/rss</loc></url>';
 echo '<url><loc>http://lambdan.se/archive</loc></url>';
 echo '<url><loc>http://lambdan.se/about</loc></url>';
+echo '<url><loc>http://lambdan.se/feeds</loc></url>';
 
 echo '</urlset>';
 

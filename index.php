@@ -37,6 +37,8 @@ if(isset($_GET['entry'])) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="https://lambdan.se/css.css">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="http://lambdan.se/rss.php" />
+<link rel="alternate" title="JSON Feed" type="application/json" href="https://lambdan.se/feed.json" />
+
 
 <meta charset="utf-8">
 
@@ -45,7 +47,7 @@ if(isset($_GET['entry'])) {
 <body>
 	<div class="navigation">
 	
-	<p><a href="." class="logo">lambdan.se</a><br><a href="archive.php">Archive</a> • <a href="stats.php">Stats</a> • <a href="rss.php">RSS</a> • <a href="https://twitter.com/djs__">Twitter</a> • <a href="about.php">About</a></p>
+	<p><a href="." class="logo">lambdan.se</a><br><a href="archive.php">Archive</a> • <a href="stats.php">Stats</a> • <a href="feeds.php">Feeds</a> • <a href="https://twitter.com/djs__">Twitter</a> • <a href="about.php">About</a></p>
 
 
 <?php
