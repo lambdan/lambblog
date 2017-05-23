@@ -1,7 +1,8 @@
 <?php
 
-// URL to folder your mirrored images will be saved to
-$image_mirror_url_prefix = 'https://lambdan.se/images/';
+require 'config.php';
+$image_mirror_url_prefix = $image_mirror_root;
+$image_mirror_path = $image_mirror_root_path;
 
 #
 #
@@ -1176,10 +1177,11 @@ class Parsedown
 
         // Mirror image for future proofing and faster loading
         global $image_mirror_url_prefix;
+        global $image_mirror_path;
         $originalLocation = $Link['element']['attributes']['href'];
         $imgHash = md5($originalLocation); // MD5 of URL
         $newFilename = $imgHash . "." . pathinfo($originalLocation, PATHINFO_EXTENSION);
-        $destination = './images/' . $newFilename;
+        $destination = $image_mirror_path . $newFilename;
         $finalURL = $image_mirror_url_prefix . $newFilename;
         if(!file_exists($destination)) {
             copy($originalLocation, $destination);

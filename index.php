@@ -22,43 +22,41 @@ if (isset($_GET['view_raw'])) {
 if(isset($_GET['entry'])) {
 	$entry = $_GET['entry'];
 	$filename = file_from_url($entry, $path_to_txts);
-	echo '<title>' . get_title($filename) . ' - lambdan.se</title>';
+	echo "<title>" . get_title($filename) . " - ${site_title}</title>";
 
-	// Twitter card
-	echo '<meta name="twitter:card" content="summary" />';
-	echo '<meta name="twitter:site" content="@djs__" />';
-	echo '<meta name="twitter:title" content="' . get_title($filename) . '" />';
-	$summary = substr(get_text($filename),0,100) . '...';
-	echo '<meta name="twitter:description" content="' . $summary . '" />';
+    // Twitter card
+    if ($twitter_username != "") {
+	    echo '<meta name="twitter:card" content="summary" />';
+	    echo '<meta name="twitter:site" content="@' . $twitter_username .'" />';
+	    echo '<meta name="twitter:title" content="' . get_title($filename) . '" />';
+	    $summary = get_summary($filename);
+        echo '<meta name="twitter:description" content="' . $summary . '" />';
+    }
 } else {
-	echo '<title>lambdan.se</title>';
+	echo '<title>' . $site_title . '</title>';
 }
 ?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="https://lambdan.se/css.css">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="http://lambdan.se/rss.php" />
-<link rel="alternate" title="JSON Feed" type="application/json" href="https://lambdan.se/feed.json" />
 
+<?php
+echo '<link rel="stylesheet" type="text/css" href="' . $css_url. '">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="' . $site_root .'/rss.php" />
+<link rel="alternate" title="JSON Feed" type="application/json" href="' . $site_root .'/feed.json" /> ';
+?>
 
 <meta charset="utf-8">
 
 </head>
 
 <body>
-	<div class="navigation">
-	
-	<p><a href="." class="logo">lambdan.se</a><br><a href="archive.php">Archive</a> • <a href="stats.php">Stats</a> • <a href="feeds.php">Feeds</a> • <a href="https://twitter.com/djs__">Twitter</a> • <a href="about.php">About</a></p>
-
 
 <?php
+generateNavigation($twitter_username);
+
 // Add files to array, and natsort it, and reverse it (newest first)
 $files = glob('' . $path_to_txts . '*.{txt,md,markdown}', GLOB_BRACE);
 natsort($files);
 $files = array_reverse($files, false);
-?>
-
-</div>
-<?php
 
 // Maybe show one?
 if(isset($_GET['entry'])) {
@@ -123,7 +121,7 @@ echo '<div class="article">';
 echo '<br><a href="stats.php?entry=' . get_display_filename($filename) . '">Stats For This Post</a>';
 
 echo '<br><a href="archive.php">Archive</a>';
-echo '<br><img class="logo" src="https://lambdan.se/avatar.png">';
+echo '<br><img class="logo" src="' . $logo .'">';
 
 echo '</footer>';
 

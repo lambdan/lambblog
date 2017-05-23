@@ -12,14 +12,14 @@ $files = array_reverse($files, false);
 
 
 foreach($files as $txt) {
-	echo '<url><loc>http://lambdan.se/?entry=' . get_display_filename($txt) . '</loc></url>';
+	echo '<url><loc>' . $site_root .'/index.php?entry=' . get_display_filename($txt) . '</loc></url>';
 }
 
 // echo any additional urls you want here
-echo '<url><loc>http://lambdan.se/rss</loc></url>';
-echo '<url><loc>http://lambdan.se/archive</loc></url>';
-echo '<url><loc>http://lambdan.se/about</loc></url>';
-echo '<url><loc>http://lambdan.se/feeds</loc></url>';
+echo '<url><loc>' . $site_root . '/rss</loc></url>';
+echo '<url><loc>' . $site_root . '/archive</loc></url>';
+echo '<url><loc>' . $site_root . '/about</loc></url>';
+echo '<url><loc>' . $site_root . '/feeds</loc></url>';
 
 echo '</urlset>';
 

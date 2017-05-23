@@ -16,24 +16,20 @@ $common_words = array("an","and","the","this","at","in","or","of","is","for","to
 if(isset($_GET['entry'])) {
 	$entry = $_GET['entry'];
 	$filename = file_from_url($entry, $path_to_txts);
-	echo '<title>Stats: ' . get_title($filename) . ' - lambdan.se</title>';
+	echo '<title>Stats: ' . get_title($filename) . ' - ' . $site_title .'</title>';
 } else {
-	echo '<title>Stats - lambdan.se</title>';
+	echo '<title>Stats - ' . $site_title . '</title>';
 }
 ?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="https://lambdan.se/css.css">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="https://lambdan.se/rss.php" />
+<link rel="stylesheet" type="text/css" href="<?php echo $css_url; ?>">
 
 <meta charset="utf-8">
 
 </head>
 
 <body>
-	<div class="navigation">
-	<p><a href="." class="logo">lambdan.se</a><br><a href="archive.php">Archive</a> • <a href="stats.php">Stats</a> • <a href="feeds.php">Feeds</a> • <a href="https://twitter.com/djs__">Twitter</a> • <a href="about.php">About</a></p>
-</div>
-
+<?php generateNavigation($twitter_username); ?>
 <div class="article">
 <?php
 // Add files to array, and natsort it, and reverse it (newest first)
@@ -131,7 +127,7 @@ $mtime = explode(' ', microtime());
 $totaltime = $mtime[0] + $mtime[1] - $starttime;
 printf('Page generated in %.3f seconds', $totaltime);
 
-echo '<br><img class="logo" src="https://lambdan.se/avatar.png">';
+echo '<br><img class="logo" src="' . $logo . '">';
 echo '</footer>';
 
 

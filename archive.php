@@ -9,18 +9,18 @@ $starttime = $starttime[1] + $starttime[0];
 
 <html>
 <head>
-<title>Archive - lambdan.se</title>
+<?php echo "<title>Archive - ${site_title}</title>"; ?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="https://lambdan.se/blog/css.css">
+<?php echo '<link rel="stylesheet" type="text/css" href="' . $css_url . '">'; ?>
 
 <meta charset="utf-8">
 
 </head>
 
 <body>
-	<div class="navigation">
-	<p><a href="." class="logo">lambdan.se</a><br><a href="archive.php">Archive</a> • <a href="stats.php">Stats</a> • <a href="feeds.php">Feeds</a> • <a href="https://twitter.com/djs__">Twitter</a> • <a href="about.php">About</a></p>
-    </div> 
+
+<?php generateNavigation($twitter_username); ?>
+
 <div class="article">
 	<h1>Archive</h1>
 
@@ -51,7 +51,7 @@ $totaltime = $mtime[0] + $mtime[1] - $starttime;
 printf('Page generated in %.3f seconds', $totaltime);
 ?>
 
-<br><img class="logo" src="https://lambdan.se/avatar.png">
+    <br><img class="logo" src="<?php echo $logo;?> ">
 </footer>
 </body>
 </html>

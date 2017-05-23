@@ -1,8 +1,5 @@
 <?php
-
-// You should probably edit these
-date_default_timezone_set('Europe/Stockholm');
-$path_to_txts = './posts/';
+require 'config.php';
 
 function get_title($txt) {
 	$lines = file($txt);
@@ -72,6 +69,29 @@ function seo_friendly_url($string){
 function count_posts($dir){
 	$files = glob('' . $dir . '*.{txt,md,markdown}', GLOB_BRACE);
 	return count($files);
+}
+
+function get_summary($filename) {
+    return substr(get_text($filename),0,100) . '...';
+}
+
+function generateNavigation($tw) {
+global $site_title;    
+echo '
+<div class="navigation">
+<p>
+<a href="." class="logo">' . $site_title . '</a>
+<br>
+<a href="archive.php">Archive</a> • 
+<a href="stats.php">Stats</a> • 
+<a href="feeds.php">Feeds</a> • '; 
+if (!empty($tw)) {
+    echo '<a href="https://twitter.com/' . $tw . '">Twitter</a> • ';
+}
+echo '<a href="about.php">About</a>
+</p>
+</div>
+';
 }
 
 ?>

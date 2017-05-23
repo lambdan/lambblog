@@ -70,8 +70,7 @@ figcaption {
 a.logo {
 	color: white;
 	text-decoration: none;
-    font-size: 2em;
-    letter-spacing:5px;
+    font-size: 1.8em;
     text-transform: uppercase;
     font-weight: bold;
 }
