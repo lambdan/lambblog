@@ -76,11 +76,11 @@ function get_summary($filename) {
 }
 
 function generateNavigation($tw) {
-global $site_title;    
+global $navbar_title;    
 echo '
 <div class="navigation">
 <p>
-<a href="." class="logo">' . $site_title . '</a>
+<a href="." class="logo">' . $navbar_title . '</a>
 <br>
 <a href="archive.php">Archive</a> • 
 <a href="stats.php">Stats</a> • 

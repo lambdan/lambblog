@@ -5,7 +5,9 @@ $path_to_txts = './posts/'; // where your markdown files are stored
 
 $site_root = 'https://lambdan.se'; // url root, do not end with /
 
-$site_title = 'L A M B D A N . S E'; // displayed in <title> and rss/json feed
+$site_title = 'lambdan.se'; // displayed at end of <title> and used as title in rss/json feed
+
+$navbar_title = '👌🏻'; // shown above links in the header/navbar. can also be  a <img>
 
 $twitter_username = 'djs__'; // your twitter handle without @, leave blank to not use twitter cards
 
