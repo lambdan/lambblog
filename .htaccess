@@ -3,8 +3,8 @@ RewriteEngine on
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
 
+RewriteRule ^([0-9-]+)/?(.*)\.text post.php?post=$1&mdown=true
 RewriteRule ^([0-9-]+)/?(.*)$ redir.php?entry=$1
 
 RewriteRule ^sitemap\.xml sitemap.php
 RewriteRule ^feed\.json jsonfeed.php
-

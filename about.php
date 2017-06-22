@@ -58,7 +58,7 @@ I prefer it on my Macbook with Retina Display though, but just use whatever you 
  
 </div>
 <footer>
-Have you noticed that the color scheme of my blog matches the color scheme of my torch slug avatar? (Yellow at the top, red at the bottom)
+<i>Casus Belli</i> is a thing they said in one episode of Seinfeld in case you're wondering...
 <br><img class="logo" src="<?php echo $logo;?>">
 </footer>
 </body>

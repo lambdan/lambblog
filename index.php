@@ -117,7 +117,7 @@ echo '<div class="article">';
 	echo '<footer>';
 }
 
-
+echo '<br>';
 echo '<br><a href="stats.php?entry=' . get_display_filename($filename) . '">Stats For This Post</a>';
 
 echo '<br><a href="archive.php">Archive</a>';

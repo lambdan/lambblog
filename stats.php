@@ -84,8 +84,9 @@ if(isset($_GET['entry'])) { // Stats for specific entry
 
 
 } else { // Global stats
-	echo '<h1>Stats</h1>';
-	echo '<p>There are ' . count($files) . ' posts.</p>';
+    echo '<h1>Stats</h1>';
+    echo '<ul>';
+	echo '<li>There are ' . count($files) . ' posts.</li>';
 
 	$post_word_counts = array();
 	$total_words = 0;
@@ -101,10 +102,10 @@ if(isset($_GET['entry'])) { // Stats for specific entry
 		$post_name = get_title($filename);
 		$post_word_counts[$filename] = $words; // add to array with title as key
 	}
-
-	echo '<p>Words in total: ' . $total_words . '</p>';
-	echo '<p>Characters in total: ' . $total_characters . '</p>';
-	echo '<h2>Posts With Most Words</h2><ol>';
+    
+	echo '<li>Words in total: ' . $total_words . '</li>';
+	echo '<li>Characters in total: ' . $total_characters . '</li>';
+	echo '</ul><h2>Posts With Most Words</h2><ol>';
 	$i = 0;
 	natsort($post_word_counts);
 	$post_word_counts = array_reverse($post_word_counts, false);

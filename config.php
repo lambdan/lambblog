@@ -7,11 +7,11 @@ $site_root = 'https://lambdan.se'; // url root, do not end with /
 
 $site_title = 'lambdan.se'; // displayed at end of <title> and used as title in rss/json feed
 
-$navbar_title = '👌🏻'; // shown above links in the header/navbar. can also be  a <img>
+$navbar_title = ''; // shown above links in the header/navbar. can also be  a <img>
 
 $twitter_username = 'djs__'; // your twitter handle without @, leave blank to not use twitter cards
 
-$css_url = $site_root . '/css.css'; // link to css file
+$css_url = $site_root . '/css-light.css'; // link to css file
 
 $logo = 'https://lambdan.se/avatar.png'; // shown in footer
 
