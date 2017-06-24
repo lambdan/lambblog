@@ -3,8 +3,14 @@ RewriteEngine on
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
 
-RewriteRule ^([0-9-]+)/?(.*)\.text post.php?post=$1&mdown=true
-RewriteRule ^([0-9-]+)/?(.*)$ redir.php?entry=$1
+#RewriteRule ^([0-9-]+)/?(.*)\.text post.php?post=$1&mdown=true
+RewriteRule ^([0-9-]+)/?(.*)$ index.php?entry=$1
+
+RewriteRule ^/?(.*)\-i([0-9-]+)$ index.php?entry=$2
+RewriteRule ^/?(.*)\-i([0-9-]+)\.text index.php?view_raw=$2
+#RewriteRule ^/?(.*)\-([0-9-]+)\.text post.php?post=$2&mdown=true
 
 RewriteRule ^sitemap\.xml sitemap.php
 RewriteRule ^feed\.json jsonfeed.php
+
+Redirect 301 /blog https://lambdan.se

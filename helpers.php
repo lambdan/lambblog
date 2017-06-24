@@ -31,14 +31,16 @@ function get_display_filename($txt) {
 	$filename = pathinfo($filename, PATHINFO_FILENAME); // remove .txt or whatever
 	$filename = seo_friendly_url($filename);
 	if (is_numeric($filename)) { // If the filename is just a number, put title of post in URL
-		$number = get_number($txt);
+		//$number = get_number($txt);
 		$title = get_title($txt);
-		$combined = $number . "-" . $title;
-		$string = seo_friendly_url($combined);
-	} else { // ... otherwise just put filename in URL
-		$string = $filename;
+        //$combined = $title . "-" . $number;
+        $string = seo_friendly_url($title);
+		//$string = seo_friendly_url($combined);
+    } else { // ... otherwise just put filename in URL
+        $string = $filename;
+        $string = substr($string, strpos($string, '-')+1);
 	}
-	return $string . "-" . get_date($txt, "Y-m-d");
+	return $string . '-' . get_date($txt, "Ymd") . '-i' . get_number($txt);
 }
 
 function get_number($txt) {
@@ -75,20 +77,17 @@ function get_summary($filename) {
     return substr(get_text($filename),0,100) . '...';
 }
 
-function generateNavigation($tw) {
+function generateNavigation() {
 global $navbar_title;    
 echo '
 <div class="navigation">
 <p>
-<a href="." class="logo">' . $navbar_title . '</a>
+<a href="." class="logo">lambdan.se</a>
 <br>
-<a href="archive.php">Archive</a> • 
-<a href="stats.php">Stats</a> • 
-<a href="feeds.php">Feeds</a> • '; 
-if (!empty($tw)) {
-    echo '<a href="https://twitter.com/' . $tw . '">Twitter</a> • ';
-}
-echo '<a href="about.php">About</a>
+<a href="archive">Archive</a> • 
+<a href="stats">Stats</a> • 
+<a href="feeds">Feeds</a> • '; 
+echo '<a href="about">About</a>
 </p>
 </div>
 ';

@@ -12,7 +12,7 @@ $files = array_reverse($files, false);
 
 
 foreach($files as $txt) {
-	echo '<url><loc>' . $site_root .'/index.php?entry=' . get_display_filename($txt) . '</loc></url>';
+	echo '<url><loc>' . $site_root .'/' . get_display_filename($txt) . '</loc></url>';
 }
 
 // echo any additional urls you want here

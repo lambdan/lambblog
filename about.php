@@ -19,7 +19,7 @@ $starttime = $starttime[1] + $starttime[0];
 
 <body>
 
-<?php generateNavigation($twitter_username); ?>
+<?php generateNavigation(); ?>
 
 <div class="article">
 	<h1>About</h1>
@@ -58,8 +58,7 @@ I prefer it on my Macbook with Retina Display though, but just use whatever you 
  
 </div>
 <footer>
-<i>Casus Belli</i> is a thing they said in one episode of Seinfeld in case you're wondering...
-<br><img class="logo" src="<?php echo $logo;?>">
+<img class="logo" src="<?php echo $logo;?>">
 </footer>
 </body>
 </html>

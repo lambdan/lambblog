@@ -13,8 +13,8 @@ $common_words = array("an","and","the","this","at","in","or","of","is","for","to
 
 <?php
 // Set title of post to <title> if possible
-if(isset($_GET['entry'])) {
-	$entry = $_GET['entry'];
+if(isset($_GET['i'])) {
+	$entry = $_GET['i'];
 	$filename = file_from_url($entry, $path_to_txts);
 	echo '<title>Stats: ' . get_title($filename) . ' - ' . $site_title .'</title>';
 } else {
@@ -29,7 +29,7 @@ if(isset($_GET['entry'])) {
 </head>
 
 <body>
-<?php generateNavigation($twitter_username); ?>
+<?php generateNavigation(); ?>
 <div class="article">
 <?php
 // Add files to array, and natsort it, and reverse it (newest first)
@@ -37,9 +37,9 @@ $files = glob('' . $path_to_txts . '*.{txt,md,markdown}', GLOB_BRACE);
 natsort($files);
 $files = array_reverse($files, false);
 
-if(isset($_GET['entry'])) { // Stats for specific entry
+if(isset($_GET['i'])) { // Stats for specific entry
 	// Read text file for that entry
-	$entry = $_GET['entry'];
+	$entry = $_GET['i'];
 	$filename = file_from_url($entry, $path_to_txts);
 	if (!file_exists($filename)) {
 		echo '<p>I could not find that post.</p>';
@@ -52,7 +52,7 @@ if(isset($_GET['entry'])) { // Stats for specific entry
 	$html_text = $Parsedown->text(get_text($filename));
 
 	// Print out title
-	echo '<h1>Stats for: <a href="index.php?entry=' . get_display_filename($filename) . '" style="text-decoration:none;">' . get_title($filename) . '</a></h1>';
+	echo '<h1>Stats for: <a href="./' . get_display_filename($filename) . '" style="text-decoration:none;">' . get_title($filename) . '</a></h1>';
 
 	// Words
 	echo '<p>Words in total: ' . str_word_count(strip_tags($html_text)) . '</p>';
@@ -86,7 +86,7 @@ if(isset($_GET['entry'])) { // Stats for specific entry
 } else { // Global stats
     echo '<h1>Stats</h1>';
     echo '<ul>';
-	echo '<li>There are ' . count($files) . ' posts.</li>';
+    echo '<li>' . count($files) . ' entries</li>';
 
 	$post_word_counts = array();
 	$total_words = 0;
@@ -111,7 +111,7 @@ if(isset($_GET['entry'])) { // Stats for specific entry
 	$post_word_counts = array_reverse($post_word_counts, false);
 	foreach($post_word_counts as $filename => $words) {
 		if ($i < 20) {
-			echo '<li><b><a href="index.php?entry=' . get_display_filename($filename) . '" style="text-decoration:none;">' . get_title($filename) . '</a></b> = ' . $words . ' words <a href="stats.php?entry=' . get_display_filename($filename) . '" style="text-decoration:none;">(stats)</a></li>';
+			echo '<li><b><a href="./' . get_display_filename($filename) . '" style="text-decoration:none;">' . get_title($filename) . '</a></b> = ' . $words . ' words <a href="stats?i=' . get_number($filename) . '" style="text-decoration:none;">(stats)</a></li>';
 			$i++;
 		} else {
 			break;
@@ -123,14 +123,6 @@ if(isset($_GET['entry'])) { // Stats for specific entry
 }
 
 echo '</div>';
-echo '<footer>';
-$mtime = explode(' ', microtime());
-$totaltime = $mtime[0] + $mtime[1] - $starttime;
-printf('Page generated in %.3f seconds', $totaltime);
-
-echo '<br><img class="logo" src="' . $logo . '">';
-echo '</footer>';
-
 
 ?>
 

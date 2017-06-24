@@ -51,7 +51,7 @@ echo '<link rel="stylesheet" type="text/css" href="' . $css_url. '">
 <body>
 
 <?php
-generateNavigation($twitter_username);
+generateNavigation();
 
 // Add files to array, and natsort it, and reverse it (newest first)
 $files = glob('' . $path_to_txts . '*.{txt,md,markdown}', GLOB_BRACE);
@@ -73,7 +73,7 @@ if (file_exists($filename)) {
 	}
 echo '<div class="article">';
 	echo '<h1 class="article_title">' . get_title($filename) . '</h1>';
-	echo '<h2 class="article_date"><a href="?entry=' . get_display_filename($filename) . '">' . get_date($filename, "j M Y H:i") . '</a></h2>';
+	echo '<h2 class="article_date"><a href="./' . get_display_filename($filename) . '">' . get_date($filename, "j M Y H:i") . '</a></h2>';
 	$Parsedown = new Parsedown();
 	echo $Parsedown->text(get_text($filename));
 	echo '</div>';
@@ -105,23 +105,23 @@ echo '<div class="article">';
 	}
 
 	if (file_exists($next)) {
-		print 'Next: <a href="?entry=' . get_display_filename($next) . '">' . get_title($next) . '</a><br>';
+		print 'Next: <a href="./' . get_display_filename($next) . '">' . get_title($next) . '</a><br>';
 	}
 
 	if (file_exists($prev)) {
-		print 'Previous: <a href="?entry=' . get_display_filename($prev) . '">' . get_title($prev) . '</a>';
+		print 'Previous: <a href="./' . get_display_filename($prev) . '">' . get_title($prev) . '</a>';
 	}
 } else {
-	echo '<h3>Not found</h3>';
+    echo '<h3>Not found</h3>';
+    echo $_GET['entry'];
 	echo '<p>The post you wanted to see was not found. It has probably been removed or you changed the entry value in the URL to be invalid.</p>';
 	echo '<footer>';
 }
 
 echo '<br>';
-echo '<br><a href="stats.php?entry=' . get_display_filename($filename) . '">Stats For This Post</a>';
+echo '<br><a href="stats?i=' . get_number($filename) . '">Stats for this post</a>';
 
-echo '<br><a href="archive.php">Archive</a>';
-echo '<br><img class="logo" src="' . $logo .'">';
+echo ' • <a href="archive">Archive</a>';
 
 echo '</footer>';
 

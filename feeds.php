@@ -19,20 +19,16 @@ $starttime = $starttime[1] + $starttime[0];
 
 <body>
 
-<?php generateNavigation($twitter_username); ?>
+<?php generateNavigation(); ?>
 
 <div class="article">
-	<h1>Feeds</h1>
 
 <ul>
 <li><a href="rss.php">RSS</a></li>
-<li><a href="feed.json">JSON Feed</a></li>
+<li><a href="feed.json">JSON Feed</a> (I recommend this one if you have the option)</li>
 </ul>
 
 
 </div>
-<footer>
-<br><img class="logo" src="<?php echo $logo;?>">
-</footer>
 </body>
 </html>
