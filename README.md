@@ -28,17 +28,19 @@ If you do decide to you use it, you should open every PHP-file in a text editor 
 	- After that you can write whatever you want
 - Start writing and hope someone reads 😭
 
-Note on filenames for posts (as of versions from 2 Jul 2017):
+## Note on filenames for posts (as of versions from 2 Jul 2017)
 
 The filename for the first post you ever do shall start with a number (maybe `1`?), and then call it whatever you want, like: `1.txt` or `1 first post.txt`. This is because we need to start our numbering index somewhere. After this post, you can add another post with a filename like `i am quitting blogging.txt` and it will automatically be prefixed with a number `2` when you visit the Archive page. 
 
 So in other words, here is the flow chart for adding posts:
 
 If it is your first post:
+
 	- Name it `1.txt`, `1 first post.txt` or `666 i love satan.txt`
 	- Upload/save it into the `posts/` folder
 
 If it isn't your first post:
+
 	- Name it `whatver you want.txt`
 	- Upload/save it into the `posts/` folder
 	- Visit the archive page (`archive.php`) in order to refresh and automatically rename `whatever you want.txt` to `n+1 whatever you want.txt` (where n is the number of your previous post)
