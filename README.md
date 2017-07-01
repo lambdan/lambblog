@@ -36,15 +36,15 @@ So in other words, here is the flow chart for adding posts:
 
 If it is your first post:
 
-	- Name it `1.txt`, `1 first post.txt` or `666 i love satan.txt`
-	- Upload/save it into the `posts/` folder
+- Name it `1.txt`, `1 first post.txt` or `666 i love satan.txt`
+- Upload/save it into the `posts/` folder
 
 If it isn't your first post:
 
-	- Name it `whatver you want.txt`
-	- Upload/save it into the `posts/` folder
-	- Visit the archive page (`archive.php`) in order to refresh and automatically rename `whatever you want.txt` to `n+1 whatever you want.txt` (where n is the number of your previous post)
-	- Of course, you could have also called it `n+1 whatever you want.txt` right from the start, but it gets hard to keep track of after 150 posts...
+- Name it `whatver you want.txt`
+- Upload/save it into the `posts/` folder
+- Visit the archive page (`archive.php`) in order to refresh and automatically rename `whatever you want.txt` to `n+1 whatever you want.txt` (where n is the number of your previous post)
+- Of course, you could have also called it `n+1 whatever you want.txt` right from the start, but it gets hard to keep track of after 150 posts...
 
 [pd]: http://parsedown.org
 [strtotime]: http://php.net/manual/en/function.strtotime.php
