@@ -71,9 +71,15 @@ if (file_exists($filename)) {
 		header("Location: index.php?view_raw=" . get_number($filename));
 		die();
 	}
-echo '<div class="article">';
-	echo '<h1 class="article_title">' . get_title($filename) . '</h1>';
-	echo '<h2 class="article_date"><a href="./' . get_display_filename($filename) . '">' . get_date($filename, "j M Y H:i") . '</a></h2>';
+    echo '<div class="article">';
+    if (isLinked($filename)) {
+        echo '<h1 class="article_title_linked"><a href="' . linkedURL($filename) . '">' . $linkedSymbol . ' ' . get_title($filename) . '</a>';
+    } else {
+        echo '<h1 class="article_title">' . get_title($filename) . '</h1>';
+    }
+    echo '<h2 class="article_date"><a href="./' . get_display_filename($filename) . '">' . get_date($filename, "j M Y H:i") . '</a></h2>';
+
+
 	$Parsedown = new Parsedown();
 	echo $Parsedown->text(get_text($filename));
 	echo '</div>';

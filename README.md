@@ -8,7 +8,8 @@ If you do decide to you use it, you should open every PHP-file in a text editor 
 ## Features
 
 - Reads blog posts from Markdown formatted txt-files saved in the `posts/` directory 
-- [Valid RSS Feed][rss]
+- Support for linked posts
+- [Valid RSS Feed][rss] and JSON Feed
 - Mirrors images and saves them locally for (probably) faster load times and future proofing (incase images disappear in the future)
 - Dynamic sitemap with every blog post
 - Doesn't use any 3rd party CSS/JS library. Only thing we use (that I haven't written) is [Parsedown][pd], and that is for converting Markdown into HTML using PHP
@@ -22,6 +23,7 @@ If you do decide to you use it, you should open every PHP-file in a text editor 
 - Write blog posts in Markdown and save them in the `posts/` directory. 
 	- First line must be the date (many formats work, see [strtotime][strtotime] manual)
 	- The second line must be a # followed by a space, and then the title of the blog post
+	- OPTIONAL: The third line shall be a URL starting with http (or https) if you are doing a linked post
 	- (See the `posts/` folder in this repository for examples)
 	- After that you can write whatever you want
 - Start writing and hope someone reads 😭

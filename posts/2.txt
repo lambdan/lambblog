@@ -1,0 +1,6 @@
+June 24th 2016 15:55
+# Example Post 2
+
+This is another example post.
+
+As you saw, this was only called `2.txt`, but in your URL you should see something along the lines of `example-post-2`

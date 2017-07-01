@@ -18,8 +18,14 @@ $files = array_reverse($files, false);
         if ($i<=10) {
             $pubDate = get_date($txt, "r");
 
-            $url = $site_root . '/index.php?entry=' . get_number($txt);
-            $title = get_title($txt);
+            
+            if (isLinked($txt)) {
+                $url = linkedURL($txt);
+                $title = $linkedSymbol . ' ' . get_title($txt);
+            } else {
+                $url = $site_root . '/index.php?entry=' . get_number($txt);
+                $title = get_title($txt);
+            }
 
             $Parsedown = new Parsedown();
 

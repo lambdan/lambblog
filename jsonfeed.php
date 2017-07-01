@@ -50,7 +50,12 @@ natsort($files);
             $item = array();
             $item['id'] = get_number($txt);
             $item['url'] = $url;
-            $item['title'] = $title;
+            if (isLinked($txt)) {
+                $item['external_url'] = linkedURL($txt);
+                $item['title'] = $linkedSymbol . ' ' . $title;
+            } else {
+                $item['title'] = $title;
+            }
             $item['date_published'] = $pubDate;
             $item['content_html'] = $Parsedown->text(get_text($txt));
             

@@ -18,11 +18,10 @@ function get_date($txt, $format) {
 function get_text($txt) {
 	$lines = file($txt);
 	unset($lines[0]); // remove date
-	unset($lines[1]); // remove title
-	// remove link
-	/* if (substr($lines[2],0,4) == "http") {
-		unset($lines[2]);
-	} */
+    unset($lines[1]); // remove title
+    if (isLinked($txt)) { // remove url if its a linked post
+        unset($lines[2]);
+    } 
 	return implode('',$lines);
 }
 
@@ -77,6 +76,21 @@ function get_summary($filename) {
     return substr(get_text($filename),0,100) . '...';
 }
 
+function isLinked($filename) {
+    $lines = file($filename);
+    // Check if third line starts with http
+    if (substr($lines[2],0,4) == "http") {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function linkedURL($filename) {
+    $lines = file($filename);
+    return rtrim($lines[2]);
+}
+
 function generateNavigation() {
 global $navbar_title;    
 echo '
@@ -92,5 +106,7 @@ echo '<a href="about">About</a>
 </div>
 ';
 }
+
+
 
 ?>

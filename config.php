@@ -11,6 +11,8 @@ $twitter_username = 'djs__'; // your twitter handle without @, leave blank to no
 
 $css_url = $site_root . '/css-night.css'; // link to css file
 
+$linkedSymbol = '📍';
+
 $logo = 'https://lambdan.se/avatar.png'; // shown in footer
 
 $feed_description = 'Blog posts by djs'; // shown in RSS and JSON feed

@@ -38,7 +38,13 @@ foreach($files as $txt) {
 		print "</ul><h2>" . $currMonth . "</h2><ul>";
 		$prevMonth = $currMonth;
 	}
-	print '<li><a href="./' . get_display_filename($txt) . '" style="text-decoration:none;">' . get_title($txt) . '</a> - ' . get_date($txt, "j M Y") . '</li>';
+    print '<li>';
+    if (isLinked($txt)) {
+        print '<a href="' . linkedURL($txt) . '">';
+        print $linkedSymbol;
+        print '</a>';
+    }
+    print '<a href="./' . get_display_filename($txt) . '" style="text-decoration:none;">' . get_title($txt) . '</a> - ' . get_date($txt, "j M Y") . '</li>';
 }
 
 ?>

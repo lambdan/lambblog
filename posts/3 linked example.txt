@@ -1,0 +1,6 @@
+1 Jul 2017 15:24
+# Linked Post Example
+https://lambdan.se
+
+This is a example of a linked post. As you can see, you put the URL on the third line.
+
