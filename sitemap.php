@@ -19,7 +19,6 @@ foreach($files as $txt) {
 echo '<url><loc>' . $site_root . '/rss</loc></url>';
 echo '<url><loc>' . $site_root . '/archive</loc></url>';
 echo '<url><loc>' . $site_root . '/about</loc></url>';
-echo '<url><loc>' . $site_root . '/feeds</loc></url>';
 
 echo '</urlset>';
 

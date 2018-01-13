@@ -92,19 +92,8 @@ function linkedURL($filename) {
 }
 
 function generateNavigation() {
-global $navbar_title;    
-echo '
-<div class="navigation">
-<p>
-<a href="." class="logo">lambdan.se</a>
-<br>
-<a href="archive">Archive</a> • 
-<a href="stats">Stats</a> • 
-<a href="feeds">Feeds</a> • '; 
-echo '<a href="about">About</a>
-</p>
-</div>
-';
+    global $navbar_title;
+    include 'header.php';
 }
 
 

@@ -6,7 +6,7 @@ body{
 	word-wrap: break-word;
     margin: 0;
     padding: 0;
-    background-color: #1a1a1a;
+    background-color:black;
 }
 
 h1.article_title {
@@ -48,9 +48,9 @@ text-decoration: underline;
 
 img{max-width:100%;max-height:auto}
 
-pre{white-space:pre-wrap;max-width:100%;overflow:auto;background-color:#272822;color:black;padding:3px;}
+pre{white-space:pre-wrap;max-width:100%;overflow:auto;background-color:#d1d6ab;color:black;padding:3px;}
 
-code{white-space:pre-wrap;max-width:100%;overflow:auto;padding:3px;}
+code{white-space:pre-wrap;max-width:100%;overflow:auto;padding:3px;color:#d1d6ab;}
 
 pre code{background-color:#272822;color:#F7F8F2;}
 
