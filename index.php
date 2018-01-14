@@ -18,6 +18,8 @@ if (isset($_GET['view_raw'])) {
 <head>
 
 <?php
+
+faviconHeaders();
 // Set title of post to <title> if possible
 if(isset($_GET['entry'])) {
 	$entry = $_GET['entry'];
@@ -111,11 +113,11 @@ if (file_exists($filename)) {
 	}
 
 	if (file_exists($next)) {
-		print 'Next: <a href="./' . get_display_filename($next) . '">' . get_title($next) . '</a><br>';
+		print 'Next: <a href="./' . get_display_filename($next) . '">' . get_title($next) . '</a> • ';
 	}
 
 	if (file_exists($prev)) {
-		print 'Previous: <a href="./' . get_display_filename($prev) . '">' . get_title($prev) . '</a>';
+		print 'Previous: <a href="./' . get_display_filename($prev) . '">' . get_title($prev) . '</a> • ';
 	}
 } else {
     echo '<div class="article"><h3><font color="red">Not found</h3>';
@@ -125,8 +127,7 @@ if (file_exists($filename)) {
 	echo '</div><footer>';
 }
 
-echo '<br>';
-echo '<br><a href="stats?i=' . get_number($filename) . '">Stats for this post</a>';
+echo '<a href="stats?i=' . get_number($filename) . '">Stats for this post</a>';
 
 echo ' • <a href="archive">Archive</a>';
 

@@ -96,6 +96,18 @@ function generateNavigation() {
     include 'header.php';
 }
 
+function faviconHeaders() {
+	echo '
+<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png?v=rMlK32YJeL">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png?v=rMlK32YJeL">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png?v=rMlK32YJeL">
+<link rel="manifest" href="/favicons/manifest.json?v=rMlK32YJeL">
+<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg?v=rMlK32YJeL" color="#ff0f00">
+<link rel="shortcut icon" href="/favicons/favicon.ico?v=rMlK32YJeL">
+<meta name="msapplication-config" content="/favicons/browserconfig.xml?v=rMlK32YJeL">
+<meta name="theme-color" content="#ffffff">
+	';
+}
 
 
 ?>

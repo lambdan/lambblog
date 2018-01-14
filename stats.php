@@ -12,6 +12,7 @@ $common_words = array("an","and","the","this","at","in","or","of","is","for","to
 <head>
 
 <?php
+faviconHeaders();
 // Set title of post to <title> if possible
 if(isset($_GET['i'])) {
 	$entry = $_GET['i'];

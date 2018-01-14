@@ -13,6 +13,7 @@ $starttime = $starttime[1] + $starttime[0];
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <?php echo '<link rel="stylesheet" type="text/css" href="' . $css_url . '">'; ?>
 
+<?php faviconHeaders(); ?>
 <meta charset="utf-8">
 
 </head>
@@ -22,7 +23,6 @@ $starttime = $starttime[1] + $starttime[0];
 <?php generateNavigation(); ?>
 
 <div class="article">
-	<h1>Archive</h1>
 
 <?php
 // Add files to array, and natsort it, and reverse it (newest first)
