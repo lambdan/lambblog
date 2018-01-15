@@ -32,6 +32,8 @@ $files = array_reverse($files, false);
 
 // List them
 $prevMonth = "";
+//$prevYear = date("Y");
+$prevYear = 0;
 foreach($files as $txt) {
     // Check if file has no number yet
     if (is_numeric(substr(basename($txt),0,1)) == false) {
@@ -41,23 +43,34 @@ foreach($files as $txt) {
         $txt = $new_name;
         print '<h1><font color="red">New post added!</font></h1>';
     }
-
-	$currMonth = get_date($txt, "F Y");
+    
+    $currYear = get_date($txt, "Y");
+    $currMonth = get_date($txt, "F");
+    
+    if ($currYear != $prevYear) {
+        echo '</ul><h1 class="ArchiveYear">' . $currYear . '</h1>';
+        $prevYear = $currYear;
+    }
 	if ($currMonth != $prevMonth) {
 		print "</ul><h2>" . $currMonth . "</h2><ul>";
 		$prevMonth = $currMonth;
-	}
+    } 
     print '<li>';
     if (isLinked($txt)) {
         print '<a href="' . linkedURL($txt) . '">';
         print $linkedSymbol;
         print '</a>';
     }
-    print '<a href="./' . get_display_filename($txt) . '" style="text-decoration:none;">' . get_title($txt) . '</a> - ' . get_date($txt, "j M Y") . '</li>';
+//    print '<a href="./' . get_display_filename($txt) . '" style="text-decoration:none;">' . get_title($txt) . '</a> - ' . get_date($txt, "j M Y") . '</li>';
+
+    print '<a href="./' . get_display_filename($txt) . '" style="text-decoration:none;">' . get_title($txt) . '</a></li>';
 }
 
 ?>
 </ul>
 </div>
+<footer>
+<p>Have you checked out the <a href="stats">Stats</a> page yet?</p>
+</footer>
 </body>
 </html>

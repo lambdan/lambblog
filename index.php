@@ -112,12 +112,17 @@ if (file_exists($filename)) {
 		$next = file_from_url($curr + $i, $path_to_txts);
 	}
 
+
+echo '<a href="stats?i=' . get_number($filename) . '">Stats</a><br>';
+
+
+
 	if (file_exists($next)) {
-		print 'Next: <a href="./' . get_display_filename($next) . '">' . get_title($next) . '</a> • ';
+		print 'Next: <a href="./' . get_display_filename($next) . '">' . get_title($next) . '</a><br>';
 	}
 
 	if (file_exists($prev)) {
-		print 'Previous: <a href="./' . get_display_filename($prev) . '">' . get_title($prev) . '</a> • ';
+		print 'Previous: <a href="./' . get_display_filename($prev) . '">' . get_title($prev) . '</a><br>';
 	}
 } else {
     echo '<div class="article"><h3><font color="red">Not found</h3>';
@@ -126,11 +131,6 @@ if (file_exists($filename)) {
     echo '<p>There is a also a very slim possibility I added a new post and you or your feed reader managed to view/cache my blog before I managed to view the <a href="archive">Archive</a> page in order to refresh and add the post. (The risk of this happening is very low, so if it does happen please let me know... Seriously, we are talking like a 5 second window here.)</p>';
 	echo '</div><footer>';
 }
-
-echo '<a href="stats?i=' . get_number($filename) . '">Stats for this post</a>';
-
-echo ' • <a href="archive">Archive</a>';
-
 echo '</footer>';
 
 
