@@ -7,9 +7,9 @@ $site_root = 'https://lambdan.se'; // url root, do not end with /
 
 $site_title = 'lambdan.se'; // displayed at end of <title> and used as title in rss/json feed
 
-$twitter_username = 'djs__'; // your twitter handle without @, leave blank to not use twitter cards
+$twitter_username = 'nadbmal'; // your twitter handle without @, leave blank to not use twitter cards
 
-$css_url = $site_root . '/css-dark.css'; // link to css file
+$css_url = $site_root . '/css-light.css'; // link to css file
 
 $linkedSymbol = '📍';
 
@@ -22,7 +22,7 @@ $image_mirror_root_path = './images/'; // path relative to where Parsedown.php i
 
 // Default author stuff, shown in JSON Feed and maybe elsewhere in the future
 $author_name = "djs";
-$author_url = "https://twitter.com/djs__";
+$author_url = "https://twitter.com/nadbmal";
 $author_avatar = "https://lambdan.se/avatar.png";
 
 ?>

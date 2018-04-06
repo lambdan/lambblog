@@ -25,9 +25,11 @@ $starttime = $starttime[1] + $starttime[0];
     <h1>About</h1>
 <p>   Most other blogs have an about page so I have one too, but I'm not really sure what to put here...</p>
 
+<p>Here's some other stuff: <a href="https://lambdan.se/other">Other Stuff</a></p>
+
 <h1>Me Elsewhere</h1>
 <ul>
-<li>Twitter: <a href="https://twitter.com/djs__" style="font-family:monospace;letter-spacing:2px;">@djs__</a> (this is is also in the header of my blog, and there are two underlines (that's why I used a monospace font))</li>
+<li>Twitter: <a href="https://twitter.com/nadbmal">@nadbmal</a></li>
 <li>Last.fm: <a href="https://last.fm/user/djs_">djs_</a> (if you wanna see what music I listen to. I take scrobbling very seriously so it should be pretty accurate.)</li>
 <li>Youtube: <a href="http://youtube.com/user/pipdjs">pipdjs? DJS?</a> (that old url with my original username still works, but I have no idea for how long)</li>
 <li>Twitch: <a href="http://twitch.tv/lambdan">lambdan</a> (fun fact: I almost streamed creating this page)</li>

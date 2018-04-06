@@ -128,10 +128,15 @@ table {
     width: 100%;
 }
 
+table a, table a:hover, table a:visited {
+color: #4286f4;
+}
+
 th {
     padding: 5px;
-    background-color:#cb00ff;
+    background-color:#4286f4;
     color: black;
+    text-align: left;
 }
 
 td {
@@ -140,7 +145,7 @@ padding: 5px;
 }
 
 tr:nth-child(even) {
-background-color: #1c1c1c;
+background-color: #050505;
 }
 
 sup a {
@@ -186,3 +191,4 @@ text-align:center;
 padding: 1em;
 text-decoration: underline;
 }
+

@@ -85,7 +85,7 @@ if(isset($_GET['i'])) { // Stats for specific entry
 
 
 } else { // Global stats
-    echo '<h1>Stats</h1>';
+    echo '<h1>Blog Stats</h1>';
     echo '<ul>';
     echo '<li>' . count($files) . ' entries</li>';
 
@@ -106,13 +106,13 @@ if(isset($_GET['i'])) { // Stats for specific entry
     
 	echo '<li>Words in total: ' . $total_words . '</li>';
 	echo '<li>Characters in total: ' . $total_characters . '</li>';
-	echo '</ul><h2>Posts With Most Words</h2><ol>';
+	echo '</ul><h1>Posts With Most Words</h1><ol>';
 	$i = 0;
 	natsort($post_word_counts);
 	$post_word_counts = array_reverse($post_word_counts, false);
 	foreach($post_word_counts as $filename => $words) {
 		if ($i < 20) {
-			echo '<li><b><a href="./' . get_display_filename($filename) . '" style="text-decoration:none;">' . get_title($filename) . '</a></b> = ' . $words . ' words <a href="stats?i=' . get_number($filename) . '" style="text-decoration:none;">(stats)</a></li>';
+			echo '<li><a href="./' . get_display_filename($filename) . '" style="text-decoration:none;">' . get_title($filename) . '</a> = ' . $words . ' words <a href="stats?i=' . get_number($filename) . '" style="text-decoration:none;">(stats)</a></li>';
 			$i++;
 		} else {
 			break;

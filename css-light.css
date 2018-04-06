@@ -10,19 +10,15 @@ body{
 }
 
 h1.article_title {
-	font-size: 1.35em;
-    font-style: italic;
+	font-size: 1.3em;
+    text-decoration: underline;
 }
 
 h2.article_date, h2.article_date a {
 	font-size: 1em;
     text-decoration: none;
-    font-style: italic;
     margin-top: -15px;
-}
-
-h2.article_date a:hover{
-text-decoration: underline;
+    color: #bebebe;
 }
 
 .article {
@@ -34,6 +30,8 @@ text-decoration: underline;
 
 a, a:active, a:visited {
     color: #1c9cff;
+    color: #0dc400;
+    color: #ff0077;
     text-decoration: none;
 }
 
@@ -94,19 +92,19 @@ text-decoration: underline;
 }
 
 .navigation {
+    padding-top: 1px;
+    padding-bottom: 1px;
 	background-color:#fcfcfc;
-  	margin-top: 5px;
     max-width: 100%;
     text-align: center;
 }
 
 .navigation a {
-    color: black;
+    color: #333333;
     text-decoration: none;
-}
-
-.navigation a:hover {
-text-decoration: underline;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    padding-right: 10px;
 }
 
 a.logo {
@@ -124,7 +122,7 @@ table {
 
 th {
     padding: 5px;
-    background-color:#1c9cff; 
+    background-color:#333333; 
     color: #fcfcfc;
 }
 
@@ -159,12 +157,17 @@ padding-top: 30px; height: 0; overflow: hidden;
 }
 
 h1 {
-font-size: 1.25em;
+font-size: 1.5em;
+font-weight: 400;
+text-transform: uppercase;
 }
 h2 {
-font-size: 1.2em;
+font-size: 1.3em;
+font-weight: 400;
+
 }
 h3 {
+font-weight: 400;
 font-size: 1.15em;
 }
 h4 {

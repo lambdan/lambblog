@@ -9,7 +9,7 @@ $starttime = $starttime[1] + $starttime[0];
 
 <html>
 <head>
-<?php echo "<title>Archive - ${site_title}</title>"; ?>
+<?php echo "<title>Blog Archive - ${site_title}</title>"; ?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <?php echo '<link rel="stylesheet" type="text/css" href="' . $css_url . '">'; ?>
 
@@ -45,16 +45,16 @@ foreach($files as $txt) {
     }
     
     $currYear = get_date($txt, "Y");
-    $currMonth = get_date($txt, "F");
+    //$currMonth = get_date($txt, "F Y");
     
     if ($currYear != $prevYear) {
         echo '</ul><h1 class="ArchiveYear">' . $currYear . '</h1>';
         $prevYear = $currYear;
     }
-	if ($currMonth != $prevMonth) {
+	/*if ($currMonth != $prevMonth) {
 		print "</ul><h2>" . $currMonth . "</h2><ul>";
 		$prevMonth = $currMonth;
-    } 
+    } */
     print '<li>';
     if (isLinked($txt)) {
         print '<a href="' . linkedURL($txt) . '">';
