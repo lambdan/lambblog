@@ -9,7 +9,7 @@ $site_title = 'lambdan.se'; // displayed at end of <title> and used as title in 
 
 $twitter_username = 'nadbmal'; // your twitter handle without @, leave blank to not use twitter cards
 
-$css_url = $site_root . '/css-light.css'; // link to css file
+$css_url = $site_root . '/css-light-2018.css'; // link to css file
 
 $linkedSymbol = '📍';
 

@@ -22,32 +22,34 @@ $starttime = $starttime[1] + $starttime[0];
 <?php generateNavigation(); ?>
 
 <div class="article">
-    <h1>About</h1>
-<p>   Most other blogs have an about page so I have one too, but I'm not really sure what to put here...</p>
 
-<p>Here's some other stuff: <a href="https://lambdan.se/other">Other Stuff</a></p>
+<h1>Contact Me</h1>
+<ul>
+	<li>If you wanna contact me, use <a href="https://twitter.com/nadbmal">Twitter</a></li>
+	<li>This should also work: <a href="mailto:david@lambdan.se">david@lambdan.se</a></li>
+</ul>
 
 <h1>Me Elsewhere</h1>
 <ul>
-<li>Twitter: <a href="https://twitter.com/nadbmal">@nadbmal</a></li>
-<li>Last.fm: <a href="https://last.fm/user/djs_">djs_</a> (if you wanna see what music I listen to. I take scrobbling very seriously so it should be pretty accurate.)</li>
-<li>Youtube: <a href="http://youtube.com/user/pipdjs">pipdjs? DJS?</a> (that old url with my original username still works, but I have no idea for how long)</li>
-<li>Twitch: <a href="http://twitch.tv/lambdan">lambdan</a> (fun fact: I almost streamed creating this page)</li>
+<li>Twitter: <a href="https://twitter.com/nadbmal">nadbmal</a></li>
+<li>Last.fm: <a href="https://last.fm/user/djs_">djs_</a></li>
+<li>Youtube: <a href="http://youtube.com/user/pipdjs">DJS</a></li>
+<li>Twitch: <a href="http://twitch.tv/lambdan">lambdan</a></li>
 <li>Whatpulse: <a href="http://whatpulse.org/lambdan">lambdan</a>
-<li>Github: <a href="https://github.com/lambdan">lambdan</a> (lots of crap there, this blogging engine to name one)
+<li>Github: <a href="https://github.com/lambdan">lambdan</a>
 </ul>
 
 
 <h1>Feeds</h1>
+<ul>
+<li><a href="https://lambdan.se/rss.php">RSS</a>
+<li><a href="https://lambdan.se/feed.json">JSON Feed</a>
+</ul>
+
 <p>
-RSS: <a href="https://lambdan.se/rss.php">/rss.php</a>
+Blog powered by <a href="https://github.com/lambdan/lambblog">lambblog</a>
 <br>
-JSON Feed: <a href="https://lambdan.se/feed.json">/feed.json</a>
-</p>
-</div>
 <footer>
-<p>Running on <a href="https://github.com/lambdan/lambblog">lambblog</a></p>
-<img class="logo" src="<?php echo $logo;?>">
 </footer>
 </body>
 </html>

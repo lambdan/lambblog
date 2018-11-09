@@ -31,7 +31,7 @@ if(isset($_GET['i'])) {
 
 <body>
 <?php generateNavigation(); ?>
-<div class="article">
+<div class="normal">
 <?php
 // Add files to array, and natsort it, and reverse it (newest first)
 $files = glob('' . $path_to_txts . '*.{txt,md,markdown}', GLOB_BRACE);
