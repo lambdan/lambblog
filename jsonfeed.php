@@ -42,7 +42,7 @@ natsort($files);
         if ($i<10) {
             $pubDate = get_date($txt, "Y-m-d\TH:i:sP");
 
-            $url = $site_root . '/index.php?entry=' . get_number($txt);
+            $url = $site_root . '/post.php?entry=' . get_number($txt);
             $title = get_title($txt);
 
             $Parsedown = new Parsedown();

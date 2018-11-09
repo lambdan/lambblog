@@ -23,7 +23,7 @@ $files = array_reverse($files, false);
                 $url = linkedURL($txt);
                 $title = $linkedSymbol . ' ' . get_title($txt);
             } else {
-                $url = $site_root . '/index.php?entry=' . get_number($txt);
+                $url = $site_root . '/post.php?entry=' . get_number($txt);
                 $title = get_title($txt);
             }
 

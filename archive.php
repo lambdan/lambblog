@@ -22,7 +22,7 @@ $starttime = $starttime[1] + $starttime[0];
 
 <?php generateNavigation(); ?>
 
-<div class="article">
+<div class="normal">
 
 <?php
 // Add files to array, and natsort it, and reverse it (newest first)
@@ -31,9 +31,8 @@ natsort($files);
 $files = array_reverse($files, false);
 
 // List them
-$prevMonth = "";
-//$prevYear = date("Y");
-$prevYear = 0;
+$year = isset($_GET['year']) ? $_GET['year'] : '2018';
+echo '<h1 style="text-align:center;">' . $year . '</h1>';
 foreach($files as $txt) {
     // Check if file has no number yet
     if (is_numeric(substr(basename($txt),0,1)) == false) {
@@ -41,20 +40,26 @@ foreach($files as $txt) {
         $new_name = $path_to_txts . $new_number . ' ' . basename($txt);
         rename($txt, $new_name);
         $txt = $new_name;
-        print '<h1><font color="red">New post added!</font></h1>';
+        print '<h1><font color="red">New post added! Refresh to take effect!</font></h1>';
     }
     
     $currYear = get_date($txt, "Y");
-    //$currMonth = get_date($txt, "F Y");
-    
-    if ($currYear != $prevYear) {
+    $currMonth = get_date($txt, "F");
+
+    if ($currYear == $year) {
+
+    /*
+    if ($currYear != $year) {
         echo '</ul><h1 class="ArchiveYear">' . $currYear . '</h1>';
         $prevYear = $currYear;
-    }
-	/*if ($currMonth != $prevMonth) {
-		print "</ul><h2>" . $currMonth . "</h2><ul>";
+
+    }*/
+
+	if ($currMonth != $prevMonth) {
+		print "</ul><h3>" . $currMonth . "</h2><ul>";
 		$prevMonth = $currMonth;
-    } */
+    }
+
     print '<li>';
     if (isLinked($txt)) {
         print '<a href="' . linkedURL($txt) . '">';
@@ -64,13 +69,19 @@ foreach($files as $txt) {
 //    print '<a href="./' . get_display_filename($txt) . '" style="text-decoration:none;">' . get_title($txt) . '</a> - ' . get_date($txt, "j M Y") . '</li>';
 
     print '<a href="./' . get_display_filename($txt) . '" style="text-decoration:none;">' . get_title($txt) . '</a></li>';
+    }
 }
-
 ?>
 </ul>
+<?php
+if (intval($year)-1 > 2013) { // FIXME lol
+    print '<a href="archive?year=' . (intval($year) - 1) . '">Back to ' . (intval($year) - 1) . '</a>';
+} else {
+    print 'You have reached the end of time...';
+}
+?>
 </div>
 <footer>
-<p>Have you checked out the <a href="stats">Stats</a> page yet?</p>
 </footer>
 </body>
 </html>

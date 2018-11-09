@@ -39,7 +39,9 @@ function get_display_filename($txt) {
         $string = $filename;
         $string = substr($string, strpos($string, '-')+1);
 	}
-	return $string . '-' . get_date($txt, "Ymd") . '-i' . get_number($txt);
+    //return get_date($txt, "Y.m.d.") . $string . '.'.  get_number($txt);
+    //return get_number($txt) . get_date($txt, ".Y.m.d-") . $string;
+    return get_number($txt) . '-' . $string;
 }
 
 function get_number($txt) {
@@ -74,6 +76,10 @@ function count_posts($dir){
 
 function get_summary($filename) {
     return substr(get_text($filename),0,100) . '...';
+}
+
+function get_summary_frontpage($filename) {
+    return explode("\n", get_text($filename))[1];
 }
 
 function isLinked($filename) {

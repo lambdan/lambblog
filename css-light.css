@@ -2,7 +2,7 @@ body{
 	line-height:1.6;
 	color: #333333;
 	font-family: 'Avenir Next', 'Ubuntu', 'Segoe UI', 'Helvetica', Verdana, sans-serif; 
-	font-size:1em;
+	font-size:1.125em;
 	word-wrap: break-word;
     margin: 0;
     padding: 0;
@@ -23,14 +23,12 @@ h2.article_date, h2.article_date a {
 
 .article {
     position: relative;
-    max-width: 1000px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 0 10px;
 }
 
 a, a:active, a:visited {
-    color: #1c9cff;
-    color: #0dc400;
     color: #ff0077;
     text-decoration: none;
 }
@@ -42,6 +40,8 @@ text-decoration: underline;
 img{max-width:100%;max-height:auto}
 
 pre{white-space:pre-wrap;max-width:100%;overflow:auto;padding:0.5em;font-size:0.9em;margin: 1.5em 10px;background-color:#F0F0F0;line-height:1.0;}
+
+code{font-family:Monaco,Consolas,monospace;}
 
 
 blockquote{ 
@@ -77,18 +77,17 @@ max-height:100px;
 }
 
 footer {
-	background:#fcfcfc;
+	background-color:#fcfcfc;
   	padding: 1em 10px;
     text-align: center;
     max-width: 100%;
+    text-transform: uppercase;
 }
 
 footer a, footer a:visited {
     text-decoration: none;
-}
-
-footer a:hover {
-text-decoration: underline;
+    color: #bebebe;
+    padding-right:10px;
 }
 
 .navigation {
