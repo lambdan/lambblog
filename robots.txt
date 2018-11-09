@@ -1,0 +1,12 @@
+User-Agent: *
+Disallow: /d/
+Disallow: /posts/
+Disallow: /old/
+DisalloW: /sag/
+Sitemap: http://lambdan.se/sitemap.xml
+
+User-Agent: MJ12Bot
+Disallow: /
+
+User-Agent: Twitterbot
+Disallow: *
