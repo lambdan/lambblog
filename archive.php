@@ -31,8 +31,14 @@ natsort($files);
 $files = array_reverse($files, false);
 
 // List them
-$year = isset($_GET['year']) ? $_GET['year'] : '2018';
+$year = isset($_GET['year']) ? $_GET['year'] : get_date($files[0], "Y");
 echo '<h1 style="text-align:center;">' . $year . '</h1>';
+
+if ($year > date("Y")) {
+    print 'The future hasn\'t been written yet';
+}
+
+$prevMonth = "aaa";
 foreach($files as $txt) {
     // Check if file has no number yet
     if (is_numeric(substr(basename($txt),0,1)) == false) {
@@ -68,16 +74,16 @@ foreach($files as $txt) {
     }
 //    print '<a href="./' . get_display_filename($txt) . '" style="text-decoration:none;">' . get_title($txt) . '</a> - ' . get_date($txt, "j M Y") . '</li>';
 
-    print '<a href="./' . get_display_filename($txt) . '" style="text-decoration:none;">' . get_title($txt) . '</a></li>';
+    print '<a href="./' . get_display_filename($txt) . '">' . get_title($txt) . '</a></li>';
     }
 }
 ?>
 </ul>
 <?php
 if (intval($year)-1 > 2013) { // FIXME lol
-    print '<a href="archive?year=' . (intval($year) - 1) . '">Back to ' . (intval($year) - 1) . '</a>';
+    print '<hr><a href="archive-' . (intval($year) - 1) . '">' . (intval($year) - 1) . '</a>';
 } else {
-    print 'You have reached the end of time...';
+    print '<hr>You have reached the end of time...';
 }
 ?>
 </div>
