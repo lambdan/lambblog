@@ -112,21 +112,16 @@ if (file_exists($filename)) {
 		$next = file_from_url($curr + $i, $path_to_txts);
 	}
 
-
+echo '<a href="stats?i=' . get_number($filename) . '">Stats For This Post</a><br><br>';
 
 	if (file_exists($next)) {
         //print 'Next: <a href="./' . get_display_filename($next) . '">' . get_title($next) . '</a><br>';
-        print '<a href="./' . get_display_filename($next) . '">Next</a>';
+        print '<a href="./' . get_display_filename($next) . '">Newer: ' . get_title($next) . '</a><br>';
     }
-
-
-echo '<a href="stats?i=' . get_number($filename) . '">Stats</a>';
-
-
 
 	if (file_exists($prev)) {
         //print 'Previous: <a href="./' . get_display_filename($prev) . '">' . get_title($prev) . '</a><br>';
-        print '<a href="./' . get_display_filename($prev) . '">Previous</a>';
+        print '<a href="./' . get_display_filename($prev) . '">Older: ' . get_title($prev) . '</a><br><br>';
 	}
 } else {
     echo '<div class="article"><h3><font color="red">Not found</h3>';
@@ -135,6 +130,8 @@ echo '<a href="stats?i=' . get_number($filename) . '">Stats</a>';
     echo '<p>There is a also a very slim possibility I added a new post and you or your feed reader managed to view/cache my blog before I managed to view the <a href="archive">Archive</a> page in order to refresh and add the post. (The risk of this happening is very low, so if it does happen please let me know... Seriously, we are talking like a 5 second window here.)</p>';
 	echo '</div><footer>';
 }
+
+generateCopyrightFooter();
 echo '</footer>';
 
 

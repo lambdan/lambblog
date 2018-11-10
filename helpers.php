@@ -102,6 +102,13 @@ function generateNavigation() {
     include 'header.php';
 }
 
+function generateCopyrightFooter() {
+    global $site_title;
+    global $copyright_start;
+    global $author_email;
+    echo '<br>©' . $copyright_start . '-' . date("Y") . '<br><a href="mailto:' . $author_email . '">' . $author_email . '</a>';
+}
+
 function faviconHeaders() {
 	echo '
 <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png?v=rMlK32YJeL">

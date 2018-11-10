@@ -126,6 +126,12 @@ if(isset($_GET['i'])) { // Stats for specific entry
 echo '</div>';
 
 ?>
-
+<footer>
+	<?php
+echo '<footer>';
+generateCopyrightFooter();
+echo '</footer>';
+?>
+</footer>
 </body>
 </html>

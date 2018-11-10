@@ -86,11 +86,14 @@ $filename = $files[$i];
 $i++;
 }
 
-
-
 ?>
 <hr>
 <p>The rest are in the <a href="archive">archives</a>...</p>
 </div>
+<?php
+echo '<footer>';
+generateCopyrightFooter();
+echo '</footer>';
+?>
 </body>
 </html>

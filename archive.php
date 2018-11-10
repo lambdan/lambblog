@@ -95,6 +95,11 @@ if (intval($year)-1 >= intval($oldestYear)) {
 ?>
 </div>
 <footer>
+<?php
+echo '<footer>';
+generateCopyrightFooter();
+echo '</footer>';
+?>
 </footer>
 </body>
 </html>

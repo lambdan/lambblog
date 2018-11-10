@@ -5,6 +5,10 @@ $path_to_txts = './posts/'; // where your markdown files are stored
 
 $site_root = 'https://lambdan.se'; // url root, do not end with /
 
+$copyright_start = 2014; // copyright start year
+
+$author_email = 'david@lambdan.se'; // your email, displayed in footer
+
 $site_title = 'lambdan.se'; // displayed at end of <title> and used as title in rss/json feed
 
 $twitter_username = 'nadbmal'; // your twitter handle without @, leave blank to not use twitter cards

@@ -49,7 +49,14 @@ $starttime = $starttime[1] + $starttime[0];
 <p>
 Blog powered by <a href="https://github.com/lambdan/lambblog">lambblog</a>
 <br>
+</p>
+</div>
 <footer>
+	<?php
+echo '<footer>';
+generateCopyrightFooter();
+echo '</footer>';
+?>
 </footer>
 </body>
 </html>
