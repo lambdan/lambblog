@@ -32,7 +32,7 @@ $files = array_reverse($files, false);
 
 // List them
 $year = isset($_GET['year']) ? $_GET['year'] : get_date($files[0], "Y");
-echo '<h1 style="text-align:center;">' . $year . '</h1>';
+echo '<h1 class="article_title">' . $year . '</h1>';
 
 if ($year > date("Y")) {
     print 'The future hasn\'t been written yet';
