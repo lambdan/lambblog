@@ -38,6 +38,7 @@ if ($year > date("Y")) {
     print 'The future hasn\'t been written yet';
 }
 
+$oldestYear=get_date($files[0], "Y");
 $prevMonth = "aaa";
 foreach($files as $txt) {
     // Check if file has no number yet
@@ -54,33 +55,39 @@ foreach($files as $txt) {
 
     if ($currYear == $year) {
 
-    /*
-    if ($currYear != $year) {
-        echo '</ul><h1 class="ArchiveYear">' . $currYear . '</h1>';
-        $prevYear = $currYear;
+        /*
+        if ($currYear != $year) {
+            echo '</ul><h1 class="ArchiveYear">' . $currYear . '</h1>';
+            $prevYear = $currYear;
 
-    }*/
+        }*/
 
-	if ($currMonth != $prevMonth) {
-		print "</ul><h3>" . $currMonth . "</h2><ul>";
-		$prevMonth = $currMonth;
+    	if ($currMonth != $prevMonth) {
+    		print "</ul><h3>" . $currMonth . "</h2><ul>";
+    		$prevMonth = $currMonth;
+        }
+
+        print '<li>';
+        if (isLinked($txt)) {
+            print '<a href="' . linkedURL($txt) . '">';
+            print $linkedSymbol;
+            print '</a>';
+        }
+
+    //    print '<a href="./' . get_display_filename($txt) . '" style="text-decoration:none;">' . get_title($txt) . '</a> - ' . get_date($txt, "j M Y") . '</li>';
+
+        print '<a href="./' . get_display_filename($txt) . '">' . get_title($txt) . '</a></li>';
     }
-
-    print '<li>';
-    if (isLinked($txt)) {
-        print '<a href="' . linkedURL($txt) . '">';
-        print $linkedSymbol;
-        print '</a>';
-    }
-//    print '<a href="./' . get_display_filename($txt) . '" style="text-decoration:none;">' . get_title($txt) . '</a> - ' . get_date($txt, "j M Y") . '</li>';
-
-    print '<a href="./' . get_display_filename($txt) . '">' . get_title($txt) . '</a></li>';
+    
+    if (intval($currYear) < intval($oldestYear)) {
+        $oldestYear = $currYear;
+        //print 'new oldest year ' . $oldestYear;
     }
 }
 ?>
 </ul>
 <?php
-if (intval($year)-1 > 2013) { // FIXME lol
+if (intval($year)-1 >= intval($oldestYear)) {
     print '<hr><a href="archive-' . (intval($year) - 1) . '">' . (intval($year) - 1) . '</a>';
 } else {
     print '<hr>You have reached the end of time...';
