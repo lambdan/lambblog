@@ -53,7 +53,7 @@ if(isset($_GET['i'])) { // Stats for specific entry
 	$html_text = $Parsedown->text(get_text($filename));
 
 	// Print out title
-	echo '<h1>Stats for: <a href="./' . get_display_filename($filename) . '" style="text-decoration:none;">' . get_title($filename) . '</a></h1>';
+	echo '<h1>Stats for: <a href="./' . get_display_filename($filename) . '">' . get_title($filename) . '</a></h1>';
 
 	// Words
 	echo '<p>Words in total: ' . str_word_count(strip_tags($html_text)) . '</p>';
@@ -112,7 +112,7 @@ if(isset($_GET['i'])) { // Stats for specific entry
 	$post_word_counts = array_reverse($post_word_counts, false);
 	foreach($post_word_counts as $filename => $words) {
 		if ($i < 20) {
-			echo '<li><a href="./' . get_display_filename($filename) . '" style="text-decoration:none;">' . get_title($filename) . '</a> = ' . $words . ' words <a href="stats?i=' . get_number($filename) . '" style="text-decoration:none;">(stats)</a></li>';
+			echo '<li><a href="./' . get_display_filename($filename) . '">' . get_title($filename) . '</a> = ' . $words . ' words <a href="stats?i=' . get_number($filename) . '">(stats)</a></li>';
 			$i++;
 		} else {
 			break;
