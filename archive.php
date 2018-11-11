@@ -88,7 +88,7 @@ foreach($files as $txt) {
 </ul>
 <?php
 echo '<hr>';
-$y = date("Y");
+$y = get_date($files[0], "Y");
 while ($y >= intval($oldestYear)) {
     echo '<a href="archive-' . ($y) . '">' . ($y) . '</a>&nbsp;&nbsp;';
     $y--;
