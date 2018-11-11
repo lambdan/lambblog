@@ -106,7 +106,18 @@ function generateCopyrightFooter() {
     global $site_title;
     global $copyright_start;
     global $author_email;
-    echo '<br>©' . $copyright_start . '-' . date("Y") . '<br><a href="mailto:' . $author_email . '">' . $author_email . '</a>';
+    global $author_name;
+    global $twitter_username;
+
+    echo '<br>©' . $copyright_start . '-' . date("Y") . ' ' . $author_name .'<br>';
+
+    if(isset($author_email)) {
+        echo 'Email: <a href="mailto:' . $author_email . '">' . $author_email . '</a><br>';
+    }
+
+    if(isset($twitter_username)) {
+        echo 'Twitter: <a href="https://twitter.com/nadbmal">@' . $twitter_username . '</a><br>';
+    }
 }
 
 function faviconHeaders() {
