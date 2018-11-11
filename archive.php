@@ -87,10 +87,11 @@ foreach($files as $txt) {
 ?>
 </ul>
 <?php
-if (intval($year)-1 >= intval($oldestYear)) {
-    print '<hr><a href="archive-' . (intval($year) - 1) . '">' . (intval($year) - 1) . '</a>';
-} else {
-    print '<hr>You have reached the end of time...';
+echo '<hr>';
+$y = date("Y");
+while ($y >= intval($oldestYear)) {
+    echo '<a href="archive-' . ($y) . '">' . ($y) . '</a>&nbsp;&nbsp;';
+    $y--;
 }
 ?>
 </div>
