@@ -65,7 +65,9 @@ if(isset($_GET['entry'])) {
 	$entry = $_GET['entry'];
 	$filename = file_from_url($entry, $path_to_txts);
 } else {
-	$filename = $files[0]; // latest entry if nothing is requested
+	print '<div class="article"><h1><font color="red">No post.</font></h1><p>Go to <a href="./archive">archive</a>?</p></div><footer>';
+	generateCopyrightFooter();
+	die();
 }
 
 if (file_exists($filename)) {
@@ -88,32 +90,11 @@ if (file_exists($filename)) {
 
 	// Footer
 	echo '<footer>';
+	echo '<a href="stats?i=' . get_number($filename) . '">Stats For This Post</a><br><br>';
 
-	$curr = get_number($filename);
-
-	// We would just do $curr-1 and $curr+1 for previous/next, but if you remove a blog post that wont work
-	$i = 1;
-	$prev = file_from_url($curr - $i, $path_to_txts);
-	while(!file_exists($prev)) {
-		if ( ($curr-$i) < 0 ) {
-			break;
-		}
-		$i++;
-		$prev = file_from_url($curr - $i, $path_to_txts);
-	}
-
-	$i = 1;
-	$next = file_from_url($curr + $i, $path_to_txts);
-	while(!file_exists($next)) {
-		if ( ($curr+$i) > get_number($files[0]) ) {
-			break;
-		}
-		$i++;
-		$next = file_from_url($curr + $i, $path_to_txts);
-	}
-
-echo '<a href="stats?i=' . get_number($filename) . '">Stats For This Post</a><br><br>';
-
+	$index = array_search($filename, $files); // current index
+	$next = $files[$index-1];
+	$prev = $files[$index+1];
 	if (file_exists($next)) {
         //print 'Next: <a href="./' . get_display_filename($next) . '">' . get_title($next) . '</a><br>';
         print '<a href="./' . get_display_filename($next) . '">Newer: ' . get_title($next) . '</a><br>';
@@ -123,6 +104,7 @@ echo '<a href="stats?i=' . get_number($filename) . '">Stats For This Post</a><br
         //print 'Previous: <a href="./' . get_display_filename($prev) . '">' . get_title($prev) . '</a><br>';
         print '<a href="./' . get_display_filename($prev) . '">Older: ' . get_title($prev) . '</a><br><br>';
 	}
+
 } else {
     echo '<div class="article"><h3><font color="red">Not found</h3>';
     echo 'Entry: ' . $_GET['entry'];
