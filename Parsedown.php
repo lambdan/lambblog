@@ -1178,32 +1178,50 @@ class Parsedown
         // Mirror image for future proofing and faster loading
         global $image_mirror_url_prefix;
         global $image_mirror_path;
-        $originalLocation = $Link['element']['attributes']['href'];
-        $imgHash = md5($originalLocation); // MD5 of URL
-        $newFilename = $imgHash . "." . pathinfo($originalLocation, PATHINFO_EXTENSION);
-        $destination = $image_mirror_path . $newFilename;
-        $finalURL = $image_mirror_url_prefix . $newFilename;
-        if(!file_exists($destination)) {
-            copy($originalLocation, $destination);
+        $originalURL = $Link['element']['attributes']['href'];
+        $imgHash = md5($originalURL); // MD5 of URL
+
+        $newFilename = $imgHash . "." . pathinfo($originalURL, PATHINFO_EXTENSION);
+        $mirrorFilePath = $image_mirror_path . $newFilename;
+        $mirrorURL = $image_mirror_url_prefix . $newFilename;
+        if(!file_exists($mirrorFilePath)) {
+            copy($originalURL, $mirrorFilePath);
         }
 
+        // Thumbnails!
+        $newFilenameThumb = $imgHash . "_thumb.jpg";
+        $thumbFilePath = $image_mirror_path . $newFilenameThumb;
+        $thumbURL = $image_mirror_path . $newFilenameThumb;
 
+        if (pathinfo($originalURL, PATHINFO_EXTENSION) == 'gif') {
+        	// dont thumbnail gifs as they're animated
+        	$thumbURL = $mirrorURL;
+        } else {
+       		if(!file_exists($thumbFilePath)) {
+        		$img = imagecreatefromstring(file_get_contents($mirrorURL));
+        		ImageJPEG($img, $thumbFilePath, 50);
+        		imagedestroy($img); // free up mem
+        		$thumbURL = $image_mirror_url_prefix . $newFilenameThumb;
+        	}
+    	}
+
+
+        // Image with thumbnail clickable to get to full res
         $Inline = array(
-            'extent' => $Link['extent'] + 1,
-            'element' => array(
-                'name' => 'img',
-                'attributes' => array(
-                    'src' => $finalURL,
-                    //'src' => $Link['element']['attributes']['href'],
-                    'alt' => $Link['element']['text'],
-                ),
-            ),
+        	'extent' => $Link['extent'] + 1,
+        	'element' => array(
+        		'name' => 'a',
+        	    'attributes' => array(
+        			'href' => $mirrorURL,
+        		),
+        		'text' => '<img class="article-thumb" src="' . $thumbURL . '" alt="' . $Link['element']['text'] . '">',
+        	)
         );
 
-        $Inline['element']['attributes'] += $Link['element']['attributes'];
+        // FIXME not sure what commenting this breaks
+        /*$Inline['element']['attributes'] += $Link['element']['attributes'];
 
-        unset($Inline['element']['attributes']['href']);
-
+        unset($Inline['element']['attributes']['href']);*/
         return $Inline;
     }
 

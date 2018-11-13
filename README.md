@@ -18,7 +18,7 @@ If you do decide to you use it, you should open every PHP-file in a text editor 
 
 ## How To Use
 
-- Install PHP (my VPS is running PHP 5.5.27-1)
+- Install PHP (my VPS is running PHP 7), and `php-gd`
 - Go through config.php and configure it your way (root URLs, etc.)
 - Write blog posts in Markdown and save them in the `posts/` directory. 
 	- First line must be the date (many formats work, see [strtotime][strtotime] manual)
