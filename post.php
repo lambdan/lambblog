@@ -93,16 +93,13 @@ if (file_exists($filename)) {
 	echo '<a href="stats?i=' . get_number($filename) . '">Stats For This Post</a><br><br>';
 
 	$index = array_search($filename, $files); // current index
-	$next = $files[$index-1];
-	$prev = $files[$index+1];
-	if (file_exists($next)) {
-        //print 'Next: <a href="./' . get_display_filename($next) . '">' . get_title($next) . '</a><br>';
-        print '<a href="./' . get_display_filename($next) . '">Newer: ' . get_title($next) . '</a><br>';
-    }
-
-	if (file_exists($prev)) {
-        //print 'Previous: <a href="./' . get_display_filename($prev) . '">' . get_title($prev) . '</a><br>';
-        print '<a href="./' . get_display_filename($prev) . '">Older: ' . get_title($prev) . '</a><br><br>';
+	if (isset($files[$index-1])) {
+		$next = $files[$index-1];
+		print '<a href="./' . get_display_filename($next) . '">Newer: ' . get_title($next) . '</a><br>';
+	}
+	if (isset($files[$index+1])) {
+		$prev = $files[$index+1];
+		print '<a href="./' . get_display_filename($prev) . '">Older: ' . get_title($prev) . '</a><br><br>';
 	}
 
 } else {
