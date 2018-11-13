@@ -1199,7 +1199,7 @@ class Parsedown
         } else {
        		if(!file_exists($thumbFilePath)) {
         		$img = imagecreatefromstring(file_get_contents($mirrorFilePath));
-        		ImageJPEG($img, $thumbFilePath, 50);
+        		ImageJPEG($img, $thumbFilePath, 75);
         		imagedestroy($img); // free up mem
         	}
     	}
