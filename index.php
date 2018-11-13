@@ -16,23 +16,8 @@ require 'helpers.php';
 <?php
 
 faviconHeaders();
-// Set title of post to <title> if possible
-if(isset($_GET['entry'])) {
-	$entry = $_GET['entry'];
-	$filename = file_from_url($entry, $path_to_txts);
-	echo "<title>" . get_title($filename) . " - ${site_title}</title>";
 
-    // Twitter card
-    if ($twitter_username != "") {
-	    echo '<meta name="twitter:card" content="summary" />';
-	    echo '<meta name="twitter:site" content="@' . $twitter_username .'" />';
-	    echo '<meta name="twitter:title" content="' . get_title($filename) . '" />';
-	    $summary = get_summary($filename);
-        echo '<meta name="twitter:description" content="' . $summary . '" />';
-    }
-} else {
-	echo '<title>' . $site_title . '</title>';
-}
+echo '<title>Home - ' . $site_title . '</title>';
 ?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -61,12 +46,15 @@ natsort($files);
 $files = array_reverse($files, false);
 
 
+// Show a preview of 5 latest posts
+// If there isn't 5 posts, then show all (<5)
 $i = 0;
 if (count($files) >= 5) {
 	$max = 5;
 } else {
 	$max = (count($files));
 }
+
 while ($i < $max) {
 $filename = $files[$i];
 	
