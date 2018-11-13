@@ -1191,7 +1191,7 @@ class Parsedown
         // Thumbnails!
         $newFilenameThumb = $imgHash . "_thumb.jpg";
         $thumbFilePath = $image_mirror_path . $newFilenameThumb;
-        $thumbURL = $image_mirror_path . $newFilenameThumb;
+        $thumbURL = $image_mirror_url_prefix . $newFilenameThumb;
 
         if (pathinfo($originalURL, PATHINFO_EXTENSION) == 'gif') {
         	// dont thumbnail gifs as they're animated
@@ -1201,7 +1201,6 @@ class Parsedown
         		$img = imagecreatefromstring(file_get_contents($mirrorURL));
         		ImageJPEG($img, $thumbFilePath, 50);
         		imagedestroy($img); // free up mem
-        		$thumbURL = $image_mirror_url_prefix . $newFilenameThumb;
         	}
     	}
 
