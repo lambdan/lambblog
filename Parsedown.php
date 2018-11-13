@@ -1198,7 +1198,7 @@ class Parsedown
         	$thumbURL = $mirrorURL;
         } else {
        		if(!file_exists($thumbFilePath)) {
-        		$img = imagecreatefromstring(file_get_contents($mirrorURL));
+        		$img = imagecreatefromstring(file_get_contents($mirrorFilePath));
         		ImageJPEG($img, $thumbFilePath, 50);
         		imagedestroy($img); // free up mem
         	}
