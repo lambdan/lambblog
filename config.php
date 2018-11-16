@@ -5,7 +5,7 @@ $path_to_txts = './posts/'; // where your markdown files are stored
 
 $site_root = 'https://lambdan.se'; // url root, do not end with /
 
-$copyright_start = 2014; // copyright start year
+$copyright_start = 2012; // copyright start year
 
 $author_email = 'david@lambdan.se'; // your email, displayed in footer
 
@@ -13,7 +13,7 @@ $site_title = 'lambdan.se'; // displayed at end of <title> and used as title in 
 
 $twitter_username = 'nadbmal'; // your twitter handle without @, leave blank to not use twitter cards
 
-$css_url = $site_root . '/css-light-2018.css'; // link to css file
+$css_url = $site_root . '/css-night-2018.css'; // link to css file
 
 $linkedSymbol = '📍';
 

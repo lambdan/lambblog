@@ -9,7 +9,7 @@ $starttime = $starttime[1] + $starttime[0];
 
 <html>
 <head>
-<?php echo "<title>Blog Archive - ${site_title}</title>"; ?>
+<?php echo "<title>Archive - ${site_title}</title>"; ?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <?php echo '<link rel="stylesheet" type="text/css" href="' . $css_url . '">'; ?>
 
