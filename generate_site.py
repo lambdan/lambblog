@@ -4,8 +4,9 @@
 ########################### Settings ################################
 SITE_ROOT = '/home/djs/public_html/blog/'
 SITE_ROOT_URL = 'https://lambdan.se/blog/'
-SITE_TITLE_SUFFIX = ' - lambdan.se' # at the end of every <title>
-SITE_TITLE = 'lambdan.se (Static Version Beta)'
+SITE_TITLE = 'lambdan.se'
+SITE_TITLE_SUFFIX = ' - ' + SITE_TITLE # at the end of every <title>
+
 CSS_URL = SITE_ROOT_URL + 'css-night-2018.css'
 
 AUTHOR_NAME = 'djs'
@@ -267,7 +268,7 @@ fg.rss_file(os.path.join(SITE_ROOT,'rss.xml'))
 print "ok"
 
 print "writing front page...",
-html_output = generateHeader("Home", "normal")
+html_output = generateHeader("Blog", "normal")
 for p in posts[:10]:
 	if p['thirdline'].lower().startswith("http"): # linked post?
 		html_output += '<h1 class="article_title_linked"><a href="' + p['thirdline'] + '">' + p['title'] + '</a></h1>'
@@ -284,13 +285,13 @@ else:
 	print "ok"
 
 print "writing archive...",
-html_output = generateHeader("Archive", "normal")
+html_output = generateHeader("Blog Archive", "normal")
 #html_output += '<p>Hint: use your web browsers\' search function to find what you\'re looking for.</p>'
 yr = 0
 mo = 0
 for p in posts:
 	if yr != p['date'].year:
-		html_output += '<h1><u><a href="' + str(p['date'].year) +'">' + str(p['date'].year) + '</a></u></h1>'
+		html_output += '<h1 class="article_title"><u><a href="' + str(p['date'].year) +'">' + str(p['date'].year) + '</a></u></h1>'
 		yr = p['date'].year
 	if mo != p['date'].month:
 		html_output += '<h2><a href="' + str(p['date'].year) + '/' + "%02d" % p['date'].month +'">' + p['date'].strftime('%B') + '</a></h2>'
@@ -303,21 +304,24 @@ print "ok"
 
 print "writing year indexes...",
 years = []
+mo = 0
 for p in posts:
 	y = p['date'].year
 	years.append(y)
 for yr in years:
 	html_output = generateHeader(str(yr), "normal")
-	html_output += '<h1>' + str(yr) + '</h1>'
-	html_output += '<ul>'
+	html_output += '<h1 class="article_title">' + str(yr) + '</h1>'
 	for p in posts:
 		y = p['date'].year
 		if y == yr:
+			if mo != p['date'].month:
+				html_output += '<h2><a href="' + "%02d" % p['date'].month +'">' + p['date'].strftime('%B') + '</a></h2>'
+				mo = p['date'].month
 			url = "%02d" % p['date'].month + '/' + "%02d" % p['date'].day + '/' + p['slug']
 			html_output += '<li><a href="' + url + '">'
 			html_output += p['title']
 			html_output += '</a></li>'
-	html_output += '</ul></div>'
+	html_output += '</div>'
 	html_output += generateFooter()
 	saveHTML(html_output, os.path.join(SITE_ROOT, str(yr), 'index.html'))
 print "ok"
@@ -431,4 +435,4 @@ for f in files:
 	shutil.copy(src, dest)
 print "ok"
 
-print "all done"
+print "all done, go try it out at", SITE_ROOT_URL
