@@ -249,9 +249,9 @@ months = []
 for p in posts:
 	y = p['date'].year
 	m = p['date'].month
-	months.append(str(y) + '-' + "%02d" % m) # 2019-04 etc
+	months.append(str(y) + '-' + "%02d" % m) # ex 2019-04
 for month in months:
-	print_month = datetime.strptime(month, '%Y-%m').strftime('%B %Y')
+	print_month = datetime.strptime(month, '%Y-%m').strftime('%B %Y') # ex April 2019
 	html_output = generateHeader(print_month, 'normal')
 	html_output += '<h1>' + print_month + '</h1>'
 	for p in posts:
@@ -265,6 +265,29 @@ for month in months:
 			html_output += '</a><br>'
 	html_output += generateFooter()
 	saveHTML(html_output, os.path.join(SITE_ROOT, month.split('-')[0], month.split('-')[1], 'index.html'))
+
+print "writing day indexes..." # for those url modifying geeks
+days = []
+for p in posts:
+	y = p['date'].year
+	m = p['date'].month
+	d = p['date'].day
+	days.append(str(y) + '-' + "%02d" % m + '-' + "%02d" % d) # ex 2019-04-20
+for day in days:
+	print_day = datetime.strptime(day, '%Y-%m-%d').strftime('%d %B %Y') # 20 April 2019
+	html_output = generateHeader(print_day, 'normal')
+	html_output += '<h1>' + print_day + '</h1>'
+	for p in posts:
+		y = str(p['date'].year)
+		m = str("%02d" % p['date'].month)
+		d = str("%02d" % p['date'].day)
+		if y == day.split('-')[0] and m == day.split('-')[1] and d == day.split('-')[2]:
+			url = p['slug']
+			html_output += '<a href="' + url + '">'
+			html_output += p['title']
+			html_output += '</a><br>'
+	html_output += generateFooter()
+	saveHTML(html_output, os.path.join(SITE_ROOT, day.split('-')[0], day.split('-')[1], day.split('-')[2], 'index.html'))
 
 print "creating other pages"
 pages = os.listdir(OTHER_PAGES_FOLDER)
