@@ -22,9 +22,12 @@ import markdown2
 from bs4 import BeautifulSoup
 from slugify import slugify
 from dateutil.parser import parse
-import os, shutil, sys, hashlib, time, requests
+import os, shutil, sys, hashlib, time, requests, re
 from datetime import datetime
 from PIL import Image
+from feedgen.feed import FeedGenerator
+from email import utils
+from curses import ascii
 
 reload(sys)
 sys.setdefaultencoding('UTF8')
@@ -36,6 +39,8 @@ def saveHTML(code, filepath):
 	f.close()
 	return os.path.isfile(filepath)
 
+def clean(text): # https://stackoverflow.com/a/20819845
+	return str(''.join(ascii.isprint(c) and c or '?' for c in text)) 
 
 def generateHeader(page_title, css_class):
 	output = '<html>'
@@ -187,11 +192,11 @@ for post in os.listdir(POSTS_DIR):
 	# previous/next navigation should probably be here?
 	html_output += generateFooter()
 
-	stub = markdown2.markdown(body_text, extras=["tables"]).split("\n")[0].encode("utf-8")
+	stub = markdown2.markdown(body_text, extras=["tables"]).split("\n")[0].encode('utf-8')
 
 	if saveHTML(html_output, os.path.join(post_root, 'index.html')):
 		#print "success: wrote", title.strip(), "to", html_file
-		posts.append({'title': title.strip(), 'slug': slugify(title.strip()), 'textfile': post, 'words': len(body_text.split()), 'chars': len(body_text), 'date': date, 'path': post_url, 'stub': stub})
+		posts.append({'title': title.strip(), 'slug': slugify(title.strip()), 'full_url': SITE_ROOT_URL + post_url, 'textfile': post, 'words': len(body_text.split()), 'chars': len(body_text), 'date': date, 'path': post_url, 'stub': stub, 'body': str(soup)})
 	else:
 		print "critical: writing post html seems to have failed"
 		print "debug: blog post is", title.strip()
@@ -209,6 +214,25 @@ else:
 newlist = sorted(posts, key=lambda k: k['date'], reverse=True) # sort by dates, reverse to get newest on top
 posts = newlist # extremely ugly code but whatever
 
+print "generating rss feed..."
+fg = FeedGenerator()
+fg.title('lambdan.se RSS')
+fg.author({'name': AUTHOR_NAME, 'email':AUTHOR_EMAIL})
+fg.link(href=SITE_ROOT_URL,rel='alternate')
+fg.logo(SITE_ROOT_URL+'avatar.png')
+fg.link(href=SITE_ROOT_URL+'rss.xml',rel='self')
+fg.description('lambdan.se rss feed')
+fg.id(SITE_ROOT_URL)
+fg.language('en')
+for p in posts:
+	fe = fg.add_entry()
+	fe.id(p['full_url'])
+	rfc2822 = utils.formatdate(time.mktime(p['date'].timetuple())) # https://stackoverflow.com/a/3453277
+	fe.pubDate(rfc2822)
+	fe.title(clean(p['title']))
+	#fe.description(clean(p['body'])) # maybe include this in the future.... causes issues with image urls atm
+fg.rss_file(os.path.join(SITE_ROOT,'rss.xml'))
+
 print "writing index..."
 html_output = generateHeader("Home", "normal")
 html_output += '<p>Hint: use your web browsers\' search function to find what you\'re looking for.</p>'
@@ -218,7 +242,7 @@ for p in posts:
 	if yr != p['date'].year:
 		html_output += '<h1><u><a href="' + str(p['date'].year) +'">' + str(p['date'].year) + '</a></u></h1>'
 		yr = p['date'].year
-	if mo != p['date'].month: # CHANGE TO NAMED MONTH
+	if mo != p['date'].month:
 		html_output += '<h2><a href="' + str(p['date'].year) + '/' + "%02d" % p['date'].month +'">' + p['date'].strftime('%B') + '</a></h2>'
 		mo = p['date'].month
 	html_output += '<li><a href="' + p['path'] + '">' + p['title'] + '</a></li>'
@@ -314,7 +338,7 @@ for page in pages:
 		print "failed: creating other page:", page
 		sys.exit(1)
 
-print "creating stats page"
+print "creating stats page...",
 total_words = 0
 total_chars = 0
 for p in posts:
@@ -340,9 +364,9 @@ html_output += '</ol>'
 html_output += '</div>'
 html_output += generateFooter()
 if saveHTML(html_output, os.path.join(SITE_ROOT, 'stats.html')):
-	print "success: stats created"
+	print "ok"
 else:
-	print "failed: stats"
+	print "failed!"
 	sys.exit(1)
 
 print "copying everything from include/ to site root"
