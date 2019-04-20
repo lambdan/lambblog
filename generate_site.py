@@ -331,6 +331,11 @@ html_output += '<li>' + str(total_chars) + ' characters</li>'
 html_output += '</ul>'
 
 html_output += '<h2>Posts With Most Words</h2>'
+html_output += '<ol>'
+posts_sorted_by_words = sorted(posts, key=lambda k: k['words'], reverse=True) # sort by dates, reverse to get most on top
+for p in posts_sorted_by_words[:20]:
+	html_output += '<li><a href="' + p['path'] + '">' + p['title'] + '</a> (' + str(p['words']) + ' words)</li>'
+html_output += '</ol>'
 
 html_output += '</div>'
 html_output += generateFooter()
