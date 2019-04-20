@@ -51,7 +51,7 @@ def generateHeader(page_title, css_class):
 	output += '<a href="' + SITE_ROOT_URL + '" class="logo">lambdan.se (STATIC BETA VERSION)</a>'
 	output += '<br>'
 	#output += '<a href="archive">Archive</a> • '
-	#output += '<a href="stats">Stats</a> • '
+	output += '<a href="' + SITE_ROOT_URL + 'stats">Stats</a> • '
 	output += '<a href="' + SITE_ROOT_URL + 'misc">Misc</a> •'
 	output += '<a href="' + SITE_ROOT_URL + 'about">About</a> '
 	output += '</p>'
@@ -191,7 +191,7 @@ for post in os.listdir(POSTS_DIR):
 
 	if saveHTML(html_output, os.path.join(post_root, 'index.html')):
 		#print "success: wrote", title.strip(), "to", html_file
-		posts.append({'title': title.strip(), 'slug': slugify(title.strip()), 'date': date, 'path': post_url, 'stub': stub})
+		posts.append({'title': title.strip(), 'slug': slugify(title.strip()), 'textfile': post, 'words': len(body_text.split()), 'chars': len(body_text), 'date': date, 'path': post_url, 'stub': stub})
 	else:
 		print "critical: writing post html seems to have failed"
 		print "debug: blog post is", title.strip()
@@ -209,8 +209,9 @@ else:
 newlist = sorted(posts, key=lambda k: k['date'], reverse=True) # sort by dates, reverse to get newest on top
 posts = newlist # extremely ugly code but whatever
 
-print "writing archive..."
+print "writing index..."
 html_output = generateHeader("Home", "normal")
+html_output += '<p>Hint: use your web browsers\' search function to find what you\'re looking for.</p>'
 yr = 0
 mo = 0
 for p in posts:
@@ -234,13 +235,15 @@ for p in posts:
 for yr in years:
 	html_output = generateHeader(str(yr), "normal")
 	html_output += '<h1>' + str(yr) + '</h1>'
+	html_output += '<ul>'
 	for p in posts:
 		y = p['date'].year
 		if y == yr:
 			url = "%02d" % p['date'].month + '/' + "%02d" % p['date'].day + '/' + p['slug']
-			html_output += '<a href="' + url + '">'
+			html_output += '<li><a href="' + url + '">'
 			html_output += p['title']
-			html_output += '</a><br>'
+			html_output += '</a></li>'
+	html_output += '</ul></div>'
 	html_output += generateFooter()
 	saveHTML(html_output, os.path.join(SITE_ROOT, str(yr), 'index.html'))
 
@@ -254,15 +257,17 @@ for month in months:
 	print_month = datetime.strptime(month, '%Y-%m').strftime('%B %Y') # ex April 2019
 	html_output = generateHeader(print_month, 'normal')
 	html_output += '<h1>' + print_month + '</h1>'
+	html_output += '<ul>'
 	for p in posts:
 		y = str(p['date'].year)
 		m = str("%02d" % p['date'].month)
 		if y == month.split('-')[0] and m == month.split('-')[1]:
 			#print y, m, p['title']
 			url = "%02d" % p['date'].day + '/' + p['slug']
-			html_output += '<a href="' + url + '">'
+			html_output += '<li><a href="' + url + '">'
 			html_output += p['title']
-			html_output += '</a><br>'
+			html_output += '</a></li>'
+	html_output += '</ul></div>'
 	html_output += generateFooter()
 	saveHTML(html_output, os.path.join(SITE_ROOT, month.split('-')[0], month.split('-')[1], 'index.html'))
 
@@ -277,15 +282,17 @@ for day in days:
 	print_day = datetime.strptime(day, '%Y-%m-%d').strftime('%d %B %Y') # 20 April 2019
 	html_output = generateHeader(print_day, 'normal')
 	html_output += '<h1>' + print_day + '</h1>'
+	html_output += '<ul>'
 	for p in posts:
 		y = str(p['date'].year)
 		m = str("%02d" % p['date'].month)
 		d = str("%02d" % p['date'].day)
 		if y == day.split('-')[0] and m == day.split('-')[1] and d == day.split('-')[2]:
 			url = p['slug']
-			html_output += '<a href="' + url + '">'
+			html_output += '<li><a href="' + url + '">'
 			html_output += p['title']
-			html_output += '</a><br>'
+			html_output += '</a></li>'
+	html_output += '</ul></div>'
 	html_output += generateFooter()
 	saveHTML(html_output, os.path.join(SITE_ROOT, day.split('-')[0], day.split('-')[1], day.split('-')[2], 'index.html'))
 
@@ -298,12 +305,40 @@ for page in pages:
 	html_output = generateHeader(title, "article")
 	html_output += f.read() # ... then read the rest of the file
 	f.close()
+	html_output += '</div>'
+	html_output += generateFooter()
 
 	if saveHTML(html_output, os.path.join(SITE_ROOT, page)):
 		print "success: created other page:", page
 	else:
 		print "failed: creating other page:", page
 		sys.exit(1)
+
+print "creating stats page"
+total_words = 0
+total_chars = 0
+for p in posts:
+	total_words += p['words']
+	total_chars += p['chars']
+total_posts = len(posts)
+
+html_output = generateHeader('Stats', 'normal')
+html_output += '<h1>Stats</h1>'
+html_output += '<ul>'
+html_output += '<li>' + str(total_posts) + ' posts</li>'
+html_output += '<li>' + str(total_words) + ' words</li>'
+html_output += '<li>' + str(total_chars) + ' characters</li>'
+html_output += '</ul>'
+
+html_output += '<h2>Posts With Most Words</h2>'
+
+html_output += '</div>'
+html_output += generateFooter()
+if saveHTML(html_output, os.path.join(SITE_ROOT, 'stats.html')):
+	print "success: stats created"
+else:
+	print "failed: stats"
+	sys.exit(1)
 
 print "copying everything from include/ to site root"
 files = os.listdir(INCLUDE_FOLDER)
