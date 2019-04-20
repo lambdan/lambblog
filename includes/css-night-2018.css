@@ -231,6 +231,17 @@ font-size: 42px;
       font-size: 36px; } 
 }
 
+h1.article_title_linked, h1.article_title_linked a, h1.article_title_linked a:visited {
+    color: #6aebd9;
+    text-transform: none;
+font-size: 42px;
+  letter-spacing: -1px;
+  line-height: 1; }
+  @media screen and (max-width: 800px) {
+    .post-title {
+      font-size: 36px; } 
+}
+
 h2.article_date, h2.article_date a, h2.article_date a:visited {
     text-decoration: none;
     margin-top: -15px;
