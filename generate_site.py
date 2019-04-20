@@ -1,6 +1,23 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- 
 
+########################### Settings ################################
+SITE_ROOT = '/home/djs/public_html/static/'
+SITE_ROOT_URL = 'https://lambdan.se/static/'
+SITE_TITLE_SUFFIX = ' - lambdan.se' # at the end of every <title>
+CSS_URL = SITE_ROOT_URL + 'css-night-2018.css'
+
+AUTHOR_NAME = 'djs'
+AUTHOR_EMAIL = 'david@lambdan.se' # these are in the footer
+AUTHOR_TWITTER = 'nadbmal' # no @
+SITE_STARTED_YEAR = 2012
+
+POSTS_DIR = './posts/'
+IMAGES_FOLDER = './images/'
+INCLUDE_FOLDER = './includes/'
+OTHER_PAGES_FOLDER = './pages/'
+#####################################################################
+
 import markdown2
 from bs4 import BeautifulSoup
 from slugify import slugify
@@ -11,22 +28,6 @@ from PIL import Image
 
 reload(sys)
 sys.setdefaultencoding('UTF8')
-
-SITE_ROOT = '/home/djs/public_html/static/'
-SITE_ROOT_URL = 'https://lambdan.se/static/'
-
-POSTS_DIR = './posts/'
-IMAGES_FOLDER = './images/'
-INCLUDE_FOLDER = './includes/'
-OTHER_PAGES_FOLDER = './pages/'
-
-SITE_TITLE_SUFFIX = ' - lambdan.se'
-CSS_URL = SITE_ROOT_URL + 'css-night-2018.css'
-
-
-
-#html = markdown2.markdown_path('./posts/113.txt')
-#print html
 
 def saveHTML(code, filepath):
 	soup = BeautifulSoup(code, 'html.parser')
@@ -51,11 +52,19 @@ def generateHeader(page_title, css_class):
 	output += '<br>'
 	#output += '<a href="archive">Archive</a> • '
 	#output += '<a href="stats">Stats</a> • '
-	output += '<a href="misc">Misc</a> •'
-	output += '<a href="about">About</a> '
+	output += '<a href="' + SITE_ROOT_URL + 'misc">Misc</a> •'
+	output += '<a href="' + SITE_ROOT_URL + 'about">About</a> '
 	output += '</p>'
 	output += '</div>'
 	output += '<div class="' + css_class + '">'
+	return output
+
+def generateFooter():
+	output = '<footer><br>'
+	output += '©' + str(SITE_STARTED_YEAR) + '-' + str(datetime.now().year) + ' ' + AUTHOR_NAME + '<br>'
+	output += 'Email: <a href="mailto:' + AUTHOR_EMAIL + '">' + AUTHOR_EMAIL + '</a><br>'
+	output += 'Twitter: <a href="https://twitter.com/' + AUTHOR_TWITTER + '">@' + AUTHOR_TWITTER + '</a><br>'
+	output += '</footer></body></html>'
 	return output
 
 if os.path.isdir(SITE_ROOT):
@@ -66,6 +75,7 @@ elif not os.path.isdir(SITE_ROOT):
 
 posts = []
 
+print "processing", POSTS_DIR, "..."
 for post in os.listdir(POSTS_DIR):
 	f = open(os.path.join(POSTS_DIR, post), 'r')
 	date = parse(f.readline(), fuzzy=True) # 1st line, date
@@ -92,7 +102,7 @@ for post in os.listdir(POSTS_DIR):
 	else:
 		html_output += '<h1 class="article_title">' + title + '</h1>'
 
-	html_output += '<h2 class="article_date">' + str(date) + '</h2>'
+	html_output += '<h2 class="article_date">' + date.strftime('%a %d %b %Y, %H:%M') + '</h2>'
 
 	# body text 
 	markdown_body = markdown2.markdown(body_text, extras=["tables"])
@@ -174,14 +184,14 @@ for post in os.listdir(POSTS_DIR):
 
 	html_output += '</div>'
 	# footer
-	html_output += '</body>'
-	html_output += '</html>'
+	# previous/next navigation should probably be here?
+	html_output += generateFooter()
 
 	stub = markdown2.markdown(body_text, extras=["tables"]).split("\n")[0].encode("utf-8")
 
 	if saveHTML(html_output, os.path.join(post_root, 'index.html')):
 		#print "success: wrote", title.strip(), "to", html_file
-		posts.append({'title': title.strip(), 'date': date, 'path': post_url, 'stub': stub})
+		posts.append({'title': title.strip(), 'slug': slugify(title.strip()), 'date': date, 'path': post_url, 'stub': stub})
 	else:
 		print "critical: writing post html seems to have failed"
 		print "debug: blog post is", title.strip()
@@ -201,43 +211,69 @@ posts = newlist # extremely ugly code but whatever
 
 print "writing archive..."
 html_output = generateHeader("Home", "normal")
+yr = 0
+mo = 0
 for p in posts:
+	if yr != p['date'].year:
+		html_output += '<h1><u><a href="' + str(p['date'].year) +'">' + str(p['date'].year) + '</a></u></h1>'
+		yr = p['date'].year
+	if mo != p['date'].month: # CHANGE TO NAMED MONTH
+		html_output += '<h2><a href="' + str(p['date'].year) + '/' + "%02d" % p['date'].month +'">' + p['date'].strftime('%B') + '</a></h2>'
+		mo = p['date'].month
 	html_output += '<li><a href="' + p['path'] + '">' + p['title'] + '</a></li>'
-html_output += '</html>'
+html_output += "</div>"
+html_output += generateFooter()
 
 saveHTML(html_output, os.path.join(SITE_ROOT, 'index.html'))
 
-#print "writing year index..."
-#years = []
-#for post in post_paths: # get years
-#	y = post.split('/')[0]
-#	years.append(y)
-#for year in years: # process years, this is inefficient
-#	html_output = generateHeader(year, "normal")
-#	html_output += "<h1>" + year + "</h1>"
-#	for post in post_paths:
-#		y = post.split('/')[0]
-#		if y == year:
-#			post = post.replace(year + '/','') # remove year from path so the directory structure is correct
-#			html_output += '<a href="' + post + '">' + post + '</a>'
-#			html_output += '<br>'
-#		else:
-#			continue
-#	html_output += "</html>"
-#	file = os.path.join(SITE_ROOT, year, "index.html")
-#	f = open(file, 'w')
-#	f.write(html_output)
-#	f.close()
+print "writing year indexes..."
+years = []
+for p in posts:
+	y = p['date'].year
+	years.append(y)
+for yr in years:
+	html_output = generateHeader(str(yr), "normal")
+	html_output += '<h1>' + str(yr) + '</h1>'
+	for p in posts:
+		y = p['date'].year
+		if y == yr:
+			url = "%02d" % p['date'].month + '/' + "%02d" % p['date'].day + '/' + p['slug']
+			html_output += '<a href="' + url + '">'
+			html_output += p['title']
+			html_output += '</a><br>'
+	html_output += generateFooter()
+	saveHTML(html_output, os.path.join(SITE_ROOT, str(yr), 'index.html'))
 
+print "writing month indexes..."
+months = []
+for p in posts:
+	y = p['date'].year
+	m = p['date'].month
+	months.append(str(y) + '-' + "%02d" % m) # 2019-04 etc
+for month in months:
+	print_month = datetime.strptime(month, '%Y-%m').strftime('%B %Y')
+	html_output = generateHeader(print_month, 'normal')
+	html_output += '<h1>' + print_month + '</h1>'
+	for p in posts:
+		y = str(p['date'].year)
+		m = str("%02d" % p['date'].month)
+		if y == month.split('-')[0] and m == month.split('-')[1]:
+			#print y, m, p['title']
+			url = "%02d" % p['date'].day + '/' + p['slug']
+			html_output += '<a href="' + url + '">'
+			html_output += p['title']
+			html_output += '</a><br>'
+	html_output += generateFooter()
+	saveHTML(html_output, os.path.join(SITE_ROOT, month.split('-')[0], month.split('-')[1], 'index.html'))
 
 print "creating other pages"
 pages = os.listdir(OTHER_PAGES_FOLDER)
 for page in pages:
 	path = os.path.join(OTHER_PAGES_FOLDER, page)
 	f = open(path,'r')
-	title = f.readline()
+	title = f.readline() # title is the first line
 	html_output = generateHeader(title, "article")
-	html_output += f.read()
+	html_output += f.read() # ... then read the rest of the file
 	f.close()
 
 	if saveHTML(html_output, os.path.join(SITE_ROOT, page)):
