@@ -2,9 +2,10 @@
 # -*- coding: utf-8 -*- 
 
 ########################### Settings ################################
-SITE_ROOT = '/home/djs/public_html/static/'
-SITE_ROOT_URL = 'https://lambdan.se/static/'
+SITE_ROOT = '/home/djs/public_html/blog/'
+SITE_ROOT_URL = 'https://lambdan.se/blog/'
 SITE_TITLE_SUFFIX = ' - lambdan.se' # at the end of every <title>
+SITE_TITLE = 'lambdan.se (Static Version Beta)'
 CSS_URL = SITE_ROOT_URL + 'css-night-2018.css'
 
 AUTHOR_NAME = 'djs'
@@ -45,6 +46,14 @@ def clean(text): # https://stackoverflow.com/a/20819845
 def generateHeader(page_title, css_class):
 	output = '<html>'
 	output += '<head>'
+	output += '<link rel="apple-touch-icon" sizes="180x180" href="' + SITE_ROOT_URL + 'apple-touch-icon.png?v=rMlK32YJeL">'
+	output += '<link rel="icon" type="image/png" sizes="32x32" href="' + SITE_ROOT_URL + 'favicon-32x32.png?v=rMlK32YJeL">'
+	output += '<link rel="icon" type="image/png" sizes="16x16" href="' + SITE_ROOT_URL + 'favicon-16x16.png?v=rMlK32YJeL">'
+	output += '<link rel="manifest" href="' + SITE_ROOT_URL + 'manifest.json?v=rMlK32YJeL">'
+	output += '<link rel="mask-icon" href="' + SITE_ROOT_URL + 'safari-pinned-tab.svg?v=rMlK32YJeL" color="#ff0f00">'
+	output += '<link rel="shortcut icon" href="' + SITE_ROOT_URL + 'favicon.ico?v=rMlK32YJeL">'
+	output += '<meta name="msapplication-config" content="' + SITE_ROOT_URL + 'browserconfig.xml?v=rMlK32YJeL">'
+	output += '<meta name="theme-color" content="#ffffff">'
 	output += '<title>' + page_title.strip() + SITE_TITLE_SUFFIX + '</title>' # strip() to remove newline
 	output += '<meta charset="utf-8">'
 	output += '<meta name="viewport" content="width=device-width, initial-scale=1">'
@@ -53,7 +62,7 @@ def generateHeader(page_title, css_class):
 	output += '<body>'
 	output += '<div class="navigation">'
 	output += '<p>'
-	output += '<a href="' + SITE_ROOT_URL + '" class="logo">lambdan.se (STATIC BETA VERSION)</a>'
+	output += '<a href="' + SITE_ROOT_URL + '" class="logo">' + SITE_TITLE + '</a>'
 	output += '<br>'
 	#output += '<a href="archive">Archive</a> • '
 	output += '<a href="' + SITE_ROOT_URL + 'stats">Stats</a> • '
@@ -214,28 +223,30 @@ else:
 newlist = sorted(posts, key=lambda k: k['date'], reverse=True) # sort by dates, reverse to get newest on top
 posts = newlist # extremely ugly code but whatever
 
-print "generating rss feed..."
+print "generating rss feed...",
 fg = FeedGenerator()
-fg.title('lambdan.se RSS')
+fg.title(SITE_TITLE + ' RSS')
 fg.author({'name': AUTHOR_NAME, 'email':AUTHOR_EMAIL})
 fg.link(href=SITE_ROOT_URL,rel='alternate')
 fg.logo(SITE_ROOT_URL+'avatar.png')
 fg.link(href=SITE_ROOT_URL+'rss.xml',rel='self')
-fg.description('lambdan.se rss feed')
+fg.description(SITE_TITLE +' rss feed')
 fg.id(SITE_ROOT_URL)
 fg.language('en')
 for p in posts:
 	fe = fg.add_entry()
 	fe.id(p['full_url'])
+	fe.link(href=p['full_url'],rel='alternate')
 	rfc2822 = utils.formatdate(time.mktime(p['date'].timetuple())) # https://stackoverflow.com/a/3453277
 	fe.pubDate(rfc2822)
 	fe.title(clean(p['title']))
 	#fe.description(clean(p['body'])) # maybe include this in the future.... causes issues with image urls atm
 fg.rss_file(os.path.join(SITE_ROOT,'rss.xml'))
+print "ok"
 
-print "writing index..."
+print "writing index...",
 html_output = generateHeader("Home", "normal")
-html_output += '<p>Hint: use your web browsers\' search function to find what you\'re looking for.</p>'
+#html_output += '<p>Hint: use your web browsers\' search function to find what you\'re looking for.</p>'
 yr = 0
 mo = 0
 for p in posts:
@@ -248,10 +259,10 @@ for p in posts:
 	html_output += '<li><a href="' + p['path'] + '">' + p['title'] + '</a></li>'
 html_output += "</div>"
 html_output += generateFooter()
-
 saveHTML(html_output, os.path.join(SITE_ROOT, 'index.html'))
+print "ok"
 
-print "writing year indexes..."
+print "writing year indexes...",
 years = []
 for p in posts:
 	y = p['date'].year
@@ -270,8 +281,9 @@ for yr in years:
 	html_output += '</ul></div>'
 	html_output += generateFooter()
 	saveHTML(html_output, os.path.join(SITE_ROOT, str(yr), 'index.html'))
+print "ok"
 
-print "writing month indexes..."
+print "writing month indexes...",
 months = []
 for p in posts:
 	y = p['date'].year
@@ -294,8 +306,9 @@ for month in months:
 	html_output += '</ul></div>'
 	html_output += generateFooter()
 	saveHTML(html_output, os.path.join(SITE_ROOT, month.split('-')[0], month.split('-')[1], 'index.html'))
+print "ok"
 
-print "writing day indexes..." # for those url modifying geeks
+print "writing day indexes...", # for those url modifying geeks
 days = []
 for p in posts:
 	y = p['date'].year
@@ -319,8 +332,9 @@ for day in days:
 	html_output += '</ul></div>'
 	html_output += generateFooter()
 	saveHTML(html_output, os.path.join(SITE_ROOT, day.split('-')[0], day.split('-')[1], day.split('-')[2], 'index.html'))
+print "ok"
 
-print "creating other pages"
+print "creating other pages...",
 pages = os.listdir(OTHER_PAGES_FOLDER)
 for page in pages:
 	path = os.path.join(OTHER_PAGES_FOLDER, page)
@@ -333,10 +347,11 @@ for page in pages:
 	html_output += generateFooter()
 
 	if saveHTML(html_output, os.path.join(SITE_ROOT, page)):
-		print "success: created other page:", page
+		print page, "ok",
 	else:
-		print "failed: creating other page:", page
+		print page, "failed",
 		sys.exit(1)
+print
 
 print "creating stats page...",
 total_words = 0
@@ -369,11 +384,12 @@ else:
 	print "failed!"
 	sys.exit(1)
 
-print "copying everything from include/ to site root"
+print "copying everything from include/ to site root...",
 files = os.listdir(INCLUDE_FOLDER)
 for f in files:
 	src = os.path.join(INCLUDE_FOLDER, f)
 	dest = os.path.join(SITE_ROOT, f)
 	shutil.copy(src, dest)
+print "ok"
 
 print "all done"
