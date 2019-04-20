@@ -1,28 +1,4 @@
-<?php
-require 'Parsedown.php';
-require 'helpers.php';
-
-$starttime = explode(' ', microtime());
-$starttime = $starttime[1] + $starttime[0];
-?>
-
-
-<html>
-<head>
-<title>About - <?php echo $site_title;?></title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="<?php echo $css_url;?>">
-<?php faviconHeaders(); ?>
-<meta charset="utf-8">
-
-</head>
-
-<body>
-
-<?php generateNavigation(); ?>
-
-<div class="article">
-
+About
 <h1>Contact Me</h1>
 <ul>
 	<li>If you wanna contact me, use <a href="https://twitter.com/nadbmal">Twitter</a></li>
@@ -42,21 +18,10 @@ $starttime = $starttime[1] + $starttime[0];
 
 <h1>Feeds</h1>
 <ul>
-<li><a href="https://lambdan.se/rss.php">RSS</a>
-<li><a href="https://lambdan.se/feed.json">JSON Feed</a>
+<li><a href="rss.xml">RSS</a>
 </ul>
 
 <p>
 Blog powered by <a href="https://github.com/lambdan/lambblog">lambblog</a>
 <br>
 </p>
-</div>
-<footer>
-	<?php
-echo '<footer>';
-generateCopyrightFooter();
-echo '</footer>';
-?>
-</footer>
-</body>
-</html>
