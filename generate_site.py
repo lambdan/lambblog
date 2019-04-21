@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*- 
 
 ########################### Settings ################################
-SITE_ROOT = '/home/djs/public_html/blog/'
-SITE_ROOT_URL = 'https://lambdan.se/blog/'
+SITE_ROOT = '/home/djs/public_html/test/'
+SITE_ROOT_URL = 'https://lambdan.se/test/'
 SITE_TITLE = 'lambdan.se'
 SITE_TITLE_SUFFIX = ' - ' + SITE_TITLE # at the end of every <title>
 
@@ -41,7 +41,7 @@ lambblog_version = "2.0"
 def saveHTML(code, filepath):
 	soup = BeautifulSoup(code, 'html.parser')
 	f = open(filepath, 'w')
-	f.write(soup.prettify())
+	f.write(str(soup))
 	f.close()
 	return os.path.isfile(filepath)
 
