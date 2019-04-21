@@ -1,25 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- 
-
-########################### Settings ################################
-SITE_ROOT = '/home/djs/public_html/test/'
-SITE_ROOT_URL = 'https://lambdan.se/test/'
-SITE_TITLE = 'lambdan.se'
-SITE_TITLE_SUFFIX = ' - ' + SITE_TITLE # at the end of every <title>
-
-CSS_URL = SITE_ROOT_URL + 'css-night-2018.css'
-
-AUTHOR_NAME = 'djs'
-AUTHOR_EMAIL = 'david@lambdan.se' # these are in the footer
-AUTHOR_TWITTER = 'nadbmal' # no @
-SITE_STARTED_YEAR = 2012
-
-POSTS_DIR = './posts/'
-IMAGES_FOLDER = './images/'
-INCLUDE_FOLDER = './includes/'
-OTHER_PAGES_FOLDER = './pages/'
-#####################################################################
-
 import markdown2
 from bs4 import BeautifulSoup
 from slugify import slugify
@@ -31,12 +11,46 @@ from feedgen.feed import FeedGenerator
 from email import utils
 from curses import ascii
 from collections import Counter
-
 reload(sys)
 sys.setdefaultencoding('UTF8')
-
 script_run_time = datetime.now()
-lambblog_version = "2.0"
+
+########################### Settings ################################
+LIVE_ROOT = '/home/djs/public_html/blog/'
+LIVE_ROOT_URL = 'https://lambdan.se/blog/'
+
+TEST_ROOT = '/home/djs/public_html/test/'
+TEST_ROOT_URL = 'https://lambdan.se/test/'
+
+SITE_TITLE = 'lambdan.se'
+SITE_TITLE_SUFFIX = ' - ' + SITE_TITLE # at the end of every <title>
+
+CSS_URL = LIVE_ROOT_URL + 'css-night-2018.css' 
+
+AUTHOR_NAME = 'djs'
+AUTHOR_EMAIL = 'david@lambdan.se' # these are in the footer
+AUTHOR_TWITTER = 'nadbmal' # no @
+SITE_STARTED_YEAR = 2012
+
+POSTS_DIR = './posts/'
+IMAGES_FOLDER = './images/'
+INCLUDE_FOLDER = './includes/'
+OTHER_PAGES_FOLDER = './pages/'
+#####################################################################
+# handle command parameters
+if len(sys.argv) > 1:
+	for arg in sys.argv:
+		if arg == "--test":
+			SITE_ROOT = TEST_ROOT
+			SITE_ROOT_URL = TEST_ROOT_URL
+			CSS_URL = TEST_ROOT_URL + 'css-night-2018.css'
+		elif arg == "--live":
+			SITE_ROOT = LIVE_ROOT
+			SITE_ROOT_URL = LIVE_ROOT_URL
+			CSS_URL = LIVE_ROOT_URL + 'css-night-2018.css'
+else:
+	print "you must specify either --live or --test"
+	sys.exit(1)
 
 def saveHTML(code, filepath):
 	soup = BeautifulSoup(code, 'html.parser')
@@ -84,7 +98,7 @@ def generateFooter():
 	output += 'Email: <a href="mailto:' + AUTHOR_EMAIL + '">' + AUTHOR_EMAIL + '</a><br>'
 	output += 'Twitter: <a href="https://twitter.com/' + AUTHOR_TWITTER + '">@' + AUTHOR_TWITTER + '</a><br>'
 	output += '<br>'
-	output += '<small>Generated ' + script_run_time.strftime('%Y-%m-%d %H:%M') + ' by <a href="https://github.com/lambdan/lambblog">lambblog</a> ' + lambblog_version + '</small>'
+	output += '<small>Generated ' + script_run_time.strftime('%Y-%m-%d %H:%M') + ' by <a href="https://github.com/lambdan/lambblog">lambblog</a></small>'
 	output += '</footer></body></html>'
 	return output
 
@@ -95,6 +109,8 @@ elif not os.path.isdir(SITE_ROOT):
 	os.makedirs(SITE_ROOT)
 
 posts = []
+
+print "output to", SITE_ROOT, SITE_ROOT_URL
 
 print "processing", POSTS_DIR, "..."
 for post in os.listdir(POSTS_DIR):
