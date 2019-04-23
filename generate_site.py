@@ -11,21 +11,16 @@ from feedgen.feed import FeedGenerator
 from email import utils
 from curses import ascii
 from collections import Counter
+from argparse import ArgumentParser
 reload(sys)
 sys.setdefaultencoding('UTF8')
 script_run_time = datetime.now()
 
 ########################### Settings ################################
-LIVE_ROOT = '/home/djs/public_html/blog/'
-LIVE_ROOT_URL = 'https://lambdan.se/blog/'
-
-TEST_ROOT = '/home/djs/public_html/test/'
-TEST_ROOT_URL = 'https://lambdan.se/test/'
-
 SITE_TITLE = 'lambdan.se'
 SITE_TITLE_SUFFIX = ' - ' + SITE_TITLE # at the end of every <title>
 
-CSS_URL = LIVE_ROOT_URL + 'css-night-2018.css' 
+CSS_FILE = 'css-night-2018.css' 
 
 AUTHOR_NAME = 'djs'
 AUTHOR_EMAIL = 'david@lambdan.se' # these are in the footer
@@ -38,20 +33,23 @@ INCLUDE_FOLDER = './includes/'
 OTHER_PAGES_FOLDER = './pages/'
 VALID_POST_EXTENSIONS = ('txt', 'md', 'markdown')
 #####################################################################
-# handle command parameters
-if len(sys.argv) > 1:
-	for arg in sys.argv:
-		if arg == "--test":
-			SITE_ROOT = TEST_ROOT
-			SITE_ROOT_URL = TEST_ROOT_URL
-			CSS_URL = TEST_ROOT_URL + 'css-night-2018.css'
-		elif arg == "--live":
-			SITE_ROOT = LIVE_ROOT
-			SITE_ROOT_URL = LIVE_ROOT_URL
-			CSS_URL = LIVE_ROOT_URL + 'css-night-2018.css'
-else:
-	print "you must specify either --live or --test"
+
+# handle arguments
+parser = ArgumentParser()
+parser.add_argument("--root-folder", action='store', dest='folder', help='root folder of website', required=True)
+parser.add_argument("--root-url", action='store', dest='url', help='root url of website', required=True)
+parsed = parser.parse_args()
+SITE_ROOT = parsed.folder
+SITE_ROOT_URL = parsed.url
+# TODO: make sure they are valid
+print "Site Root:", SITE_ROOT
+print "URL Root:", SITE_ROOT_URL
+yn = raw_input("Continue? y/N ").lower()
+if yn != "y":
+	print "exiting..."
 	sys.exit(1)
+
+CSS_URL = SITE_ROOT_URL + CSS_FILE
 
 def saveHTML(code, filepath):
 	soup = BeautifulSoup(code, 'html.parser')
@@ -109,10 +107,11 @@ if os.path.isdir(SITE_ROOT):
 elif not os.path.isdir(SITE_ROOT):
 	os.makedirs(SITE_ROOT)
 
+if not os.path.isdir(IMAGES_FOLDER):
+	os.makedirs(IMAGES_FOLDER)
+
 posts = []
 processed_posts = 0
-
-print "output to", SITE_ROOT, SITE_ROOT_URL
 
 print "processing", POSTS_DIR, "..."
 for post in os.listdir(POSTS_DIR):
