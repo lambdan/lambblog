@@ -36,6 +36,7 @@ POSTS_DIR = './posts/'
 IMAGES_FOLDER = './images/'
 INCLUDE_FOLDER = './includes/'
 OTHER_PAGES_FOLDER = './pages/'
+VALID_POST_EXTENSIONS = ('txt', 'md', 'markdown')
 #####################################################################
 # handle command parameters
 if len(sys.argv) > 1:
@@ -73,6 +74,7 @@ def generateHeader(page_title, css_class):
 	output += '<link rel="shortcut icon" href="' + SITE_ROOT_URL + 'favicon.ico?v=rMlK32YJeL">'
 	#output += '<meta name="msapplication-config" content="' + SITE_ROOT_URL + 'browserconfig.xml?v=rMlK32YJeL">'
 	output += '<meta name="theme-color" content="#ffffff">'
+	output += '<link rel="alternate" type="application/rss+xml" title="RSS" href="' + SITE_ROOT_URL + 'rss.xml" />'
 	output += '<title>' + page_title.strip() + SITE_TITLE_SUFFIX + '</title>' # strip() to remove newline
 	output += '<meta charset="utf-8">'
 	output += '<meta name="viewport" content="width=device-width, initial-scale=1">'
@@ -108,11 +110,18 @@ elif not os.path.isdir(SITE_ROOT):
 	os.makedirs(SITE_ROOT)
 
 posts = []
+processed_posts = 0
 
 print "output to", SITE_ROOT, SITE_ROOT_URL
 
 print "processing", POSTS_DIR, "..."
 for post in os.listdir(POSTS_DIR):
+	if not post.lower().endswith(VALID_POST_EXTENSIONS):
+		print "(ignoring",post,"because it doesnt have any of these extensions:",VALID_POST_EXTENSIONS,")"
+		continue
+	else:
+		processed_posts += 1
+
 	f = open(os.path.join(POSTS_DIR, post), 'r')
 	date = parse(f.readline(), fuzzy=True) # 1st line, date
 	title = f.readline() # 2nd line, title
@@ -249,11 +258,11 @@ for post in os.listdir(POSTS_DIR):
 		sys.exit(1)
 
 
-if len(posts) == len(os.listdir(POSTS_DIR)):
-	print "success: wrote", len(posts), "html files from", len(os.listdir(POSTS_DIR)), "post files"
+if len(posts) == processed_posts:
+	print "success: wrote", len(posts), "html files from", processed_posts, "processed files"
 else:
 	print "critical: not every post in", POSTS_DIR, "seems to have gotten a html file"
-	print "debug:", len(posts), "/", len(os.listdir(POSTS_DIR))
+	print "debug:", len(posts), "/", processed_posts
 	sys.exit(1)
 
 #print posts
@@ -392,9 +401,12 @@ for day in days:
 	saveHTML(html_output, os.path.join(SITE_ROOT, day.split('-')[0], day.split('-')[1], day.split('-')[2], 'index.html'))
 print "ok"
 
-print "creating other pages...",
+print "creating other pages..."
 pages = os.listdir(OTHER_PAGES_FOLDER)
 for page in pages:
+	if not page.lower().endswith('html'):
+		print "(ignoring",page,"because its not a html file)"
+		continue
 	path = os.path.join(OTHER_PAGES_FOLDER, page)
 	f = open(path,'r')
 	title = f.readline() # title is the first line
@@ -405,11 +417,10 @@ for page in pages:
 	html_output += generateFooter()
 
 	if saveHTML(html_output, os.path.join(SITE_ROOT, page)):
-		print page, "ok",
+		print page, "ok"
 	else:
-		print page, "failed",
+		print page, "failed"
 		sys.exit(1)
-print
 
 print "creating stats page...",
 total_words = 0
