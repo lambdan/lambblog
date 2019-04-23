@@ -23,4 +23,4 @@ This is made for my own blog, but if you wanna use it, you can:
 - In the folder called `pages` goes your `about.html` and `misc.html` pages. If you want more pages, you can add more but you have to modify the generateHeader() def to include them (ideally this will be done automatically eventually). The very first line of these HTML files should be the title of the page. These pages will be wrapped in the css-class `article`. See examples in the repo.
 - Next to the script, create a folder called `includes`, in here goes stuff you want in the root of your site, such as CSS files, favicons
 - `pip install python-dateutil python-slugify markdown2 Pillow bs4 requests feedgen`
-- Then run the script with either `--test` or `--live`
+- Then run the script: `python generate_site.py --root-folder /public_html/blog/ --root-url https://example.com/blog/`

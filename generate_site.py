@@ -25,7 +25,7 @@ CSS_FILE = 'css-night-2018.css'
 AUTHOR_NAME = 'djs'
 AUTHOR_EMAIL = 'david@lambdan.se' # these are in the footer
 AUTHOR_TWITTER = 'nadbmal' # no @
-SITE_STARTED_YEAR = 2012
+SITE_STARTED_YEAR = 2012 # used for (c) in the footer
 
 POSTS_DIR = './posts/'
 IMAGES_FOLDER = './images/'
