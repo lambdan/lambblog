@@ -97,8 +97,7 @@ def generateFooter():
 	output += '©' + str(SITE_STARTED_YEAR) + '-' + str(datetime.now().year) + ' ' + AUTHOR_NAME + '<br>'
 	output += 'Email: <a href="mailto:' + AUTHOR_EMAIL + '">' + AUTHOR_EMAIL + '</a><br>'
 	output += 'Twitter: <a href="https://twitter.com/' + AUTHOR_TWITTER + '">@' + AUTHOR_TWITTER + '</a><br>'
-	output += '<br>'
-	output += '<small>Generated ' + script_run_time.strftime('%Y-%m-%d %H:%M') + ' by <a href="https://github.com/lambdan/lambblog">lambblog</a></small>'
+	#output += '<br><small>Generated ' + script_run_time.strftime('%Y-%m-%d %H:%M') + ' by <a href="https://github.com/lambdan/lambblog">lambblog</a></small>'
 	output += '</footer></body></html>'
 	return output
 
