@@ -36,10 +36,15 @@ VALID_POST_EXTENSIONS = ('txt', 'md', 'markdown')
 
 # handle arguments
 parser = ArgumentParser()
-parser.add_argument("--root-folder", action='store', dest='folder', help='root folder of website', required=True)
+parser.add_argument("--root-folder", action='store', dest='folder', help='root folder of website, default = ./_output/')
 parser.add_argument("--root-url", action='store', dest='url', help='root url of website', required=True)
 parsed = parser.parse_args()
-SITE_ROOT = parsed.folder
+
+if not parsed.folder:
+	SITE_ROOT = './_output/'
+else:
+	SITE_ROOT = parsed.folder
+
 SITE_ROOT_URL = parsed.url
 # TODO: make sure they are valid
 print "Site Root:", SITE_ROOT
