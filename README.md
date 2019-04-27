@@ -28,7 +28,7 @@ This is made for my own blog, but if you wanna use it, you can:
 - Next to the script, create a folder called `includes`, in here goes stuff you want in the root of your site, such as CSS files, favicons
 - `pip install python-dateutil python-slugify markdown2 Pillow bs4 requests feedgen`
 - Then run the script: `python generate_site.py --root-url https://example.com/blog/`
-	- This will output the resulting HTML files in a folder called `./_output/` in the current folder
+	- This will output the resulting files to `./_output/`
 	- You can output to another folder using `--root-folder /folder/folder2/folder3/`
 - The script will confirm that you want to continue with a simple `Continue? y/N` prompt
 - Copy the resulting files to your site's root folder
