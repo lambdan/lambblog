@@ -19,10 +19,16 @@ This is a new rewrite of lambblog, which previously was dynamic using PHP, so th
 This is made for my own blog, but if you wanna use it, you can:
 
 - Place this script in a new folder
-- In the folder called `posts` goes your Markdown formatted text files/blog posts... see examples in the repo, the first 3 lines are important
-- In the folder called `pages` goes your `about.html` and `misc.html` pages. If you want more pages, you can add more but you have to modify the generateHeader() def to include them (ideally this will be done automatically eventually). The very first line of these HTML files should be the title of the page. These pages will be wrapped in the css-class `article`. See examples in the repo.
+- In the folder called `posts` goes your Markdown formatted text files/blog posts
+	- See examples in the repo, the first 3 lines are important
+- In the folder called `pages` goes your `about.html` and `misc.html` pages
+	- If you want more pages, you can add more but you have to modify the generateHeader() def to include them ([ideally this will be done automatically eventually](https://github.com/lambdan/lambblog/issues/13))
+	- The very first line of these HTML files must be the title of the page. These pages will be wrapped in the css-class `article`. 
+	- See examples in the repo.
 - Next to the script, create a folder called `includes`, in here goes stuff you want in the root of your site, such as CSS files, favicons
 - `pip install python-dateutil python-slugify markdown2 Pillow bs4 requests feedgen`
-- Then run the script: `python generate_site.py --root-url https://example.com/blog/` - this will output the resulting HTML files in a folder called `./_output/` in the current folder, and the HTML files can then be copied to your site root. You can output to another folder using `--root-folder /folder/folder2/folder3/`
+- Then run the script: `python generate_site.py --root-url https://example.com/blog/`
+	- This will output the resulting HTML files in a folder called `./_output/` in the current folder
+	- You can output to another folder using `--root-folder /folder/folder2/folder3/`
 - The script will confirm that you want to continue with a simple `Continue? y/N` prompt
-
+- Copy the resulting files to your site's root folder
