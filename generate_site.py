@@ -47,7 +47,7 @@ else:
 
 SITE_ROOT_URL = parsed.url
 # TODO: make sure they are valid
-print "Site Root:", SITE_ROOT
+print "Output folder:", SITE_ROOT
 print "URL Root:", SITE_ROOT_URL
 yn = raw_input("Continue? y/N ").lower()
 if yn != "y":
@@ -465,4 +465,4 @@ for f in files:
 	shutil.copy(src, dest)
 print "ok"
 
-print "all done, go try it out at", SITE_ROOT_URL
+print "all done!"
