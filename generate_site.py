@@ -12,8 +12,7 @@ from email import utils
 from curses import ascii
 from collections import Counter
 from argparse import ArgumentParser
-reload(sys)
-sys.setdefaultencoding('UTF8')
+
 script_run_time = datetime.now()
 
 ########################### Settings ################################
@@ -47,21 +46,26 @@ else:
 
 SITE_ROOT_URL = parsed.url
 # TODO: make sure they are valid
-print "Output folder:", SITE_ROOT
-print "URL Root:", SITE_ROOT_URL
-yn = raw_input("Continue? y/N ").lower()
+print ("Output folder:", SITE_ROOT)
+print ("URL Root:", SITE_ROOT_URL)
+yn = input("Continue? y/N ").lower()
 if yn != "y":
-	print "exiting..."
+	print ("exiting...")
 	sys.exit(1)
 
 CSS_URL = SITE_ROOT_URL + CSS_FILE
 
 def saveHTML(code, filepath):
-	soup = BeautifulSoup(code, 'html.parser')
-	f = open(filepath, 'w')
-	f.write(str(soup))
-	f.close()
-	return os.path.isfile(filepath)
+	try:
+		soup = BeautifulSoup(code, 'html.parser')
+		f = open(filepath, 'w', encoding="utf8")
+		f.write(str(soup))
+		f.close()
+		return os.path.isfile(filepath)
+	except Exception as e:
+		print ("saveHTML error:", filepath)
+		print (e)
+		return False
 
 def clean(text): # https://stackoverflow.com/a/20819845
 	return str(''.join(ascii.isprint(c) and c or '?' for c in text)) 
@@ -118,15 +122,15 @@ if not os.path.isdir(IMAGES_FOLDER):
 posts = []
 processed_posts = 0
 
-print "processing", POSTS_DIR, "..."
+print ("processing", POSTS_DIR, "...")
 for post in os.listdir(POSTS_DIR):
 	if not post.lower().endswith(VALID_POST_EXTENSIONS):
-		print "(ignoring",post,"because it doesnt have any of these extensions:",VALID_POST_EXTENSIONS,")"
+		print ("(ignoring",post,"because it doesnt have any of these extensions:",VALID_POST_EXTENSIONS,")")
 		continue
 	else:
 		processed_posts += 1
 
-	f = open(os.path.join(POSTS_DIR, post), 'r')
+	f = open(os.path.join(POSTS_DIR, post), 'r', encoding="utf8")
 	date = parse(f.readline(), fuzzy=True) # 1st line, date
 	title = f.readline() # 2nd line, title
 	title = title[2:]
@@ -169,10 +173,10 @@ for post in os.listdir(POSTS_DIR):
 			elif 'png' in ext:
 				ext = ".png"
 			elif ext == '':
-				print "warning:", imgurl, "in blog post", title.strip(), ": has no extension. assuming .jpg"
+				print ("warning:", imgurl, "in blog post", title.strip(), ": has no extension. assuming .jpg")
 				ext = ".jpg"
 
-			md5 = hashlib.md5(imgurl).hexdigest().lower()
+			md5 = hashlib.md5(imgurl.encode("utf8")).hexdigest().lower()
 			mirror_img_filename = md5 + ext
 			mirror_img_filepath = os.path.join(IMAGES_FOLDER, mirror_img_filename)
 			if os.path.isfile(mirror_img_filepath):
@@ -180,22 +184,22 @@ for post in os.listdir(POSTS_DIR):
 				destination = os.path.join(post_root, mirror_img_filename)
 				shutil.copy(mirror_img_filepath, destination)
 			else:
-				print "image: not mirrored:", imgurl, mirror_img_filename
-				print "image: attempting download", imgurl, " --> ", mirror_img_filename
+				print ("image: not mirrored:", imgurl, mirror_img_filename)
+				print ("image: attempting download", imgurl, " --> ", mirror_img_filename)
 				f = open(mirror_img_filepath, 'wb')
 				f.write(requests.get(imgurl).content)
 				f.close()
-				f = open(mirror_img_filepath, 'r')
-				if "puush could not be found" in f.read().lower():
-					print "error: image download failed: puush could not be found"
-					f.close()
-					os.remove(mirror_img_filepath)
+				#f = open(mirror_img_filepath, 'r') 
+				#if "puush could not be found" in f.read().lower(): # this is broken with python3
+				#	print ("error: image download failed: puush could not be found")
+				#	f.close()
+				#	os.remove(mirror_img_filepath)
 
 				if not os.path.isfile(mirror_img_filepath):
-					print "error: downloading image seems to have failed"
-					print "debug: blog post is", title
+					print ("error: downloading image seems to have failed")
+					print ("debug: blog post is", title)
 				else:
-					print "image: success downloading image", mirror_img_filepath, os.path.getsize(mirror_img_filepath)
+					print ("image: success downloading image", mirror_img_filepath, os.path.getsize(mirror_img_filepath))
 					destination = os.path.join(post_root, mirror_img_filename)
 					shutil.copy(mirror_img_filepath, destination)
 
@@ -206,23 +210,23 @@ for post in os.listdir(POSTS_DIR):
 				destination = os.path.join(post_root, mirror_img_filename_thumb)
 				shutil.copy(mirror_img_filepath_thumb, destination)
 			else:
-				print "image: no thumbnail:", imgurl, mirror_img_filename_thumb
+				print ("image: no thumbnail:", imgurl, mirror_img_filename_thumb)
 				if os.path.isfile(mirror_img_filepath):
-					print "image: generating thumbnail"
+					print ("image: generating thumbnail")
 					im = Image.open(mirror_img_filepath)
 					if not im.mode == 'RGB':
 						im = im.convert('RGB')
 					im.save(mirror_img_filepath_thumb, quality=75)
 					if not os.path.isfile(mirror_img_filepath_thumb):
-						print "error: creating thumbnail seems to have failed"
-						print "debug: blog post is", title
+						print ("error: creating thumbnail seems to have failed")
+						print ("debug: blog post is", title)
 					else:
-						print "success: created thumbnail", mirror_img_filename_thumb, os.path.getsize(mirror_img_filepath_thumb)
+						print ("success: created thumbnail", mirror_img_filename_thumb, os.path.getsize(mirror_img_filepath_thumb))
 						destination = os.path.join(post_root, mirror_img_filename_thumb)
 						shutil.copy(mirror_img_filepath_thumb, destination)
 				else:
-					print "image: original file hasnt been downloaded so i cant create a thumbnail"
-					print "debug: blog post is", title
+					print ("image: original file hasnt been downloaded so i cant create a thumbnail")
+					print ("debug: blog post is", title)
 
 
 			image['src'] = mirror_img_filename_thumb # inline image is the thumb
@@ -236,14 +240,14 @@ for post in os.listdir(POSTS_DIR):
 	# previous/next navigation should probably be here?
 	html_output += generateFooter()
 
-	stub = markdown2.markdown(body_text, extras=["tables"]).split("\n")[0].encode('utf-8')
+	stub = markdown2.markdown(body_text, extras=["tables"]).split("\n")[0]
 
 	if saveHTML(html_output, os.path.join(post_root, 'index.html')):
-		#print "success: wrote", title.strip(), "to", html_file
+		#print ("success: wrote", title.strip(), "to", post_root)
 		posts.append({'title': title.strip(), 'thirdline': third_line, 'slug': slugify(title.strip()), 'full_url': SITE_ROOT_URL + post_url, 'textfile': post, 'words': len(body_text.split()), 'chars': len(body_text), 'date': date, 'path': post_url, 'stub': stub, 'body': str(soup)})
 	else:
-		print "critical: writing post html seems to have failed"
-		print "debug: blog post is", title.strip()
+		print ("critical: writing post html seems to have failed")
+		print ("debug: blog post is", title.strip(), "(", post.strip(), ")")
 		sys.exit(1)
 
 	# write stats page
@@ -253,20 +257,20 @@ for post in os.listdir(POSTS_DIR):
 	count = Counter(body_text.split())
 	html_output += '<ol>'
 	for word, value in count.most_common(10): # i tried listing all words but it stops working properly for some reason, around 2080 words
-		html_output += '<li><b>' + word.encode('ascii', 'xmlcharrefreplace') + '</b> - ' + str(value) + ' occurences</li>'
+		html_output += '<li><b>' + str(word) + '</b> - ' + str(value) + ' occurences</li>'
 	html_output += '</ol>'
 	html_output += '</div>'
 	html_output += generateFooter()
 	if not saveHTML(html_output, os.path.join(post_root, 'stats.html')):
-		print "failed saving stats page for", title
+		print ("failed saving stats page for", title)
 		sys.exit(1)
 
 
 if len(posts) == processed_posts:
-	print "success: wrote", len(posts), "html files from", processed_posts, "processed files"
+	print ("success: wrote", len(posts), "html files from", processed_posts, "processed files")
 else:
-	print "critical: not every post in", POSTS_DIR, "seems to have gotten a html file"
-	print "debug:", len(posts), "/", processed_posts
+	print ("critical: not every post in", POSTS_DIR, "seems to have gotten a html file")
+	print ("debug:", len(posts), "/", processed_posts)
 	sys.exit(1)
 
 #print posts
@@ -274,7 +278,7 @@ else:
 newlist = sorted(posts, key=lambda k: k['date'], reverse=True) # sort by dates, reverse to get newest on top
 posts = newlist # extremely ugly code but whatever
 
-print "generating rss feed...",
+print ("generating rss feed...",)
 fg = FeedGenerator()
 fg.title(SITE_TITLE + ' RSS')
 fg.author({'name': AUTHOR_NAME, 'email':AUTHOR_EMAIL})
@@ -293,9 +297,9 @@ for p in posts:
 	fe.title(clean(p['title']))
 	#fe.description(clean(p['body'])) # maybe include this in the future.... causes issues with image urls atm
 fg.rss_file(os.path.join(SITE_ROOT,'rss.xml'))
-print "ok"
+print ("ok")
 
-print "writing front page...",
+print ("writing front page...",)
 html_output = generateHeader("Blog", "normal")
 for p in posts[:10]:
 	if p['thirdline'].lower().startswith("http"): # linked post?
@@ -308,11 +312,11 @@ for p in posts[:10]:
 html_output += '</div>'
 html_output += generateFooter()
 if not saveHTML(html_output, os.path.join(SITE_ROOT, 'index.html')):
-	print "error"
+	print ("error")
 else:
-	print "ok"
+	print ("ok")
 
-print "writing archive...",
+print ("writing archive...",)
 html_output = generateHeader("Blog Archive", "normal")
 #html_output += '<p>Hint: use your web browsers\' search function to find what you\'re looking for.</p>'
 yr = 0
@@ -328,9 +332,9 @@ for p in posts:
 html_output += "</div>"
 html_output += generateFooter()
 saveHTML(html_output, os.path.join(SITE_ROOT, 'archive.html'))
-print "ok"
+print ("ok")
 
-print "writing year indexes...",
+print ("writing year indexes...",)
 years = []
 mo = 0
 for p in posts:
@@ -352,9 +356,9 @@ for yr in years:
 	html_output += '</div>'
 	html_output += generateFooter()
 	saveHTML(html_output, os.path.join(SITE_ROOT, str(yr), 'index.html'))
-print "ok"
+print ("ok")
 
-print "writing month indexes...",
+print ("writing month indexes...",)
 months = []
 for p in posts:
 	y = p['date'].year
@@ -377,9 +381,9 @@ for month in months:
 	html_output += '</ul></div>'
 	html_output += generateFooter()
 	saveHTML(html_output, os.path.join(SITE_ROOT, month.split('-')[0], month.split('-')[1], 'index.html'))
-print "ok"
+print ("ok")
 
-print "writing day indexes...", # for those url modifying geeks
+print ("writing day indexes...",) # for those url modifying geeks
 days = []
 for p in posts:
 	y = p['date'].year
@@ -403,13 +407,13 @@ for day in days:
 	html_output += '</ul></div>'
 	html_output += generateFooter()
 	saveHTML(html_output, os.path.join(SITE_ROOT, day.split('-')[0], day.split('-')[1], day.split('-')[2], 'index.html'))
-print "ok"
+print ("ok")
 
-print "creating other pages..."
+print ("creating other pages...")
 pages = os.listdir(OTHER_PAGES_FOLDER)
 for page in pages:
 	if not page.lower().endswith('html'):
-		print "(ignoring",page,"because its not a html file)"
+		print ("(ignoring",page,"because its not a html file)")
 		continue
 	path = os.path.join(OTHER_PAGES_FOLDER, page)
 	f = open(path,'r')
@@ -421,12 +425,12 @@ for page in pages:
 	html_output += generateFooter()
 
 	if saveHTML(html_output, os.path.join(SITE_ROOT, page)):
-		print page, "ok"
+		print (page, "ok")
 	else:
-		print page, "failed"
+		print (page, "failed")
 		sys.exit(1)
 
-print "creating stats page...",
+print ("creating stats page...",)
 total_words = 0
 total_chars = 0
 for p in posts:
@@ -434,7 +438,14 @@ for p in posts:
 	total_chars += p['chars']
 total_posts = len(posts)
 
-html_output = generateHeader('Stats', 'normal')
+# hide some useful debug info in the html as a comment
+html_output = '<!---'
+html_output += 'lambblog super hidden secret debug info: '
+html_output += 'Generated ' + script_run_time.strftime('%Y-%m-%d %H:%M') + ", python sys.version: "
+html_output += sys.version
+html_output += '--->'
+# and then make the actual stats page
+html_output += generateHeader('Stats', 'normal')
 html_output += '<h1>Stats</h1>'
 html_output += '<ul>'
 html_output += '<li>' + str(total_posts) + ' posts</li>'
@@ -450,19 +461,20 @@ for p in posts_sorted_by_words:
 html_output += '</ol>'
 
 html_output += '</div>'
+
 html_output += generateFooter()
 if saveHTML(html_output, os.path.join(SITE_ROOT, 'stats.html')):
-	print "ok"
+	print ("ok")
 else:
-	print "failed!"
+	print ("failed!")
 	sys.exit(1)
 
-print "copying everything from include/ to site root...",
+print ("copying everything from include/ to site root...",)
 files = os.listdir(INCLUDE_FOLDER)
 for f in files:
 	src = os.path.join(INCLUDE_FOLDER, f)
 	dest = os.path.join(SITE_ROOT, f)
 	shutil.copy(src, dest)
-print "ok"
+print ("ok")
 
-print "all done!"
+print ("all done!")

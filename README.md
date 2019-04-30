@@ -32,3 +32,5 @@ This is made for my own blog, but if you wanna use it, you can:
 	- You can output to another folder using `--root-folder /folder/folder2/folder3/`
 - The script will confirm that you want to continue with a simple `Continue? y/N` prompt
 - Copy the resulting files to your site's root folder
+
+Python 3.
