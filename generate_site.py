@@ -131,7 +131,13 @@ for post in os.listdir(POSTS_DIR):
 		processed_posts += 1
 
 	f = open(os.path.join(POSTS_DIR, post), 'r', encoding="utf8")
-	date = parse(f.readline(), fuzzy=True) # 1st line, date
+	try:
+		date = parse(f.readline(), fuzzy=True) # 1st line, date
+	except Exception as e:
+		print ("error parsing date, you probably forgot to put a date at the very top of the file:", post)
+		print (e)
+		print ("exiting...")
+		sys.exit(1)
 	title = f.readline() # 2nd line, title
 	title = title[2:]
 	#print "processing", title
