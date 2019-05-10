@@ -142,7 +142,7 @@ for post in os.listdir(POSTS_DIR):
 		sys.exit(1)
 	title = f.readline() # 2nd line, title
 	title = title[2:]
-	#print "processing", title
+	print ("> " + title.strip() + " [" + post + "]")
 	third_line = f.readline() # 3rd line, possibly a link
 	body_text = f.read()
 	f.close()
@@ -179,14 +179,14 @@ for post in os.listdir(POSTS_DIR):
 			# remove twitters weird :orig :large extensions
 			if 'jpeg:' in ext or 'jpg:' in ext:
 				ext = ".jpg"
-				print ('image: correcting extension of', imgurl, 'to', ext)
+				#print ('correcting extension of', imgurl, 'to', ext)
 			elif 'png:' in ext:
 				ext = ".png"
-				print ('image: correcting extension of', imgurl, 'to', ext)
+				#print ('correcting extension of', imgurl, 'to', ext)
 			
 			# cursed old puush images
 			if ext == '':
-				print ("warning:", imgurl, "in blog post", title.strip(), ": has no extension. assuming .jpg")
+				#print (imgurl + " has no extension. assuming jpg")
 				ext = ".jpg"
 
 			# add a dot in case the extension doesnt come with one
@@ -201,8 +201,8 @@ for post in os.listdir(POSTS_DIR):
 				destination = os.path.join(post_root, mirror_img_filename)
 				shutil.copy(mirror_img_filepath, destination)
 			else:
-				print ("image: not mirrored:", imgurl, mirror_img_filename)
-				print ("image: attempting download", imgurl, " --> ", mirror_img_filename)
+				print ("\tnot mirrored:", imgurl)
+				print ("\tattempting download", imgurl, " --> ", mirror_img_filename)
 				f = open(mirror_img_filepath, 'wb')
 				f.write(requests.get(imgurl).content)
 				f.close()
@@ -213,10 +213,9 @@ for post in os.listdir(POSTS_DIR):
 				#	os.remove(mirror_img_filepath)
 
 				if not os.path.isfile(mirror_img_filepath):
-					print ("error: downloading image seems to have failed")
-					print ("debug: blog post is", title)
+					print ("\terror: downloading image seems to have failed")
 				else:
-					print ("image: success downloading image", mirror_img_filepath, os.path.getsize(mirror_img_filepath))
+					print ("\tsuccess downloading image", mirror_img_filepath)
 					destination = os.path.join(post_root, mirror_img_filename)
 					shutil.copy(mirror_img_filepath, destination)
 
@@ -225,44 +224,43 @@ for post in os.listdir(POSTS_DIR):
 			mirror_img_filepath_thumb = os.path.join(IMAGES_FOLDER, mirror_img_filename_thumb)
 
 			if ext == ".gif":
-				print ('skipping thumbnail for gif:', imgurl)
+				#print ('skipping thumbnail for gif:', imgurl)
 				if os.path.isfile(mirror_img_filepath_thumb):
-					print ('deleting old thumbnail because its not needed anymore:', mirror_img_filepath_thumb)
+					print ('\tdeleting old thumbnail because its not needed anymore:', mirror_img_filepath_thumb)
 					os.remove(mirror_img_filepath_thumb)
 				image['src'] = mirror_img_filename
 
 			elif mirror_img_size < IMAGE_SIZE_THRESHOLD:
-				print ('skipping thumbnail because original is small enough:', imgurl, mirror_img_size)
+				#print ('skipping thumbnail because original is small enough:', imgurl, mirror_img_size)
 				if os.path.isfile(mirror_img_filepath_thumb):
-					print ('deleting old thumbnail because its not needed anymore:', mirror_img_filepath_thumb)
+					print ('\tdeleting old thumbnail because its not needed anymore:', mirror_img_filepath_thumb)
 					os.remove(mirror_img_filepath_thumb)
 				image['src'] = mirror_img_filename
 
 			elif os.path.isfile(mirror_img_filepath_thumb):
-				print ("thumb already exists: ", imgurl)
+				#print ("thumb already exists: ", imgurl)
 				destination = os.path.join(post_root, mirror_img_filename_thumb)
 				shutil.copy(mirror_img_filepath_thumb, destination)
 				image['src'] = mirror_img_filename_thumb
 
 			else:
-				print ("image: no thumbnail:", imgurl, mirror_img_filename_thumb)
+				print ("\tno thumbnail:", imgurl)
 				if os.path.isfile(mirror_img_filepath):
-					print ("image: generating thumbnail")
+					print ("\tgenerating thumbnail")
 					im = Image.open(mirror_img_filepath)
 					if not im.mode == 'RGB':
 						im = im.convert('RGB')
 					im.save(mirror_img_filepath_thumb, quality=75)
 					if not os.path.isfile(mirror_img_filepath_thumb):
-						print ("error: creating thumbnail seems to have failed")
-						print ("debug: blog post is", title)
+						print ("\terror: creating thumbnail seems to have failed")
 					else:
-						print ("success: created thumbnail", mirror_img_filename_thumb, os.path.getsize(mirror_img_filepath_thumb))
+						print ("\tcreated thumbnail", mirror_img_filename_thumb, os.path.getsize(mirror_img_filepath_thumb))
+						# TODO: make sure thumb actually is smaller
 						destination = os.path.join(post_root, mirror_img_filename_thumb)
 						shutil.copy(mirror_img_filepath_thumb, destination)
 						image['src'] = mirror_img_filename_thumb
 				else:
-					print ("image: original file hasnt been downloaded so i cant create a thumbnail")
-					print ("debug: blog post is", title)
+					print ("\toriginal file hasnt been downloaded so i cant create a thumbnail")
 
 			link_to_fullres = soup.new_tag('a', href=mirror_img_filename) # make the thumb clickable to get fullres
 			image.wrap(link_to_fullres)
@@ -280,8 +278,7 @@ for post in os.listdir(POSTS_DIR):
 		#print ("success: wrote", title.strip(), "to", post_root)
 		posts.append({'title': title.strip(), 'thirdline': third_line, 'slug': slugify(title.strip()), 'full_url': SITE_ROOT_URL + post_url, 'textfile': post, 'words': len(body_text.split()), 'chars': len(body_text), 'date': date, 'path': post_url, 'stub': stub, 'body': str(soup)})
 	else:
-		print ("critical: writing post html seems to have failed")
-		print ("debug: blog post is", title.strip(), "(", post.strip(), ")")
+		print ("\tcritical: writing post html seems to have failed")
 		sys.exit(1)
 
 	# write stats page
@@ -296,7 +293,7 @@ for post in os.listdir(POSTS_DIR):
 	html_output += '</div>'
 	html_output += generateFooter()
 	if not saveHTML(html_output, os.path.join(post_root, 'stats.html')):
-		print ("failed saving stats page for", title)
+		print ("\tfailed saving stats page")
 		sys.exit(1)
 
 
@@ -312,7 +309,7 @@ else:
 newlist = sorted(posts, key=lambda k: k['date'], reverse=True) # sort by dates, reverse to get newest on top
 posts = newlist # extremely ugly code but whatever
 
-print ("generating rss feed...",)
+print ("generating rss feed")
 fg = FeedGenerator()
 fg.title(SITE_TITLE + ' RSS')
 fg.author({'name': AUTHOR_NAME, 'email':AUTHOR_EMAIL})
@@ -331,9 +328,8 @@ for p in posts:
 	fe.title(clean(p['title']))
 	#fe.description(clean(p['body'])) # maybe include this in the future.... causes issues with image urls atm
 fg.rss_file(os.path.join(SITE_ROOT,'rss.xml'))
-print ("ok")
 
-print ("writing front page...",)
+print ("writing front page")
 html_output = generateHeader("Blog", "normal")
 for p in posts[:10]:
 	if p['thirdline'].lower().startswith("http"): # linked post?
@@ -347,10 +343,8 @@ html_output += '</div>'
 html_output += generateFooter()
 if not saveHTML(html_output, os.path.join(SITE_ROOT, 'index.html')):
 	print ("error")
-else:
-	print ("ok")
 
-print ("writing archive...",)
+print ("writing archive")
 html_output = generateHeader("Blog Archive", "normal")
 #html_output += '<p>Hint: use your web browsers\' search function to find what you\'re looking for.</p>'
 yr = 0
@@ -366,9 +360,8 @@ for p in posts:
 html_output += "</div>"
 html_output += generateFooter()
 saveHTML(html_output, os.path.join(SITE_ROOT, 'archive.html'))
-print ("ok")
 
-print ("writing year indexes...",)
+print ("writing year indexes")
 years = []
 mo = 0
 for p in posts:
@@ -390,9 +383,8 @@ for yr in years:
 	html_output += '</div>'
 	html_output += generateFooter()
 	saveHTML(html_output, os.path.join(SITE_ROOT, str(yr), 'index.html'))
-print ("ok")
 
-print ("writing month indexes...",)
+print ("writing month indexes")
 months = []
 for p in posts:
 	y = p['date'].year
@@ -415,9 +407,8 @@ for month in months:
 	html_output += '</ul></div>'
 	html_output += generateFooter()
 	saveHTML(html_output, os.path.join(SITE_ROOT, month.split('-')[0], month.split('-')[1], 'index.html'))
-print ("ok")
 
-print ("writing day indexes...",) # for those url modifying geeks
+print ("writing day indexes") # for those url modifying geeks
 days = []
 for p in posts:
 	y = p['date'].year
@@ -441,9 +432,8 @@ for day in days:
 	html_output += '</ul></div>'
 	html_output += generateFooter()
 	saveHTML(html_output, os.path.join(SITE_ROOT, day.split('-')[0], day.split('-')[1], day.split('-')[2], 'index.html'))
-print ("ok")
 
-print ("creating other pages...")
+print ("creating other pages:")
 pages = os.listdir(OTHER_PAGES_FOLDER)
 for page in pages:
 	if not page.lower().endswith('html'):
@@ -459,12 +449,12 @@ for page in pages:
 	html_output += generateFooter()
 
 	if saveHTML(html_output, os.path.join(SITE_ROOT, page)):
-		print (page, "ok")
+		print ("\t", page)
 	else:
-		print (page, "failed")
+		print ("\t", page, "= failed")
 		sys.exit(1)
 
-print ("creating stats page...",)
+print ("creating stats page")
 total_words = 0
 total_chars = 0
 for p in posts:
@@ -497,18 +487,16 @@ html_output += '</ol>'
 html_output += '</div>'
 
 html_output += generateFooter()
-if saveHTML(html_output, os.path.join(SITE_ROOT, 'stats.html')):
-	print ("ok")
-else:
+if not saveHTML(html_output, os.path.join(SITE_ROOT, 'stats.html')):
 	print ("failed!")
 	sys.exit(1)
 
-print ("copying everything from include/ to site root...",)
+print ("copying from " + INCLUDE_FOLDER + " to site root:",)
 files = os.listdir(INCLUDE_FOLDER)
 for f in files:
 	src = os.path.join(INCLUDE_FOLDER, f)
 	dest = os.path.join(SITE_ROOT, f)
+	print("\t", src, "-->", dest)
 	shutil.copy(src, dest)
-print ("ok")
 
 print ("all done!")
