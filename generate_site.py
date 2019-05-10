@@ -26,6 +26,8 @@ AUTHOR_EMAIL = 'david@lambdan.se' # these are in the footer
 AUTHOR_TWITTER = 'nadbmal' # no @
 SITE_STARTED_YEAR = 2012 # used for (c) in the footer
 
+IMAGE_SIZE_THRESHOLD = 100000 # images smaller than this (bytes) won't get a thumbnail (default: 100 KB)
+
 POSTS_DIR = './posts/'
 IMAGES_FOLDER = './images/'
 INCLUDE_FOLDER = './includes/'
@@ -174,13 +176,22 @@ for post in os.listdir(POSTS_DIR):
 			imgurl = image['src']
 			ext = os.path.splitext(imgurl)[1].lower()
 
-			if 'jpeg' in ext or 'jpg' in ext: # to remove twitter weird .jpeg:large extensions etc
+			# remove twitters weird :orig :large extensions
+			if 'jpeg:' in ext or 'jpg:' in ext:
 				ext = ".jpg"
-			elif 'png' in ext:
+				print ('image: correcting extension of', imgurl, 'to', ext)
+			elif 'png:' in ext:
 				ext = ".png"
-			elif ext == '':
+				print ('image: correcting extension of', imgurl, 'to', ext)
+			
+			# cursed old puush images
+			if ext == '':
 				print ("warning:", imgurl, "in blog post", title.strip(), ": has no extension. assuming .jpg")
 				ext = ".jpg"
+
+			# add a dot in case the extension doesnt come with one
+			if '.' not in ext:
+				ext = "." + ext
 
 			md5 = hashlib.md5(imgurl.encode("utf8")).hexdigest().lower()
 			mirror_img_filename = md5 + ext
@@ -209,12 +220,30 @@ for post in os.listdir(POSTS_DIR):
 					destination = os.path.join(post_root, mirror_img_filename)
 					shutil.copy(mirror_img_filepath, destination)
 
+			mirror_img_size = os.path.getsize(mirror_img_filepath)
 			mirror_img_filename_thumb = md5 + "_thumb.jpg"
 			mirror_img_filepath_thumb = os.path.join(IMAGES_FOLDER, mirror_img_filename_thumb)
-			if os.path.isfile(mirror_img_filepath_thumb):
-				#print "thumb for", mirror_img_filename, "exists :)"
+
+			if ext == ".gif":
+				print ('skipping thumbnail for gif:', imgurl)
+				if os.path.isfile(mirror_img_filepath_thumb):
+					print ('deleting old thumbnail because its not needed anymore:', mirror_img_filepath_thumb)
+					os.remove(mirror_img_filepath_thumb)
+				image['src'] = mirror_img_filename
+
+			elif mirror_img_size < IMAGE_SIZE_THRESHOLD:
+				print ('skipping thumbnail because original is small enough:', imgurl, mirror_img_size)
+				if os.path.isfile(mirror_img_filepath_thumb):
+					print ('deleting old thumbnail because its not needed anymore:', mirror_img_filepath_thumb)
+					os.remove(mirror_img_filepath_thumb)
+				image['src'] = mirror_img_filename
+
+			elif os.path.isfile(mirror_img_filepath_thumb):
+				print ("thumb already exists: ", imgurl)
 				destination = os.path.join(post_root, mirror_img_filename_thumb)
 				shutil.copy(mirror_img_filepath_thumb, destination)
+				image['src'] = mirror_img_filename_thumb
+
 			else:
 				print ("image: no thumbnail:", imgurl, mirror_img_filename_thumb)
 				if os.path.isfile(mirror_img_filepath):
@@ -230,12 +259,11 @@ for post in os.listdir(POSTS_DIR):
 						print ("success: created thumbnail", mirror_img_filename_thumb, os.path.getsize(mirror_img_filepath_thumb))
 						destination = os.path.join(post_root, mirror_img_filename_thumb)
 						shutil.copy(mirror_img_filepath_thumb, destination)
+						image['src'] = mirror_img_filename_thumb
 				else:
 					print ("image: original file hasnt been downloaded so i cant create a thumbnail")
 					print ("debug: blog post is", title)
 
-
-			image['src'] = mirror_img_filename_thumb # inline image is the thumb
 			link_to_fullres = soup.new_tag('a', href=mirror_img_filename) # make the thumb clickable to get fullres
 			image.wrap(link_to_fullres)
 
