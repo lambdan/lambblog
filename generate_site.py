@@ -94,7 +94,7 @@ def generateHeader(page_title, css_class):
 	output += '<br>'
 	output += '<a href="' + SITE_ROOT_URL + 'archive">Archive</a> • '
 	output += '<a href="' + SITE_ROOT_URL + 'stats">Stats</a> • '
-	output += '<a href="' + SITE_ROOT_URL + 'misc">Misc</a> •'
+	output += '<a href="' + SITE_ROOT_URL + 'misc">Misc</a> • '
 	output += '<a href="' + SITE_ROOT_URL + 'about">About</a> '
 	output += '</p>'
 	output += '</div>'
