@@ -26,7 +26,7 @@ AUTHOR_EMAIL = 'david@lambdan.se' # these are in the footer
 AUTHOR_TWITTER = 'nadbmal' # no @
 SITE_STARTED_YEAR = 2012 # used for (c) in the footer
 
-IMAGE_SIZE_THRESHOLD = 100000 # images smaller than this (bytes) won't get a thumbnail (default: 100 KB)
+IMAGE_SIZE_THRESHOLD = 300000 # images smaller than this (bytes) won't get a thumbnail (default: 300 KB)
 
 POSTS_DIR = './posts/'
 IMAGES_FOLDER = './images/'
