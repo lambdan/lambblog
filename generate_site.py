@@ -33,6 +33,8 @@ IMAGES_FOLDER = './images/'
 INCLUDE_FOLDER = './includes/'
 OTHER_PAGES_FOLDER = './pages/'
 VALID_POST_EXTENSIONS = ('txt', 'md', 'markdown')
+
+STATS_WHITELISTED_CHARACTERS = set('abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ åäö ÅÄÖ')
 #####################################################################
 
 # handle arguments
@@ -285,7 +287,9 @@ for post in os.listdir(POSTS_DIR):
 	html_output = generateHeader(title + ' - Stats', "normal")
 	html_output += '<h1>Stats: <u>' + title + '</u></h1>'
 	html_output += '<p>' + str(len(body_text.split())) + ' words, ' + str(len(body_text)) + ' characters.</p>'
-	count = Counter(body_text.split())
+	# filter out so we only get whitelisted characters (STATS_WHITELISTED_CHARACTERS) to avoid counting symbols and dashes etc.
+	stats_body_text = ''.join(filter(STATS_WHITELISTED_CHARACTERS.__contains__,body_text)) # https://stackoverflow.com/a/21564666
+	count = Counter(stats_body_text.lower().split()) # also make it lowercase so for example "The" and "the" aren't separated
 	html_output += '<ol>'
 	for word, value in count.most_common(10): # i tried listing all words but it stops working properly for some reason, around 2080 words
 		html_output += '<li><b>' + str(word) + '</b> - ' + str(value) + ' occurences</li>'
