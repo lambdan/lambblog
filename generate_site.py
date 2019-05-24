@@ -144,7 +144,7 @@ for post in os.listdir(POSTS_DIR):
 		sys.exit(1)
 	title = f.readline() # 2nd line, title
 	title = title[2:]
-	print ("> " + title.strip() + " [" + post + "]")
+	#print ("> " + title.strip() + " [" + post + "]")
 	third_line = f.readline() # 3rd line, possibly a link
 	body_text = f.read()
 	f.close()
@@ -252,7 +252,8 @@ for post in os.listdir(POSTS_DIR):
 					im = Image.open(mirror_img_filepath)
 					if not im.mode == 'RGB':
 						im = im.convert('RGB')
-					im.save(mirror_img_filepath_thumb, quality=75)
+					im.thumbnail((1000,1000))
+					im.save(mirror_img_filepath_thumb, "JPEG")
 					if not os.path.isfile(mirror_img_filepath_thumb):
 						print ("\terror: creating thumbnail seems to have failed")
 					else:
