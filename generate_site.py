@@ -12,6 +12,7 @@ from email import utils
 from curses import ascii
 from collections import Counter
 from argparse import ArgumentParser
+from progress.bar import Bar
 
 script_run_time = datetime.now()
 
@@ -127,13 +128,11 @@ if not os.path.isdir(IMAGES_FOLDER):
 posts = []
 processed_posts = 0
 
-print ("processing", POSTS_DIR, "...")
+bar = Bar('Processing ' + POSTS_DIR, max=len(os.listdir(POSTS_DIR)))
 for post in os.listdir(POSTS_DIR):
 	if not post.lower().endswith(VALID_POST_EXTENSIONS):
 		print ("(ignoring",post,"because it doesnt have any of these extensions:",VALID_POST_EXTENSIONS,")")
 		continue
-	else:
-		processed_posts += 1
 
 	f = open(os.path.join(POSTS_DIR, post), 'r', encoding="utf8")
 	try:
@@ -292,7 +291,10 @@ for post in os.listdir(POSTS_DIR):
 	if not saveHTML(html_output, os.path.join(post_root, 'stats.html')):
 		print ("\tfailed saving stats page")
 		sys.exit(1)
+	processed_posts += 1
+	bar.next()
 
+bar.finish()
 
 if len(posts) == processed_posts:
 	print ("success: wrote", len(posts), "html files from", processed_posts, "processed files")
