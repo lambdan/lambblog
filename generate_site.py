@@ -19,14 +19,15 @@ script_run_time = datetime.now()
 SITE_TITLE = 'lambdan.se'
 SITE_TITLE_SUFFIX = ' - ' + SITE_TITLE # at the end of every <title>
 
-CSS_FILE = 'css-night-2018.css' 
+CSS_FILE = 'css-night-2018.css' # should be in the root of ./includes/
 
 AUTHOR_NAME = 'djs'
 AUTHOR_EMAIL = 'david@lambdan.se' # these are in the footer
 AUTHOR_TWITTER = 'nadbmal' # no @
 SITE_STARTED_YEAR = 2012 # used for (c) in the footer
 
-IMAGE_SIZE_THRESHOLD = 300000 # images smaller than this (bytes) won't get a thumbnail (default: 300 KB)
+IMAGE_SIZE_THRESHOLD = 300000 # (bytes) images smaller than this won't get a thumbnail
+THUMBNAIL_MAX_RESOLUTION = 1000,1000 # max resolution for thumbnails in each axis (aspect ratio is preserved)
 
 POSTS_DIR = './posts/'
 IMAGES_FOLDER = './images/'
@@ -222,7 +223,7 @@ for post in os.listdir(POSTS_DIR):
 					shutil.copy(mirror_img_filepath, destination)
 
 			mirror_img_size = os.path.getsize(mirror_img_filepath)
-			mirror_img_filename_thumb = md5 + "_thumb.jpg"
+			mirror_img_filename_thumb = md5 + ".thumb.jpg"
 			mirror_img_filepath_thumb = os.path.join(IMAGES_FOLDER, mirror_img_filename_thumb)
 
 			if ext == ".gif":
@@ -239,28 +240,19 @@ for post in os.listdir(POSTS_DIR):
 					os.remove(mirror_img_filepath_thumb)
 				image['src'] = mirror_img_filename
 
-			elif os.path.isfile(mirror_img_filepath_thumb):
-				#print ("thumb already exists: ", imgurl)
-				destination = os.path.join(post_root, mirror_img_filename_thumb)
-				shutil.copy(mirror_img_filepath_thumb, destination)
-				image['src'] = mirror_img_filename_thumb
-
 			else:
-				print ("\tno thumbnail:", imgurl)
 				if os.path.isfile(mirror_img_filepath):
-					print ("\tgenerating thumbnail")
+					thumb_destination = os.path.join(post_root, mirror_img_filename_thumb)
+					#print ("\tgenerating thumbnail to " + thumb_destination)
 					im = Image.open(mirror_img_filepath)
 					if not im.mode == 'RGB':
 						im = im.convert('RGB')
-					im.thumbnail((1000,1000))
-					im.save(mirror_img_filepath_thumb, "JPEG")
-					if not os.path.isfile(mirror_img_filepath_thumb):
+					im.thumbnail((THUMBNAIL_MAX_RESOLUTION))
+					im.save(thumb_destination, "JPEG")
+					if not os.path.isfile(thumb_destination):
 						print ("\terror: creating thumbnail seems to have failed")
 					else:
-						print ("\tcreated thumbnail", mirror_img_filename_thumb, os.path.getsize(mirror_img_filepath_thumb))
-						# TODO: make sure thumb actually is smaller
-						destination = os.path.join(post_root, mirror_img_filename_thumb)
-						shutil.copy(mirror_img_filepath_thumb, destination)
+						#print ("\tok. original size:", mirror_img_size, ", thumb:", os.path.getsize(thumb_destination))
 						image['src'] = mirror_img_filename_thumb
 				else:
 					print ("\toriginal file hasnt been downloaded so i cant create a thumbnail")
