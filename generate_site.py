@@ -12,7 +12,7 @@ from email import utils
 from curses import ascii
 from collections import Counter
 from argparse import ArgumentParser
-from progress.bar import Bar
+from tqdm import tqdm
 
 script_run_time = datetime.now()
 
@@ -127,11 +127,12 @@ if not os.path.isdir(IMAGES_FOLDER):
 
 posts = []
 processed_posts = 0
+pbar = tqdm(total=len(os.listdir(POSTS_DIR))) # start progress bar
 
-bar = Bar('Processing ' + POSTS_DIR, max=len(os.listdir(POSTS_DIR)))
 for post in os.listdir(POSTS_DIR):
 	if not post.lower().endswith(VALID_POST_EXTENSIONS):
 		print ("(ignoring",post,"because it doesnt have any of these extensions:",VALID_POST_EXTENSIONS,")")
+		pbar.update(1)
 		continue
 
 	f = open(os.path.join(POSTS_DIR, post), 'r', encoding="utf8")
@@ -292,9 +293,9 @@ for post in os.listdir(POSTS_DIR):
 		print ("\tfailed saving stats page")
 		sys.exit(1)
 	processed_posts += 1
-	bar.next()
+	pbar.update(1)
 
-bar.finish()
+pbar.close()
 
 if len(posts) == processed_posts:
 	print ("success: wrote", len(posts), "html files from", processed_posts, "processed files")
