@@ -26,7 +26,7 @@ This is made for my own blog, but if you wanna use it, you can:
 	- The very first line of these HTML files must be the title of the page. These pages will be wrapped in the css-class `article`. 
 	- See examples in the repo.
 - Next to the script, create a folder called `includes`, in here goes stuff you want in the root of your site, such as CSS files, favicons
-- `pip install progress python-dateutil python-slugify markdown2 Pillow bs4 requests feedgen`
+- `pip3 install tqdm python-dateutil python-slugify markdown2 Pillow bs4 requests feedgen`
 - Then run the script: `python generate_site.py --root-url https://example.com/blog/`
 	- This will output the resulting files to `./_output/`
 	- You can output to another folder using `--root-folder /folder/folder2/folder3/`
