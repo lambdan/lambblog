@@ -169,7 +169,7 @@ for post in os.listdir(POSTS_DIR):
 	html_output += '<h2 class="article_date">' + date.strftime('%a %d %b %Y, %H:%M') + '</h2>'
 
 	# body text 
-	markdown_body = markdown2.markdown(body_text, extras=["tables"])
+	markdown_body = markdown2.markdown(body_text, extras=["strike", "tables"])
 
 	# find images and mirror/thumbnail them
 	soup = BeautifulSoup(markdown_body, "html.parser")
