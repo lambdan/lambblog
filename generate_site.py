@@ -7,12 +7,12 @@ from dateutil.parser import parse
 import os, shutil, sys, hashlib, time, requests, re
 from datetime import datetime
 from PIL import Image
-from feedgen.feed import FeedGenerator
 from email import utils
 from curses import ascii
 from collections import Counter
 from argparse import ArgumentParser
 from tqdm import tqdm
+import PyRSS2Gen
 
 script_run_time = datetime.now()
 
@@ -73,8 +73,8 @@ def saveHTML(code, filepath):
 		print (e)
 		return False
 
-def clean(text): # https://stackoverflow.com/a/20819845
-	return str(''.join(ascii.isprint(c) and c or '?' for c in text)) 
+def xml_clean(text): # https://stackoverflow.com/a/20819845
+	return str(''.join(ascii.isprint(c) and c or '' for c in text)) 
 
 def generateHeader(page_title, css_class):
 	output = '<html>'
@@ -108,10 +108,10 @@ def generateHeader(page_title, css_class):
 	return output
 
 def generateFooter():
-	output = '<footer><br>'
+	output = '<footer>'
+	output += '<a href="mailto:' + AUTHOR_EMAIL + '">' + AUTHOR_EMAIL + '</a><br>'
+	output += 'See the <a href="https://lambdan.se/blog/about">about page</a> for other ways to contact me<br>'
 	output += '©' + str(SITE_STARTED_YEAR) + '-' + str(datetime.now().year) + ' ' + AUTHOR_NAME + '<br>'
-	output += 'Email: <a href="mailto:' + AUTHOR_EMAIL + '">' + AUTHOR_EMAIL + '</a><br>'
-	output += 'Twitter: <a href="https://twitter.com/' + AUTHOR_TWITTER + '">@' + AUTHOR_TWITTER + '</a><br>'
 	#output += '<br><small>Generated ' + script_run_time.strftime('%Y-%m-%d %H:%M') + ' by <a href="https://github.com/lambdan/lambblog">lambblog</a></small>'
 	output += '</footer></body></html>'
 	return output
@@ -257,7 +257,8 @@ for post in os.listdir(POSTS_DIR):
 				else:
 					print ("\toriginal file hasnt been downloaded so i cant create a thumbnail")
 
-			link_to_fullres = soup.new_tag('a', href=mirror_img_filename) # make the thumb clickable to get fullres
+			image['src'] = SITE_ROOT_URL + post_url + '/' + image['src'] # disgusting hack for getting full urls in RSS
+			link_to_fullres = soup.new_tag('a', href=SITE_ROOT_URL + post_url + '/' + mirror_img_filename) # make the thumb clickable to get fullres
 			image.wrap(link_to_fullres)
 
 	html_output += str(soup)
@@ -310,24 +311,25 @@ newlist = sorted(posts, key=lambda k: k['date'], reverse=True) # sort by dates, 
 posts = newlist # extremely ugly code but whatever
 
 print ("generating rss feed")
-fg = FeedGenerator()
-fg.title(SITE_TITLE + ' RSS')
-fg.author({'name': AUTHOR_NAME, 'email':AUTHOR_EMAIL})
-fg.link(href=SITE_ROOT_URL,rel='alternate')
-fg.logo(SITE_ROOT_URL+'avatar.png')
-fg.link(href=SITE_ROOT_URL+'rss.xml',rel='self')
-fg.description(SITE_TITLE +' rss feed')
-fg.id(SITE_ROOT_URL)
-fg.language('en')
+rss_items = [] # First generate the posts RSS items...
 for p in posts:
-	fe = fg.add_entry()
-	fe.id(p['full_url'])
-	fe.link(href=p['full_url'],rel='alternate')
-	rfc2822 = utils.formatdate(time.mktime(p['date'].timetuple())) # https://stackoverflow.com/a/3453277
-	fe.pubDate(rfc2822)
-	fe.title(clean(p['title']))
-	#fe.description(clean(p['body'])) # maybe include this in the future.... causes issues with image urls atm
-fg.rss_file(os.path.join(SITE_ROOT,'rss.xml'))
+	item = PyRSS2Gen.RSSItem(
+		title = xml_clean(p['title']),
+		link = p['full_url'],
+		description = xml_clean(p['body']),
+		pubDate = p['date']
+		)
+	rss_items.append(item)
+
+rss = PyRSS2Gen.RSS2( # ...then create the main RSS feed and include those items
+	title = SITE_TITLE,
+	link = SITE_ROOT_URL,
+	description = SITE_TITLE + ' RSS feed.',
+	lastBuildDate = script_run_time,
+	items = rss_items)
+
+rss.write_xml(open(os.path.join(SITE_ROOT,'rss.xml'), 'w'))
+
 
 print ("writing front page")
 html_output = generateHeader("Blog", "normal")
