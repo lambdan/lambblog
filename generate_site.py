@@ -310,9 +310,10 @@ else:
 newlist = sorted(posts, key=lambda k: k['date'], reverse=True) # sort by dates, reverse to get newest on top
 posts = newlist # extremely ugly code but whatever
 
-print ("generating rss feed")
+print ("generating main RSS feed")
+# First generate RSS feed where linked posts links back to our site
 rss_items = [] # First generate the posts RSS items...
-for p in posts:
+for p in posts[:20]: # only use 20 newest posts
 	item = PyRSS2Gen.RSSItem(
 		title = xml_clean(p['title']),
 		link = p['full_url'],
@@ -324,11 +325,58 @@ for p in posts:
 rss = PyRSS2Gen.RSS2( # ...then create the main RSS feed and include those items
 	title = SITE_TITLE,
 	link = SITE_ROOT_URL,
-	description = SITE_TITLE + ' RSS feed.',
+	description = SITE_TITLE + ' RSS feed',
 	lastBuildDate = script_run_time,
 	items = rss_items)
 
 rss.write_xml(open(os.path.join(SITE_ROOT,'rss.xml'), 'w'))
+
+print ("generating alternate RSS feed")
+# Generate RSS feed where linked posts links to their links
+rss_items = [] # First generate the posts RSS items...
+for p in posts[:20]: # only use 20 newest posts
+	if p['linked']:
+		linkURL = p['linked']
+	else:
+		linkURL = p['full_url']
+	item = PyRSS2Gen.RSSItem(
+		title = xml_clean(p['title']),
+		link = linkURL,
+		description = xml_clean(p['body']),
+		pubDate = p['date']
+		)
+	rss_items.append(item)
+
+rss = PyRSS2Gen.RSS2( # ...then create the main RSS feed and include those items
+	title = SITE_TITLE + ' (Alternate)',
+	link = SITE_ROOT_URL,
+	description = SITE_TITLE + ' Alternate RSS feed (linked posts link to their targets)',
+	lastBuildDate = script_run_time,
+	items = rss_items)
+
+rss.write_xml(open(os.path.join(SITE_ROOT,'rss_follow_links.xml'), 'w'))
+
+print ("generating RSS feed without linked posts")
+rss_items = [] # First generate the posts RSS items...
+for p in posts[:20]: # only use 20 newest posts
+	if p['linked']:
+		continue
+	item = PyRSS2Gen.RSSItem(
+		title = xml_clean(p['title']),
+		link = p['full_url'],
+		description = xml_clean(p['body']),
+		pubDate = p['date']
+		)
+	rss_items.append(item)
+
+rss = PyRSS2Gen.RSS2( # ...then create the main RSS feed and include those items
+	title = SITE_TITLE + ' (Originals)',
+	link = SITE_ROOT_URL,
+	description = SITE_TITLE + ' Originals RSS feed (linked posts not included)',
+	lastBuildDate = script_run_time,
+	items = rss_items)
+
+rss.write_xml(open(os.path.join(SITE_ROOT,'rss_originals.xml'), 'w'))
 
 
 print ("writing front page")
