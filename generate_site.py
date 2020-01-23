@@ -157,6 +157,9 @@ for post in os.listdir(POSTS_DIR):
 	post_root = os.path.join(SITE_ROOT, post_url)
 	os.makedirs(post_root)
 
+	# copy original text file to post root so it can be viewed by adding .text to post URL
+	shutil.copy(os.path.join(POSTS_DIR, post), os.path.join(post_root, '.text'))
+
 	# header
 	html_output = generateHeader(title, "article")
 
