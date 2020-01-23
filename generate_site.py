@@ -161,9 +161,11 @@ for post in os.listdir(POSTS_DIR):
 	html_output = generateHeader(title, "article")
 
 	# blog post header
-	if third_line.lower().startswith("http"): # linked post?
+	if third_line.lower().startswith("http"): # detect linked post
+		isLinked = third_line
 		html_output += '<h1 class="article_title_linked"><a href="' + third_line + '">' + title + '</a></h1>'
 	else:
+		isLinked = False
 		html_output += '<h1 class="article_title">' + title + '</h1>'
 
 	html_output += '<h2 class="article_date">' + date.strftime('%a %d %b %Y, %H:%M') + '</h2>'
@@ -272,7 +274,7 @@ for post in os.listdir(POSTS_DIR):
 
 	if saveHTML(html_output, os.path.join(post_root, 'index.html')):
 		#print ("success: wrote", title.strip(), "to", post_root)
-		posts.append({'title': title.strip(), 'thirdline': third_line, 'slug': slugify(title.strip()), 'full_url': SITE_ROOT_URL + post_url, 'textfile': post, 'words': len(body_text.split()), 'chars': len(body_text), 'date': date, 'path': post_url, 'stub': stub, 'body': str(soup)})
+		posts.append({'title': title.strip(), 'linked': isLinked, 'slug': slugify(title.strip()), 'full_url': SITE_ROOT_URL + post_url, 'textfile': post, 'words': len(body_text.split()), 'chars': len(body_text), 'date': date, 'path': post_url, 'stub': stub, 'body': str(soup)})
 	else:
 		print ("\tcritical: writing post html seems to have failed")
 		sys.exit(1)
@@ -305,8 +307,6 @@ else:
 	print ("debug:", len(posts), "/", processed_posts)
 	sys.exit(1)
 
-#print posts
-
 newlist = sorted(posts, key=lambda k: k['date'], reverse=True) # sort by dates, reverse to get newest on top
 posts = newlist # extremely ugly code but whatever
 
@@ -334,8 +334,8 @@ rss.write_xml(open(os.path.join(SITE_ROOT,'rss.xml'), 'w'))
 print ("writing front page")
 html_output = generateHeader("Blog", "normal")
 for p in posts[:10]:
-	if p['thirdline'].lower().startswith("http"): # linked post?
-		html_output += '<h1 class="article_title_linked"><a href="' + p['thirdline'] + '">' + p['title'] + '</a></h1>'
+	if p['linked']: # linked post? is either False or an URL
+		html_output += '<h1 class="article_title_linked"><a href="' + p['linked'] + '">' + p['title'] + '</a></h1>'
 	else:
 		html_output += '<h1 class="article_title"><a href="' + p['full_url'] + '">' + p['title'] + '</a></h1>'
 	html_output += '<h2 class="article_date"><a href="' + p['full_url'] + '">' + p['date'].strftime('%a %d %b %Y, %H:%M') + '</a></h2>'
