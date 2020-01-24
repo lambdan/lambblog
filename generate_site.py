@@ -11,7 +11,7 @@ from email import utils
 from curses import ascii
 from collections import Counter
 from argparse import ArgumentParser
-from tqdm import tqdm
+#from tqdm import tqdm
 import PyRSS2Gen
 
 script_run_time = datetime.now()
@@ -32,6 +32,7 @@ THUMBNAIL_MAX_RESOLUTION = 1000,1000 # max resolution for thumbnails in each axi
 
 POSTS_DIR = './posts/'
 IMAGES_FOLDER = './images/'
+THUMBS_FOLDER = './images/thumbs/'
 INCLUDE_FOLDER = './includes/'
 OTHER_PAGES_FOLDER = './pages/'
 VALID_POST_EXTENSIONS = ('txt', 'md', 'markdown')
@@ -43,6 +44,8 @@ STATS_WHITELISTED_CHARACTERS = set('abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQ
 parser = ArgumentParser()
 parser.add_argument("--root-folder", action='store', dest='folder', help='root folder of website, default = ./_output/')
 parser.add_argument("--root-url", action='store', dest='url', help='root url of website', required=True)
+parser.add_argument('--regenerate-thumbs', action="store_true", dest='regenThumbs', default=False)
+parser.add_argument('--verbose', action="store_true", dest='verbose', default=False)
 parsed = parser.parse_args()
 
 if not parsed.folder:
@@ -125,21 +128,28 @@ elif not os.path.isdir(SITE_ROOT):
 if not os.path.isdir(IMAGES_FOLDER):
 	os.makedirs(IMAGES_FOLDER)
 
+if not os.path.isdir(THUMBS_FOLDER):
+	os.makedirs(THUMBS_FOLDER)
+
 posts = []
 processed_posts = 0
-pbar = tqdm(total=len(os.listdir(POSTS_DIR))) # start progress bar
+i = 0 # used for progress counting
+#pbar = tqdm(total=len(os.listdir(POSTS_DIR))) # start progress bar
 
 for post in os.listdir(POSTS_DIR):
+	i += 1
 	if not post.lower().endswith(VALID_POST_EXTENSIONS):
 		print ("(ignoring",post,"because it doesnt have any of these extensions:",VALID_POST_EXTENSIONS,")")
-		pbar.update(1)
+		#pbar.update(1)
 		continue
+
+	print("(" + str(i) + "/" + str(len(os.listdir(POSTS_DIR))) + ") Processing", post)
 
 	f = open(os.path.join(POSTS_DIR, post), 'r', encoding="utf8")
 	try:
 		date = parse(f.readline(), fuzzy=True) # 1st line, date
 	except Exception as e:
-		print ("error parsing date, you probably forgot to put a date at the very top of the file:", post)
+		print ("\terror: parsing date, you probably forgot to put a date at the very top of the file:", post)
 		print (e)
 		print ("exiting...")
 		sys.exit(1)
@@ -209,8 +219,8 @@ for post in os.listdir(POSTS_DIR):
 				destination = os.path.join(post_root, mirror_img_filename)
 				shutil.copy(mirror_img_filepath, destination)
 			else:
-				print ("\tnot mirrored:", imgurl)
-				print ("\tattempting download", imgurl, " --> ", mirror_img_filename)
+				print ("\tmirroring: will mirror:", imgurl)
+				if parsed.verbose: print ("\tmirroring: attempting download", imgurl, " --> ", mirror_img_filename)
 				f = open(mirror_img_filepath, 'wb')
 				f.write(requests.get(imgurl).content)
 				f.close()
@@ -221,46 +231,55 @@ for post in os.listdir(POSTS_DIR):
 				#	os.remove(mirror_img_filepath)
 
 				if not os.path.isfile(mirror_img_filepath):
-					print ("\terror: downloading image seems to have failed")
+					print ("\tmirroring: error: downloading image seems to have failed")
 				else:
-					print ("\tsuccess downloading image", mirror_img_filepath)
+					if parsed.verbose: print ("\tmirroring: success downloading image", imgurl, "-->", mirror_img_filepath)
 					destination = os.path.join(post_root, mirror_img_filename)
 					shutil.copy(mirror_img_filepath, destination)
 
 			mirror_img_size = os.path.getsize(mirror_img_filepath)
 			mirror_img_filename_thumb = md5 + ".thumb.jpg"
-			mirror_img_filepath_thumb = os.path.join(IMAGES_FOLDER, mirror_img_filename_thumb)
+			mirror_img_filepath_thumb = os.path.join(THUMBS_FOLDER, mirror_img_filename_thumb)
 
 			if ext == ".gif":
 				#print ('skipping thumbnail for gif:', imgurl)
 				if os.path.isfile(mirror_img_filepath_thumb):
-					print ('\tdeleting old thumbnail because its not needed anymore:', mirror_img_filepath_thumb)
+					if parsed.verbose: print ('\tthumbnailing: deleting old GIF thumbnail because its not needed anymore:', mirror_img_filepath_thumb)
 					os.remove(mirror_img_filepath_thumb)
 				image['src'] = mirror_img_filename
 
 			elif mirror_img_size < IMAGE_SIZE_THRESHOLD:
 				#print ('skipping thumbnail because original is small enough:', imgurl, mirror_img_size)
 				if os.path.isfile(mirror_img_filepath_thumb):
-					print ('\tdeleting old thumbnail because its not needed anymore:', mirror_img_filepath_thumb)
+					if parsed.verbose: print ('\tthumbnailing: deleting old thumbnail because its not needed anymore (already small enough):', mirror_img_filepath_thumb)
 					os.remove(mirror_img_filepath_thumb)
 				image['src'] = mirror_img_filename
 
 			else:
-				if os.path.isfile(mirror_img_filepath):
-					thumb_destination = os.path.join(post_root, mirror_img_filename_thumb)
-					#print ("\tgenerating thumbnail to " + thumb_destination)
-					im = Image.open(mirror_img_filepath)
-					if not im.mode == 'RGB':
-						im = im.convert('RGB')
-					im.thumbnail((THUMBNAIL_MAX_RESOLUTION))
-					im.save(thumb_destination, "JPEG")
-					if not os.path.isfile(thumb_destination):
-						print ("\terror: creating thumbnail seems to have failed")
+				if os.path.isfile(mirror_img_filepath): # Check if mirror image exists, we generate thumbs from that so we need it
+
+					thumb_destination = os.path.join(post_root, mirror_img_filename_thumb) # Destination to where thumb is served for the website
+
+					if not os.path.isfile(mirror_img_filepath_thumb) or parsed.regenThumbs: # Thumbnail does not exist, we need to re-generate it OR force regen is on
+						if parsed.verbose: print ("\tthumbnailing: generating thumbnail for", imgurl, "to", mirror_img_filepath_thumb)
+						
+						im = Image.open(mirror_img_filepath) # Source image is the mirrored image
+						if not im.mode == 'RGB':
+							im = im.convert('RGB')
+						im.thumbnail((THUMBNAIL_MAX_RESOLUTION))
+						im.save(mirror_img_filepath_thumb, "JPEG")
+						if not os.path.isfile(mirror_img_filepath_thumb):
+							print ("\tthumbnailing: error: creating thumbnail seems to have failed")
 					else:
-						#print ("\tok. original size:", mirror_img_size, ", thumb:", os.path.getsize(thumb_destination))
-						image['src'] = mirror_img_filename_thumb
+						if parsed.verbose: print("\tthumbnailing: skipping thumbnail generation", imgurl)
+
+					if parsed.verbose: print("\tthumbnailing: copying", mirror_img_filepath_thumb, "-->", thumb_destination)
+					shutil.copy(mirror_img_filepath_thumb, thumb_destination) # Copy thumb to website
+					image['src'] = mirror_img_filename_thumb
+				
 				else:
-					print ("\toriginal file hasnt been downloaded so i cant create a thumbnail")
+					print ("\tthumbnailing: error: original file hasnt been downloaded so i cant create a thumbnail")
+					sys.exit(1)
 
 			image['src'] = SITE_ROOT_URL + post_url + '/' + image['src'] # disgusting hack for getting full urls in RSS
 			link_to_fullres = soup.new_tag('a', href=SITE_ROOT_URL + post_url + '/' + mirror_img_filename) # make the thumb clickable to get fullres
@@ -299,15 +318,15 @@ for post in os.listdir(POSTS_DIR):
 		print ("\tfailed saving stats page")
 		sys.exit(1)
 	processed_posts += 1
-	pbar.update(1)
+	#pbar.update(1)
 
-pbar.close()
+#pbar.close()
 
 if len(posts) == processed_posts:
 	print ("success: wrote", len(posts), "html files from", processed_posts, "processed files")
 else:
-	print ("critical: not every post in", POSTS_DIR, "seems to have gotten a html file")
-	print ("debug:", len(posts), "/", processed_posts)
+	print ("critical: not every post in", POSTS_DIR, "seems to have gotten a html file. exiting...")
+	if parsed.verbose: print ("debug:", len(posts), "/", processed_posts)
 	sys.exit(1)
 
 newlist = sorted(posts, key=lambda k: k['date'], reverse=True) # sort by dates, reverse to get newest on top
@@ -395,7 +414,7 @@ for p in posts[:10]:
 html_output += '</div>'
 html_output += generateFooter()
 if not saveHTML(html_output, os.path.join(SITE_ROOT, 'index.html')):
-	print ("error")
+	print ("error saving front page")
 
 print ("writing archive")
 html_output = generateHeader("Blog Archive", "normal")
@@ -490,7 +509,7 @@ print ("creating other pages:")
 pages = os.listdir(OTHER_PAGES_FOLDER)
 for page in pages:
 	if not page.lower().endswith('html'):
-		print ("(ignoring",page,"because its not a html file)")
+		if parsed.verbose: print ("(ignoring",page,"because its not a html file)")
 		continue
 	path = os.path.join(OTHER_PAGES_FOLDER, page)
 	f = open(path,'r')
@@ -541,15 +560,17 @@ html_output += '</div>'
 
 html_output += generateFooter()
 if not saveHTML(html_output, os.path.join(SITE_ROOT, 'stats.html')):
-	print ("failed!")
+	print ("error: saving stats page failed!")
 	sys.exit(1)
 
-print ("copying from " + INCLUDE_FOLDER + " to site root:",)
+print ("copying files from Include Folder", INCLUDE_FOLDER, "to Site Root", SITE_ROOT)
 files = os.listdir(INCLUDE_FOLDER)
 for f in files:
 	src = os.path.join(INCLUDE_FOLDER, f)
 	dest = os.path.join(SITE_ROOT, f)
-	print("\t", src, "-->", dest)
+	if parsed.verbose: print("\t", src, "-->", dest)
 	shutil.copy(src, dest)
 
+print()
 print ("all done!")
+print ("find your website in", os.path.abspath(SITE_ROOT))
