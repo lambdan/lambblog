@@ -558,32 +558,32 @@ html_output += sys.version
 html_output += '--->'
 # and then make the actual stats page
 html_output += generateHeader('Stats', 'normal')
-html_output += '<h1>Stats</h1>'
+html_output += '<h1>Stats 💯</h1>'
 html_output += '<ul>'
-html_output += '<li>' + str(total_posts) + ' posts</li>'
-html_output += '<li>' + str(total_words) + ' words</li>'
-html_output += '<li>' + str(total_chars) + ' characters</li>'
-html_output += '<li>' + str(total_images) + ' images</li>'
+html_output += '<li>📜 ' + str(total_posts) + ' posts</li>'
+html_output += '<li>📝 ' + str(total_words) + ' words</li>'
+html_output += '<li>🔤 ' + str(total_chars) + ' characters</li>'
+html_output += '<li>🖼️ ' + str(total_images) + ' images</li>'
 html_output += '</ul>'
 
-html_output += '<h2>Posts With Most Words</h2>'
+html_output += '<h2>Posts With Most Words 📝</h2>'
 html_output += '<ol>'
 posts_sorted_by_words = sorted(posts, key=lambda k: k['words'], reverse=True) # sort by dates, reverse to get most on top
 for p in posts_sorted_by_words:
-	html_output += '<li><a href="' + p['path'] + '">' + p['title'] + '</a> <a href="' + p['path'] + '/stats' + '">(' + str(p['words']) + ' words)</a></li>'
+	html_output += '<li><a href="' + p['path'] + '">' + p['title'] + '</a> — <a href="' + p['path'] + '/stats' + '">' + str(p['words']) + ' words</a></li>'
 html_output += '</ol>'
 
-html_output += '<h2>Posts With Most Images</h2>'
+html_output += '<h2>Posts With Most Images 🖼️</h2>'
 html_output += '<ol>'
 posts_sorted_by_images = sorted(posts, key=lambda k: len(k['images']), reverse=True)
 for p in posts_sorted_by_images:
 	if len(p['images']) > 0:
-		html_output += '<li><a href="' + p['path'] + '">' + p['title'] + '</a> <a href="' + p['path'] + '/stats' + '">(' + str(len(p['images']))
+		html_output += '<li><a href="' + p['path'] + '">' + p['title'] + '</a> — <a href="' + p['path'] + '/stats' + '">' + str(len(p['images']))
 		if len(p['images']) == 1:
 			html_output += ' image'
 		else:
 			html_output += ' images'
-		html_output += ')</a></li>'
+		html_output += '</a></li>'
 
 html_output += '</ol>'
 
