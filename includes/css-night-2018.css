@@ -111,6 +111,11 @@ max-height:100px;
     margin: auto;
 }
 
+.normal img {
+  display: block;
+  margin: auto;
+}
+
 footer {
   	padding: 1em 10px;
     text-align: center;
@@ -172,6 +177,7 @@ th {
 td {
 background-color: transparent;
 padding: 5px;
+text-align: center;
 }
 
 tr:nth-child(even) {
@@ -201,12 +207,12 @@ padding-top: 30px; height: 0; overflow: hidden;
 }
 
 h1 {
-font-size: 1.5em;
+font-size: 1.6em;
 font-weight: 400;
 /*text-transform: uppercase;*/
 }
 h2 {
-font-size: 1.3em;
+font-size: 1.4em;
 font-weight: 400;
 
 }

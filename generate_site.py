@@ -189,6 +189,7 @@ for post in os.listdir(POSTS_DIR):
 	# find images and mirror/thumbnail them
 	soup = BeautifulSoup(markdown_body, "html.parser")
 	images = soup.find_all('img') # https://stackoverflow.com/a/47166709
+	image_urls = []
 	if len(images) > 0:
 		for image in images:
 			imgurl = image['src']
@@ -282,6 +283,7 @@ for post in os.listdir(POSTS_DIR):
 					sys.exit(1)
 
 			image['src'] = SITE_ROOT_URL + post_url + '/' + image['src'] # disgusting hack for getting full urls in RSS
+			image_urls.append(image['src']) # this will be used for front page
 			link_to_fullres = soup.new_tag('a', href=SITE_ROOT_URL + post_url + '/' + mirror_img_filename) # make the thumb clickable to get fullres
 			image.wrap(link_to_fullres)
 
@@ -296,7 +298,7 @@ for post in os.listdir(POSTS_DIR):
 
 	if saveHTML(html_output, os.path.join(post_root, 'index.html')):
 		#print ("success: wrote", title.strip(), "to", post_root)
-		posts.append({'title': title.strip(), 'linked': isLinked, 'slug': slugify(title.strip()), 'full_url': SITE_ROOT_URL + post_url, 'textfile': post, 'words': len(body_text.split()), 'chars': len(body_text), 'date': date, 'path': post_url, 'stub': stub, 'body': str(soup)})
+		posts.append({'title': title.strip(), 'linked': isLinked, 'slug': slugify(title.strip()), 'full_url': SITE_ROOT_URL + post_url, 'textfile': post, 'words': len(body_text.split()), 'chars': len(body_text), 'date': date, 'path': post_url, 'stub': stub, 'body': str(soup), 'images': image_urls})
 	else:
 		print ("\tcritical: writing post html seems to have failed")
 		sys.exit(1)
@@ -408,8 +410,17 @@ for p in posts[:10]:
 		html_output += '<h1 class="article_title_linked"><a href="' + p['linked'] + '">' + p['title'] + '</a></h1>'
 	else:
 		html_output += '<h1 class="article_title"><a href="' + p['full_url'] + '">' + p['title'] + '</a></h1>'
+
 	html_output += '<h2 class="article_date"><a href="' + p['full_url'] + '">' + p['date'].strftime('%a %d %b %Y, %H:%M') + '</a></h2>'
+	
 	html_output += p['stub']
+
+	if len(p['images']) > 0: # add first image from post, clicking it links to article
+		html_output += '<a href="' + p['full_url'] + '">'
+		html_output += '<img src="' + p['images'][0] + '">' # 0 to get first image (the top one)
+		html_output += '</a>'
+
+	html_output += '<br><br>'
 
 html_output += '</div>'
 html_output += generateFooter()
