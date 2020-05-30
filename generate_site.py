@@ -305,7 +305,7 @@ for post in os.listdir(POSTS_DIR):
 
 	# write stats page
 	html_output = generateHeader(title + ' - Stats', "normal")
-	html_output += '<h1>Stats: <u>' + title + '</u></h1>'
+	html_output += '<h1>Stats: <u><a href="' + SITE_ROOT_URL + post_url + '">' + title + '</a></u></h1>'
 	html_output += '<p>' + str(len(body_text.split())) + ' words, ' + str(len(body_text)) + ' characters.</p>'
 	# filter out so we only get whitelisted characters (STATS_WHITELISTED_CHARACTERS) to avoid counting symbols and dashes etc.
 	stats_body_text = ''.join(filter(STATS_WHITELISTED_CHARACTERS.__contains__,body_text)) # https://stackoverflow.com/a/21564666
@@ -314,6 +314,9 @@ for post in os.listdir(POSTS_DIR):
 	for word, value in count.most_common(10): # i tried listing all words but it stops working properly for some reason, around 2080 words
 		html_output += '<li><b>' + str(word) + '</b> - ' + str(value) + ' occurences</li>'
 	html_output += '</ol>'
+
+	html_output += '<p>' + str(len(image_urls)) + ' images.</p>' # how many images
+
 	html_output += '</div>'
 	html_output += generateFooter()
 	if not saveHTML(html_output, os.path.join(post_root, 'stats.html')):
@@ -540,9 +543,11 @@ for page in pages:
 print ("creating stats page")
 total_words = 0
 total_chars = 0
+total_images = 0
 for p in posts:
 	total_words += p['words']
 	total_chars += p['chars']
+	total_images += len(p['images'])
 total_posts = len(posts)
 
 # hide some useful debug info in the html as a comment
@@ -558,6 +563,7 @@ html_output += '<ul>'
 html_output += '<li>' + str(total_posts) + ' posts</li>'
 html_output += '<li>' + str(total_words) + ' words</li>'
 html_output += '<li>' + str(total_chars) + ' characters</li>'
+html_output += '<li>' + str(total_images) + ' images</li>'
 html_output += '</ul>'
 
 html_output += '<h2>Posts With Most Words</h2>'
@@ -565,6 +571,20 @@ html_output += '<ol>'
 posts_sorted_by_words = sorted(posts, key=lambda k: k['words'], reverse=True) # sort by dates, reverse to get most on top
 for p in posts_sorted_by_words:
 	html_output += '<li><a href="' + p['path'] + '">' + p['title'] + '</a> <a href="' + p['path'] + '/stats' + '">(' + str(p['words']) + ' words)</a></li>'
+html_output += '</ol>'
+
+html_output += '<h2>Posts With Most Images</h2>'
+html_output += '<ol>'
+posts_sorted_by_images = sorted(posts, key=lambda k: len(k['images']), reverse=True)
+for p in posts_sorted_by_images:
+	if len(p['images']) > 0:
+		html_output += '<li><a href="' + p['path'] + '">' + p['title'] + '</a> <a href="' + p['path'] + '/stats' + '">(' + str(len(p['images']))
+		if len(p['images']) == 1:
+			html_output += ' image'
+		else:
+			html_output += ' images'
+		html_output += ')</a></li>'
+
 html_output += '</ol>'
 
 html_output += '</div>'
