@@ -305,17 +305,22 @@ for post in os.listdir(POSTS_DIR):
 
 	# write stats page
 	html_output = generateHeader(title + ' - Stats', "normal")
-	html_output += '<h1>Stats: <u><a href="' + SITE_ROOT_URL + post_url + '">' + title + '</a></u></h1>'
-	html_output += '<p>' + str(len(body_text.split())) + ' words, ' + str(len(body_text)) + ' characters.</p>'
+	html_output += '<h1>Stats for <u><a href="' + SITE_ROOT_URL + post_url + '">' + title + '</a></u></h1>'
+	html_output += '<p>'
+	html_output += str(len(body_text.split())) + ' words 📝<br>'
+	html_output += str(len(body_text)) + ' characters 🖊️<br>'
+	html_output += str(len(image_urls)) + ' images 🖼️<br>'
+	html_output += '</p>' # how many images
 	# filter out so we only get whitelisted characters (STATS_WHITELISTED_CHARACTERS) to avoid counting symbols and dashes etc.
 	stats_body_text = ''.join(filter(STATS_WHITELISTED_CHARACTERS.__contains__,body_text)) # https://stackoverflow.com/a/21564666
 	count = Counter(stats_body_text.lower().split()) # also make it lowercase so for example "The" and "the" aren't separated
-	html_output += '<ol>'
-	for word, value in count.most_common(10): # i tried listing all words but it stops working properly for some reason, around 2080 words
-		html_output += '<li><b>' + str(word) + '</b> - ' + str(value) + ' occurences</li>'
-	html_output += '</ol>'
 
-	html_output += '<p>' + str(len(image_urls)) + ' images.</p>' # how many images
+	html_output += '<h2>Words Used More Than Once:</h2>'
+	html_output += '<p>' #               10
+	for word, value in count.most_common(len(count)): # i tried listing all words but it stops working properly for some reason, around 2080 words
+		if value > 1:
+			html_output += '"' + str(word) + '" is used <i>' + str(value) + ' times</i><br>'
+	html_output += '</p>'
 
 	html_output += '</div>'
 	html_output += generateFooter()
@@ -562,7 +567,7 @@ html_output += '<h1>Stats 💯</h1>'
 html_output += '<ul>'
 html_output += '<li>📜 ' + str(total_posts) + ' posts</li>'
 html_output += '<li>📝 ' + str(total_words) + ' words</li>'
-html_output += '<li>🔤 ' + str(total_chars) + ' characters</li>'
+html_output += '<li>🖊️ ' + str(total_chars) + ' characters</li>'
 html_output += '<li>🖼️ ' + str(total_images) + ' images</li>'
 html_output += '</ul>'
 
