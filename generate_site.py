@@ -430,7 +430,11 @@ for p in posts[:10]:
 
 	html_output += '<br><br>'
 
+
 html_output += '</div>'
+
+html_output += '<div class="article"><center><p>Go to the <a href="archive">archive</a> to see all posts</p></center></div>' # add article div to get colored link
+
 html_output += generateFooter()
 if not saveHTML(html_output, os.path.join(SITE_ROOT, 'index.html')):
 	print ("error saving front page")
