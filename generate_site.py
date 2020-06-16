@@ -115,7 +115,7 @@ def generateHeader(page_title, css_class):
 def generateFooter():
 	output = '<footer>'
 	output += '<a href="mailto:' + AUTHOR_EMAIL + '">' + AUTHOR_EMAIL + '</a><br>'
-	output += 'See the <a href="https://lambdan.se/blog/about">about page</a> for other ways to contact me<br>'
+	output += 'See the <a href="https://lambdan.se/blog/about">about page</a> for feeds and more ways to contact me<br>'
 	output += '©' + str(SITE_STARTED_YEAR) + '-' + str(datetime.now().year) + ' ' + AUTHOR_NAME + '<br>'
 	#output += '<br><small>Generated ' + script_run_time.strftime('%Y-%m-%d %H:%M') + ' by <a href="https://github.com/lambdan/lambblog">lambblog</a></small>'
 	output += '</footer></body></html>'
