@@ -11,7 +11,7 @@ from email import utils
 from curses import ascii
 from collections import Counter
 from argparse import ArgumentParser
-#from tqdm import tqdm
+from tqdm import tqdm
 import PyRSS2Gen
 
 script_run_time = datetime.now()
@@ -42,10 +42,11 @@ STATS_WHITELISTED_CHARACTERS = set('abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQ
 
 # handle arguments
 parser = ArgumentParser()
-parser.add_argument("--root-folder", action='store', dest='folder', help='root folder of website, default = ./_output/')
-parser.add_argument("--root-url", action='store', dest='url', help='root url of website', required=True)
-parser.add_argument('--regenerate-thumbs', action="store_true", dest='regenThumbs', default=False)
-parser.add_argument('--verbose', action="store_true", dest='verbose', default=False)
+parser.add_argument("--output-folder", '-o', action='store', dest='folder', help='generated website appears here (default: ./_output/')
+parser.add_argument("--root-url", '-url', action='store', dest='url', help='root url of website (example: https://lambdan.se/blog/)', required=True)
+parser.add_argument('--regenerate-thumbs', action="store_true", dest='regenThumbs', help="force re-generation of thumbnails", default=False)
+parser.add_argument('--verbose', '-v', action="store_true", dest='verbose', help="print alot of info", default=False)
+parser.add_argument('--skip-confirm', '-y', action="store_true", dest='skip_confrm', help="skip confirmation", default=False)
 parsed = parser.parse_args()
 
 if not parsed.folder:
@@ -57,10 +58,11 @@ SITE_ROOT_URL = parsed.url
 # TODO: make sure they are valid
 print ("Output folder:", SITE_ROOT)
 print ("URL Root:", SITE_ROOT_URL)
-yn = input("Continue? y/N ").lower()
-if yn != "y":
-	print ("exiting...")
-	sys.exit(1)
+if not parsed.skip_confrm:
+	yn = input("Continue? y/N ").lower()
+	if yn != "y":
+		print ("exiting...")
+		sys.exit(1)
 
 CSS_URL = SITE_ROOT_URL + CSS_FILE
 
@@ -134,7 +136,6 @@ if not os.path.isdir(THUMBS_FOLDER):
 input_files = []
 posts = []
 processed_posts = 0
-#pbar = tqdm(total=len(os.listdir(POSTS_DIR))) # start progress bar
 
 print("Searching for posts in", POSTS_DIR, "...")
 for dirpath, dirnames, files in os.walk(POSTS_DIR):
@@ -143,36 +144,38 @@ for dirpath, dirnames, files in os.walk(POSTS_DIR):
 		if os.path.splitext(file)[1] in VALID_POST_EXTENSIONS:
 			input_files.append(fullpath)
 		else:
-			print("Skipping",dirpath,file,"because it doesnt have the right file extension")
+			print("(Skipping",dirpath,file,"because it doesnt have a supported file extension)")
 
 print("Found", len(input_files), "posts")
 
 print("Processing posts...")
-for post in input_files:
-	print("Processing:", post)
-	# post is fullpath to txt file
-	#print("(" + str(processed_posts) + "/" + str(len(input_files)) + ") Processing", post)
+pbar = tqdm(total=len(input_files))
+for post in input_files: # post is fullpath to the text file
+	if parsed.verbose: print("Processing:", post)
 
 	f = open(post, 'r', encoding="utf8")
 	try:
 		date = parse(f.readline(), fuzzy=True) # 1st line, date
 	except Exception as e:
-		print ("\terror: parsing date, you probably forgot to put a date at the very top of the file:", post)
-		print (e)
-		print ("exiting...")
+		print ("ERROR WITH", post)
+		print ("Couldnt parse a date, you probably forgot to put a date at the very top of the file:", e)
+		print ("Exiting...")
 		sys.exit(1)
-	title = f.readline() # 2nd line, title
-	title = title[2:]
+	title = f.readline().rstrip() # 2nd line, title
+	title = title[2:].rstrip()
 	third_line = f.readline() # 3rd line, possibly a link
 	body_text = f.read()
 	f.close()
 
 	slug_title = slugify(title)
+	if parsed.verbose: print('Title:', title)
+	if parsed.verbose: print('Slug title:', slug_title)
 
 	# create folder for post
 	post_url = str(date.year) + "/" + "%02d" % date.month + "/" +  "%02d" % date.day + "/" + str(slug_title)
 	post_root = os.path.join(SITE_ROOT, post_url)
 	os.makedirs(post_root)
+	if parsed.verbose: print('Post root folder:', post_root)
 
 	# copy original text file to post root so it can be viewed by adding .text to post URL
 	shutil.copy(post, os.path.join(post_root, '.text'))
@@ -182,11 +185,12 @@ for post in input_files:
 
 	# blog post header
 	if third_line.lower().startswith("http"): # detect linked post
-		isLinked = third_line
+		isLinked = third_line.rstrip()
 		html_output += '<h1 class="article_title_linked"><a href="' + third_line + '">' + title + '</a></h1>'
 	else:
 		isLinked = False
 		html_output += '<h1 class="article_title">' + title + '</h1>'
+	if parsed.verbose: print('Linked post:', isLinked)
 
 	html_output += '<h2 class="article_date">' + date.strftime('%a %d %b %Y, %H:%M') + '</h2>'
 
@@ -205,14 +209,14 @@ for post in input_files:
 			# remove twitters weird :orig :large extensions
 			if 'jpeg:' in ext or 'jpg:' in ext:
 				ext = ".jpg"
-				#print ('correcting extension of', imgurl, 'to', ext)
+				if parsed.verbose: print ('correcting extension of', imgurl, 'to', ext)
 			elif 'png:' in ext:
 				ext = ".png"
-				#print ('correcting extension of', imgurl, 'to', ext)
+				if parsed.verbose: print ('correcting extension of', imgurl, 'to', ext)
 			
 			# cursed old puush images
 			if ext == '':
-				#print (imgurl + " has no extension. assuming jpg")
+				if parsed.verbose: print (imgurl, "has no extension. assuming jpg")
 				ext = ".jpg"
 
 			# add a dot in case the extension doesnt come with one
@@ -223,12 +227,12 @@ for post in input_files:
 			mirror_img_filename = md5 + ext
 			mirror_img_filepath = os.path.join(IMAGES_FOLDER, mirror_img_filename)
 			if os.path.isfile(mirror_img_filepath):
-				#print mirror_img_filename, "already exists :)"
+				if parsed.verbose: print ("Already mirrored:", imgurl, "(" + str(mirror_img_filepath) + ")")
 				destination = os.path.join(post_root, mirror_img_filename)
 				shutil.copy(mirror_img_filepath, destination)
 			else:
-				print ("\tmirroring: will mirror:", imgurl)
-				if parsed.verbose: print ("\tmirroring: attempting download", imgurl, " --> ", mirror_img_filename)
+				if parsed.verbose: print ("Picture not mirrored:", imgurl)
+				if parsed.verbose: print ("Attempting to mirror", imgurl, " --> ", mirror_img_filepath)
 				f = open(mirror_img_filepath, 'wb')
 				f.write(requests.get(imgurl).content)
 				f.close()
@@ -239,9 +243,11 @@ for post in input_files:
 				#	os.remove(mirror_img_filepath)
 
 				if not os.path.isfile(mirror_img_filepath):
-					print ("\tmirroring: error: downloading image seems to have failed")
+					print ("ERROR WITH MIRRORING: Downloading image seems to have failed")
+					print ("Exiting...")
+					sys.exit(1)
 				else:
-					if parsed.verbose: print ("\tmirroring: success downloading image", imgurl, "-->", mirror_img_filepath)
+					if parsed.verbose: print ("Success downloading image", imgurl, "-->", mirror_img_filepath)
 					destination = os.path.join(post_root, mirror_img_filename)
 					shutil.copy(mirror_img_filepath, destination)
 
@@ -250,16 +256,16 @@ for post in input_files:
 			mirror_img_filepath_thumb = os.path.join(THUMBS_FOLDER, mirror_img_filename_thumb)
 
 			if ext == ".gif":
-				#print ('skipping thumbnail for gif:', imgurl)
+				if parsed.verbose: print ('Skipping thumbnail for gif:', imgurl)
 				if os.path.isfile(mirror_img_filepath_thumb):
-					if parsed.verbose: print ('\tthumbnailing: deleting old GIF thumbnail because its not needed anymore:', mirror_img_filepath_thumb)
+					if parsed.verbose: print ('Deleting old GIF thumbnail because its not needed anymore:', mirror_img_filepath_thumb)
 					os.remove(mirror_img_filepath_thumb)
 				image['src'] = mirror_img_filename
 
 			elif mirror_img_size < IMAGE_SIZE_THRESHOLD:
-				#print ('skipping thumbnail because original is small enough:', imgurl, mirror_img_size)
+				if parsed.verbose: ('Skipping thumbnail because original is small enough:', imgurl, " - size:", mirror_img_size)
 				if os.path.isfile(mirror_img_filepath_thumb):
-					if parsed.verbose: print ('\tthumbnailing: deleting old thumbnail because its not needed anymore (already small enough):', mirror_img_filepath_thumb)
+					if parsed.verbose: print ('Deleting old thumbnail because its not needed anymore (original is already small enough):', mirror_img_filepath_thumb)
 					os.remove(mirror_img_filepath_thumb)
 				image['src'] = mirror_img_filename
 
@@ -269,7 +275,7 @@ for post in input_files:
 					thumb_destination = os.path.join(post_root, mirror_img_filename_thumb) # Destination to where thumb is served for the website
 
 					if not os.path.isfile(mirror_img_filepath_thumb) or parsed.regenThumbs: # Thumbnail does not exist, we need to re-generate it OR force regen is on
-						if parsed.verbose: print ("\tthumbnailing: generating thumbnail for", imgurl, "to", mirror_img_filepath_thumb)
+						if parsed.verbose: print ("Generating thumbnail for", imgurl, "-->", mirror_img_filepath_thumb)
 						
 						im = Image.open(mirror_img_filepath) # Source image is the mirrored image
 						if not im.mode == 'RGB':
@@ -277,16 +283,18 @@ for post in input_files:
 						im.thumbnail((THUMBNAIL_MAX_RESOLUTION))
 						im.save(mirror_img_filepath_thumb, "JPEG")
 						if not os.path.isfile(mirror_img_filepath_thumb):
-							print ("\tthumbnailing: error: creating thumbnail seems to have failed")
+							print ("ERROR WITH THUMBNAIL: creating thumbnail seems to have failed")
+							print ("Exiting...")
+							sys.exit(1)
 					else:
-						if parsed.verbose: print("\tthumbnailing: skipping thumbnail generation", imgurl)
+						if parsed.verbose: print("Skipping thumbnail generation for", imgurl)
 
-					if parsed.verbose: print("\tthumbnailing: copying", mirror_img_filepath_thumb, "-->", thumb_destination)
+					if parsed.verbose: print("Copying thumbnail", mirror_img_filepath_thumb, "-->", thumb_destination)
 					shutil.copy(mirror_img_filepath_thumb, thumb_destination) # Copy thumb to website
 					image['src'] = mirror_img_filename_thumb
 				
 				else:
-					print ("\tthumbnailing: error: original file hasnt been downloaded so i cant create a thumbnail")
+					print ("ERROR WITH THUMBNAIL: original file hasnt been downloaded so i cant create a thumbnail")
 					sys.exit(1)
 
 			image['src'] = SITE_ROOT_URL + post_url + '/' + image['src'] # disgusting hack for getting full urls in RSS
@@ -307,7 +315,7 @@ for post in input_files:
 		#print ("success: wrote", title.strip(), "to", post_root)
 		posts.append({'title': title.strip(), 'linked': isLinked, 'slug': slugify(title.strip()), 'full_url': SITE_ROOT_URL + post_url, 'textfile': post, 'words': len(body_text.split()), 'chars': len(body_text), 'date': date, 'path': post_url, 'stub': stub, 'body': str(soup), 'images': image_urls})
 	else:
-		print ("\tcritical: writing post html seems to have failed")
+		print ("ERROR: writing post html seems to have failed")
 		sys.exit(1)
 
 	# write stats page
@@ -332,23 +340,31 @@ for post in input_files:
 	html_output += '</div>'
 	html_output += generateFooter()
 	if not saveHTML(html_output, os.path.join(post_root, 'stats.html')):
-		print ("\tfailed saving stats page")
+		print ("ERROR: saving stats page failed", post_root)
 		sys.exit(1)
+	
 	processed_posts += 1
 	posts_left = len(input_files) - processed_posts
-	print("OK,", posts_left, "left...")
+	if parsed.verbose: print("OK,", posts_left, "left...\n")
+	pbar.update(1)
 
-if len(posts) == processed_posts:
-	print ("success: wrote", len(posts), "html files from", processed_posts, "processed files")
+pbar.close()
+
+####################################
+
+if len(input_files) == processed_posts:
+	print ("Success! Made", processed_posts, "posts from", len(input_files), "input files")
 else:
-	print ("critical: not every post in", POSTS_DIR, "seems to have gotten a html file. exiting...")
-	if parsed.verbose: print ("debug:", len(posts), "/", processed_posts)
+	print ("ERROR: not every post seems to have been processed")
+	print ("Expected posts:", len(input_files))
+	print ("Processed posts:", processed_posts)
+	print ("Exiting...")
 	sys.exit(1)
 
 newlist = sorted(posts, key=lambda k: k['date'], reverse=True) # sort by dates, reverse to get newest on top
 posts = newlist # extremely ugly code but whatever
 
-print ("generating main RSS feed")
+print ("Generating main RSS feed...")
 # First generate RSS feed where linked posts links back to our site
 rss_items = [] # First generate the posts RSS items...
 for p in posts[:20]: # only use 20 newest posts
@@ -369,7 +385,7 @@ rss = PyRSS2Gen.RSS2( # ...then create the main RSS feed and include those items
 
 rss.write_xml(open(os.path.join(SITE_ROOT,'rss.xml'), 'w'))
 
-print ("generating alternate RSS feed")
+print ("Generating alternate RSS feed...")
 # Generate RSS feed where linked posts links to their links
 rss_items = [] # First generate the posts RSS items...
 for p in posts[:20]: # only use 20 newest posts
@@ -394,7 +410,7 @@ rss = PyRSS2Gen.RSS2( # ...then create the main RSS feed and include those items
 
 rss.write_xml(open(os.path.join(SITE_ROOT,'rss_follow_links.xml'), 'w'))
 
-print ("generating RSS feed without linked posts")
+print ("Generating RSS feed without linked posts...")
 rss_items = [] # First generate the posts RSS items...
 for p in posts[:20]: # only use 20 newest posts
 	if p['linked']:
@@ -417,7 +433,7 @@ rss = PyRSS2Gen.RSS2( # ...then create the main RSS feed and include those items
 rss.write_xml(open(os.path.join(SITE_ROOT,'rss_originals.xml'), 'w'))
 
 
-print ("writing front page")
+print ("Writing front page...")
 html_output = generateHeader("Blog", "normal")
 for p in posts[:10]:
 	if p['linked']: # linked post? is either False or an URL
@@ -445,7 +461,7 @@ html_output += generateFooter()
 if not saveHTML(html_output, os.path.join(SITE_ROOT, 'index.html')):
 	print ("error saving front page")
 
-print ("writing archive")
+print ("Writing archive...")
 html_output = generateHeader("Blog Archive", "normal")
 #html_output += '<p>Hint: use your web browsers\' search function to find what you\'re looking for.</p>'
 yr = 0
@@ -462,7 +478,7 @@ html_output += "</div>"
 html_output += generateFooter()
 saveHTML(html_output, os.path.join(SITE_ROOT, 'archive.html'))
 
-print ("writing year indexes")
+print ("Making indexes for every year...")
 years = []
 mo = 0
 for p in posts:
@@ -485,7 +501,7 @@ for yr in years:
 	html_output += generateFooter()
 	saveHTML(html_output, os.path.join(SITE_ROOT, str(yr), 'index.html'))
 
-print ("writing month indexes")
+print ("Making indexes for every month...")
 months = []
 for p in posts:
 	y = p['date'].year
@@ -509,7 +525,7 @@ for month in months:
 	html_output += generateFooter()
 	saveHTML(html_output, os.path.join(SITE_ROOT, month.split('-')[0], month.split('-')[1], 'index.html'))
 
-print ("writing day indexes") # for those url modifying geeks
+print ("Making indexes for every day...") # for those url modifying geeks
 days = []
 for p in posts:
 	y = p['date'].year
@@ -534,7 +550,7 @@ for day in days:
 	html_output += generateFooter()
 	saveHTML(html_output, os.path.join(SITE_ROOT, day.split('-')[0], day.split('-')[1], day.split('-')[2], 'index.html'))
 
-print ("creating other pages:")
+print ("Creating other pages:")
 pages = os.listdir(OTHER_PAGES_FOLDER)
 for page in pages:
 	if not page.lower().endswith('html'):
@@ -555,7 +571,7 @@ for page in pages:
 		print ("\t", page, "= failed")
 		sys.exit(1)
 
-print ("creating stats page")
+print ("Creating stats page...")
 total_words = 0
 total_chars = 0
 total_images = 0
@@ -606,10 +622,10 @@ html_output += '</div>'
 
 html_output += generateFooter()
 if not saveHTML(html_output, os.path.join(SITE_ROOT, 'stats.html')):
-	print ("error: saving stats page failed!")
+	print ("ERROR: saving stats page failed")
 	sys.exit(1)
 
-print ("copying files from Include Folder", INCLUDE_FOLDER, "to Site Root", SITE_ROOT)
+print ("Copying files from the include folder to the site root...")
 files = os.listdir(INCLUDE_FOLDER)
 for f in files:
 	src = os.path.join(INCLUDE_FOLDER, f)
@@ -618,5 +634,5 @@ for f in files:
 	shutil.copy(src, dest)
 
 print()
-print ("all done!")
-print ("find your website in", os.path.abspath(SITE_ROOT))
+print ("All done!")
+print ("Find your website in", os.path.abspath(SITE_ROOT))
