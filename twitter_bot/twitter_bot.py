@@ -3,6 +3,7 @@ import feedparser
 import re
 import requests
 import os
+import datetime
 
 # pip3 install tweepy feedparser
 
@@ -19,6 +20,9 @@ def auth_twitter():
 	api = tweepy.API(auth)
 	return api
 
+# print date time, useful for cron logging
+print ( "The time is", str(datetime.datetime.now() ) ) 
+
 # read already tweeted links
 already_tweeted = []
 if os.path.isfile(database_file):
@@ -26,7 +30,7 @@ if os.path.isfile(database_file):
 		lines = f.readlines()
 	for line in lines:
 		already_tweeted.append(line.rstrip())
-print(len(already_tweeted), "urls in", database_file)
+print(len(already_tweeted), "urls in", os.path.abspath(database_file))
 
 
 # read rss
