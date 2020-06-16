@@ -35,7 +35,7 @@ IMAGES_FOLDER = './images/'
 THUMBS_FOLDER = './images/thumbs/'
 INCLUDE_FOLDER = './includes/'
 OTHER_PAGES_FOLDER = './pages/'
-VALID_POST_EXTENSIONS = ('txt', 'md', 'markdown')
+VALID_POST_EXTENSIONS = ['.txt', '.text.', '.md', '.markdown']
 
 STATS_WHITELISTED_CHARACTERS = set('abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ åäö ÅÄÖ')
 #####################################################################
@@ -131,21 +131,29 @@ if not os.path.isdir(IMAGES_FOLDER):
 if not os.path.isdir(THUMBS_FOLDER):
 	os.makedirs(THUMBS_FOLDER)
 
+input_files = []
 posts = []
 processed_posts = 0
-i = 0 # used for progress counting
 #pbar = tqdm(total=len(os.listdir(POSTS_DIR))) # start progress bar
 
-for post in os.listdir(POSTS_DIR):
-	i += 1
-	if not post.lower().endswith(VALID_POST_EXTENSIONS):
-		print ("(ignoring",post,"because it doesnt have any of these extensions:",VALID_POST_EXTENSIONS,")")
-		#pbar.update(1)
-		continue
+print("Searching for posts in", POSTS_DIR, "...")
+for dirpath, dirnames, files in os.walk(POSTS_DIR):
+	for file in files:
+		fullpath = os.path.join(dirpath, file)
+		if os.path.splitext(file)[1] in VALID_POST_EXTENSIONS:
+			input_files.append(fullpath)
+		else:
+			print("Skipping",dirpath,file,"because it doesnt have the right file extension")
 
-	print("(" + str(i) + "/" + str(len(os.listdir(POSTS_DIR))) + ") Processing", post)
+print("Found", len(input_files), "posts")
 
-	f = open(os.path.join(POSTS_DIR, post), 'r', encoding="utf8")
+print("Processing posts...")
+for post in input_files:
+	print("Processing:", post)
+	# post is fullpath to txt file
+	#print("(" + str(processed_posts) + "/" + str(len(input_files)) + ") Processing", post)
+
+	f = open(post, 'r', encoding="utf8")
 	try:
 		date = parse(f.readline(), fuzzy=True) # 1st line, date
 	except Exception as e:
@@ -155,7 +163,6 @@ for post in os.listdir(POSTS_DIR):
 		sys.exit(1)
 	title = f.readline() # 2nd line, title
 	title = title[2:]
-	#print ("> " + title.strip() + " [" + post + "]")
 	third_line = f.readline() # 3rd line, possibly a link
 	body_text = f.read()
 	f.close()
@@ -168,7 +175,7 @@ for post in os.listdir(POSTS_DIR):
 	os.makedirs(post_root)
 
 	# copy original text file to post root so it can be viewed by adding .text to post URL
-	shutil.copy(os.path.join(POSTS_DIR, post), os.path.join(post_root, '.text'))
+	shutil.copy(post, os.path.join(post_root, '.text'))
 
 	# header
 	html_output = generateHeader(title, "article")
@@ -328,9 +335,8 @@ for post in os.listdir(POSTS_DIR):
 		print ("\tfailed saving stats page")
 		sys.exit(1)
 	processed_posts += 1
-	#pbar.update(1)
-
-#pbar.close()
+	posts_left = len(input_files) - processed_posts
+	print("OK,", posts_left, "left...")
 
 if len(posts) == processed_posts:
 	print ("success: wrote", len(posts), "html files from", processed_posts, "processed files")
