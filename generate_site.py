@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 import markdown2
 from bs4 import BeautifulSoup
 from slugify import slugify
@@ -47,6 +47,7 @@ parser.add_argument("--root-url", '-url', action='store', dest='url', help='root
 parser.add_argument('--regenerate-thumbs', action="store_true", dest='regenThumbs', help="force re-generation of thumbnails", default=False)
 parser.add_argument('--verbose', '-v', action="store_true", dest='verbose', help="print alot of info", default=False)
 parser.add_argument('--skip-confirm', '-y', action="store_true", dest='skip_confrm', help="skip confirmation", default=False)
+parser.add_argument('--keep-old', '-k', action="store_true", dest='keep_old', help="keep old generation", default=False)
 parsed = parser.parse_args()
 
 if not parsed.folder:
@@ -79,7 +80,7 @@ def saveHTML(code, filepath):
 		return False
 
 def xml_clean(text): # https://stackoverflow.com/a/20819845
-	return str(''.join(ascii.isprint(c) and c or '' for c in text)) 
+	return str(''.join(ascii.isprint(c) and c or '' for c in text))
 
 def generateHeader(page_title, css_class):
 	output = '<html>'
@@ -121,17 +122,18 @@ def generateFooter():
 	output += '</footer></body></html>'
 	return output
 
-if os.path.isdir(SITE_ROOT):
-	shutil.rmtree(SITE_ROOT)
-	os.makedirs(SITE_ROOT)
-elif not os.path.isdir(SITE_ROOT):
-	os.makedirs(SITE_ROOT)
+if not parsed.keep_old:
+	if os.path.isdir(SITE_ROOT):
+		shutil.rmtree(SITE_ROOT)
+		os.makedirs(SITE_ROOT)
+	elif not os.path.isdir(SITE_ROOT):
+		os.makedirs(SITE_ROOT)
 
-if not os.path.isdir(IMAGES_FOLDER):
-	os.makedirs(IMAGES_FOLDER)
+	if not os.path.isdir(IMAGES_FOLDER):
+		os.makedirs(IMAGES_FOLDER)
 
-if not os.path.isdir(THUMBS_FOLDER):
-	os.makedirs(THUMBS_FOLDER)
+	if not os.path.isdir(THUMBS_FOLDER):
+		os.makedirs(THUMBS_FOLDER)
 
 input_files = []
 posts = []
@@ -174,7 +176,7 @@ for post in input_files: # post is fullpath to the text file
 	# create folder for post
 	post_url = str(date.year) + "/" + "%02d" % date.month + "/" +  "%02d" % date.day + "/" + str(slug_title)
 	post_root = os.path.join(SITE_ROOT, post_url)
-	os.makedirs(post_root)
+	if not os.path.isdir(post_root): os.makedirs(post_root)
 	if parsed.verbose: print('Post root folder:', post_root)
 
 	# copy original text file to post root so it can be viewed by adding .text to post URL
@@ -194,7 +196,7 @@ for post in input_files: # post is fullpath to the text file
 
 	html_output += '<h2 class="article_date">' + date.strftime('%a %d %b %Y, %H:%M') + '</h2>'
 
-	# body text 
+	# body text
 	markdown_body = markdown2.markdown(body_text, extras=["strike", "tables"])
 
 	# find images and mirror/thumbnail them
@@ -213,7 +215,7 @@ for post in input_files: # post is fullpath to the text file
 			elif 'png:' in ext:
 				ext = ".png"
 				if parsed.verbose: print ('correcting extension of', imgurl, 'to', ext)
-			
+
 			# cursed old puush images
 			if ext == '':
 				if parsed.verbose: print (imgurl, "has no extension. assuming jpg")
@@ -236,7 +238,7 @@ for post in input_files: # post is fullpath to the text file
 				f = open(mirror_img_filepath, 'wb')
 				f.write(requests.get(imgurl).content)
 				f.close()
-				#f = open(mirror_img_filepath, 'r') 
+				#f = open(mirror_img_filepath, 'r')
 				#if "puush could not be found" in f.read().lower(): # this is broken with python3
 				#	print ("error: image download failed: puush could not be found")
 				#	f.close()
@@ -276,7 +278,7 @@ for post in input_files: # post is fullpath to the text file
 
 					if not os.path.isfile(mirror_img_filepath_thumb) or parsed.regenThumbs: # Thumbnail does not exist, we need to re-generate it OR force regen is on
 						if parsed.verbose: print ("Generating thumbnail for", imgurl, "-->", mirror_img_filepath_thumb)
-						
+
 						im = Image.open(mirror_img_filepath) # Source image is the mirrored image
 						if not im.mode == 'RGB':
 							im = im.convert('RGB')
@@ -290,9 +292,12 @@ for post in input_files: # post is fullpath to the text file
 						if parsed.verbose: print("Skipping thumbnail generation for", imgurl)
 
 					if parsed.verbose: print("Copying thumbnail", mirror_img_filepath_thumb, "-->", thumb_destination)
-					shutil.copy(mirror_img_filepath_thumb, thumb_destination) # Copy thumb to website
+					if not os.path.isfile(thumb_destination):
+						shutil.copy(mirror_img_filepath_thumb, thumb_destination) # Copy thumb to website
+					else:
+						if parsed.verbose: print("Nevermind... thumb already in destination")
 					image['src'] = mirror_img_filename_thumb
-				
+
 				else:
 					print ("ERROR WITH THUMBNAIL: original file hasnt been downloaded so i cant create a thumbnail")
 					sys.exit(1)
@@ -342,7 +347,7 @@ for post in input_files: # post is fullpath to the text file
 	if not saveHTML(html_output, os.path.join(post_root, 'stats.html')):
 		print ("ERROR: saving stats page failed", post_root)
 		sys.exit(1)
-	
+
 	processed_posts += 1
 	posts_left = len(input_files) - processed_posts
 	if parsed.verbose: print("OK,", posts_left, "left...\n")
@@ -442,7 +447,7 @@ for p in posts[:10]:
 		html_output += '<h1 class="article_title"><a href="' + p['full_url'] + '">' + p['title'] + '</a></h1>'
 
 	html_output += '<h2 class="article_date"><a href="' + p['full_url'] + '">' + p['date'].strftime('%a %d %b %Y, %H:%M') + '</a></h2>'
-	
+
 	html_output += p['stub']
 
 	if len(p['images']) > 0: # add first image from post, clicking it links to article
