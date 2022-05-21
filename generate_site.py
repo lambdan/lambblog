@@ -20,7 +20,7 @@ script_run_time = datetime.now()
 SITE_TITLE = 'lambdan.se'
 SITE_TITLE_SUFFIX = ' - ' + SITE_TITLE # at the end of every <title>
 
-CSS_FILE = 'css-night-2018.css' # should be in the root of ./includes/
+CSS_FILE = 'css-oled-2022.css' # should be in the root of ./includes/
 
 AUTHOR_NAME = 'djs'
 AUTHOR_EMAIL = 'david@lambdan.se' # these are in the footer
@@ -85,6 +85,7 @@ def xml_clean(text): # https://stackoverflow.com/a/20819845
 def generateHeader(page_title, css_class):
 	output = '<html>'
 	output += '<head>'
+	output += '<link rel="stylesheet" type="text/css" href="' + CSS_URL + '">'
 	output += '<link rel="apple-touch-icon" sizes="180x180" href="' + SITE_ROOT_URL + 'apple-touch-icon.png?v=rMlK32YJeL">'
 	output += '<link rel="icon" type="image/png" sizes="32x32" href="' + SITE_ROOT_URL + 'favicon-32x32.png?v=rMlK32YJeL">'
 	output += '<link rel="icon" type="image/png" sizes="16x16" href="' + SITE_ROOT_URL + 'favicon-16x16.png?v=rMlK32YJeL">'
@@ -92,12 +93,17 @@ def generateHeader(page_title, css_class):
 	output += '<link rel="mask-icon" href="' + SITE_ROOT_URL + 'safari-pinned-tab.svg?v=rMlK32YJeL" color="#ff0f00">'
 	output += '<link rel="shortcut icon" href="' + SITE_ROOT_URL + 'favicon.ico?v=rMlK32YJeL">'
 	#output += '<meta name="msapplication-config" content="' + SITE_ROOT_URL + 'browserconfig.xml?v=rMlK32YJeL">'
-	output += '<meta name="theme-color" content="#ffffff">'
 	output += '<link rel="alternate" type="application/rss+xml" title="RSS" href="' + SITE_ROOT_URL + 'rss.xml" />'
+
+        # font
+	output += '<link rel="preconnect" href="https://fonts.googleapis.com">'
+	output += '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
+	output += '<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">'
+        # end font
+
 	output += '<title>' + page_title.strip() + SITE_TITLE_SUFFIX + '</title>' # strip() to remove newline
 	output += '<meta charset="utf-8">'
 	output += '<meta name="viewport" content="width=device-width, initial-scale=1">'
-	output += '<link rel="stylesheet" type="text/css" href="' + CSS_URL + '">'
 	output += '</head>'
 	output += '<body>'
 	output += '<div class="navigation">'
