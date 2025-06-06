@@ -44,13 +44,10 @@ parser.add_argument("--s3-region", '-r', required=True, action='store', dest='s3
 parser.add_argument("--root-url", '-url', action='store', dest='url', help='root url of website (example: https://lambdan.se/blog/)', required=True)
 parser.add_argument('--verbose', '-v', action="store_true", dest='verbose', help="print alot of info", default=False)
 parser.add_argument('--skip-confirm', '-y', action="store_true", dest='skip_confrm', help="skip confirmation", default=False)
-parser.add_argument('--keep-old', '-k', action="store_true", dest='keep_old', help="keep old generation", default=False)
 parsed = parser.parse_args()
 
-if not parsed.folder:
-	SITE_ROOT = './_output/'
-else:
-	SITE_ROOT = parsed.folder
+# if no folder is specified, use ./_output/
+SITE_ROOT = parsed.folder if parsed.folder else './_output/'  
 
 S3_BUCKET = parsed.s3bucket
 S3_REGION = parsed.s3region
@@ -72,7 +69,7 @@ BOTO3_SESSION = boto3.Session(
 BOTO3_S3_CLIENT = BOTO3_SESSION.client('s3')
 S3_EXISTING_KEYS = {}
 
-def s3_list_all_keys(bucket_name, prefix=''):
+def s3_list_all_keys(bucket_name, prefix='') -> set:
     keys = []
     paginator = BOTO3_S3_CLIENT.get_paginator('list_objects_v2')
     page_iterator = paginator.paginate(Bucket=bucket_name, Prefix=prefix)
@@ -115,6 +112,20 @@ def getImageExtension(url: str) -> str:
 		return '.jpg'
 	raise Exception("Unknown image extension in URL: " + url)
 
+def contentTypeOfFile(filepath: str) -> str:
+	if filepath.lower().endswith('.jpg') or filepath.lower().endswith('.jpeg'):
+		return 'image/jpeg'
+	elif filepath.lower().endswith('.png'):
+		return 'image/png'
+	elif filepath.lower().endswith('.gif'):
+		return 'image/gif'
+	elif filepath.lower().endswith('.webp'):
+		return 'image/webp'
+	elif filepath.lower().endswith('.svg'):
+		return 'image/svg+xml'
+	else:
+		raise Exception("Unknown file extension for content type: " + filepath)
+
 def mirrorImage(sourceUrl) -> str:
 	ext = getImageExtension(sourceUrl)
 	dest_filename = md5str(sourceUrl) + ext
@@ -122,10 +133,23 @@ def mirrorImage(sourceUrl) -> str:
 	if s3_file_exists(S3_BUCKET, dest_filename):
 		return final_url
 	print("Mirroring image:", sourceUrl, "to", final_url)
-	# TODO: download and upload
-	raise Exception("Need to mirror", sourceUrl)
+	download = requests.get(sourceUrl, stream=True)
+	if download.status_code != 200:
+		raise Exception("Failed to download image: " + sourceUrl + " --- Status code: " + str(download.status_code))
+	# save to S3
+	BOTO3_S3_CLIENT.upload_fileobj(
+		download.raw,
+		S3_BUCKET,
+		dest_filename,
+		ExtraArgs={
+			'ContentType': contentTypeOfFile(dest_filename),
+			'ACL': 'public-read' 
+		}
+	)
+	return final_url
 
-def saveHTML(code, filepath):
+
+def saveHTML(code, filepath) -> bool:
 	try:
 		soup = BeautifulSoup(code, 'html.parser')
 		f = open(filepath, 'w', encoding="utf8")
@@ -137,7 +161,7 @@ def saveHTML(code, filepath):
 		print (e)
 		return False
 
-def xml_clean(text): # https://stackoverflow.com/a/20819845
+def xml_clean(text) -> str: # https://stackoverflow.com/a/20819845
 	return str(''.join(ascii.isprint(c) and c or '' for c in text))
 
 def generateHeader(page_title, css_class):
@@ -185,21 +209,6 @@ def generateFooter():
 	#output += '<br><small>Generated ' + script_run_time.strftime('%Y-%m-%d %H:%M') + ' by <a href="https://github.com/lambdan/lambblog">lambblog</a></small>'
 	output += '</footer></body></html>'
 	return output
-
-if not parsed.keep_old:
-	if os.path.isdir(SITE_ROOT):
-		# delete all files in SITE_ROOT, but not the actual folder
-		for f in os.listdir(SITE_ROOT):
-			filepath = os.path.join(SITE_ROOT, f)
-			if os.path.isfile(filepath):
-				if parsed.verbose: print("Deleting old file:", filepath)
-				os.remove(filepath)
-			elif os.path.isdir(filepath):
-				if parsed.verbose: print("Deleting old folder:", filepath)
-				shutil.rmtree(filepath)
-		os.makedirs(SITE_ROOT)
-	elif not os.path.isdir(SITE_ROOT):
-		os.makedirs(SITE_ROOT)
 
 input_files = []
 posts = []
