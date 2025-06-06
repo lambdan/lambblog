@@ -1,15 +1,16 @@
 FROM python:3.7 AS build
 
-RUN pip3 install markdown2==2.4.8
-RUN pip3 install PyRSS2Gen==1.1
-RUN pip3 install beautifulsoup4==4.13.4
-RUN pip3 install python-slugify==8.0.4
-RUN pip3 install python-dateutil==2.9.0
-RUN pip3 install tqdm==4.67.1
-RUN pip3 install requests==2.31.0
-RUN pip3 install pillow==9.5.0
-RUN pip install boto3==1.33.13
-RUN pip install pytz==2025.2
+RUN pip install \
+    markdown2==2.4.8 \
+    PyRSS2Gen==1.1 \
+    beautifulsoup4==4.13.4 \
+    python-slugify==8.0.4 \
+    python-dateutil==2.9.0 \
+    tqdm==4.67.1 \
+    requests==2.31.0 \
+    pillow==9.5.0 \
+    boto3==1.33.13 \
+    pytz==2025.2
 
 WORKDIR /build
 
