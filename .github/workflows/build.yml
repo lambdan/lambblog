@@ -48,7 +48,7 @@ jobs:
           cache-from: type=registry,ref=${{ env.REGISTRY }}/${{ env.CACHE_PATH }}:cache
           cache-to: type=registry,ref=${{ env.REGISTRY }}/${{ env.CACHE_PATH }}:cache,mode=max
           build-args: |
-            BASE_URL=${{ env.BASE_URL }}
-            AWS_REGION=${{ env.AWS_REGION }}
+            BASE_URL=${{ vars.BASE_URL }}
+            AWS_REGION=${{ vars.AWS_REGION }}
             AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}
             AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}
