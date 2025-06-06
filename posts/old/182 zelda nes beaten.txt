@@ -1,0 +1,67 @@
+2017-06-23T23:16:00+02:00
+# Game Beaten: The Legend of Zelda (NES)
+
+Ah, another one of the list (several years ago I made a list where I put in a bunch of classic games that I wanted to beat before I die. This was one of them.)
+
+Why did I decide to spend this [midsummer][mid] playing this game instead of doing something more traditional?
+Well, first off, I don't really celebrate midsummer. It's just a unnecessary tradition here in Sweden.
+
+Secondly, I've been genuinely wanting to play this game since a week or two ago.
+
+You see, my lil' cousin who is like 12 or 13 years old came over. He is a big fan of [_Breath of the Wild_][botw] by the way. 
+Suddenly, he asks me if I have the original Zelda, and I say I do (well, technically I don't, but I have it on my Everdrive) and so I boot it up for him. Also had to explain how to use the SELECT and START buttons to navigate the file select menu and such.
+
+Then he started playing and I got stuck watching him - it was so interesting! 
+Instead of running to the first level like I usually do, he ran all over the place. Then he brought up a map on his iPhone and started following it to find a bunch of items and hearts, without even being into the first dungeon.
+
+This was blowing my mind. For some reason it never occured to me that you could do this. I know it's an exploration game, and people always said that it was the first game to truly be open-world and exploratory, but I never really read into it. For me, that meant that you had to find the dungeons but nothing else. 
+
+I realized it really is open-world, and that it is basically a 2D version of _Breath of the Wild_, or more correctly, _Breath of the Wild_ is a 3D version of the first Zelda game.
+Being a relatively big _Breath of the Wild_ fan, I was amazed by this old game all of a sudden, that I previously didn't like that much.
+
+Anyway.
+
+Once my cousin decided to go into a level, he had no problems at all, despite not being used to the "NES difficulty"-factor. He just had so many hearts and other items that he could just breeze through the first couple of levels. One of the reasons I haven't played this game much is because I found it too difficult, but with all the items and things, it looked easy.
+
+So, here we are, one or two weeks later (sorry, I have lost my ability to track time, everything is just a blur nowadays) and I decided to do the same thing.
+
+I started playing it, just running around looking for stuff.
+I first tried getting bombs. Once I got them, I tried to remember where I had seen my cousin blow walls and tried to go there and blow them up, and indeed I got a heart or two. Then I had enough rupies to buy a candle, so I could start burning bushes and I tried remembering where I've seen "bush burning spots."
+
+Once I couldn't find anything else, I decided to look up a walkthrough to see what they had found before entering the first dungeon, and conveniently enough, I had found exactly the same things they had.
+
+I ended up using [these maps][wt]. I know it's a walkthrough but I actually didn't read anything of it, really. All I looked at was their amazing overworld maps. Another nice thing was that they stated at the start of each page how many hearts you should have at this point (which I said I used above.)
+
+So I entered the first dungeon, and just cruised right through it. I was very prepared for it, especially since I am used to playing it with just 3 maps and no other items.
+
+![Level 1](http://i.imgur.com/1t8xEPr.jpg)
+<figcaption>Doing the first level with 6 hearts and a better sword was very different from how I am used to doing it</figcaption>
+
+After I had completed level 1, I just looked at that walkthrough's overworld map for level 2, and once I was in level 2 I looked at its map to see where things was, and so on...
+
+You might argue that I shouldn't have done this and I should've figured out all of this on my own, but no, lets not do that. 
+I hate getting stuck in games and not knowing where to go. 
+That's why I greatly prefer linear games, or open-world games with markers that tells you what to do next.
+Or just using a walkthrough and cruisin', just like I did with this game and [Terranigma][t], although Terranigma might be even more cryptic.
+
+I also didn't use save states for this playthrough...
+Or well, that's not entirely true... I did use save states to always win the "money gambling" game, just because I didn't feel like grinding for rupies. 
+
+![Gambling](http://i.imgur.com/2xZraXV.jpg)
+<figcaption>I did use save states to always win this game, just because I didn't wanna waste time grinding rupies</figcaption>
+
+Why didn't I wanna grind for rupies? Well, to be honest, just fighting in this game isn't that fun. The controls aren't the smoothest and it's just not that fun to poke your sword. 
+What's fun in this game is finding items and figuring out what the cryptic clues actually mean, and also being amazed that all of this is happening on a NES in 1986. Having some combat in between is nice, so you have some variation.
+
+I think the reason this game captured me now is because I have played _Breath of the Wild_. I just saw this game, as a more simple 2D version of _Breath of the Wild_, and it's so cool to think of it like that, seeing how this game came out about 30 years before _Breath of the Wild_. 
+It also helped me understand some things in _Breath of the Wild_ better, especially why the Master Sword requires X hearts to be pulled (because you need X hearts in this game too!)
+
+I think I'll give this game a 9/10. It's a __legendary game__ that was __way ahead of its time__ when it was originally released.
+
+I cannot imagine how amazing and different this game must've been in 1986. I wish I could've been there too.
+
+[mid]: https://sweden.se/culture-traditions/midsummer/
+[botw]: https://lambdan.se/168
+[wt]: https://www.zeldadungeon.net/the-legend-of-zelda-walkthrough/
+[t]: https://lambdan.se/158
+[tm]: https://www.youtube.com/watch?v=4IakZtHzBL8

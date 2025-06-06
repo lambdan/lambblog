@@ -1,0 +1,34 @@
+2016-09-21T17:23:00+02:00
+# Season 7, Episode 13
+
+* In retrospect I kinda wish I would've gotten a jet black model instead of the regular black, just because I would like to see how scratched it would end up looking like  after being at work with me. On the other hand, I don't need more than 32 GB so I did save money. _Update: I have now gotten a Jet Black 128 GB and I like it much, much better because it is much easier to grip._
+* I like the home ["button"][hb]. I have it set at option 2, but I like all of the settings. I've seen a lot of people saying 3 (the strongest) is the best but I disagree. 
+* I went with the 4.7" which feels way too big coming from an SE (4.0"). I can't believe I've previously used a 6+ (5.5") - that seems unbelievably big. 
+* Battery seems good enough. I've never really had iPhone battery problems, apart from the time I used a >2 year old iPhone 5.  
+* I haven't missed the 3.5mm port. I tried the Lightning EarPods and they seem to work fine. It does feel weird to plug in a Lightning connector to listen to music though. I'll keep using my *Sony SBH20* for music or podcasts on the go. 
+* I really like the haptics. They're subtle but adds a lot to the experience. I think you would miss them if you used any other phone - the other phones would feel broken. 
+* I got an *Apple Leather Case* (midnight blue), and I like it, but not as much as my old 6+ Leather Case. This leather case feels too "mass produced", with the buttons being clicky and all. The old leather cases felt much more unique and "genuine." _Now that I got Jet Black I don't use the case._
+* The dual speakers are nice. I'd listen through them if I had no other choice and I were comfortable with listening to music through speakers. 
+* Albeit not a 7 feature, 3D Touch, from the iPhone 6s, is kinda meh. It's cool but I haven't found any good uses for it yet, except the text cursor you can move around by firmly pressing the keyboard. 
+* The A10 Fusion CPU is ridiculous. It's actually faster than my old Plex server (a 2011 Mac Mini), and I believe it beats some modern CPUs in single core tests. Not sure what to use the speed for. 
+* I have not heard my iPhone 7 [hiss][hiss]. 
+* The phone being *IP67* compliant is nice. I've seen [people on YouTube recording video with the iPhone 7 underwater][yt], and it seems to work just fine so that feels reassuring. 
+
+Overall I'm happy with it. But there's nothing special about it. It just works. 
+
+# iOS 10
+
+Been running iOS 10 since public beta 2 or 3 and I haven't really had any issues with it. 
+
+* I like the new keyboard and lock sounds. 
+* I don't like how you have to swipe down on Alarm notifications to shut them off. 
+* I don't like how you have to swipe to access music controls in the control center. 
+* I don't care at all about widgets at the Lock Screen, especially not with the new fingerprint reader being so damn fast you can barely even see the lock screen when unlocking your phone (I love this.)
+* I don't care at all about the new iMessage features. I haven't tried any of them. 
+* I do like the new emoji design 🤔
+* I have *Raise to wake* disabled. 
+* I do like the "AI" features of Photos.app, similar to the ones in *Google Photos*. Been working pretty good in my testing. 
+
+[hb]: http://www.theverge.com/circuitbreaker/2016/9/7/12828652/apple-iphone-7-home-button-removed-force-touch
+[hiss]: https://512pixels.net/2016/09/iphone-7-plus-logic-board-noise/
+[yt]: https://youtube.com/watch?v=M6W6ndsD0ww

@@ -1,0 +1,65 @@
+2015-05-03T00:00:00+02:00
+# Sega Genesis/MD Region lockout and differences
+
+Recently I’ve gotten interested in the Sega Genesis/MD (from here on called SMD.) My brother used to have one when I was a little baby, but as I understand I urinated on it and they threw it out. Only memory I have of it is playing a game on it where you were a guy or robot on rooftops, and it was a sidescroller, if anyone knows what game this is let me know.
+
+Anyway, I was pleasantly surprised to know that the SMD is very import friendly, especially the Model 1. Basically, there are two settings in the console (not settings as in you can go in a menu and change them, but solder points that has traces between them that sets different options). One setting changes between 50 Hz and 60 Hz. The other changes between English and Japanese system language. To change these settings, you can [mod it](http://mdpal60.net/wiki/megadrive/regionmod/start) to toggle them. Another, more traditional way of modding it, is to have [two switches](http://www.mmmonkey.co.uk/console/sega/md1switches.htm): one for the Hz, and one for the language. Eitherway, you can effectively make your SMD play whatever game you throw at it.
+
+Once I got to know about this, I ordered a japanese SMD Model 1 (which hasn’t arrived at the time of writing this). Excited as I am, I got the emulator Gens and started messing around with this stuff. I have ordered a _EU version of Michael Jackson’s Moonwalker_ and a _JP version of Sonic the Hedgehog 2, _so I wanted to check if both would work in my japanese SMD. In Gens, there are three options that affect the CPU emulation:&nbsp;
+![](https://40.media.tumblr.com/6cd7de97f86268f1b4776acb6e938371/tumblr_inline_nns9hqnxyC1s4uxtt_540.png)
+
+*   **Japan (NTSC)** = 60 Hz, and Japanese language = Japanese SMD
+
+*   **USA (NTSC)** = 60 Hz, and English language = American Sega Genesis (SMD)
+
+*   **Europe (PAL)** = 50 Hz, and English language = European SMD
+
+*   **Japan (PAL)** = 50 Hz, and Japanese language = Doesn’t exist in practice
+
+Most games for the SMD use the same rom worldwide, meaning in theory it is the same exact game everyone is playing in the world, but because of the console setting(s) it acts differently. Moonwalker for example, is a (W) game meaning it is the same rom worldwide. Therefore, no matter what setting you have this on it will work.&nbsp;
+
+Around 1993 however, SEGA started adding checks to see what region the console was. Streets of Rage 2, also known as Bare Knuckle 2 in Japan, is an example of this. If you try to run the **(U) [american] version** of it, with the CPU Country-setting **set to Japan or Europe**, this shows up when you boot up the game:
+![](https://33.media.tumblr.com/e1193fa784bb136d2c6a29b46d458b58/tumblr_inline_nns9z4TkPn1s4uxtt_540.gif)
+
+Likewise, if you run the **(JE) [japan and europe] rom** with the CPU Country-setting **set to US**, this shows up:
+![](https://38.media.tumblr.com/9f9e7216b5bfa4af993828fea96278b0/tumblr_inline_nns9ymzRoz1s4uxtt_540.gif)
+
+So, let’s pretend you live in the states and you have a Genesis from your childhood and you imported Bare Knuckle 2 from Japan because you like the box art more. When you put the game in your Genesis you see the screen above :( What do you do now? Well, you perform the mods I linked above, then you would set the language setting to Japanese, and keep the Hz-setting at 60 Hz, and boom: it would work.
+
+Sonic the Hedgehog 3 is also an interesting game if we’re talking about region locking. It has three separate versions: one for america, one for europe, and one for japan. Not only that, but it also checks what Hz your console is set to. What this means, is that you absolutely have to run it on the exact same region it was made for: (E) will only run on 50 Hz and English, (J) will only run on 60 Hz and Japanese, and (U) will only run on 60 Hz and English. If you don’t fulfill these conditions &nbsp;you will be greeted by one of these screens:&nbsp;
+![](https://41.media.tumblr.com/350357ca4f39f7ed28030fe33d8e97ad/tumblr_inline_nnsaduOVRh1s4uxtt_540.png)
+
+(50 Hz and JP setting results in a black screen, as this combination doesn’t exist in practice - there are no japanese speaking countries in PAL territory)
+
+In theory, you can import, let’s say an european copy of it, and then just have the console set to 50 Hz and English, and then after the SEGA screen you could switch the Hz back to 60 Hz and it should work (it does on Gens, not sure what happens on an actual system). The downside of this, is that it would run sped up, as Sonic 3 is one of the few games that have been optimized for 50 Hz (personally I don’t trust this and I will import an US-NTSC copy of it probably). Disney’s Aladdin is another example of this (except that the (J) version runs on any CPU setting), which is a bummer as it’s a very cheap game for the SMD here in Sweden. Now I’m gonna have to buy a expensive US-NTSC copy of it if I want a English version of it that runs in 60 Hz.&nbsp;
+
+One interesting thing with Sonic 3 is that if it’s combined with Sonic &amp; Knuckles it doesn’t care about anything. Judging from roms, the Sonic &amp; Knuckles rom is a (W) - meaning Worldwide, meaning the same rom worldwide. Because of this you should be able to combine any Sonic 3 cartridge with any Sonic &amp; Knuckles cartridge and be able to run whatever Hz or language you want (I have no way to test this though, as you can’t&nbsp;“manually combine” S3&amp;K in Gens afaik.)
+
+**Streets of Rage 2 / Bare Knuckle 2**
+
+This game is interesting in a lot of ways. First of, that there is a (JE) and (U) rom.&nbsp;
+
+Secondly, that you can flip the language switch at any time and get instant results. If you have the country setting set to JP, you will have japanese subtitles during cutscenes. If it’s set to english and you are using the (JE) rom you will have english subtitles (makes sense). Now, what if you imported an Japanese version and want to play it in 60 Hz with english subtitles, how would you do it then? Well, as mentioned earlier the (JE) rom wont run if you use the 60Hz &amp; ENG settings. Therefore you have two options: use the Japanese setting and press start on the SEGA startup logo, as soon as the screen goes black hit the language switch and voila: english. The other, easier option, is to start it up in 50 Hz &amp; ENG setting (European), then at any point after the SEGA logo flip the 60 Hz switch.&nbsp;
+
+Thirdly, as the game is called **Bare Knuckle 2 in Japan**, and **Streets of Rage 2 elsewhere**, they have _different logos_. The Japanese one uses gold color, and the English one is blue.&nbsp;
+![](https://33.media.tumblr.com/239aceb3983d9e2daa5447481898e078/tumblr_inline_nnsc5muSKQ1s4uxtt_540.gif)![](https://38.media.tumblr.com/254c293cd66e4ad0e9539e17906e3b9b/tumblr_inline_nnsc6khgOZ1s4uxtt_540.gif)
+
+On the menu, both has a kind of glowing/reflecting animation, as if you would use a flashlight and drag it over them. Now, if you flip the language switch interesting things happen. If you have the english logo and flip it to japanese, it will get gold on top of the blue, because of the&nbsp;“glowing” animation:
+![](https://38.media.tumblr.com/ee699bdb7dc1b2dd8e2513ed9d7932f8/tumblr_inline_nnscb1E4uH1s4uxtt_540.gif)
+
+Likewise, if you have the japanese logo and flip it to the english setting, you will get blue on top of gold:
+![](https://38.media.tumblr.com/8364b8d120457e64fa4881e65b038444/tumblr_inline_nnscchqHW91s4uxtt_540.gif)
+
+The final interesting thing is that the region check isn’t just during the startup. If you let the demo play through, it will come back to the SEGA logo again and check the region &amp; Hz setting again. This is probably because the game just sends a&nbsp;“reset command” to the SMD, but still, it’s neat.
+
+**Bonus**
+
+Another interesting effect from messing around with the language switch is that you can notice regional differences. Here’s the SEGA screen from Sonic the Hedgehog (REV 01):&nbsp;
+![](https://40.media.tumblr.com/d10bb7b9269a94b11b8b7d212b5278d2/tumblr_inline_nnsb917nhq1s4uxtt_540.png)
+
+Notice how the JP setting doesn’t have a TM-thing in the top-right? Yeah, that’s cool. (REV 00 has TM-thing in top-right no matter what setting.) The same thing is in Sonic 2 too (and probably many other games too.)
+
+**Bonus 2**
+
+Thanks to Twitter, after publishing this post I got to know of a pretty funny easter egg in Mickey Mania. Apparently some developers were aware of &nbsp;region modding:
+[https://www.youtube.com/watch?v=edxi2zNGEHw](https://www.youtube.com/watch?v=edxi2zNGEHw)

@@ -1,0 +1,27 @@
+2017-02-04T21:18:00+01:00
+# HTPC Requirements
+
+Here are my requirements for a HTPC, or a device I will hook up to my TV and watch Movies/TV Shows with:
+
+- Must be controllable over HDMI CEC (So I can control it with my TV remote)
+- Plays 1080p videos with Blu-ray bitrates (20-30 Mbps) without stuttering. Maybe 2160p/4K eventually.
+- Can passthrough/bitstream AC3 and DTS over optical
+- 24p output
+- Runs some sort of Plex, preferably [OpenPHT](https://github.com/RasPlex/OpenPHT)
+- Can navigate Plex menus without lag/stuttering
+- Is very quiet
+
+![tv](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/2017-02-04_212828.jpg)
+<p class="img-caption">Usual view</p>
+
+So far the device that suits me the best is the Raspberry Pi. Model 2 in my case. 
+It does all of these things except 4K and navigate OpenPHT without lag. The lag isn't bad mind you, but it's a bit annoying. Just a sliver.
+Apparently the speed difference is noticable with a Model 3 so I could potentially just get one of those and it would be perfect, except for 4K.
+
+But instead of spending money on yet another Raspberry Pi I'd rather save it for a Nvidia Shield TV or something nice like that.
+
+The Raspberry Pi 2 is great though, it's just slow sometimes. If you are just binge watching a show, i.e. you just navigate to the next episode and hit play (2 clicks on the remote) it's totally fine.
+It's just slow when you are scrolling through 1000 movies or 300 TV shows.
+
+![rpi2](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/2017-02-04_212900.jpg)
+<p class="img-caption">The Pi ticking along, below the TV. Yes, there is dust to the side there.</p>

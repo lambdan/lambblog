@@ -1,0 +1,104 @@
+2016-04-06T13:42:00+02:00
+# PS4 Remote Play To PC Impressions
+
+Not as good as Steam In-home streaming. But not bad either, especially with Ethernet.
+
+## Methodology
+
+I used three games to test: Bloodborne, Destiny and Hotline Miami. Bloodborne I picked because it's the game I currently play most on my PS4 and it's a PS4 exclusive. Destiny I picked because it's a console exclusive and it's a FPS. Hotline Miami wasn't a great pick, but I needed a 60 FPS game. In retrospect I could've used Last Of Us: Remastered but that game takes so damn long to boot up and I don't feel like going back and re-recording.
+
+For hardware I used my main PC: i7 4770K @ stock speed, 16 GB DDR3, GTX 970 and Windows 10, running over CAT5e to my DLink DIR-850L (a Gigabit ethernet router).
+
+For the PS4 I used my main PS4 obviously (as I only have one), it's one of those new models with physical buttons, and it's the MGS 5 limited red edition. It was connected over both 802.11n Wifi and Ethernet.
+
+## Setup
+
+Installing the system update on my PS4 was obviously easy. Getting the Remote Play app was also easy once you know the [url](https://remoteplay.dl.playstation.net/remoteplay/lang/en/index.html). Installing it was also easy, although on the Mac it wasn't a trusted developer so you have to tell Gatekeeper that it's okay.
+
+Once the app is started it wants you to enter your PSN ID and password, to sign in. On Windows it worked fine, but on OS X I couldn't paste in my password which was annoying.
+
+When you're signed in, all you should do is connect your PS4 controller to your PC using USB and eventually adjust the settings. On Windows I could easily find this settings menu but I did not find it in the OS X version.
+
+Anyway, then you just hit start and wait for a while and hope it finds your PS4. In my experience you needed to turn on the PS4 manually, but I'm assuming that if I allowed my PS4 to be in low-power mode (that mode where it's kind of shut of but still powers the USB ports and downloads updates) it would automatically turn on.
+
+And then you're off!
+
+## PS4 Connected To 802.11n Wifi
+
+First up I accidentally tried it when my PS4 was connected to Wifi (I wish Sony consoles (PS3 and PS4) would disconnect from Wifi when they detect an active ethernet connection). As I thought it was over Ethernet I wasn't very happy with the results. But now, thinking about it, considering my PS4 was connected over 802.11n I think the results are pretty good now!
+
+#### Hotline Miami
+
+<div class="video-container">
+<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/RvPOuz5IjxE"></iframe>
+</div>
+
+The controls felt very floaty and unresponsive.
+
+#### Bloodborne
+
+<div class="video-container">
+<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/juJYGCIdPac"></iframe>
+</div>
+
+I had a lot of framerate issues with it (probably Wifi to blame) and the controls weren't super responsive. It was playable for just farming easy enemies, but I would not wanna fight any harder monsters or bosses with my PS4 connected to wifi.
+
+#### Destiny
+
+<div class="video-container">
+<iframe src="https://www.youtube.com/embed/ziUK85r1wAI" frameborder="0" allowfullscreen></iframe>
+</div>
+
+This game gave me some solid hiccups and I also lost control over my right stick sometimes. I'd use it for PvE, it was pretty okay as long as the hiccups didn't happen. Input delay made aiming alot harder though.
+
+## PS4 Connected To Gigabit Ethernet
+
+Ahh, realizing my PS4 had been connected over Wifi gave me new hope for Remote Play. And it did generally fix the issues.
+
+#### Hotline Miami
+
+ <div class="video-container">
+<iframe src="https://www.youtube.com/embed/NhAzPmYc8IU" frameborder="0" allowfullscreen></iframe>
+</div>
+
+Ahh, this felt much more responsive. Still not as good as playing on the actual TV, but much better than wifi. I'd play it.
+
+#### Bloodborne
+
+ <div class="video-container">
+<iframe src="https://www.youtube.com/embed/LaIPJEDitfQ" frameborder="0" allowfullscreen></iframe>
+</div>
+
+Felt better and looked better. Had less framerate issues. I'd play it, but I would still not trust doing any bosses over Remote Play.
+
+#### Destiny
+
+ <div class="video-container">
+<iframe src="https://www.youtube.com/embed/2QmGRLSMksI" frameborder="0" allowfullscreen></iframe>
+</Div>
+
+As with Bloodborne, it looked better and just felt better. I also didn't run into any of those hiccups I had over Wifi. Very playable PvE. PvP at your own risk.
+
+## Computer Connected To Wifi
+
+For fun I decided to try installing the Remote Play app on my Macbook Air from 2014, connected to Wifi, and oh boy. That is not a good experience.
+
+I took this screenshot and you can see how blocky and compressed everything looked:
+
+![screenshot](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/Screen%20Shot%202016-04-06%20at%2013.23.36.png)
+
+<p class="img-caption">A lot of compression artifacts and disconnects makes me not recommend Remote Playing to a computer connected to Wifi.</p>
+
+It also kept on randomly disconnecting. I bet it would be alot better if I could use 802.11ac, which I can, but my router likes to freeze when something connects to the 802.11ac network.
+To be fair though, my Steam In-home Streaming experience with a computer on Wifi isn't great either.
+
+## Conclusion
+
+I remember when Steam In-home streaming was new and I tried it. I didn't like it. It was cumbersome to setup and once it was up it was bad. After a couple of updates, it's fantastic and I played the majority of Fallout 4 using it. I hope this will be the same case for PS4 Remote Play. It's usable now, but not great.
+
+Steam In-home streaming works as good as connecting a HDMI Cable to my TV for me. I hope Remote Play can reach that level some day (but in reverse, HDMI cable to my computer monitor). It's almost there, but not quite. I'd like even better image quality (1080p30 support would be great) and better input delay if possible. With Steam In-home streaming I've been able to play at 1080p60 without any noticable input delay and it's been fantastic. Only when looking around really fast or spinning the camera have I noticed compression artifacts using Steam In-home streaming.
+
+To be fair though, Steam In-home streaming could use my i7 to do a lot of the encoding, while the PS4 has to use it's dinky little CPU to do it. Maybe the PS 4.5 will do it better.
+
+If you don't feel like turning on your TV and just wanna use your computer monitor instead, without having to switch source or maybe your monitor doesn't have a HDMI Input (mine doesn't, thanks to G-Sync), PS4 Remote Play is good enough for less difficult games. I would not use it for bosses in Bloodborne or PvP in Destiny. For PvE in both of those games, I'd consider it, if you have Ethernet connections both ends.
+

@@ -1,0 +1,59 @@
+2017-09-30T00:13:00+02:00
+# Autohotkey Script for Using Apple Magic Keyboard 2 on Windows
+
+Here's the [Autohotkey](https://autohotkey.com/) script I have settled for using with my Apple Magic Keyboard 2 on Windows 10.
+
+	; AutoHotkey script to make Apple Magic Keyboard 2 (Bluetooth, released in 2015) usable in Windows
+	; Unfortunately the actual FN-key and the Eject key on this keyboard does literally nothing in Windows, so we can't use them
+	; The fundamental principle is to instead use Right Shift as FN key, and then use the printed media keys, and then 
+	; some elements from the layout of POK3R Keyboards, such as "FN"+Backspace to Delete, and "FN"+P to Print Screen
+	; ("FN" is Right Shift ofcourse)
+
+	#NoEnv
+	SendMode Input
+
+	; Swap left Command/Windows key with left Alt (for alt-tab and muscle memory)
+	LAlt::LWin
+	LWin::LAlt
+
+	; "FN" mappings (...except R Shift is the FN key...)
+	RShift & Backspace::sendinput, {delete}
+	RShift & Right::sendinput, {End}
+	RShift & Left::sendinput, {Home}
+	RShift & Up::sendinput, {PgUp}
+	RShift & Down::sendinput, {pgdn}  
+	RShift & P::sendinput, {printscreen}
+	RShift & U::sendinput, {pause}
+	; Media keys
+	RShift & F7::sendinput, {Media_Prev}
+	RShift & F8::sendinput, {Media_Play_Pause}
+	RShift & F9::sendinput, {Media_Next}
+	RShift & F10::sendinput, {Volume_Mute}
+	RShift & F11::sendinput, {Volume_Down}
+	RShift & F12::sendinput, {Volume_Up}
+	; RShift ESC to open Task Manager
+	RShift & ESC::Send ^+{Escape}
+	; show open apps in Windows 10 (similar to Mission Control in macOS), a bit glitchy
+	RShift & F3::send #{Tab}
+	; open task manager
+	RShift & F4::send {SHIFTDOWN}{CTRLDOWN}{ESC}{SHIFTUP}{CTRLUP}
+
+
+	; swap < and § (you may not need this)
+	§::<
+	<::§
+	
+The comment at the top pretty much sums it up, but the idea is to use the Right Shift key as a FN key.
+The Eject key and the FN-key on the keyboard does nothing in Windows (nothing reacts to it), so we can't use those.
+Therefore, I decided to figure out what the least used key was, and I determined it was the Right Shift.
+
+Once we have a function key we can start doing some fun stuff, inspired by my _POK3R_ Keyboard:
+
+- RShift P --> Print Screen
+- RShift Arrow Keys --> Move around (page up, page down, home, end)
+
+And then for media keys, I went with the ones that have the Media icons printed on them (F7-F12). Just use RShift to do the action that is printed on them.
+
+This is what I have been using for the past week or two and I am quite fond of it. Especially the navigation stuff.  I use my middle finger to push down RShift, and then I use my thumb to pick an arrow.
+
+The last snippet is to swap `<` and `§`. You may or may not need it. Sometimes I've needed it and sometimes I haven't. Even when I use a PC keyboard in macOS I've sometimes needed it. I don't know why.

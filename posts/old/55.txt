@@ -1,0 +1,30 @@
+2015-12-28T00:00:00+01:00
+# Week 52
+
+Sorry I'm a day late on this one. I simply forgot.
+
+Hot:
+
+* Watched The Force Awakens. [Base64 decode](https://www.base64decode.org) this for more details (or just click [here](http://pastebin.com/MYwANKRk)): `SSB3aXNoIGl0IHdhc24ndCBjYWxsZWQgRXBpc
+29kZSA3LiBJIHdpc2ggaXQgd291bGQgaGF2ZSBub25l
+IG9mIHRoZSBvbGQgY2hhcmFjdGVycyBhbmQgdGhhdC
+BpdCB3b3VsZCB0YWtlIHBsYWNlIGluIGFub3Ro
+ZXIgdGltZWxpbmUuIEkgaGF0ZSBLeWxvIFJlbi4gQW
+xzbyBraW5kYSBsYW1lIHRoYXQgaXQncyBiYXNpY2F
+sbHkgdGhlIHNhbWUgcGxvdCBhcyBBIE5ldyBIb3BlL
+CBidXQgb3RoZXIgdGhhbiB0aGF0IEkgZW5qb3l
+lZCBpdC4gV2lsbCB3YXRjaCBpdCBhZ2FpbiB3aXRoI
+GJldHRlciBxdWFsaXR5IHNvbWV0aW1lLg0K`
+* Finished Metal Gear Solid V: The Phantom Pain, you can read about it and all the other games I beat in 2015 [here](http://lambdan.se/blog/54/games-i-beat-in-2015-and-my-game-of-the-year)
+* Published the Games I've Beaten Post, as mentioned above
+* Sold my Razer Firefly. I'm free of Razer stuff now!
+* Won 500 SEK (~$50) on bingo
+* Got Class S License in Destiny SRL
+* Had a nice Christmas with nice people and tasty food
+* Been making a Bootstrap version out of my blog, you can try it by going to [http://lambdan.se/blog/bootstrap/](http://lambdan.se/blog/bootstrap)
+
+Not:
+
+* Eaten a lot of junk since its been Christmas
+* Bought another (mechanical) keyboard, Tesoro Tizona G2N (Kailh Brown, TKL, $35, couldn't resist)
+

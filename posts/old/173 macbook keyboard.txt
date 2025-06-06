@@ -1,0 +1,28 @@
+2017-04-28T01:44:00+02:00
+# 12" Macbook Keyboard
+
+The keyboard on the 12" Macbook is a very controversial topic.
+[Some people hate it][marco], some people don't mind it, and maybe [someone even loves it][jim].
+
+I am writing this on it, and I'm not really sure where I land. Probably the middle: I don't mind it.
+
+The hard part is that I cannot explain to you how it feels. I really cannot do it. It feels unlike anything else I have ever typed on. So I'm sorry, but you are going to go out to a store or something to try it out. 
+
+It doesn't feel mushy like a rubber dome keyboard, and it doesn't feel clicky and tactile like a mechanical keyboard with Cherry MX switches. 
+It doesn't feel like any other laptop keyboard I have tried. It feels like it's own thing.
+
+Thing is, despite the keyboard not feeling great. I am still typing great on it, both [fast][fast] and accurate. It's just when you open up the computer for the first time of that day and you start typing and you kinda go "uhhh", and then after a while you almost get used to it, but not quite.
+
+It's worth noting that my desktop keyboard of choice, at the moment, uses clicky Cherry MX Blue switches, and I have no trouble transitioning between the two.
+
+So I'm not getting rid of this computer because of the keyboard, like some people. I have no problems with the keyboard.
+Would I prefer the keyboard on my old 11-inch Macbook Air or my more recent 15-inch Retina Macbook Pro? Yeah, probably.
+But those keys do kinda wobble and when you don't know better that doesn't bother you. But now that I can try to wobble the keys on this 12-inch Macbook, and they don't wobble, I kinda prefer this. 
+
+It feels much more premium.
+
+(Other thoughts on this computer will come whenever I think of something to write about it. But so far, I have very few/no complaints. Battery is incredible, screen is ok, trackpad is fantastic, thinness is incredible, only one port hasn't bothered me so far... All around, very happy with it so far.)
+
+[fast]: https://twitter.com/djs__/status/857371569194237953
+[marco]: https://marco.org/2015/05/19/mistake-one
+[jim]: http://www.loopinsight.com/2016/01/19/my-love-of-macbook/

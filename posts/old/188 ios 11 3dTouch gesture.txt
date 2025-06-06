@@ -1,0 +1,11 @@
+2017-07-02T02:47:55+02:00
+# Removal of 3D Touch app switching gesture in iOS 11 confirmed as intentional change
+https://9to5mac.com/2017/06/30/ios-11-3d-touch-app-switching-gesture-removed/
+
+Well I'm glad I didn't get used to it. 
+I have done it a couple of times but it always felt weird and sometimes something I didn't intend for happened. 
+
+I'm interested why though. Maybe something to do with the new allegedly edge-to-edge display iPhones later this year? 🤔
+Maybe it feels wrong to press so hard right on the edge of a display with a curved body underneath?
+
+I have no idea really, but I really look forward to seeing the new iPhones. 

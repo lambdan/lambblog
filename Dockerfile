@@ -12,16 +12,13 @@ RUN pip3 install pillow==9.5.0
 WORKDIR /build
 
 COPY ./posts /build/posts
-COPY ./images /build/images
 COPY ./includes /build/includes
 COPY ./pages /build/pages
-
 COPY ./generate_site.py /build/generate_site.py
 
 RUN python3 generate_site.py -url http://localhost:80/ -y -v
 
 FROM nginx:alpine AS final
-
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /build/_output /html
 

@@ -1,0 +1,152 @@
+2016-09-18T00:09:00+02:00
+# The New Plex Server
+
+Sorry, this is kind of a lame post, but I feel like writing something because I'm kinda bored this weekend. I didn't get my iPhone 7 so I can't play with that, and I can't figure out a good place to put my computer monitor/TV so I can't play PS4 either.
+
+So let's talk about the new Plex Server I built this week.
+
+Specs:
+- Case: Fractal Design Node 304
+- Motherboard: MSI H110I PRO (I think, it might be H110l, because of how stupid lowercase L and uppercase i is)
+- CPU: Intel Core i3-6100 @ 3.7 GHz
+- RAM: 1x4 GB Crucial 2133 MHz DDR4
+- PSU: Corsair VX450W
+- System Disk: Kingston V300 120 GB SSD
+- Storage Disks: 2x 4 TB Seagate Desktop
+- OS: Windows 10 x64 (I'll explain later)
+
+![firstboot](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/IMG_0249.JPG)
+<p class="img-caption">First boot</p>
+
+Why did I build this? Well, I have been for years now been using my 2011 Mac Mini as my Plex Server, and it's been fine. It's quiet and draws little power. But it's slow.
+The i5-2415m in it got __3305__ points on [Passmark][passmark]. Plex recommends roughly 2000 points for a 1080p transcode, which essentially means my Mac Mini could do 1.5 simultaneous 1080p transcodes.
+Now to be fair, I rarely have to do any 1080p transcodes on my Plex Server, as pretty much all of the stuff I keep there that needs to be transcoded are usually 480p XViD encodes that are really old. All my HD stuff is usually H264 which 99% of Plex capable devices can just direct play. In the worst case, the audio has to be transcoded, but that is a way easier/faster procedure than video transcoding.
+
+So my Mac Mini being slow isn't really the reason why. The main reason why, was because my mother needed a computer running OS X, so she can use the Photos.app that is in OS X. Once I realized this, and realized the Mac Mini would be perfect for her (as she doesn't care about speed), I swiftly ordered the stuff. 
+
+# Part Choices
+
+It was inevitable that I would get a new Plex server though. My 2-bay Synology NAS has both it's bays full, so if I would need more storage I would have to buy either a new NAS or a computer that can be both a NAS and Plex Server, and I went with the later. And that is why I went with the Node 304 - it has 6x 3.5" slots. 
+
+Interestingly, the motherboard I went with does not have 6x SATA connections, only four. I plan on solving this by either buying a SATA card that I can put in the PCI-express slot (I'm on integrated graphics) or just buying 2x USB -> SATA adapters, and just pull the cables through the back of the case, or maybe one of those [internal USB header adapters][usb]. Either way, I'm sure it can be fixed.
+
+The CPU I had a bit of trouble picking. It was either this i3-6100 or an i5-6600. Both were on sale too, so it was basically 999 SEK for the i3, or 1990:- for the i5. I decided to just go with the i3 though, as it's fast enough (gets __5335__ on [Passmark][passmark]) and it would probably run cooler and quieter than the i5 (which got __7653__ on [Passmark][passmark]). Twice the price for one third better performance did not seem that necessary. 
+The i3 idles at around 30 C, and at 100% load it peaked at 68 C, so I'm pretty impressed by the Intel Stock cooler, especially considering the noise is basically none.
+
+I only went with 4 GB of RAM. Currently it's sitting at 1.4 GB used. The most I've seen it go up to is 3.1 GB. If the same type of RAM goes on sale, I'll buy another stick. I really don't need it right now though.
+
+The PSU is far from ideal, but I had it lying around. It's not ideal as it's not modular and it's so old that it doesn't support the C6/C7 states modern Intel CPUs can do to save power. A new PSU is next on the purchase list. Just gonna go with a good brand, modular PSU with atleast 6x SATA power connectors. 
+
+Using a SSD for a server is a bit excessive, but I had it lying around and I didn't use it as much as I should, so what the hell. One plus of SSD is that the metadata/cover art in Plex loads instantly, and search results in Plex also come up instantly.
+
+The storage disks are actually former external drives I had connected to my NAS for backups. I moved them out of their enclosures and put them inside this Node 304 to clean up some external cable mess + they're probably cooler inside the Node 304. They are still used as just NAS backup drives though (I'll get back to that in a second).
+
+# Software
+
+Here's what I wanted to be able to do with this computer:
+- Plex Server
+- [Transcode Videos][tc]
+- Remote control it, both graphically (VNC/RDP) and in a Terminal (ssh)
+- Run PlexPy for Plex Server stats
+- Receive backups from NAS
+- Run on a UPS and do a peaceful shutdown if necessary
+
+My first idea was to Hackintosh it and run OS X, and then just do a Time Machine of my Mac Mini to get basically everything set up instantly. But I decided against it, as running a server on a Hackintosh is probably not a great idea. And I wasn't happy with the VNC performance in OS X, and setting up scripts to run at launch was also kinda annoying in OS X.
+So I went with a much easier route.
+
+__I decided to run Windows 10 on my server.__
+
+And I mean Windows 10. Not some Windows Server 2016 or anything, just plain Windows 10 Pro x64. Here's why:
+
+- Plex Media Server is very easy to install and run on it, and it's easy to update
+- The Transcode Video scripts run just fine on Windows, apart from it using an open source AAC encoder which is lower quality than Apple's AudioToolbox that it can use in OS X. Personally, I haven't been able to tell a difference though.
+- Windows can use RDP and it's fantastic. This is the best remote desktop solution I have ever used. Both on my own PC and on my iPad. Especially on the iPad it's fantastic, it's like your iPad is running Windows natively. I am _very_ impressed by RDP. In the past I have always just installed TightVNC Server and used VNC - I don't know why I never tried RDP.
+- PlexPy is just a simple Python script, so I just made a shortcut to `plexpy.py` and put it in the Startup folder in the start menu. 
+- To receive backups from the NAS, I use [DeltaCopy][dc] which basically is a rsync wrapper. I'll go into detail later.
+- As my Synology has the most important stuff, I have it hooked up the UPS USB port, but I still have a ton of other devices hooked up to the UPS, they just don't know what the status of the UPS is. That's where [Windows NUT Client][winnut] comes in. I'll go into more detail on that later, too.
+- I went with Windows 10 as it is the latest Windows so it's probably gonna receive updates the longest. I wanted to go with Windows 7, but once that gets no support I would have to upgrade the computer to the latest Windows, so I just went right ahead with 10. 
+
+The only thing I'm lacking with using Windows as a server OS is remote control using `ssh`, which is possible to do using Cygwin. I have done it in the past, but RDP is working so good right now that I have no use for it, for now. 
+
+## DeltaCopy (Alternate header title: Unicode + old versions of Cygwin and `rsync`)
+So DeltaCopy is an old piece of Windows software that wraps rsync as a Windows service. Setting it up was not terribly difficult, and on the Synology I just set it up as any other rsync server. Then I let it start backing up the ~7 TB of data and a day or so later I got a notice saying the backup had failed. Well, it had backed up 99% of the stuff, but that 1% didn't get backed up. 
+
+At this point I didn't know where to start. Synology said the error was a permission error, or illegal filename characters or filename too long. And those two latter one seemed plausible. So I started googling around, and sure enough I found some results about it. 
+I'll spare you the details as I had hoped someone would do for me.
+
+Basically, DeltaCopy comes with a really old version of `rsync.exe` and a really old version of `cygwin1.dll`, that does not support unicode. To fix this, you should install Cygwin and install `chmod, rsync and ssh`. Then copy these 3 .exe files from the `/bin` directory in your Cygwin install, along with the `cygwin1.dll and cygiconv-2.dll`, and put these 5 files in the DeltaCopy folder, replacing the older files. Now DeltaCopy supports unicode. 
+
+You should also edit the `deltad.conf` file and add the line `log file = /some/path/to/log/to/rsync.log` so you'll have a log of what rsync is up to. 
+
+Once I had done this DeltaCopy was working great and Synology successfully backed everything up. I had to manually delete some files that had corrupted unicode names as the proper unicode version of rsync couldn't find them anymore.
+
+![synology backups all good](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/synologybackupsallgood.PNG)
+
+Atleast I hope everything is copied. In a perfect world the backup disks should have as much disk space available as the source disks, but I now notice that the backup disks are 0.6 GB larger, probably from using NTFS (probably another controversial choice in the Server world).
+
+![diskspace](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/diskspace.PNG)
+
+## Windows NUT Client
+
+I was really surprised that this worked. To set it up, hook up your UPS USB to your Synology, then go to Hardware & Power settings on your Synology > UPS Tab, and enable network UPS server. In 'Permitted DiskStation devices' add your other computers IP. 
+
+Then open up `upsclient.exe` and go into Settings and set it up as such: 
+
+![upsclient settings](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/upsclientsettings.PNG)
+
+And that's pretty much it. Hit Apply and your UPS should appear in the interface:
+
+![interface](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/upsclient.PNG)
+
+You can also go into settings and go to the settings of `upsclient.exe` and set a threshold of how little battery the UPS must have left before it shuts down. I have mine at 5%. 
+
+I have tested this program and I can vouch that it works. I put the threshold to 90% and then unplugged the UPS from the wall and indeed, when it went under 90% the computer shut down (peacefully).
+
+This program hasn't been updated since 2007 though, so I'm not that confident with it. If you know a better tool for Windows that does the same thing and is as easy to use, I would love to know.
+
+And oh! Both DeltaCopy and Windows NUT Client requires you to manually allow them through the Windows 10 Firewall.
+
+# Performance
+
+## Plex
+
+Just browsing around Plex and starting up a stream is much faster, to put it simply. Transcoding/syncing content is also faster. One huge pro of this i3-6100 is that the stock fan is basically silent. In idle it's silent. At 100% load it's audible, but it's not worse than a WD Red disk.
+
+## Transcoding Blu-rays
+
+To test this I made a very simple thing: I transcoded the same episode of Friends (S09E01<sup>[1](#myfootnote1)</sup>), with the same settings, on both computers:
+
+|CPU|Avg. Transcode FPS|Time Taken|
+|--------|---------------|----------|
+|i5-2415m|8.028829|01:09:28|
+|i3-6100|16.030066|00:34:47|
+|i7-4770K<sup>[2](#myfootnote2)</sup>|28.668539|00:19:27|
+
+~~(Sadly, I do not have my Mac Mini in a usable state right now so I cannot to do a comparison on that. Maybe in the future I'll update this post and add that to the table.)~~ Now added as i5-2415m. 
+
+As you can see, the i7 is roughly a third faster.
+But! 
+We have to think about relative time here. My i7 can only transcode videos when I'm awake (my computer is on, I don't leave it on at night as I want my room to be quiet), but the i3 can run 24/7. 
+So let's say my i7 can transcode stuff 16 hours per day and the i3 can transcode stuff 24 hours per day. 
+This means that my i7 can transcode 48.5 episodes of Friends per day, while my i3 will do 41.3 episodes per day... so in practice this Plex Server isn't actually faster than my gaming rig at transcoding Blu-rays.
+If my i7 could only transcode 13 hours per day though, the i3 would be faster.
+
+# Final Words
+
+Overall I am very happy with this build. Finally getting to build a mITX rig was fun, and I'm sure it would've been even more fun if I had a modular PSU. 
+
+As far as OS goes, I'm not sure if Windows is the greatest choice in the long run. When I put in more hard drives in there, I will want to share them out on the network and I'm not sure if Windows and/or NTFS is the best choice for that, so maybe in the future I'll set up a OpenMediaVault VM or something, that will just share the drives. We'll see. 
+
+For now, this works wonderfully. RDP is fantastic.
+
+----------------------
+
+<a name="myfootnote1">1</a>: TOW No One Proposes: not a great episode. I really didn't like that Joey accidentally proposed to Rachel in the Season 8 finale. Although, they clear that all up in this episode, so I guess it's not terrible. It's just the first 2 minutes that is abysmal. I skipped this episode (and TOW Rachel Has A Baby) last time I re-watched the show.
+
+<a name="myfootnote2">2</a>: My i7 is not overclocked. It has been in the past, but I just can't deal with the once-a-month BSOD's. Maybe if you check back here some day I will have OC @ 4.2 GHz results.
+
+[passmark]: https://www.cpubenchmark.net/cpu_list.php
+[usb]: http://www.ebay.com/itm/9Pin-Motherboard-to-Double-Layer-2-Ports-USB2-0-A-Female-Internal-Header-Adapter-/272086520995?hash=item3f599ed4a3:g:0WkAAOSw0fhXi3o9
+[tc]: http://lambdan.se/91/how-i-rip-my-dvds-amp-blu-rays
+[dc]: http://www.aboutmyip.com/AboutMyXApp/DeltaCopy.jsp
+[winnut]: https://sourceforge.net/projects/winnutclient/

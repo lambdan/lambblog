@@ -1,0 +1,27 @@
+2017-06-30T01:08:00+02:00
+# Publishing and Modifying This Blog from an iPad
+
+I got the 10.5" iPad Pro recently. Since it is a "Pro" device, I decided to try doing some work on it and as it turns out I can actually edit and publish to my blog entirely from this iPad, and quite nicely I might add.
+
+# Publishing
+
+For publishing, I use _Byword_ (as I am writing this in, right now) to write the Markdown text.
+From there I export to the app _Transmit_, which is basically a FTP/SFTP client and I simply upload the .txt file from _Byword_ to my VPS in the proper folder.
+
+![Byword](https://cdn.pbrd.co/images/3a9gvpsZw.png)
+
+# Modifying code
+
+To edit, I simply use the app _Prompt_ to SSH into my VPS and I can do modify just like I do on the computer. Especially with a hardware keyboard, this is really nice. 
+Even key commands like ^D works to log out and such.
+
+I can run _Safari_ and _Prompt_ side-by-side to just enter code in _Prompt_, and then just hit refresh on Safari to see the changes.
+
+To update the code on Github, I could probably use the git command line on my server, but I haven't looked into it. I am sure it is possible though.
+
+![Safari and Prompt side-by-side](https://cdn.pbrd.co/images/3abK95xNR.png)
+<figcaption>Safari and Prompt side-by-side can be used to modify and develop lambblog</figcaption>
+
+It's actually quite nice. I am liking this.
+
+Of course, editing some code over SSH and writing in Markdown are pretty simple tasks. 

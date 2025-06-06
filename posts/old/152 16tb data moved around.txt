@@ -1,0 +1,75 @@
+2017-01-08T21:05:00+01:00
+# Why I Copied 16 TB of Data This Weekend
+
+Here's what happened: I didn't wanna think about my Synology anymore. Up until now the Synology box contained both Media and a bunch of photos of family. I didn't wanna think about the users photos and such any more. I want that to handle itself.
+
+## Before This Weekend
+
+Prior to this weekend, my setup looked like this:
+
+![before](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/Ny%20mapp/before.png)
+
+This was fine, but it wasn't good for the future. What happens when the disks in the Synology fill up? Am I gonna start putting Media on WD Red drives inside my _Node 304_ <a href="#fn1"><sup>1</sup></a> and have Media files on both my Synology and my Node 304? 
+Yeah, that could work, but it would get messy.
+
+So here's what I changed it to, and what I am currently running:
+
+![now](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/Ny%20mapp/now.png)
+
+This has a couple of issues:
+
+- The Seagate 4 TB drives aren't being used (well, in a way they are, since they have a backup of the WD Red drives from Jan 7th)
+- WD Reds in Node 304 aren't being backed up regularly
+- Synology has 1 unused bay
+
+## Next Week
+
+Here's what I'm hoping it will look like next week, when all the parts I need have arrived:
+
+![next week](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/Ny%20mapp/next_week.png)
+
+This is pretty good and works pretty good for a while. If I add a disk to the Node 304, I can add another, same size, to the Crappy Backup computer and just backup there. The Robocopy would be triggered manually, on my command, maybe once a week. New TV Shows and such usually come out on a weekly basis.
+
+The downside of this is that this crappy PC Backup-target is kind of crappy. It's loud and big. And runs Windows. While I kind of enjoy using Windows on my Node 304 box (the Plex server), it feels bad. There's some bad stigma about running Windows on a server that I cannot shake.
+
+You might be wondering why I don't just put all the 4 TB drives in the one Node 304 and just backup between them internally?
+I would love to do this, it would be faster and easier and less messy, but, what if the PSU decides to send a huge surge to all the drives? Then both my "live drives" and the backups are dead. 
+This is why I want the backups to be external. Either USB drives or another computer. I don't want 1 PSU to ruin my whole life. 
+
+Ideally I'd also have an outside backup, like at another house or something like Backblaze. I haven't found a good way to do this though. Backblaze seems really good but I don't really feel comfortable sending 8 TB of consumable media to them. 
+
+## Ideally...
+
+Now here's my dream setup. If my employment gets extended, maybe that's pretty soon.
+
+![dream](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/Ny%20mapp/dream.png)
+
+Now this is a pretty ridiculous setup. Buying an additional eight 4TB HDD's is not cheap.
+
+I could also just make my current Node 304 into a file server, and run RAID 5, or maybe RAID 10 on it for extra safety, and start using my old Mac Mini as my Plex server again. I need to get some hard drives though that can temporarily hold the 8 TB of data I currently have. 
+
+Well I haven't settled for anything yet, and __that's why I wanted to move these 16 TB of data around this weekend__: I don't have to care about where the Synology user data is anymore. The Synology is self contained and I can freely move my 4 TB Drives around without worrying about my brothers wedding photos disappearing.
+
+> ## Migrating to smaller Hard Drives in a Synology
+> I created a [Reddit thread](https://www.reddit.com/r/synology/comments/5mabjr/migrate_to_smaller_hdds_in_shr_but_keep/) to ask about how to do this properly, but I'll summarize it here now that I have done it and I can confirm it works:
+> 
+> - Make sure the data you want to move will fit onto the smaller HDDs (in my case, all the home folders were a total of 86 GB, which a 1 TB is plenty for)
+> - Backup the `homes` folder using _Hyper Backup_. I used a USB drive. (The `homes` folder contains all the users home folders, that only the _admin_ user can access). This also backs up the Configuration for the system.
+> - Shutdown the Synology, and do the obvious things (remove old drives, put in the smaller ones) and then boot it up again
+> - Set up the Synology as if it was a new one. Use find.synology.com to find it in your web browser. Use the same Synology account and such.
+> - If you backed up any applications using _Hyper Backup_, install those (I had to install _Photo Station_)
+> - Plug in USB drive, open up _Hyper Backup_, click the little clock icon in the lower-left, and click Restore from other medium (it's a blue link, I can't remember exactly what is was called), and pick your old backup and let it restore everything it can: ![synology restore](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/Ny%20mapp/Screen%20Shot%202017-01-07%20at%2015.23.34.png)
+> - Done!
+>
+> Now, there are some caveats with the configuration it doesn't backup _all of your settings_. Here's what I have noticed it didn't restore and I had to re-set myself: 
+> - UPS Settings
+> - Notification Settings
+> - Admin 2FA
+> - User individual Photo Station (the photos are still there, just need to re-enable for each user)
+> - DDNS (Outside Access settings)
+>
+> Doing this, I successfully moved all my home folders from a 4 TB drive, to a 1 TB drive
+
+-----------
+
+<a name="fn1">1.</a> This particular Node 304 is currently also my Plex server. It has a i3-6100 with 4 GB of RAM, and uses Windows 10 x64 as its OS. Node 304 refers to its case, the Fractal Design Node 304. You can read more about this particular computer [here](http://lambdan.se/index.php?entry=134-plex-server-2016-09-18)

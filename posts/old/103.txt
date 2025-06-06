@@ -1,0 +1,21 @@
+2016-05-06T00:00:00+02:00
+# Some graphs about transcoding Friends episodes from Blu-ray
+
+I finally finished transcoding all the Friends episodes from Blu-ray (How? [How I Rip My DVDs & Blu-rays](http://lambdan.se/91/how-i-rip-my-dvds-amp-blu-rays))
+
+I created a little python script that will [Mine Data](https://dl.dropboxusercontent.com/u/60071552/Mine%20Data.py) from the `.log` files `transcode-video` creates and it will spit out data in tabular form that is easily imported into Excel (_Apple Numbers_ in my case). 
+
+Here are some graphs that resulted from it. They're probably not interesting to you, but I had fun making them.
+
+![episode length vs transcode time](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/friends-big-transcodes/friends%20episode%20length%20vs%20transcode%20time.png)
+
+![avg transcode speed](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/friends-big-transcodes/friends%20avg%20transcode%20speed.png)
+<p class="img-caption">As you can see in the graph with episode lengths, you can see the transcode times are slightly lower. Well as you can see in this graph, it's because the avg. transcode fps is slightly over 24 fps most of the time.</p>
+
+![output sizes](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/friends-big-transcodes/friends%20output%20size.png)
+<p class="img-caption">Pretty hefty file sizes for a 20 min show. That's why I'm gonna re-transcode them with different settings soon.</p>
+
+![output video bitrate](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/friends-big-transcodes/friends%20video%20bitrate.png)
+<p class="img-caption">TOW The Blackout makes the bitrate shoot up like crazy.</p>
+
+Oh, and if you wanna make your own graphs from this data, here is the data Mine Data spit out: [friends_output.txt](https://dl.dropboxusercontent.com/u/60071552/friends_output.txt)

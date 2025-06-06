@@ -1,0 +1,35 @@
+2017-06-06T23:11:00+02:00
+# macOS: "The installation failed." error with .pkg files
+
+(If you are just here for what fixed it for me, [click here](#fix).)
+
+I randomly got this problem on my Hackintosh where the system was pretty unresponsive, more so than usual, and I couldn't install any software bundled in .pkg installers. 
+Stuff like Logitech Options, Nvidia Web Drivers and Clover Bootloader .pkg files all just failed.
+
+I would hit install, type in my password, then see it say validating packages, and then a yellow triangle telling me the install just failed.
+
+![Installation Failed](https://pbs.twimg.com/media/DBqIgHCWAAAGd_T.png)
+
+First I thought this was just some problem with my Hackintosh, so I first tried googling terms with Hackintosh in mind but nothing really came up.
+
+Then I was told you can see the installer log by going into Window -> Log, and now I could see the more complicated error message:
+
+![Detailed Error](https://pbs.twimg.com/media/DBqNHx9XkAE2KFj.png:orig)
+
+So now I started googling. First I googled around for the first error line (`packagekit session uuid file exists - will not overwrite yada yada...`) and now I saw that I wasn't the only with this problem. This is even a problem on non-Hackintoshes I saw.
+The solution seemed to be to either re-install or get into the Recovery partition and repair some OS files. But as I was on a Hackintosh, I didn't really wanna do that, and I'm not really sure if I could even do that (I probably could as _Clover_ is pretty dope, but whatever.)
+
+Then I started googling for the second error line, `packagekit install failed error domain nsposixerrordomain code 2` and I found this [answer](https://apple.stackexchange.com/a/258209). 
+And I was like yay! Commands to paste into Terminal.
+
+I did the first line, went fine. But when I did the second line, it just said that `/private/tmp/ does not exist`. So I did `cd /private/` and then `ls`, and indeed, there was no folder called `tmp` in there.
+
+<a name="fix"></a>
+
+So what did I do? Well I did `sudo mkdir /private/tmp`, and thus, my problem was solved.
+
+What caused my `/private/tmp/` folder to go away? I have no idea. That is a mystery for the ages.
+
+When writing this, and re-googling the terms to get the URL:s, I came across this [issue](https://github.com/osxfuse/osxfuse/issues/292) on osxfuse's Github. Really wish I had paid attention to that the first time I was googling around, as they solved the problem in the same way.
+
+

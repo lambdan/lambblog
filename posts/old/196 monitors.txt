@@ -1,0 +1,16 @@
+2017-08-21T21:29:00+02:00
+# Some Thoughts on Computer Monitors
+
+- 24" is too small. 27" is good, but not great.
+- Windows is not ready for 4K/Retina/HiDPI. Mac definitively is (i.e. if you use a Mac, you should absolutely have a 4K/Retina monitor.)
+- 60 Hz vs 144 Hz is noticable, and if you play games with a keyboard and mouse I would urge you to get a monitor with high refresh rates
+- _V-Sync_ is horrible if you play with a mouse and keyboard. If you use a controller it's good
+- _G-Sync_ is good and very fluid, but if you get high framerates (100+ fps) it may not be necessary
+- I have not tried _FreeSync_
+- I find 1080p at 27" usable
+- If you can, go for some kind of IPS panel
+- If you use two screens, 1 in front of you and 1 to the side is the way to go. I do not understand people that have the "crack" in the middle
+
+I am in the market for a 144 Hz 27" monitor now.
+
+4K at 24" was an experiment.

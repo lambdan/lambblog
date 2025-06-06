@@ -1,0 +1,47 @@
+2016-05-03T23:36:00+02:00
+# Considering mITX
+
+Kinda gotten the urge for mITX again. They're so cute!
+
+![mitx build 1](https://i.ytimg.com/vi/nxy81z5d0NM/maxresdefault.jpg)
+<p class="img-caption">Bitfenix Prodigy build, without a graphics card</p>
+
+![mitx build 2](http://images.hardwarecanucks.com/image/foxtrot/Cases/NanoS/2.jpg)
+<p class="img-caption">Fractal Design Nano build</p>
+
+So I've been scouting for cases and motherboards today if I were to convert to a mITX build.
+
+My first question was: should I sell my Haswell stuff (i7 4770K, 4x4 GB DDR3 RAM, GA-Z97P-D3 motherboard) and move to Skylake? 
+
+Well I decided against Skylake, as it would be more expensive and selling stuff is annoying.
+
+My second question was: what motherboard should I get for Haswell? Since I am a big Hackintosh user, Gigabyte is usually the way to go, so I found the _Gigabyte GA-H97N-WIFI_, which from googling around seems to be compatible. I'm still waiting for an answer from my "hackintosh guy" just to be sure.
+
+My third question was: do I need a 5.25" (optical drive) bay? As I like to [rip dvds and blu-rays](https://lambdan.se/blog/2016/04/26/how-i-rip-my-dvds-blu-rays/) I need a blu-ray drive. But can I just use it over USB (externally), or is SATA just that much faster that I should get a 5.25" bay to use it internally over SATA? 
+
+Well, to test that I simply ripped Avatar in MakeMKV. Once over SATA, once over USB (2.0) using a little USB-SATA dongle I've kept around for years.
+
+The results were surprising to me. Ripping the 45 GB blu-ray over SATA took _30 minutes, 4 seconds_. Over USB it took _30 minutes, 7 seconds_. I actually double-checked to make sure I had it plugged in over USB.
+
+So, a 5.25" bay is definitively not a must. But it would still be nice to have for convenience.
+
+![old usb sata adapter](https://pbs.twimg.com/media/ChjrekYWMAACwLK.jpg:orig)
+<p class="img-caption">USB-SATA adapter I've kept around for years. For power there is a external brick (not pictured.)</p>
+
+My other requirements were: must fit my GTX 970 G1 card, at least 1x 3.5" bay, and at least 3x 2.5" bays.
+
+So now we can start picking cases, and I've come up with a few:
+
+- _Fractal Design Nano_. Ever since I saw this case introduced I loved it. It's sleek, sexy and seems easy to build in. Biggest upside of it is that it is sound proofed. Downside is the PSU is very close to the GPU and that it's kind of a big case for being mITX.
+
+- _Bitfenix Prodigy_. Seems to be a older, but still popular, model. Biggest upsides is that it's available in white and kind of looks like a mini Mac Pro, and it has a ton of 2.5" bays. Downside to me seems that it would be hard to put a backplate on for CPU cooling, and it isn't sound proofed.
+
+- _Cooler Master Elite 130_. My friend has an older model of this case, so I already know how tiny it is. Downside is that the CPU Cooler must be low-profile, and once again it's not soundproofed. 
+
+- _Silverstone SG09_. This one was recently brought up to me and it seems cute and fits all my needs. Downsides are no sound proofing, and isn't widely available in Sweden.
+
+I'm leaning mostly towards the Bitfenix Prodigy, because it has a 5.25" bay (for convenience), has a lot of 2.5" bays, and it's tiny. Only downsides are the lack of soundproofing and it seems complicated to build in.
+
+We'll see what I end up buying. I'll definitively keep you posted.
+
+

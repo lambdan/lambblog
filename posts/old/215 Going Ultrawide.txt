@@ -1,0 +1,23 @@
+2018-04-08T19:23:00+02:00
+# Going Ultrawide
+
+I ordered a _Dell U3417W_ today. A 34", Ultrawide 21:9, 3440x1440 IPS display. Notably it has no adaptive sync technology and only runs at 60 Hz.
+
+![Dell U3417W, not my picture](https://cdn.mos.cms.futurecdn.net/9e4e2c6e33d8a1a37df68780257267c6.jpg)
+
+Now why did I do this?
+
+Well, frankly it was kind of impulsive. I even tried to go through my web browser history to see how I got there and there is no conclusive trail.
+
+Why did I choose this monitor, the _Dell U3417W_?
+
+- It's a ultrawide 3440x1440. I'm hoping to make this my only display on my desk. And I'm hoping the 1440 resolution will look sharp enough that I don't miss Retina.
+- I play very little games. Almost none, atleast not on PC, so high refresh rates and G-Sync was not a requirement.
+- It's an IPS panel. I am never using TN again after my _Dell S2716DG_ fiasco.
+- *Apparently* my [mid-2014 rMBP](https://lambdan.se/214.2018.04.06-all-macbooks-currently-suck) can use it in 3440x1440@60 Hz. I say apparently because Apple docs says it can't, but there are plenty of comments and forum threads where people say it works. I will test.
+- The monitor has a built-in KVM switch and this is really cool, I wish all monitors had it. This was the biggest reason why I went with this monitor instead of any other alternative. Basically, I will hook up my keyboard, mouse and headset (all USB) to the monitor. And then I will have two USB cables from the monitor, one goes to Computer A and one goes to Computer B. Then whenever I switch input source between the computers it will automatically redirect the USB ports.
+- Dell monitors are designed nicely and don't look epic.
+
+We'll see how it works out. I am kind of excited.
+
+My only concern is if I ever play a game in fullscreen, and I want to watch something on the side. Can't really do that with one single screen, unless you run the game windowed (which I guess I could do since I can't use G-Sync anyway.)

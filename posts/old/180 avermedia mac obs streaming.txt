@@ -1,0 +1,78 @@
+2017-06-14T20:41:00+02:00
+# 720p60 streaming with AverMedia Capture Card and OBS Studio on Mac
+
+# Prologue: Avermedia released updated drivers for macOS
+
+Depressed as I always am about how awful it is streaming and recording video game consoles from macOS I was googling around, looking for alternative capture cards. 
+I started looking for USB 3.0 1080p60 Capture Cards, and found the _AverMedia ExtremeCap U3 (CV710)_, and then went to their website to see if there was drivers and software available for the latest version of macOS and to my surprise there was!
+
+Something caught my eye with it though... the driver was released just a week ago!
+Surprised by that, I went to look for the software page for my trusty _AverMedia LGP Lite (GL310)_ to see if it had gotten updated drivers too, and wow: it had!
+
+![Surprisingly](https://cdn.pbrd.co/images/1QUEQ4jwD.png)
+
+Why do I find this surprising? 
+Because the version prior to this was released in 2014. While it did work for a while (I think I remember using it with _Yosemite_) it seemed to have stopped working when I got _Sierra_.
+
+So I downloaded it, and copied RECentral to my Applications folder, plugged in my trusty _GL310_ into a USB 2.0 port on my computer, then hooked up a HDMI cable to it from my HDMI 1-to-4-splitter and wow, it worked!
+
+# Local Recordings with RECentral
+
+I'm in a hurry so I'll just cut to the point: __local recordings done with the RECentral software with this capture card are great__. 
+Keep in mind that the bitrate limit is around 30 Mbps (because of USB 2.0), and it can only capture 60 fps with 720p or lower resolution (1080p is capped at 30 fps, but honestly, capturing a PS4 game at 720p60 doesn't look horrible.)
+
+# Streaming 720p60
+
+What about streaming though, this is what I am really curious about as I would like to eventually never use _Windows_ again. 
+
+To make it short: it's pretty doable now. __I'd consider it acceptable.__
+
+Some caveats:
+- For now, audio must be done through Line-in
+	- It might be possible to use the preview audio, and then use something like [_Soundflower_](https://rogueamoeba.com/freebies/soundflower/) or [_Loopback_](https://rogueamoeba.com/loopback/), but using Line-in from the capture cards 3.5mm out port is just much easier
+- The capture card preview has a 700~800 ms delay, so audio will have to be delayed accordingly
+	- This can be done in OBS natively so not a huge deal
+
+Here's how to do it:
+
+- Open up _RECentral_, and get a preview picture in
+	- If your source is outputting 720p, like a _Framemeister_, you can just open up RECentral and the preview will be 60 fps
+	- If your source is outputting 1080p, you will need to have a 720p60 profile configured and start a local recording. Otherwise the preview window will be in 1080p30. (Unless you want 1080p30 obviously, personally I want 720p60 over 1080p30.)
+- Open up [OBS Studio](https://obsproject.com)
+	- Set up a 1280x720 scene running at 60 fps, also set video bitrate to 6000 kbps (and any other settings you want) and configure your Twitch account etc.
+	- Add a _Game Capture (Syphon)_ source, and inject RECentral. Feel free to crop in here too. If you crop using the Transform option in OBS, it will go black.
+	- Add _Audio Input Capture_ and select your Line-in
+	- Click the Mixer cogwheel above the volume levels to adjust delay to fit your capture card: ![Adding audio delay to compensate](https://cdn.pbrd.co/images/ixtCtClNK.png)
+- Done
+
+Now you can add a timer or whatever you want to your scene also.
+
+![OBS Preview](https://cdn.pbrd.co/images/ixCYLWgE8.png)
+<figcaption>Don't worry about the 58.06 fps at the bottom, it's from taking a screenshot.</figcaption>
+
+The thing that's nice about this, compared to [last time](https://lambdan.se/index.php?entry=141-elgato-macos-2016-12-18) is that there is very little hiccups with this method. No locally hosted RTMP servers or anything like that. The only crap, and I barely call it crap, is that you have to add an audio delay.
+
+# Samples
+
+Here are some samples captured in OBS with the settings described above. YouTube obviously compresses them a little but they should give you an idea (they weren't lossless to begin with as they're captured with just 6000 Kbps and x264 preset=veryfast, this is especially noticable in F-Zero GX):
+
+- [NES Games](https://www.youtube.com/watch?v=tu44xAi1Egc)
+- [Sonic 2](https://www.youtube.com/watch?v=-xSjxFA0bOI)
+- [F-Zero GX](https://www.youtube.com/watch?v=qXaXFESuSzY) - there are some noticable framedrops here, and I think it's a bottleneck with the capture card, but I'd consider them tolerable for a stream
+- [Modern Warfare Remastered (PS4)](https://www.youtube.com/watch?v=A3-yIP7p9S0) - this is a 1080p60 game, but 720p60 doesn't look horrible
+
+(The _Avermedia LGP Lite_ is only a HDMI capture card, so I use a _Framemeister_ to be able to capture older consoles.)
+
+# My Setup
+
+- Hackintosh running macOS Sierra 10.12.5
+	- Gigabyte GA-Z97P-D3
+	- Intel i7-4770K running at stock speeds
+	- 16 GB 1600 MHz DDR3 RAM
+	- Nvidia GTX 1080 Ti 
+- Avermedia LGP Lite (GL310)
+- RECentral driver version `1.2.21 (20170607)`
+- OBS Studio 19.0.2
+
+__I think__ this should work exactly the same on a legit Mac and/or with another AverMedia capture card.
+

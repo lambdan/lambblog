@@ -1,0 +1,32 @@
+2016-05-12T13:17:00+02:00
+# SSHD only makes sense in a PS4
+
+Not happy with the performance of a SSHD in my PC. Using it as a Steam drive was terrible - GTA V took forever to load. 
+
+So I tried moving OS X over to it and using it for that, as I always think OS X works best when it has a single big drive, but the boot times were awful. Once you're in the OS it's pretty okay, but nothing compared to a plain SSD.
+
+So I swapped around and now I'm back to basically where I started, except Windows now has it's own SSD:
+
+- Kingston 120GB V300 SSD: Mac OS X (HFS+)
+- Samsung 120GB 840 EVO SSD: Windows 10 (NTFS)
+- Crucial BX100 250GB SSD: Installed Games (exFAT)
+- WD Green 1TB HDD: "Dump"/local mp3s/etc. (exFAT)
+- 1 TB SSHD: ? (likely exFAT)
+
+I'm considering moving over all the stuff on my Green over to the SSHD and using it instead, as it is a bit quieter, and then making the Green drive for backups, maybe partitioning it 500 GB for HFS+/Time Machine, and 500 GB exFAT for Crashplan.
+
+Using a SSHD just isn't fast enough for me on my PC. It doesn't act well as a Steam drive, or as a OS drive.
+
+## Why they make sense in a PS4
+
+- On PS4 you're likely to switch games less frequently, because you are too lazy to change discs (unless you buy digital but then you have other problems). This allows the 8 GB SSD cache to fill up with the game you are currently playing a lot. 
+
+- For a game like Bloodborne a SSHD makes a difference. It can cache Hunter's Dream (the hub) and the current area you are in. If you play Destiny, it can cache the Tower and the current planet you're roaming around on.
+
+- The PS4 OS gets accessed frequently and will always be stored in the cache.
+
+On a PC I didn't notice any difference between a regular HDD and a SSHD. On PS4 I have noticed the difference. A death in Bloodborne is a lot more time consuming now.
+
+-------
+
+Anyway, that's it. Don't buy a SSHD unless it's for your PS4, or maybe other game console where you can swap HDD.

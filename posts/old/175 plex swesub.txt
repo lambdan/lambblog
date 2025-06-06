@@ -1,0 +1,65 @@
+2017-05-12T15:15:00+02:00
+# Managing Plex and Subtitles, both burned-in and external
+
+Plex is pretty good at handling subtitles. If it finds an external SRT file or any other subtitle format that has the same filename as the movie/episode, it will show it as an selectable subtitle.
+If it finds a subtitle track within the video file, such as a SRT file in a MKV file, it will display that too.
+
+But what do we do with movies/episodes that have the subtitle burned-in in the video? As this isn't a separate/optional subtitle, Plex has no idea it is there.
+
+This gets even more tough if you are sharing your Plex server with someone else, and they only wanna see movies with subtitles/spoken language in their native language.
+
+I perplexed (ha ha) about this a couple of years ago, and I came up with a solution that I have been doing for years now.
+
+# My Solution
+
+It's pretty simple: have two TV libraries, and two Movie libraries. One of them for content with subtitles/native spoken language, and one of them with all content.
+
+Basically your directory structure will look like this:
+
+- X:/Movies
+- X:/Movies (Swedish Subtitles)
+- X:/TV
+- X:/TV (Swedish Subtitles)
+
+Then you put your movies without subtitles in the regular _Movies_ folder, and put the ones with subtitles (either burned in or external) in the _Movies (Swedish Subtitles)_ folder.
+Same for the TV shows and its episodes.
+
+Then in Plex, you wanna set up the libraries. 
+
+Make one Movie library called "Movies (all)", and for that library point to __both__ `X:/Movies` and `X:/Movies (Swedish Subtitles)`. 
+Then make another Movie library called "Movies (Swedish subtitles)", and for that library point to __just__ `X:/Movies (Swedish Subtitles)`.
+
+And do the same for TV shows.
+
+It will end up looking something like this: ![My Plex libraries](http://i.imgur.com/V4DJy6X.png)
+
+And that's pretty much it. Now you can just share the library with Swedish subtitles to the ones who need subtitles, and anyone who doesn't need them can enjoy the content that does not have subtitles in the (all) libraries.
+
+The downsides of this method are mostly cosmetical:
+
+- The TV Shows/Movies are considered separate, i.e. if you watch a TV show in the (all) library, the watched/unwatched progress won't sync with the library that has subtitles
+- If you add a episode/movie to the folder with subtitles, there will be duplicate entries in the "Recently Added" section
+
+![Recently Added](http://i.imgur.com/vdBb5Rk.jpg)
+<figcaption>Content with Swedish subtitles show up twice in the Recently Added section, as they are in two libraries. The ones without Swedish subtitles only show once, as they are only in one library.</figcaption>
+
+# Alternative Solution
+
+Before I ended up doing what I described above, I did a much more hacky solution.
+
+I basically made a dummy external .srt file for each movie/episode that had burned-in subtitle (or well, I ran a script that did it automatically). This .srt file only contained this:
+
+	1
+	00:00:00,000 --> 00:00:01,000
+	Burned-In Subtitle
+
+By doing this, you can then just go into any episode/movie and see if there is a Swedish subtitle track available. If there isn't, there isn't.
+
+Now why did I stop doing this?
+
+- It made the folders look very messy
+- It caused Plex to transcode if the player didn't support .srt files, just to burn in the 1 second of text
+- It was hard to keep track of what were actual external subtitles, and what was just "dummy" subtitles
+- It caused disappointment when someone saw a movie they wanted to see, only to navigate into it and see that it had no subtitles available
+
+Upside of this is of course that you only need one library for Movies, and one for TV, instead of two for each.

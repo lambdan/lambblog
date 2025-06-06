@@ -1,0 +1,93 @@
+2020-06-08T13:19:00+02:00
+# Going from a 2010 Macbook Pro to a 2020 Macbook Pro
+
+Ever since Apple started releasing new Macbook Pro's with good keyboards again I've been very interested in buying one.
+And so I finally did.
+
+![Versus](https://lambdan.se/img/2020-06-08_13-16-10.352759.JPG)
+
+I cheaped out and went with the cheapest 13" Pro though. I really can't stand Apple's RAM prices and SSD prices and I don't ever really do anything CPU intensive on my laptops. If I need heavy horsepower I go on my desktop with the Ryzen 3900X.
+
+I also considered the base model Air, which would probably have been fine, but that dual-core i3 really bothered me. And I also like the more square shape of the Pro models.
+
+My laptop is basically just a fancy writing machine and for doing macOS things.
+So ideally, yes, I would go for the 13" model with the 10th gen Intel CPU's but I really don't wanna pay that much.
+If my laptop was my only machine I probably would've gone for a specced out 16-inch.
+
+There are also lots of rumors that Apple might switch to AMD or ARM processors soon, and I might wanna get one of those, so this'll do until then.
+
+I am really happy with it so far anyway.
+It's so nice and tidy, while still feeling very solid.
+
+The keyboard is great. I still think the travel is kinda low, but the keys don't wobble (unlike my 2010 model which wobbles a lot). I'm just happy we're done with the _butterfly keyboard_.
+
+![Keyboard](https://lambdan.se/img/2020-06-08_13-16-20.564912.JPG)
+
+The touch bar is interesting too. I never used one before. I kinda like it, but I have accidentally pressed on it when typing. I'm hoping I'll eventually get used to not doing that. Very many times my sound just disappears and I discover I accidentally hit the mute button.
+
+# About the 2010 Model...
+
+You might think: "Wow! you used the same Macbook for 10 years?"
+
+But sadly, I didn't. I actually got this machine in 2018 I think... or maybe it was 2019?
+
+I basically needed a real Mac for some reason. I think it was to create a USB for a Hackintosh project. So I just went on eBay and got the cheapest, working one I could find.
+
+And yeah, it works, but it's pretty rough.
+
+First off, one of the RAM slots are dead, so I can only put 4 GB of RAM in it, as it seems to be hard to find 8 GB laptop DDR3 sticks. This has been the hardest part about using this machine because 4 GB of RAM is too little. I can do with 8 GB, but 4 GB is just not enough.
+
+Secondly, it runs really hot, all the time, and the fans stay on all the time. I've even replaced the thermal paste in it but it didn't help much.
+
+Thirdly, this computer no longer gets updates! But thankfully I can run Catalina on it unofficially (through use of [dosdude1's Catalina Patcher](http://dosdude1.com/catalina/). This actually works surprisingly well, apart from some minor graphical issues sometimes.
+
+And finally, it's just slow. So ungodly slow. If you use multiple browser tabs the computer just hogs. Watching YouTube in HD makes the fans scream.
+
+But I stuck with this computer for the last couple of years because I just kinda liked the fact that it was 10 years old. It wasn't completely unusable since I put a SSD in it.
+
+But finally one night, I needed to do something quick on it, and it wasn't quick enough so I decided to order a new machine the next day.
+
+# Specifications and Results
+
+So let's get to why you're here.
+
+Here are the specs of the machines:
+
+|Component|2010 MBP|2020 MBP|
+|---------|--------|--------|
+|Identifier|[MacbookPro6,2](https://everymac.com/systems/apple/macbook_pro/specs/macbook-pro-core-i7-2.66-aluminum-15-mid-2010-unibody-specs.html)|[MacBookPro16,3](https://everymac.com/systems/apple/macbook_pro/specs/macbook-pro-core-i5-1.4-quad-core-13-2020-2-thunderbolt-3-ports-scissor-specs.html)|
+|Display|15" 1680x1050|13" Retina|
+|CPU|Intel i7 M 620 @ 2.67GHz|Intel i5-8257U @ 1.4GHz|
+|GPU|Intel HD Graphics, NVIDIA GeForce GT 330M|Intel Iris Plus Graphics 645|
+|RAM|4 GB 1067MHz DDR3|8 GB 2133MHz LPDDR3|
+|SSD|250 GB Crucial SATA|250 GB Apple PCIE|
+
+Here's a table with all the results:
+
+|Test|2010 MBP|2020 MBP|Difference|
+|-----------|----------|----------|--------|
+|Blackmagic Disk Speed Test - Write|252.8 MB/s|1282.0 MB/s|407% improvement|
+|Blackmagic Disk Speed Test - Read|262.4 MB/s|1791.2 MB/s|582% improvement|
+|Cinebench R15 - Single Core|86 cb|154 cb|79% improvement|
+|Cinebench R15 - Multi Core|213 cb|636 cb|198% improvement|
+|Cinebench R15 - OpenGL|15.79 fps|55.07 fps|248% improvement|
+|Cinebench R20 - Single Core|178 pts|399 pts|124% improvement|
+|Cinebench R20 - Multi Core|456 pts|1576 pts|245% improvement|
+|Geekbench 4 - Single Core|[2454](https://browser.geekbench.com/v4/cpu/15549428)|[4641](https://browser.geekbench.com/v4/cpu/15549387)|89% improvement|
+|Geekbench 4 - Multi Core|[4593](https://browser.geekbench.com/v4/cpu/15549428)|[16532](https://browser.geekbench.com/v4/cpu/15549387)|259% improvement|
+|Geekbench 5 - Single Core|[533](https://browser.geekbench.com/v5/cpu/2450204)|[926](https://browser.geekbench.com/v5/cpu/2450006)|73% improvement|
+|Geekbench 5 - Multi Core|[1033](https://browser.geekbench.com/v5/cpu/2450204)|[3706](https://browser.geekbench.com/v5/cpu/2450006)|258% improvement|
+
+While these differences might seem incredible, keep in mind we're comparing 10 years of technology. This i5-8257U in my new Macbook Pro is not that good in the big picture. Just as a comparison [the Ryzen 3900X in my desktop PC gets around 12000 points in Geekbench 5 Multi Core](https://browser.geekbench.com/processors/2587), which is 223% better than this i5-8257U. It's kind of an unfair comparison though as this is a low power laptop CPU, while my desktop is a high power... desktop CPU.
+
+Maybe more fair would be to compare it to some other laptops and maybe even mobile devices:
+
+|Test|My 2020 13" MBP (i5-8257U)|2020 13" MBP 10th Gen (i5-1038NG7)|2019 16" MBP (i9-9980HK)|2020 ASUS Zephyrus G14 (Ryzen 9 4900HS)|2019 iPhone 11 Pro Max (Apple A13 Bionic)|2020 OnePlus 8 Pro (Snapdragon 865)|2020 iPad Pro 12.9-inch (Apple A12Z Bionic)|
+|-|-|-|-|-|-|-|-|
+|Geekbench 5 - Single Core|926|[1134](https://browser.geekbench.com/macs/macbook-pro-13-inch-mid-2020-intel-core-i5-1038ng7-2-0-ghz-4-cores)|[1113](https://browser.geekbench.com/macs/macbook-pro-16-inch-late-2019)|[1203](https://www.legitreviews.com/asus-rog-zephyrus-g14-laptop-review-amd-ryzen-9-4900hs_218082/2)|[1326](https://browser.geekbench.com/ios_devices/63)|[892](https://browser.geekbench.com/android_devices/oneplus-8-pro)|[1118](https://browser.geekbench.com/ios_devices/ipad-pro-12-9-inch-4th-generation)|
+|Geekbench 5 - Multi Core|3706|[4233](https://browser.geekbench.com/macs/macbook-pro-13-inch-mid-2020-intel-core-i5-1038ng7-2-0-ghz-4-cores)|[6963](https://browser.geekbench.com/macs/macbook-pro-16-inch-late-2019)|[7893](https://www.legitreviews.com/asus-rog-zephyrus-g14-laptop-review-amd-ryzen-9-4900hs_218082/2)|[3397](https://browser.geekbench.com/ios_devices/63)|[3255](https://browser.geekbench.com/android_devices/oneplus-8-pro)|[4622](https://browser.geekbench.com/ios_devices/ipad-pro-12-9-inch-4th-generation)|
+
+Well, atleast my new laptop is faster than the current fastest Android phone... that's always something I guess.
+
+Intel CPUs aren't that exciting anymore as you can see, and that's why I'm excited for an AMD or ARM powered Macbook Pro.
+And I hope to use this laptop until then.

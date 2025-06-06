@@ -1,0 +1,88 @@
+2015-11-18T00:00:00+01:00
+# Apple Watch Review
+
+I've had the Apple Watch for a month now and I have some things to say about it.
+Before I used Apple Watch, I used a Pebble. It started having some random graphics corruption and the screen was pretty messed up due to various scratches it had gotten.
+Towards the end, the only thing I did with my Pebble was check the time and play/pause audio. Getting notifications to it no longer worked, whenever I would access the menu it generally got that graphics corruption (I paused/played music without looking at it, that is one advantage of physical buttons.)
+One day I just said screw it, and just put it in my drawer and never wore it again. It was done.
+
+But I missed having a watch, particularly a smart watch. I missed being able to tell time on my wrist, and I didn't like pulling out my phone to check notifications.
+I always knew Apple Watch would be the only proper choice for me, as I have an iPhone, and with watchOS 2 coming out and Apple Watches getting in stock in major Swedish retailers, I decided to bite the bullet and get one.
+I got the __42mm Sport Space Gray/Black Band__. This felt like the most reasonable prized one. The "normal" model looks nicer, but it's also more expensive.
+
+![42mm space grey](http://blog.lambdan.se/content/49_watch.png)
+
+Now, I'm not an active Apple Watch user, I'd like to call myself a passive user, meaning, I don't use a lot of apps on it or anything. I can go a day without pressing any of the buttons on it. I just tell time, get notifications and look at the activity rings.
+
+In general, the Apple Watch is just fine. People criticize the battery on it, but I usually have about 60% left when I go to bed. But as you read above, I'm a pretty passive user. YMMV.
+
+In a lot of these areas that I'm gonna talk about, I'm gonna compare it to the Pebble.
+
+Let's start with the __good things__.
+
+### Notifications
+
+Apple Watch is my favorite way of getting notifications. No longer having my phone vibrate (loudly), no more phone playing a weird notification sound, no more my phone's screen waking up. Just a gentle tap on my wrist.
+I just rotate my wrist 90 degrees and I can see it, once I have seen it I either just rotate my wrist back or dismiss it by swiping from the top.
+The way Pebble did it was pretty much the same, except you had to press a button, IIRC two times, to make it dismiss the notification. The vibration sound the Pebble made was also worse.
+Some notifications also have some iOS Quick Actions with it, such as Twitter Favorite or Mark as Read. Apple Watch does it way better than the Pebble.
+
+### Activity tracking
+
+I loved having my phone in pocket and having it counting steps, but I didn't always bring my phone with me so it would sometimes give inaccurate recordings.
+The Apple Watch is on my wrist all the time, from the moment I wake up to when I lie down in bed and about to sleep, therefore it can always count my steps.
+Curiously though, the Apple Watch and Pedometer++ app on my phone gives me different step counts. Today I have had both my phone and my watch on me, yet there is almost a 1000 step difference. So I don't really know what to believe.
+Has all those steps I've taken with my phone been a lie, or is my Watch defective? I tend to trust my watch more, as it can check my heart rate and my arms tend to swing.
+
+![Steps difference](http://blog.lambdan.se/content/49_steps.png)
+
+The activity rings are also a nice touch, but sadly wasn't as motivating as I had hoped. I was hoping that my OCD would force me to fill up those rings every day, but no. Having unfilled rings wasn't as annoying as I had hoped. I do fill the Move and Stand ring everyday, but the Exercise ring is a bitch to fill, for me anyway as I'm not a very active person.
+
+Pebble had no form of activity tracking, which made it feel less like a part of me. The Apple Watch, with it keeping track of my heart rate and other things, feels more like a part of me.
+
+### Nightstand mode
+
+This is a minor little thing, but I love it. Basically when you put your watch in horizontal mode on your table and connect the charger, it goes into a nightstand mode. In this mode, you can just kinda hit your Watch (not really sure what activates it) and it will display the time, date and when your alarm is set in a nice green color that is pleasant to look at night.
+
+![Nightstand mode](http://blog.lambdan.se/content/49_night.jpg)
+
+I like it a lot because I used to use my phone for doing this, but it always gave me a strong flash of light whenever I would do so. This nightstand mode is way more comfortable.
+
+My Pebble was very useless at night. It was usually just charging and doing nothing, and when the Do Not Disturb hours had passed it would vibrate and wake me up if I got a notification. Super annoying.
+
+### Connection consistency
+
+__This is why you want an Apple Watch if you use an iPhone.__ They work flawlessly together. I don't think I ever had to open up the Bluetooth menu on my phone to connect it, compared to the Pebble where I had to do it constantly, and I constantly got a notification on my phone that "Pebble wants to communicate with Pebble D027" which was super confusing, but it basically means the Pebble app on my phone wants to communicate with Pebble D027 (the watch).
+None of that is necessary with the Apple Watch, it all just works fine. Even through reboots and shut downs and Bluetooth toggling and Airplane mode toggling. It. Just. Works.
+
+This isn't really Pebble's fault, as Apple makes it really hard for them to have a smartwatch on the iOS platform so it's kind of a miracle that the Pebble can work as good as it can do, but still, paying the little extra to get into the Apple walled garden is worth it in this case. It makes your life a lot less annoying.
+
+Another nice thing is that the "Do Not Disturb"-mode is synced between them. So if you activate it on your phone, it's activated on the watch. This is exactly how I want it at night because the last thing I do before sleeping is activating Do Not Disturb mode on my phone, and when I do that, I don't want any technology disturbing my sleep. With the Pebble, this wasn't possible, it didn't sync this setting so I usually ended up turning of my Pebble at night, but that had some other issues as well because in the morning I would have to redo the god damn pairing procedure again. With the Apple Watch it's all just fine.
+
+This is also why I chose to get the Apple Watch instead of, say a Moto 360, because I knew this wouldn't be a problem if I had both products made by Apple. I'm assuming the Android Wear watches would have to use the same API's that the Pebble uses, and that does not result in a good experience.
+
+...
+
+Now, over to the __bad things__.
+
+### Apps
+
+I have tried some apps, Tweetbot for instance is very nice on it. Sometimes if I go to the bathroom and forget to bring my phone I check Instagram on it, it's ok for those times when I don't have my phone with me. But even stuff like Authy or setting a timer, I usually find it faster to just bring up my phone and do those things there, it's just ___a lot___ faster in my experience. Not faster because the phone has a better CPU, but because it's so much easier to tap on a huge screen instead of trying to hit small icons on this little display. Also specifying a time in the timer on the watch with the digital crown is very hard to pinpoint down to a minute, you have to be very careful when doing so.
+
+Authy also has some glitch where if you open up the Apple Watch app you have to open the app on the phone also to unlock the accounts. It's a bug and I believe they are working on it (they mentioned it in their changelog), but it's super annoying.
+
+There are some good apps however, like Sleep++. I tried it for two nights, and it worked just fine. It basically just monitored how I slept (similar to the Sleep Cycle app except more consistent because it's on my wrist keeping track of a whole bunch of stuff). I stopped using it though because I liked nightstand mode more.
+
+Apps on the Apple Watch is still a ton better than on the Pebble though. I don't think I used any app on the Pebble, unless you wanna count the Music app (where you play/pause whatever you are listening to.)
+
+### The other button
+
+Apple Watch has two buttons: the digital crown and the other button. The other button just opens a ring with Contacts you have marked as favorites. This is super useless to me as I am very unsocial with my phone contacts. I would much prefer if the button was mapped to Play/Pause or something else. I never press that button in it's current state.
+
+...
+
+And that's kinda it. There really isn't anything else that is bad about it. It's just a very pricey gadget that goes on your wrist that is a convenience to have, but there are probably more convenient things you can spend the money on.
+
+### Should you get one?
+
+Unfortunately, I can't really recommend anyone getting one unless you are super into Apple or you really want a smartwatch and you have an iPhone, then it's without a doubt the best choice.

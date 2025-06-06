@@ -1,0 +1,12 @@
+2016-05-20T00:00:00+02:00
+# Snazzy Labs' Mac Mini Hackintosh
+http://snazzylabs.com/article/skylake-mac-mini-hackintosh/
+
+I really like this buiid, and the photos and video he took for it is also very crisp and nicely editted. He keeps his points short and right to the point, just as I like it.
+
+He also released a new video today talking about how it has been working and kind of a Q&A: https://www.youtube.com/watch?v=aZU9KD2YESQ
+
+And yeah, I agree with him. Everything pretty much works great on a Hackintosh. I am very happy with mine.
+
+I am tempted to build a similar machine to his, just because I wanna try using a PicoPSU, they're so cute. Unfortunately I can't really think of why I would need one. It would be nice to have a separate desktop Mac so I don't have to reboot, but then that will cause an issue with input and displays so yuck. I better stick to one machine. But maybe someday I'll build a machine similar to his.
+

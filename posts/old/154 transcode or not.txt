@@ -1,0 +1,72 @@
+2017-01-25T21:18:00+01:00
+# To Transcode or Not to Transcode... That Is the Question...
+
+Up until now, my DVD & BluRay scheme has worked like this, in essence:
+
+- Rip the disc using MakeMKV into MKV files with the best available English audio track + Swedish subtitle
+- Put that original MKV onto an External HDD 
+- Make a transcoded version that is smaller and much more compatible for use in Plex 
+
+This has worked great. The original files lived on the external drive so if I wanted to re-do some encode or if there was a new version of Handbreak or a breakthrough in HEVC (H.265) I could just re-do the transcode, without having to re rip and re-identify everything (in retrospect I would've kept track of it so I could make a script for the future, but oh well...)
+
+The transcoded versions are small and didn't take up much space and all my Plex players instantly played them and my Plex Server didn't need to sweat very often. 
+
+But now I got Breaking Bad on Blu-ray, and My Name Is Earl on DVD, and now my external HDD cannot fit the originals. There is not enough room.
+
+So I need to do something.
+
+Easiest solution: get another external HDD. 
+I was gonna do this, but I ended up not doing so. Why? I don't know. I could've just put the Breaking Bad and Earl originals on this new drive, transcode the originals and put them on my Plex Server and live on happily ever after.
+
+But this is gonna get messy as time goes on. My library isn't getting smaller, it's getting bigger, so I will just need more external drives as time goes on.
+
+Basically what I realized, which is so obvious, is that only having one version saves a lot of space. Obviously I've known this, but it was now I realized it's not practical anymore to keep both. 
+
+So here are my practical choices:
+
+- Just keep the original MKVs (use these in Plex, no transcoded versions)
+- Just keep the transcoded versions (and remove original MKVs, re-rip them if necessary)
+- Use transcoded versions for DVDs, and use originals for Blu-ray
+
+The last one is the one I am most likely going with.
+
+Just keeping the originals and using them in Plex, sounds huge and great on paper, which it is for Blu-rays. Sure, they take up a lot of space but I no longer have to have days where my PC is sitting at 100% CPU usage for days just thugging along. And they look fantastic.
+Blu-rays are usually AVC/H.264 which a lot of players can direct play, such as Plex Web and iOS. 
+
+Sadly, Blu-rays usually come with PGS subtitles which very few players directly support, so my Plex server has to burn-them in on the fly, but that's fine. The i3-6100 in my Plex Server should be able to handle ~2.5 1080p streams.
+
+But what about DVDs? Everything isn't as nice over here. Here we usually get very space inefficient, old, crappy and incompatible MPEG2. 
+
+1 GB for a 20 minute episode encoded in MPEG-2 that looks not good? No thanks. How about the same episode at around 300 MB in H.264? Ah, much better.
+
+And how about That '70s Show, Season 2? It's stretched 16:9. You don't wanna keep setting the aspect ratio every time you use Plex to play an episode of these. Let's transcode these and push them back into 4:3.
+
+And how about all those NTSC Friends DVDs that are telecined? Let's detelecine them and compress them a little. They look horrible anyway.
+
+Also DVDs are just SD resolution which is way faster to transcode than 1080p footage (don't get me started on 2160p). My i7 averages around 150 fps when transcoding DVD videos with typical settings, while 1080p gets around 27 fps. 
+
+That's pretty much it. It can be summarized like this: I want everything in properly viewable H.264 (or H.265 when that time comes.)
+
+Let's talk about the second option for fun, which is obviously the most space efficient. I did some semi-accurate calculations and here's what I found out:
+
+- Deleting all my compressed versions (only keeping originals) would give me back 1 TB of space
+- Deleting all the originals and only keeping the compressed versions would give me back 4 TB of space (which makes sense as my external HDD is 4 TB) 
+
+So why don't I do this? Well, it's mostly because I don't want to re-rip everything, especially not TV Shows.
+
+TV Shows are a pain in the ass. Sometimes they're nice on disk, sometimes they're not. Sometimes the DVD order is different from the TV order (which Plex uses.), and sometimes they're not.
+I currently have a external HDD where all my original rips of TV Shows are nice and properly ordered, and I wanna keep those.
+Or am I?
+
+A thought that's been flying through my head is just compressing all these shows with really good settings, like by using the `--target big` option in `transcode-video` and just keeping them like that, and just remove the originals. This is something I might do, atleast for DVDs. 
+DVD Quality is so bad anyway that a very good compressed version probably won't differ much.
+
+-------
+
+## TLDR
+
+- Keep Blu-rays in original format for now, as they are very nice quality and they're already H.264 which is natively supported in many devices
+- Transcode DVDs to H.264 with high quality, burn in subtitles, fix aspect ratios and various other issues (telecining, interlacing, etc.), and probably delete originals eventually 
+
+BTW, I am working on an updated [How I Rip My DVDs & Blu-rays](https://lambdan.se/index.php?entry=91-ripping-2016-04-26) but before I can recommend you what to do, I need to decide myself.
+

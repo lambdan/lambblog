@@ -1,0 +1,9 @@
+2016-01-15T00:00:00+01:00
+# Don Melton's video_transcoding scripts
+https://github.com/donmelton/video_transcoding
+
+These are the scripts I have used to encode all of my DVDs after I have ripped them with MakeMKV. 
+
+I have also encoded some Blu-rays with it, but not many.
+
+I think the file size is good enough and I think the videos still look great after being transcoded.

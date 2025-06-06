@@ -1,0 +1,110 @@
+2016-08-01T01:00:00+02:00
+# encode_youtube.bat
+
+This post was last updated: 2 Sep 2016 17:53
+
+Finally decided to write a script that will make my YouTube encoding easier.
+
+![screenshot](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/encodeyoutube1.png)
+
+<div class="embed-responsive embed-responsive-4by3">
+<iframe width="480" height="360" src="https://www.youtube.com/embed/zaWRfArNWV8" frameborder="0" allowfullscreen></iframe>
+</div>
+
+# Features
+
+- Upscales SD (less than 720p) video to 720p30 or 720p60 (both 4:3 and 16:9) to take advantage of YouTube 60fps
+- Encodes HD video such as 1080p30 and 1080p60
+- Can trim (set start time and end time)
+- Encodes follow YouTube's [Recommended upload encoding settings](https://support.google.com/youtube/answer/1722171?hl=en) (Level 4.1, profile high, 4:2:0 pixel format, 2 bframes, etc.)
+
+# Installation/Usage
+
+- Download (right click, save as): [encode_youtube.bat](https://github.com/lambdan/video_bla/raw/master/encode_youtube.bat)
+- Have ffmpeg in path
+    - An easy way to get ffmpeg in path is to just download a ffmpeg build from [here](https://ffmpeg.zeranoe.com/builds/) and put `ffmpeg.exe` in the same folder you put this script in.
+- Drag n drop a video file onto the .bat
+- Answer the few questions (the default answers are in (paranthesis))
+
+__<font color="red">Please note:</font>__ This script does not deinterlace or scan line double video. If you have a interlaced capture (30 fps) you should deinterlace it first in something like [Yua](https://kb.speeddemosarchive.com/Yua). You can then drop the 60 fps video from Yua onto this script.
+
+For quality tests, scroll down.
+
+-------
+
+Until now I always used to google for stuff like "ffmpeg trim" to figure out how to trim something. Now I have a script with it and I don't have to manually type out a `ffmpeg` command.
+
+# "Why not just use Yua or anri-chan?"
+
+First of *anri-chan* is incredibly outdated. I do however prefer it over *Yua* in some cases, as it doesn't do that audio amplification factor thing.
+
+*Yua* is a good, simple to use, tool. If I was submitting a run to *SDA* I would definitively encode using that.
+
+But for what I'm trying to do here, get videos from *Amarec* onto *YouTube* as fast as I can, *Yua* is no good:
+
+* It does some kind of Audio Amplification Factor calculation that takes way too long
+* It doesn't upscale to 720p
+
+# Why not use Don Melton's video transcoding scripts that you are so fond of, or just Handbrake?
+
+I am fond of his scripts, and I do still use them for my DVDs and Blu-Rays. They are excellent. But not for my gaming videos:
+
+- They don't upscale to 720p
+- The quality targets are not suitable for a 60 fps racing game like F-Zero
+
+It does have some nice features though, like automatic cropping.
+
+As for why I don't use plain *Handbrake*: it doesn't upscale to 720p (that might be possible though, I haven't looked much.) I also hate *Handbrake's* GUI.
+
+It's CLI component, *HandbrakeCLI*, is interesting though. I might look into that to get automatic cropping and simple deinterlacing. *ffmpeg* is more portable though, just a single .exe file. So for now it's gonna be using *ffmpeg*.
+If I decide to re-write it in a language that's not batch I might switch to HandbrakeCLI.
+
+# Future plans
+
+- Cropping (delete black borders automatically, not sure how this will mess with aspect ratio though)
+- Rewrite in a better language than BATCH. Probably Python.
+- Watermarking so people can't steal your videos
+- Burn-in timer?
+
+# Quality tests on YouTube
+
+Here are a bunch of quality tests I've uploaded to youtube using an older version of this script. Video quality should be the same though. Audio quality is not the same (it's worse.)
+
+When you watch these, please remember that __YouTube re-encodes everything__ you upload to them. Therefore, a game like F-Zero GX is very very hard to get good looking on YouTube.
+
+## NES RGB 240p
+
+- See my dedicated NESRGB blogpost: [NESRGB](http://lambdan.se/131)
+
+## SNES RGB 240p
+
+- [Castlevania Bloodlines](https://www.youtube.com/watch?v=t32BoiGTUkQ)
+- [Donkey Kong Country](https://www.youtube.com/watch?v=ExqFPAxaw84)
+- [F-ZERO](https://www.youtube.com/watch?v=zaWRfArNWV8) (very visible compression artifacts, it's a bit too intense for YouTube)
+- [Sonic 2](https://www.youtube.com/watch?v=wjVy-lHIYe0)
+- [Super Mario World](https://www.youtube.com/watch?v=42spNsWcNbg)
+- [Wolfenstein 3D (SNES)](https://www.youtube.com/watch?v=eIkAUNlHxRo)
+
+## N64 RGB 240p
+
+- [Banjo Kazooie](https://www.youtube.com/watch?v=MM-U53kSlpc) (It's a 30fps game but it's in 720p60 format because my script couldn't at the time do a 720p30 version)
+- [F-ZERO X](https://www.youtube.com/watch?v=k3OA-MeaDDA)
+- [Goldeneye 007](https://www.youtube.com/watch?v=DpkY_rEhqZI) (See Banjo-Kazooie notes)
+- [Zelda Ocarina of Time](https://www.youtube.com/watch?v=j6fIHhyea0Y) (See Banjo-Kazooie notes)
+
+## Gamecube/Wii Component 480p
+
+- [F-Zero GX](https://www.youtube.com/watch?v=ngLdEUi7zog&feature=youtu.be)
+- [F-Zero GX Widescreen](https://www.youtube.com/watch?v=TLc6RgnycTM&feature=youtu.be)
+- [Metroid Prime](https://www.youtube.com/watch?v=jt3WQ-Fe3IE&feature=youtu.be)
+- [Super Smash Bros. Melee](https://www.youtube.com/watch?v=GzKcIj01uHc&feature=youtu.be)
+- [Super Smash Bros. Melee Widescreen](https://www.youtube.com/watch?v=HW86oiIlZ-4&feature=youtu.be) (fun to watch)
+
+## PS4 HDMI 1080p
+- [Destiny](https://www.youtube.com/watch?v=7ttmke-A2NU) (30fps game)
+- [Hotline Miami](https://www.youtube.com/watch?v=EDzBJXRmhXo)
+- [MGSV TPP](https://www.youtube.com/watch?v=Faq4mRpfVSI)
+- [Uncharted 4](https://www.youtube.com/watch?v=28MqzGk-_78)
+
+[![github logo](http://puu.sh/qW4ty/76d0427b88.png)](https://github.com/lambdan/video_bla/blob/master/encode_youtube.bat)
+

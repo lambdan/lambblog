@@ -1,0 +1,17 @@
+2017-05-19T21:59:00+02:00
+# JSON Feed
+
+I now have a [JSON Feed][jf] available for my blog, available at [`https://lambdan.se/feed.json`](feed.json).
+
+Why? Mostly for fun. I really like it so far though, it was really simple and easy to do. I've had alot of issues with RSS where I would have to escape a ton of stuff just to get it to validate. So far with JSON Feed, I have had no issues.
+
+It's also a very nice feed to look at. You can almost read my blog entirely by just looking at the JSON Feed of it.
+
+There aren't alot of feed readers that support JSON Feed, yet, but here is one that does: http://json-feed-viewer.herokuapp.com and you can try [viewing my feed][view] there.
+
+I also updated my Github repo for _lambblog_ so you can see how I made the implementation: https://github.com/lambdan/lambblog/blob/master/jsonfeed.php
+
+In other news, I've been busy with other stuff so I've been kind of dead on Twitter and here. That should hopefully be over soon though.
+
+[jf]: https://jsonfeed.org
+[view]: http://json-feed-viewer.herokuapp.com/?feed_url=https%3A%2F%2Flambdan.se%2Ffeed.json

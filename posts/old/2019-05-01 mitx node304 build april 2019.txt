@@ -1,0 +1,59 @@
+2019-05-01T00:11:00+02:00
+# mITX Considered
+
+It has been almost 3 years since I wrote [Considering mITX](https://lambdan.se/blog/2016/05/03/considering-mitx/), and now I have finally considered enough and now finally have a mITX system.
+But since then, 3 years ago, and now, I've actually gone through 2 different cases: a _Fractal Design Define C_ and a _Fractal Design Define R6_. Both of which are great cases, but they had their annoyances with me.
+
+For the _Define C_, I made the mistake of going with a windowed one. So I gave that case away to a friend who desperately needed a new one.
+
+The _Define R6_ was actually a lovely case, if I ever need a full-size ATX again I'll probably just get that again. But right now my Plex server needs it more with its 7 mechanical 3.5" hard drives. I think it's gonna be a lovely case for that purpose.
+
+So what did I end up with?
+
+Well, I went with something pretty boring, a _Fractal Design Node 304_. I actually already had this case for my old NAS, and now for my backup server. So I just bought another one, because I kinda like it!
+
+I was dreading building it a bit though, because I know how tight it is in there from my previous experience, and now I needed to shove a graphics card in there. But I saw this [build video](https://www.youtube.com/watch?v=f1GWkZS4Syg) and it looked so roomy when he used a SFX power supply.
+
+So, here's my current PC then, the part list if you will. Keep in mind that most of the parts I already had from my previous build. Only thing I bought new for this was the motherboard, PSU and case (and the case wasn't actually new, it was a demo unit, but it looks new.)
+
+- __Case__ Fractal Design Node 304
+- __Motherboard__ Gigabyte Z390 I AORUS PRO WIFI
+- __RAM__ 2x 8 GB DDR4-3200 MHz G.Skill FlareX CL14
+- __Graphics Card__ MSI GTX 1080 Ti FE
+- __Power Supply__ Corsair SF600 600W 80+ Platinum
+- __SSD__ A bunch of them... Samsung 970 Evo 500 GB NVMe, WD Black 250 GB NVMe, 750 GB Crucial SATA, 1 TB Crucial SATA...
+
+Ideally I'd like to replace my 2 SATA SSD's with just 1 stick of M.2, but 2 TB M.2 sticks are pretty expensive, so I'm gonna hold off on that. This works for now.
+
+The motherboard is also quite expensive and very unecessary, but I've learned from [past experience](https://lambdan.se/blog/2018/01/28/the-eagle-ryzes-and-flies-away/) I want _Gigabyte_ boards incase I want to Hackintosh. Having a Z390 could be nice if I wanted a 9900K in the future for some dumb reason also.
+
+Here are some pics from the build. The Oneplus 6T is a fantastic phone, except for the camera...
+
+![Parts](https://lambdan.se/img/blogpics2019/mitx/IMG_20190429_162557.jpg)
+<figcaption>The parts I didn't already have.</figcaption>
+
+![SF600 In Hand](https://lambdan.se/img/blogpics2019/mitx/IMG_20190429_175725.jpg)
+<figcaption>The Corsair SF600 is one of the main reasons why I finally went ahead with this build. It's so cute 😍.</figcaption>
+
+![Brackets](https://lambdan.se/img/blogpics2019/mitx/IMG_20190429_180206.jpg)
+<figcaption>Although I wish I had read more closely, as I ended up with an extra ATX-SFF bracket 🤦‍♂️</figcaption>
+
+![Motherboard bent](https://lambdan.se/img/blogpics2019/mitx/IMG_20190429_173347.jpg)
+<figcaption>I had a feeling that I had broken the motherboard after putting the Noctua backplate on because it got super bent, but no it seems to work fine. I didn't use excessive force, just as the Noctua manual says.</figcaption>
+
+![Noctua cooler in small case](https://lambdan.se/img/blogpics2019/mitx/IMG_20190429_190108.jpg)
+<figcaption>I've always had a thing for big Noctua coolers in small cases.</figcaption>
+
+![Sticky pads](https://lambdan.se/img/blogpics2019/mitx/IMG_20190429_192609.jpg)
+![SSDs](https://lambdan.se/img/blogpics2019/mitx/IMG_20190429_193209.jpg)
+<figcaption>As you can see, my SSDs are mounted on those sticky pads. They're not great but they do the job for now. As I said, down the line, I want to replace them with one stick of M.2. instead. Unfortunately I have to take the whole motherboard out to swap that so hopefully I'll do it whenever I swap motherboard next...</figcaption>
+
+And finally, the whole reason why I've wanted mITX for so long: 
+
+![On shelf](https://lambdan.se/img/blogpics2019/mitx/IMG_20190430_232624.jpg)
+
+The computer fits in my shelf!
+
+-------------------------------
+
+Down the line I'd like to try one of those even smaller cases, like the Ghost or Dan. But I find building in something this "big" already very frustrating so I can't imagine I would enjoy building in something even smaller. And I want my Noctua tower coolers so they won't work for me anyway. But they sure are neat.

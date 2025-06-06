@@ -1,0 +1,93 @@
+2020-06-06T19:06:00+02:00
+# Getting Excited for PS5
+
+I'm starting to get excited for the PlayStation 5.
+
+We still don't know a whole lot about it even though it's meant to be available in less than half a year.
+
+Well, we know some stuff, like some of the tech specs, but we don't know how it will look. There are some patent drawings flying around but can we be sure about them?
+
+Eitherway, that doesn't matter. Not really what this post is about.
+
+I wanna talk more about the super fast SSD, or my neglect of it.
+
+## The SSD
+
+When we first heard that the PS5 was getting a SSD, I was glad but I wasn't really that excited about it. It was more like a "finally". We've had SSD in our computers (and our PS4s if you wanna swap it yourself) for almost a decade now and they're great. 
+
+So I just thought, well great, finally we'll get some decent load times.
+
+![SSD Speeds](https://lambdan.se/img/2020-06-06_23-46-57.476623.png)
+
+But what if we could get more than good load times?
+
+This wasn't really something I had considered. 
+
+In [The Road to PS5](https://www.youtube.com/watch?v=ph8LyNIT9sg), presented by _Mark Cerny_, we get some details about their SSD. 
+
+And basically, it's really fast. Like, super fast. Insanely fast.
+
+I didn't really grasp how fast it was until I started watching this guy: [GAME ENGINE DEVELOPER Reacts to ROAD TO PS5](https://www.youtube.com/watch?v=erxUR9SI4F0).
+
+But after having listened to him, I am a whole lot more excited about the PS5 than just faster load times.
+
+## The Room of Landscapes
+
+In the current console generation, we have to load into RAM pretty much everything that we could need in the next couple of seconds (30 seconds according to Sony) because mechanical HDD's and traditional storage controllers aren't fast enough to load stuff in the instant we need it. 
+
+![PS4 Paradigm](https://lambdan.se/img/2020-06-06_23-46-59.995306.png)
+
+Another downside of this is that lots of RAM can go to "waste" on things we didn't end up needing.
+
+Here's my dumb way of explaining this. I am not a game engine developer or anything but I think I get this.
+
+Imagine you are in a square room with 4 walls, each with a window, and you are in the middle (the X):
+
+![The Room](https://lambdan.se/img/e0b8baada6906d5ded6d861be73d82cf.png)
+
+Now, looking through the windows on each wall you can see landscape A, B, C and D. 
+
+Right now we have to load in each landscape before you enter the room. This is because the HDD isn't fast enough to give you landscape B as you're turning away from landscape A. What if you did something like crazy like turn your controller sensitivity to max and turned around super fast and passed landscape D in a split second and are now looking at landscape C? The HDD would get a heart attack, trying to load in landscape D and C in that short amount of time, and you would likely encounter stuttering or missing textures, or something worse.
+
+So, we load in each landscape before you enter the room. But doing it this way we have to make sure each of the landscapes fit into RAM. We cannot have too many details or we'll run out of RAM, or maybe the load time would be insanely long.
+
+Now, what if I told you the SSD (and all surrounding storage controllers etc.) were fast enough to stream in the landscapes as you started to turn towards them? 
+
+That is what the PS5 is gonna try to do.
+
+![PS5 Paradigm](https://lambdan.se/img/2020-06-06_23-47-02.584053.png)
+
+And it's wild if you think about it.
+
+Basically, what you are looking at is all that is in RAM. What you cannot see is not in RAM, but will be instantly put there when needed.
+
+This means, if you are looking at landscape A we could make it extremely detailed and have super high resolution textures. We have a couple gigabytes of RAM to use for just that landscape, instead of having to share 8 GB of RAM (PS4) with all 4 landscapes.
+
+And then when you start turning towards landscape B, landscape A will start to be unloaded as B will be loaded in and hopefully it will be super smooth and invisible to the user.
+
+If Sony can pull, or rather have pulled, this off it could be insane and truly revolutionize games if the games are programmed to take advantage of this. And I am excited for this.
+
+Oh, and we don't have to have those weird, arbitrary corridors everywhere to disguise that we are loading in new stuff. We could have huge cities right next to each other now.
+
+## But What If It's... Not Good?
+
+There is certainly risk involved here.
+
+Well, first of all, it could just not be true. Sony could just be blowing smoke, but from all rumors I've seen fly by on Twitter, this is true. But we'll see for sure when it's actually out.
+
+Secondly, most games are on other platforms too, so they have to work on there as well. While the next Xbox and PCs also have fast SSDs, they're not as fast as what the PS5 is getting. I mean sure, the SSD itself might be fast enough in a PC running in NVME over PCIe 4.0 (I'm pretty sure Sony mentioned this is viable in their video) but the PS5 also has custom chips to help speed things up. They have a part of the custom chip dedicated to just decompress the specific compression algorithm games use. PC's don't have this, atleast not yet. Maybe in the future we'll have it in PC's too, maybe as PCI expansion cards, but not right now.
+(On the other hand, PC's might have much more powerful general CPUs that we can use some of it to decompress quick enough.)
+
+![PS5 Custom SSD Controller](https://lambdan.se/img/2020-06-06_23-47-04.731088.png)
+
+So there's certainly a chance cross platform titles won't take advantage of this insane architecture and just use the SSD as general storage and we'll just get shorter load screens and that'll be it. In that case, the Xbox will probably the better choice for multiplats. 
+
+Thirdly, and this is one thing that worries me, is that this kind of technology might only work with lower framerates... say... 30 FPS? I mean as fast as it is, I can see it working for 30 FPS games, but if we go higher than that? I'm not sure. I hope it will work, but I'm worred it won't. I can easily see developers thinking "well, we have twice as much time to load stuff in if we just halve the framerate" and they'll just do that.
+
+Another consideration I have is SSD to SSD variability. Sony must be sourcing some super high quality SSDs that never hiccups. What happens overtime if the SSDs degrade? Will games run worse in a couple of years than when the PS5 was new? What happens if your SSD is almost full? They tend to slow down when they're almost full.
+
+I'm excited anyway, and I hope it works as good as they say.
+
+If it doesn't, well, we'll look back on this in a couple of years and make YouTube videos and think about how crazy Sony's claims was.
+
+But if it does work, Sony could have some truly unique experiences on deck with the PS5.

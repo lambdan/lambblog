@@ -1,0 +1,37 @@
+2015-07-01T00:00:00+02:00
+# UsefulMenubar (OSX)
+
+## Run bash commands from a Menu Bar icon
+
+Been working on this these past couple of days. This is the first Mac utility I have written from scratch.
+
+I'm releasing it as it is now. It works "good enough" in my testing and I want to move on to other projects. I will probably update it when I figure out a new cool feature (for example: remove individual scripts, I haven't figured a good GUI for that yet).
+
+It's written in Swift (compiled in Swift 1.2, Xcode 6.4), and tested on a 11" Macbook Air running OSX Yosemite 10.10.4.
+
+![Where the magic happens, the menu bar](http://lambdan.se/d/UsefulMenubar/screenshot1.png)
+![Add New Script dialog](http://lambdan.se/d/UsefulMenubar/screenshot2.png)
+
+## What It Does
+- Lets you launch bash commands from the Menu Bar item
+
+Yeah, that's all. But since you can do pretty much everything from bash, you can do pretty much anything in this.
+You can launch Apple scripts which opens up a bunch of possibilities, more info below.
+
+It also has a option to remove all your settings/scripts and a Donate button which will open a page where you can donate to me.
+
+## Apple Scripts
+Thanks to the command `osascript`, you can use Apple Scripts with this thing. Simply use this as your command:
+`osascript /path/to/script.scpt`
+or
+`osascript -e 'tell application "iTunes" to pause'`
+
+If your path is in a folder with spaces, for example: `/Users/djs/Documents/Apple Scripts/My Apple Script.scpt`, make sure to put the path in quotes: `osascript "/Users/djs/Documents/Apple Scripts/My Apple Script.scpt"` - __this also applies to any script you want to run which uses a path with spaces.__
+
+## Known Issues
+- __No retina icons__. While [icons8](http://icons8.com) is great, they don't provide retina icons for the free tier.
+- __Unfocused window__. 'Add New Script' and 'About UsefulMenubar' windows will sometimes not be focused when they open (You can see them in Mission Control if this happens)
+
+## Download
+Download the .zip here: [Download](http://lambdan.se/d/UsefulMenubar/UsefulMenubar.zip)  
+Then unzip it and put the .app wherever you want and run it.

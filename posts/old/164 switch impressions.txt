@@ -1,0 +1,57 @@
+2017-03-03T23:45:00+01:00
+# Nintendo Switch: First Impressions
+
+What a fun day. Here are my impressions after roughly 12 hours of owning it.
+
+## Nintendo Switch
+
+- The system menu is really fast. The eShop is also really fast and buying games on there (I bought Fast RMX and I am gonna buy Mario Kart 8 Deluxe) was really fast. Stuff like taking screenshots is also instantenous, much faster than the PS4 for instance.
+- The system menu does however run at just 720p, which is very noticable on your 1080p screen. Text is a bit aliased and fuzzy.
+- There is no music on the System Menu or the eShop. Completely silent apart from your navigating.
+- For Video Output settings you can swap between these resolutions: Automatic, 1080p, 720p and 480p. You can swap RGB Range between: Automatic, Full Range and Limited Range. Very similar to the PS4 in other words.
+- For Audio Output you can swap between: Stereo, Mono and Surround. When I put it at Surround, my soundbar didn't switch over to Dolby 5.1 or DTS 5.1 mode, so I guess it's some kind of other thing (like the Wii U)
+- The display on the Switch itself is really nice and crisp... Too bad I will never use it
+- Not a huge fan of the feeling of sliding the Switch into the dock. Feels a bit too loose fragile
+- The system is quiet. If you put your near next to it and listen to the fan exhaust you will hear something, but it's a nice sound
+- The wifi is sometimes bad, but it's not the Switch's fault - it's because of the particular corner of my room that all my consoles are in. I use Ethernet for all other consoles so I ordered a little [USB 2.0 10/100 Adapter][adapter] for the Switch, hopefully it'll work.
+- The undocking and docking is really fast and works exactly as advertised. Remove it from the dock and the picture instantly comes up on the Switch itself. Put it back in and 2 seconds later your TV (and capture card and second monitor) all show the Switch image. Very happy with that aspect of it so far.
+- The packaging was extremely good, probably one of my favorites of all time. Everything was very organized and all the plastic bags came off easily (were not sealed). I left the HDMI cable and JoyCon straps in the box.
+- I kinda like using the two JoyCons in the grip to make one controller. I probably wouldn't mind using it if I didn't have the Pro Controller. One annoying thing though is that you cannot charge them while they are in there, you need the [JoyCon Charging Grip][cg] for that. 
+- You cannot power off the console like you do with a PS4 or something. Instead it goes into Sleep Mode. That's fine with me I guess, as long as the battery doesn't run out over night when I flip the switch on the power in my whole entertainment center and everything goes black. 
+- Overall, the build quality of the Switch itself feels much better than the Wii U Gamepad. The Switch feels nice, solid and sturdy while the Wii U Gamepad felt plastic, big and chunky. The kickstand on the back feels a bit cheap though, like a lot of reviewers have pointed out.
+
+![bla](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/UNADJUSTEDNONRAW_thumb_118c.jpg)
+<figcaption>Next to the PS4 for now. With a USB cable plugged in to the left of it, it's a bit tight so I might move it when I think of a better spot</figcaption>
+
+## Pro Controller
+
+- It comes with a USB-A ↔ USB-C cable that is intended for charging, and it is very thick and heavy. I'm eyeballing it to be 1.5 meters long
+- The "R2 and L2" buttons aren't as much triggers as the PS/Xbox controllers, but they do go in a little further. Much better than the Wii Classic Controller Pro anyway.
+- Not a huge fan of the Share and Home button placements. I frequently hit those instead of + and - (Start and Select essentially)
+- Playing _FAST RMX_ with this controller was really awesome. I don't really know why but I just got this incredible sense of "WOW" while playing it with this controller. The "R2 and L2" buttons worked really well for that game, in combination with the vibration
+- The face buttons feel a bit wobbly compared to the PS4 controller. They are very usable though
+- The D-pad feels nice. Sadly haven't gotten to try it in a game yet (apart from equipment management in _Breath of the Wild_)
+- Can't judge battery yet, but it started at around 3/4 and I ended my day with 3/4 so it seems to be pretty good
+
+![controllers](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/NxafAyG4RUyfhvElATOgOg_thumb_118b.jpg)
+<figcaption>Pro Controller to the left if you can't tell</figcaption>
+
+## Breath of the Wild
+
+- I'm not gonna definitively say if it's good or bad until I get atleast 10 hours in (currently at almost 6 hours of the Switch version), but I can already tell you that I will [have to eat my hat][lol]. The game becomes alot more fun once you get off The Great Plateau, it starts to feel more like a traditional Zelda game then (with the names, villages, people and Cucco minigame)
+- The Switch version looks noticably sharper than the Wii U version, and is something that I greatly prefer
+- The Switch version's framerate is as bad, or maybe even worse, than the [Wii U version][wiiu], when docked. I [hear][eg] that in portable mode it runs at a rock solid framerate though. I doubt Nintendo can patch this either but we'll see. It is annoying but it doesn't make you wanna stop playing.
+- Overall I just have more fun with the game now than I did earlier in the week when I played it on the Wii U. It's a great game so far. Not a 10/10, but maybe a 8/10 or so, we'll see how things unfold. I'm a bit overwhelmed by all the things you can do.
+
+![unfortunately](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/UNADJUSTEDNONRAW_thumb_118e.jpg)
+<figcaption>Unfortunately I will very rarely use it like this... most likely</figcaption>
+
+Overall I am very happy with the console itself so far and I hope future updates will improve the system menu resolution and maybe add some music to it.
+
+Oh, and more games. While Breath of the Wild is fun, I kinda want something else to play on the side as it is very overwhelming (FAST RMX is alright though.)
+
+[adapter]: https://www.startech.com/eu/Networking-IO/usb-network-adapters/usb-ethernet-adapter~USB2100
+[cg]: http://www.gamestop.com/accessories/nintendo-switch-joy-con-charging-power-grip/141868
+[lol]: https://lambdan.se/index.php?entry=162-early-botw-thoughts-2017-03-02
+[wiiu]: https://www.youtube.com/watch?v=XQElPnJ5w20
+[eg]: http://www.eurogamer.net/articles/digitalfoundry-2017-the-legend-of-zelda-breath-of-the-wild-face-off

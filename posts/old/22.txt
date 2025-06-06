@@ -1,0 +1,33 @@
+2014-10-29T00:00:00+01:00
+# San Andreas Remastered (x360) - First things I noticed
+
+So hey, we finally got a new version of San Andreas version. Oh wait, it's the same version that came out on iOS/Android, but it has changed it controls for a physical controlller.
+
+So what are the differences? Well I only played it like 30 mins so I'm sure there are more but here are some I noticied immediately:
+
+* **Graphics** - they are more glossy and reflective and more light. Original San Andreas is kinda dark and boring to look at. This looks nicer on paper but I prefer the original San Andreas look.
+* **Controls** - one thing I immediately noticed was with the biking. On the other versions you just tap the "pedal" button repeatedly to start biking really fast. Well in this one you cant do that, you just gotta hold down the button and eventually you will start going fast.
+* **Size of game** - the original game was distributed on DVD, around 4GB. The Xbox 360 download is 2 GB, so they did something. Maybe they compressed it or made the audio quality worse? 
+* **Achievements** - there are achievements in it, and this is like the only thing that I really like. I always wanted achievements for this game and now I can have them. They aren't great though. For example, one of them is "Drown". Wow, that's fun.
+* **The gym is open** - when I was driving to the barber in the second mission 'Rider' the gym was already opened and I could enter it.
+* **Food & Hair Styles have previews** - probably clothes too, but yeah, instead of just that white text on black background you see a little image preview of what you are getting. 
+* **It's laggy** - playing on the 360, it's framerate gets raped in heavy trafic/people areas
+* **Jeffrey can't be quickly killed in the mission OG Loc** - I started to suspect this when his bike didn't start burning when I shot my SMG at it, like I have always done the last 10 years. It got black smoke, but it didnt start burning. So I tried a couple more times and eventually I just tried using a rocket launcher to take it out immediately, but nope, he is invulnerable. I might try it a couple more times (because this is possible in the iOS versions last time I tried) but yeah, I think you'll have to take a bike ride.
+* **Checkpoints** - the game saves occasionally in a mission, so that in case you die you can just retry from there. 
+* **Retry?** - a compliment to the previous one: when you fail a mission you can Retry it immediately if you want to
+* **The aiming is horrible** - there are two aim modes. Free and Lock on. With Free its like you are playing on a PC, you will have to manually aim at everything. On a console that isn't that practical, atleast not for me. Then there is lock on, which is like the classic San Andreas lockon targeting system. EXCEPT you can't free aim with it. For example, shooting the gas tank on Ryder's car is impossible because you will lock on to the pedestrians instead. Really frustrating, you end up going into the options screen and change the targeting system all the time to suit your current needs.
+* **Main Menu** - it has that new design with square options at the bottom, but it's really laggy and awful. On my iPhone it's okay, but it feels like on the xbox that there is a input delay or something. The map is also differently accessed (you press BACK on the main screen), and the Stats menu is a bit fancier. I like it.
+* **Jumping** - running into a short wall/fence will cause CJ to climb over it automatically.
+* **Can't lock onto Spray Tags** - really irritating as you have to rotate CJ to get him to face the tag.
+
+That's all the differences I can think of. In general it is the same game. The same bugs still work, including:
+* **"Monster Truck Glitch"** - I don't know the proper word for this, but take a monster truck and put one of the front wheel on a pedestrian car. Crazy stuff will happen.
+* **"Secret World"** - the gym secret world is still there and works like before.
+
+The game also uses the same cheat codes as the original Xbox game does. Entering a cheat causes an annoying Xbox 360 popup show, saying that achievements will be disabled, though.
+
+So overall, my conclusion is this:
+* If you have played the original Xbox version, the controls will frustrate you. But the achievements might keep you through the game though.
+* If you haven't played the game before, go for it. It's an awesome game.
+
+_/DJS_  

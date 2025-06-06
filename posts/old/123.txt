@@ -1,0 +1,227 @@
+2016-06-27T19:34:00+02:00
+# Today, 10 years ago, I started speedrunning
+
+10 years ago, I decided to join the SDA (SpeedDemosArchive) forums. I like to see this as when I started speedrunning. I was 10 years old at the time, and I thought I would tell you some stories about it and my thoughts on speedrunning now.
+
+![sda profile](http://puu.sh/pI0yx/e2ba420a12.png)
+
+Before we can get into the forums, we need to talk about the background here. How did I find SDA? How did I find any speedruns at all?
+
+# bisqwit.iki.fi/nesvideos
+
+I had come across the term speedrun around 2003-2004, but it had the words Tool-Assisted before it. My brother had shown me `bisqwit.iki.fi/nesvideos` where I watched alot of videos. He got to know of that page by some friends in his high school (gymnasium.)
+As I had experience with torrenting I found it very easy to watch these videos hosted as _nesvideos_ (nowadays known as _TASVideos_). I did not know about YouTube or anything similar. Most pages that had videos used QuickTime embeds.
+
+So yes, I knew about TAS'es before regular speedruns. However, I did not understand what a TAS was, I could not understand the page describing a TAS. All I thought was that they used a special controller (because they could walk up and down simultaneously for example). I did not know they used slow-downs, frame advance, save states, etc.
+
+Later, circa 2005. I am home, as usual, playing Mario 64, when I come across a star in CCM that I cannot figure out how to get. I remember there is this Google thing, and I google something like "mario 64 cool cool mountain star guide", and I come across this other site called YouTube.
+On YouTube I find a bunch of videos showing me how to get stars in this game, and all of them had "speedrun" in their title. I started to realize that speedrun is some sort of collective word of these videos. I didn't realize they were "world records" (I assumed the TAS'es was world records). I thought they were more of a guide video, showing you how to beat games fast.
+
+(The first Mario 64 16-star TAS was posted late 2005, so I had not seen a TAS of that. I'm guessing N64 TASing wasn't even a thing when I discovered _nesvideos_.)
+
+Some months later, I was stuck again. I can't remember what game, I think it was _Prince of Persia Warrior Within_. I googled something to the extent of "warrior within speedrun", as I thought speedrun was a word for "fast guide" essentially, and [this page](http://speeddemosarchive.com/PrinceOfPersiaWW.html) came up, with SnapDragon's 100% SS run (which is still the run on there.)
+I downloaded the whopping 1.58 GB DivX file (we had broadband at the time, fiber (still do), so it didn't take long) and I was amazed.
+
+A week or so later, I had a friend over, who also played Warrior Within, and so we looked at it together. Trying to figure out where to go next and what we had missed. Another one of our favorite games at the time was GTA San Andreas, so I googled "san andreas speedrun" and sure enough, SDA's page with NTG's 7:46 came up.
+And this is when I realized SDA is hosting a bunch of these runs. I removed the `/GrandTheftAutoSA.html` part from the url and sure enough I reached the front page of SDA.
+
+# SpeedDemosArchive
+
+I eventually found the Game List with all the games and I was in heaven. I looked up runs for Metroid Prime, Battletoads, Mega Man 3, GTA Vice City, Banjo-Kazooie, and of course, Ocarina of Time.
+At the time, the hot OoT run was TSA's 4:57<sup>[1](#myfootnote1)</sup>, and I used to watch this run all the time.
+
+TSA pretty much instantly became my idol, but I was disappointed that he was skipping a lot of items (remember, I thought these were more like guides and I wanted to collect everything), I wanted to see a run where he got all of the items.
+I went on to find the SDA Forums, where I needed to register an account to say anything, so I did!
+I wasn't on many forums at the time so I didn't really have any good nick names. My name is David, so a lot of friends called me _Davve_. I used to put a spin on that, making up stuff like _Pavve_ and such (which still lives on in my 2005-registered Steam account).
+But I thought TSA's name was really cool, so I only wanted 3 letters. For some reason I assumed TSA was his initials, completely ignoring the fact it had _Mike Damiani_ around it, so I registered as DJS, my initials.
+
+
+
+Eventually it clicked for me that these are speedruns - not guides. The goal of these videos is to beat the games as fast as humanly possible, without cheating.
+
+# The Forums
+
+## First Posts
+
+Let's have some fun with my first posts.
+Remember, I am Swedish so English isn't my native language and I was 10 at the time, I don't even think we've had any English classes in school yet. All my English was from games (especially Ocarina of Time), movies, and just using a computer in general (I was pirating stuff and reading NFO's long before I did this.)
+
+![first couple of posts](http://puu.sh/pEzd9/6c7ee4220a.png)
+
+Ah yes, downloading runs with BitTorrent was very convenient at the time. YouTube was relatively new for me and I didn't like using it alot (I wanna say it was really laggy for me).
+One thing I find interesting is that my first post was on the 29th, and my second was a month later. I'm pretty sure I had posts between there but maybe I removed them.
+I'm also fairly certain my absolute first interaction on the forums was finding TSA's profile and sending him a PM, asking about a OoT 100% run. Sadly, when SDA Forums moved to Taiga, I lost most/all of my PMs, and I'm also pretty sure I had cleaned out a lot of them before the move. I really wish I still had them (I'll get back to that soon...)
+
+Note on the Warcraft III post that I say I "cant record". I guess I didn't know of FRAPS at the time. Remember, Xsplit and OBS did not exist at the time. Nothing even close to it. Well, there was Unregistered HyperCam 2.
+
+![more posts](http://puu.sh/pEzul/421f905966.png)
+
+These are funny. First of, I remember that Mario 64 run, it was really bad, I could even tell at the time. Even though I had never gotten 120 stars myself, I still considered it a bad run.
+
+Secondly, the San Andreas posts are hillarious. First I ask about a map where I can see all the things I need, and in the next post I mention that I have completed the game 100% 3 times, which is 100% a lie. It was only last year I beat it 100% for my first time. I have however gotten like 95% a couple of times so maybe that was what I was referring to.
+
+I also remember the part about the VHS tape. I remember asking my mom how much it would cost to ship a couple dozen of VHS tapes over the pond, and I also remember her being very confused/surprised over the question. I had never asked something even remotely similar.
+The concept of recording game footage onto VHS was not new though. I did at the time, frequently, record myself playing Mario Kart 64. Not sure why I did, because I wasn't good at it, but I did. I think it was because I didn't personally own Mario Kart 64, but my cousin did, so I borrowed it from him and then recorded some gameplay so I could watch it later and imagine I was playing the game... maybe?
+
+![last about sa](http://puu.sh/pEzSF/719da72af7.png)
+
+Oh yeah, SDA used to not accept runs over 10 hours. I also thought NTG (the guy who had done the 7:46 any% run at the time) was a pro. 2 years later I created a thread where I pushed for people (including me) to make a better run.
+
+![first yauty](http://puu.sh/pEA0K/8e16f8dcf5.png)
+
+Here I'm asking for a ROM for OoT, which would probably get you banned today.
+More importantly, here is my first interaction, I think, with the Swedish OoT speedrunner at the time, _Yautja Elder_. He will become very important soon.
+
+I think these are enough first posts for now. I just wanted to give you an idea of how I was in the beginning.
+
+## The Torch Slug
+
+![torch slug](https://i.imgur.com/g8ciAbX.jpg)
+
+You probably recognize this avatar above. I used it for a looooong time. I still kinda use it, but a version that I drew myself, and kinda still like. Some people say it looks like a mustasche, some people say it's a nose. I like it.
+
+So how did this happen? Well, let's bring up another old school OoT player: _FIERCELINKMASTER_.
+As it seems to me, going through my post history and cringing at it (it's honestly painful, but on the other hand, what the hell, I was 10), I was spamming the OoT topic so much about an emulated run I was doing, just constantly pestering all these people, like _Manocheese, Acryte, AKA, PyroTHPS/fluffy kitten, Captain Compost,_ etc. with my super annoying english and useless stuff, while they were doing actual science (finding clips in Shadow Temple and what not). I'm pretty sure I actually even got banned from the topic, from the looks of it.
+
+Anyway, I guess FLM wanted to ridicule me, so he made this:
+![challenge post](http://puu.sh/pEAEb/a0dde0982c.jpg)
+<p class="img-caption">I cannot find the post that he quoted, but I'm pretty sure it's one of mine, by the looks of it.</p>
+
+And I can't find the video of where I did it, but I did actually end up doing it, because I wanted people to like me. I got out our digital camera and pointed it at my CRT and simply dropped a bomb in front of a goron in Goron City and that was it. And so I got the torch slug "rank" and I stuck with it.
+
+_Sidenote: I can't remember why, but in 2008 we did a video of it. This time featuring digital camera footage of Twilight Princess and emulator footage of Ocarina of Time. FLM did all the editting and I simply just provided him the gameplay footage._
+
+<div class="embed-responsive embed-responsive-16by9">
+<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/adp4426TO2Y"></iframe>
+</div>
+
+***
+
+Somewhere around here I started posting a lot less in the topic. And I think I know why...
+
+## _Yautja Elder_
+
+This guy, man, I owe him a lot. He basically thought me everything about OoT speedrunning and a lot of other things. He was super nice and polite and helped me with everything. We must've had 1000s of PMs combined, back and forth. Me asking a question, he replying back. We basically used the SDA PMs as instant messaging.
+
+Surprisingly, he also didn't live far from me. Only like 20 mil (1 mil = 10 km) from me. I remember we talked about our cats, the different releases of Ocarina of Time in Sweden (PAL N64, GC Collectors Edition etc). I think he was the one to finally crack it for me that there is a difference between 50 and 60 Hz.
+
+Even though we lived relatively close to each other, we never met IRL, which is fine. An 10 year old meeting a 15-16 year old would be kinda weird. I did however go his town recently (well, 1-2 years ago) and I thought about him when I was there. I did not go there because of him (it was a school trip), but it suddenly occured to me when I was there: "Oh yeah, he lived here. I wonder if he still is."
+
+It might sound weird to think of another speedrunner like that, but you don't understand. I was considered hell in that OoT topic, no one liked me, people kinda bullied me (I don't blame them though, I was super annoying) and I'm pretty sure I was eventually banned. Yauty helped me and made me a better person, over PMs. I still can't believe his patience with me.
+
+When he started doing his 100% run, I nagged him for more segments, and it was also through this run I learned most of the stuff, the rupees on the chains to Hyrule Castle, the Gold Scale as Child glitch, etc. I would watch segments, ask why he did what he did and how, and then he would explain it and I would learn.
+
+He actually ended up mentioning me in his authors comments, which I still really appreciate. I have that page and his run archived and backed up.
+
+![yautys comments](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/123/yauty%20comments.PNG)
+<p class="img-caption">Yauty's Author's Comments for his segmented OoT 100% run</p>
+
+
+As time went on, we both got other things to do. I would imagine Yautja got busy with school, and I had learned everything about OoT that I needed to know, so our PM frequency reduced significantly, until it eventually stopped.
+[Last I heard of him](https://youtu.be/VoyPlChAS_k?t=14s) was AGDQ 2011. He did a donation during one of the Resident Evil runs by _Carcinogen_.
+
+If you're reading this Oskar, I hope you're doing well and I still appreciate everything you taught me. Thanks.
+
+## Disconnecting from the forum...
+
+Time went by and I got less obnoxious. My English had improved alot and my excitement from finding a forum where people were discussing how to beat my favorite games had started to wear of.
+I was active on SDA for 2-3 more years, being active in the making of CannibalK9's segmented San Andreas run and ofcourse Yauty's OoT 100% run.
+
+Somewhere around 2008-2009 I think, I stopped going to SDA regularly. I don't know why, but I did. I still occasionally viewed the front page.
+I instead spent more time playing video games with friends and being with friends. It was somewhere around here I spent an entire summer trying to beat TTFAF on Expert in Guitar Hero 3, and eventually learning the intro as well.
+
+# GDQ & Streaming
+
+Early 2010, after new years, me and some friends had a LAN-party in my room for like a week. They took their computers to my room and by day we'd play games. By night they went home and I went to sleep. Next day we would continue, and so on.
+Randomly, one day, I went onto SDA again and I saw this live stream they had. I'm fairly certain this was the first gaming live stream I watched. I was really interested but I was kind of disappointed by the game choices, no ALTTP notably.
+
+Apart from the game choices, CGDQ was fascinating. The amount of people that were there, the fact that we could see and hear them, the live streaming aspect, the chat aspect, the donation aspect, the live gamefeed. Everything was just so new to me.
+
+I went on to the forums again to see what was going on and I saw that this GDQ thing was picking up steam and they were planing another event for next year. So I went away from SDA for another year, until the next GDQ. In the meantime, I occasionally watched the CGDQ recordings.
+
+AGDQ 2011 was fantastic. While I had been gone for a year or two I quickly catched up to what was happening. Racing on SpeedRunsLive was a thing. Mario 64 had picked up alot of steam by Jiano & co. Ocarina of Time was severely broken and could be beaten in around an hour. Streaming speedruns on Ustream was the new hot thing.
+
+# The Peak of Speedrunning
+
+After AGDQ 2011, I went on to register on SRL and Ustream. I started lurking in Jiano's stream. He streamed very late at night/early morning in his time zone, so it was perfect for me who woke up 9-10 AM.
+Eventually I wanted to start running Mario 64. I started of playing it on Project64, then on the Original Xbox using an emulator, and eventually I took the big jump and imported a NTSC N64 and Japanese Mario 64 cart from eBay. I also hacked my Wii around here and got NTSC VC running on it.
+
+Speedrunning and streaming around this time was the most fun I have ever had in speedrunning, and maybe video games in general. Waking up, going onto SRL IRC and finding someone to race with (you would eventually start racing with the same group of people and make good Internet friends with them), and then just do race after race until the day was over.
+If you didn't find someone to race with you would just practice on your own or maybe do some runs yourself. If you got bored of that you would go onto the SRL Front Page or w00ty's SDA page and find a couple of other streams. As time went on you learned everyone's names and you got your favorites.
+After school you would come home and just practice Mario 64 and do runs. No homework.
+
+Getting your stream set up used to not be a trivial task. Today we have amazing tools like OBS and Xsplit, but before it was like a _Ruth Goldberg Machine_. You'd use SCFH DSF for screen regioning, Adobe FMLE to stream out to Ustream/Justin, BKST for a timer, and LapTool for splits.
+Nowadays you just download OBS and Wsplit or Livesplit and you're up and running in no time.
+
+The move to Justin.tv came and popular speedrunners such as _Siglemic_ got partner, due to their growing viewership. Watching these top runners grind run after run for the, at the time, perfect time was just so entertaining.
+As their viewership grew, the GDQ events also grew to huge numbers and seemingly over night what used to be this niche hobby that few dealt with, grew to a big hobby and the new runners just flooded in. Everyone was streaming on Twitch, hoping to get partnership to also make money on their speedrunning...
+
+And shortly after this is when it all went to hell.
+
+# Now
+
+Here's a unfinished and unpublished blog post I wrote January 3rd, this year. I ended up not finishing it as I realized I would instead post it on the day of my 10 year anniversary and I couldn't really come up with a good conclusion.
+
+># “Speedrunning is dead”
+>
+>No it isn’t - it’s more alive than ever. But to the nostalgic me, it’s dead.
+>
+>Conceptually it hasn’t changed, the main goal, for most people, is still to beat a game as fast as you can, and if you are dedicated maybe even get a world record.
+>
+>But everything around it has changed. Or actually, it hasn’t. Before, people went on SDA Forums or a chatroom (IRC) to discuss strategies. People still do that, but now on a separate forum for every game and a lot of people have moved to Twitter or private Skype/Discord groups dedicated to the game in particular.
+>
+>If we go real far back, like 2006 when I joined (damn, 10 years ago!), then it has changed a lot. Streaming your attempts wasn’t a thing back then and you usually did not have any contact with other speedrunners outside of the SDA Forums, unless you got AIM and added a few of them (I at one point added _Kazooie_ on AIM and we talked about a zoo in Finland that we had both been to, at separate times.)
+>
+>Then all of a sudden, someone would come in the thread and say that they did it! They had done a run that had a huge mistake in it, but they are still submitting it to SDA! And everyone was happy and just waited for it to appear so people could download it in their Download Managers (DownThemAll! FTW) or Torrent clients.
+>
+>And then you’d watch it, or maybe you wouldn’t and just let it seed, and then you would just lurk in the forums and see what the next hot thing was gonna be.
+>
+>Today there is a new WR every day in some game. Every run is super optimized and every day a game has a new discovery in it, and that’s just great.
+>
+>## To Me
+>
+>But to me, it’s dead. Unofficially I quit speedrunning a while back, maybe over a year ago, but I don’t wanna make any statements about it because I might all of a sudden get a urge to speedrun something.
+>
+>You could argue that I never was a speedrunner, because I never did anything “big”. I never had a run on SDA and I never held a WR in anything popular.
+>
+>The thing I miss most about speedrunning before, let’s say 2010, was that you basically knew 80% of the names. If you were on the SDA forums and looked over the Online Users list you basically knew who everyone was. If you were on SRL in 2011 you could look over the nicklist and basically know who everyone was.
+>Sure, there were some people you didn’t know, but then you could just click their names and see what threads they had posted in and go “Oh, that’s a speedrunner of X”, or check their Twitch archive and see what they had streamed, and then you would remember it forever because there weren’t a lot of names to keep track on.
+>
+>But even after the point of SDA Forums relevancy, SRL in the early days was great. You would usually end up racing the same 3 guys over and over in the same game but it was great fun.
+>
+>...
+
+I still haven't quit.
+
+I still enjoy _Goldeneye_ IL's. And I also ended up doing a decent [run of Kung Fu](http://www.speedrun.com/run/2ywjr33z) not too long ago. And honestly, I don't see a point in quitting speedrunning. It's just a way to play a game.
+
+But I don't like it as much today. I can't pinpoint why, but I think it's because it's simply too spread out and mainstream.
+Sure it is for the better, speedruns are just [crazy](http://www.speedrun.com/sm64#120_Star) [optimized](http://www.speedrun.com/oot#Any) today.
+No matter how you look at it, speedrunning is objectively better today.
+
+"Speedrunning is dead" is a phrase that I, and sometimes other people, utter. Mostly it's just for fun but at the same time, I think there's truth to it, but that truth is mostly nostalgia.
+
+# Conclusion
+
+Overall I really like the speedrunning community, atleast the small section of it that I consider friends, and I'm happy I found it. Without it, I'm not sure I would be into computers & games as much as I am today and I am not sure what people I would "hang" with on the internet.
+
+In a way speedrunning ruined me from playing games casually. I can't go slow and explore everything, I just try to rush through them.
+
+SRL and streaming in the early days was really fun but at the same time really bad. I honestly think software like Xsplit and OBS had a huge impact on getting new runners.
+
+Obviously the biggest accomplishment of the speedrunning community is the success of the GDQ events and it's spin-offs. Raising money for charities by speedrunning was never something I imagined this hobby could lead to when I joined 2006.
+I still kinda wanna go to a GDQ or ESA, but at the same time it's not high up on my to-do list.
+
+The events are so huge now that they have lost the coziness aspect for me. When you watch something like AGDQ 2011 it feels like everyone there is a family, or the main cast of a sitcom, compared to AGDQ 2016 when the stars of the sitcom are on the couch and the people in the background is the laughtrack.
+
+# Final Words
+
+The main goal I had with this post was to make a final _thank you_ to _Yautja Elder_, which I think I managed to do. Without him, I would not be writing this and you, the reader, would probably not even know me, I would've dropped out of the speedrun community a long time ago.
+
+Will I write another blog post to celebrate my 20th anniversary? I have my doubts, but it could happen. I did not plan on writing this post 10 years ago.
+
+<hr class="footnote">
+<a name="myfootnote1"><sup>1</sup></a> If you want to know more about TSA's 4:57, there is this decent [pastebin](http://pastebin.com/R2hDkiHw) on the history of Ocarina of Time speedrunning. Please note TSA's 5:04 and 5:25 run was confirmed being spliced, but there is no evidence that shows the 4:57 is, and I like to believe it isn't.
+
+<sup>2</sup> I considered dropping this version of the blog post entirely, and instead write it in the form of SDA Author's comments, but [I didn't get far](https://dl.dropboxusercontent.com/u/60071552/123%20sda%20v2.txt) before I stopped.
+

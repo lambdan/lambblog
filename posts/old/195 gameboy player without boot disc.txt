@@ -1,0 +1,59 @@
+2017-08-13T20:14:00+02:00
+# Gameboy Player without the Boot Disc (Gameboy Interface (GBI))
+
+I finally got a GameCube again. And I decided to get a Gameboy Player with it.
+
+I've always wanted a Gameboy Player, but I was always discouraged by how expensive the boot discs were. (The _Gameboy Player hardware_ itself is very easy to find and since the hardware itself is region free, you can get it from anywhere, very cheaply.)
+
+But recently, there has been some development on this front, namely the _Gameboy Interface_ or shortened __GBI__.
+
+So what is it?
+It is basically a Homebrew replacement for the official boot disc, but it even has more features and improvements.
+
+For example, video quality is better with it, as the official disc will make it display in 480i or 480p (but with some weird softening filter as I understand it), but __GBI__ can output 240p which is very nice for CRT's and upscalers such as the _Framemeister_.
+
+So how do you get the _Gameboy Interface_? 
+It's actually very easy and anyone can do it, as long as you have the right tools.
+
+One thing you need is some way to get custom save files on a memory card for your GameCube. Personally, I used my hacked Wii and the app [GCMM](http://wiibrew.org/wiki/GCMM) to copy over a hacked _Zelda: The Wind Waker_ save file which can be used to launch homebrew.
+
+Another alternative, which is much easier, is to buy the [SD Media Launcher](https://www.codejunkies.com/Products/SD-Media-Launcher__EF000580V.aspx) which is a little package of a memory card with a SD card slot and a disc that any GameCube can boot (I am not sure how that is possible.)
+Once you have it, you transfer the _Gameboy Interface_ program to a SD card and put it in the "SD Card/Memory Card-adapter", then put the _SD Media Launcher Boot Disc_ in and simply start the app using a nice list view.
+
+Personally I didn't feel like buying that thing. I might eventually because there are some other uses, but I wanted to go with what I had.
+
+There are multiple savegame exploits for the GameCube that makes it launch homebrew. On top of my mind, you can use these games to do it:
+
+- BMX XXX
+- Super Smash Bros Melee
+- Zelda: The Wind Waker
+- Zelda: Twilight Princess
+- 007 Agent Under Fire
+
+(You can see all the ways over at the GC-Forever Wiki: [Booting Homebrew](http://www.gc-forever.com/wiki/index.php?title=Booting_Homebrew))
+
+I decided to go with _Zelda: The Wind Waker_, as I don't play it very often and it only requires one button press (compared to _Melee_ where you have to go through some menus). 
+
+So here's how to do it with _Zelda: The Wind Waker_, using a hacked Wii and GCMM (I assume you already put GCMM inside the `apps` folder on your Wii's SD Card, like any other Wii Homebrew App):
+
+- Download the [hacked Wind Waker save file](http://www.gc-forever.com/forums/viewtopic.php?f=39&t=3311). It should come with a couple of different `.gci` files. You have to pick the one that corresponds to your region of the game (PAL or NTSC etc.)
+- Go ahead and put this `.gci` file on your Wii's SD Card, inside a folder called `MCBACKUP` (i.e. `sd://MCBACKUP/bla.gci`)
+- Download [Gameboy Interface](https://www.gc-forever.com/forums/viewtopic.php?t=2782). You only need to care about the `.gci` files that the archive has. Read the forum thread to figure out which version you want. Just get the standard one if you are unsure.
+- Copy the corresponding `.gci` file to your Wii's SD Card, inside the `MCBACKUP` folder (like `sd://MCBACKUP/gbi.gci`)
+- Put in a memory card into your Wii. If you wanna keep your _Wind Waker_ save game that you had on it, do a backup of it (copy it to another memory card or something. You will be unable to play _Wind Waker_ with this memory card, unless you remove the hacked save file.)
+- Open up GCMM and just follow the instructions on screen. You wanna go into Restore mode, then restore the Wind Waker save file, and the Dolphin Application save file (which is actually __GBI__.)
+- Take the memory card out of your Wii, and put it in your GameCube. Also make sure your Gameboy Player is connected to your GameCube, and put some game in it.
+- Put in your _Zelda: Wind Waker_ disc into your Gamecube and start the game like usual
+- Press Start on the title screen, like you normally would, and well... I won't spoil the fun.
+
+There you have it. It's very easy. And cheap too, if you already had the game.
+
+What I had here are the instructions for how to do it with _Wind Waker_, but the procedure is almost the same with all the other games. The only difference is how you trigger the exploit: In _Wind Waker_ you just need to hit Start. In _Melee_ you have to go into Options -> Name Entry or something like that. The way you copy save files etc is exactly the same.
+
+Even if you didn't have a compatible game, the _SD Media Launcher_ isn't expensive either. Certainly not as expensive as the _Gameboy Player Boot Disc_.
+
+Also, once you have a "hacked Memory Card", you can easily copy the hack over to your friends' memory card, using the Gamecube or Wii's own memory card management interface, just like you would copy any other save file (just make sure to copy both the hacked save file, and the "Dolphin Application".)
+
+I suppose you also could burn a disc of the official _Gameboy Player boot disc_, and boot [Swiss](https://www.gc-forever.com/wiki/index.php?title=Swiss) instead of _Gameboy Interface_ to run a burned disc, but why bother when __GBI__ is much much better.
+
+Have fun. 

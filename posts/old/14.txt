@@ -1,0 +1,54 @@
+2014-08-17T00:00:00+02:00
+# Sync music to your iPhone, without touching your computer
+
+One thing that always bugged me since I got the iPhone, was how you sync music to it.  
+You need iTunes, you need to import music into iTunes, you need to hook up your iPhone to iTunes, drag n drop songs over or make a playlist, and sync.  
+Once you get used to iTunes, having the program and importing music into it isn't a problem. But hooking up your iPhone to sync music is still hell (at least in my opinion)  
+
+What if you are in bed, daydreaming and all of a sudden get a urge to listen to some album? You dont wanna get out of bed, get your laptop (no matter how tiny and convenient it is *cough* macbook air *cough*) or sit down in front of your computer to hook up your phone and sync it. Well, I thought of a way to do it, that works perfectly fine for me and my needs.
+
+## Stuff you need
+
+* iPhone that has been synced once with a iTunes Library and has _Wifi Syncing enabled_
+* Computer that is running iTunes (latest version I guess)
+* 'Remote' app from iPhone App Store (it's a App made by Apple)
+
+My setup is:
+* iPhone 5, iOS 7.1.2
+* Mac Mini 2011 running OSX 10.9.3 and iTunes 11.3
+* Latest Remote app from App Store
+
+## How to
+
+1. Basically sync your iPhone with iTunes like you normally would (via cable). Enable Wifi Sync, Manually Manage Music and Only sync marked playlists (My iTunes is in Swedish so I'm not sure what they say on English)
+2. Create a playlist labeled iPhone (if you wanna have a huge library on your phone, might be smart to make multiple playlists like iPhone A-G, iPhone H-O, iPhone O-Ö and so on)
+3. Add atleast a song to this playlist (otherwise it doesn't show in next step)
+4. Go to your iPhone tab in iTunes, then click the Music tab, and check the playlists you created (and nothing else)
+5. Sync through cable. After that, disconnect the cable and try syncing again, to verify that Wifi Sync is working.
+6. Start the Remote app on your phone, and add device. A 4-digit PIN code should show up, add this PIN code in iTunes on your computer (for me a Remote thing showed up below my iPhone, in iTunes)
+7. In this paired Remote app, you should now see your computers iTunes library
+8. Go to the Playlist tab in this Remote app, select your iPhone playlist, and Add some songs to it. You can add entire albums easily by going into a album and selecting the top alternative "Add all songs"
+9. On your iPhone, open up the Settings App, General -> iPhone Wifi Sync -> (select your computer that has the iTunes library, if multiple) -> Sync Now
+
+If all goes well, your phone should now start syncing the songs you added to that playlist.  
+Now try laying down in bed and do steps 7-9 again, see if it works there aswell.
+
+If you wanna make this more convenient, I set my iTunes to auto-start hidden when my computer starts. It's invisible.
+
+![Photo](http://i.imgur.com/SVW8pC2.jpg)
+
+I find this pretty neat, because I don't think Apple intended you to use the Remote app and Wifi syncing like this, but it works and I find it neat.
+
+## What about brand new songs I don't have in my Library?
+
+This is also very possible, using only your phone, assuming you have some kind of remote control running on your iTunes computer. I personally use SSH + SFTP, but you can probably use something like VNC/TeamViewer.
+
+1. Get the songs
+2. Copy/move these songs into 'iTunes/iTunes Media/Automatically Add in iTunes' (Default location is ~/Music/iTunes/iTunes Media/Automatically add... or on Windows: C:/Users/you/My Music/iTunes/iTunes Media/Automatically add...)
+3. Like magic, your songs are gonna disappear from this folder and get added to your iTunes library. Now you can do steps 7-9 again in the previous how-to.
+
+## Finishing words
+
+You can skip all of this by just getting Spotify/Pandora/Google Music/Beats Music. This is not a sponsored message, but those services are still more convenient. This only works in your house for example.
+
+_/DJS_  

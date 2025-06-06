@@ -1,0 +1,25 @@
+2017-07-04T16:37:00+02:00
+# Does the Apple Magic Keyboard 2 work with a PC over USB?
+
+Yes, it does. It also works over Bluetooth if you want.
+
+**Do I need Bluetooth? ** No, you don't. Just connect it with a regular Lightning/USB cable.
+
+**Does it work with Windows 10<sup>[1](#footnote1)</sup>?** Yes, it does. Plug n play. However, Media keys won't work and you don't have a Delete key, but you can solve that with something like [Autohotkey](https://autohotkey.com). 
+
+**Does it work inside macOS on a Hackintosh? ** Yes, it does.
+
+**Does it work in the BIOS/UEFI?** Yes, at least for me and my motherboard (Gigabyte GA-Z97P-D3). The function keys work as normal F1-F12 keys, without needing to hold down FN.
+
+**Does it work with Clover boot loader? **Yes, it does.
+
+**What if I wanna connect it to my iPad/iPhone over Bluetooth again? **Then just unplug the USB/Lightning and hit any button on the keyboard to make it connect over Bluetooth to its last paired device.
+
+**I'm done typing on my iPad/iPhone, what if I wanna connect it to my PC again? **Then just plug in the USB/Lightning cable again.
+
+*It just works.*
+
+These tests are done with the keyboard that has the model number `MLA22S/A` (Swedish/Nordic layout). 
+I'm guessing the very new model, with a numpad, works just the same.
+
+<a name="footnote1"><sup>1</sup></a> I haven't tested with other versions of Windows. I would guess it works with 7 and up.

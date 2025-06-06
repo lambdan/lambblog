@@ -1,0 +1,35 @@
+2017-11-19T19:03:00+01:00
+# Week 46 (2017) Review
+
+I wanna write about something.
+
+Good:
+
+- [Been obsessed with Taylor Swift.](https://twitter.com/djs__/status/931961303714942976) Considering going to a concert of hers if she comes to Sweden. ![Taylor Swift lockscreen](https://pbs.twimg.com/media/DO792TlXUAAqNbl.jpg)
+- Found the old and nostalgic Super Mario Bros Super Show and Legend of Zelda with the Swedish dub that I heard when I was a kid. For Zelda I even made a [physical DVD](https://twitter.com/djs__/status/932269875753611266) as I do not wanna lose it.
+- _MW2_ is active on Xbox Live. You can even find Ground War lobbies (the game is also active on PC and PS3, but not enough to find Ground War lobbies.)
+- Got the Mophie Qi charger for my iPhone X and I love Qi charging. I always hated fumbling around the floor with my hand trying to find the charging cable, and then in the morning being too lazy to unplug it so you lie uncomfortably in bed using your phone. Now I just pick up the phone, or lie it down.
+- Got the Apple Leather Case for my iPhone X and I am actually very pleased with it. I can't remember the last time I wasn't bothered by having a iPhone case. I got it in saddle brown, and I kinda hate the color of it right now, but over time [it should get much darker](https://www.reddit.com/r/iphone/comments/79z2ma/my_saddle_brown_leather_case_after_1_year/).
+- Discovered Ramsay's _Hotel Hell_ show. Very entertaining first episode (haven't gotten around to watching more... yet.)
+- Found a way to leave my [_Oculus Rift_ hooked up but not in the way](https://twitter.com/djs__/status/931865863162089475) when not using it. _Doom VFR_ can't come soon enough.
+- Got Lubuntu running on a _Dell Latitude D510_, which doesn't have a working battery or a HDD (honestly, not very exciting, just installed it onto USB.) I am writing this from this computer. ![Dell Laptop](https://pbs.twimg.com/media/DO8E_aCWkAAXmJH.jpg:orig)
+- No online store in Sweden has the iPhone X in stock yet, so it seems like it was worth it for me to pay $100 extra to the guy on eBay to get it immediately
+
+
+Bad:
+
+- [MW2 on  Xbox Live has some hackers](https://twitter.com/djs__/status/931993412844314624), which upsets me as the only people that play it nowadays are doing it because they love the game. It's like walking into a amish community and setting up a loud and flashy rave party in the middle of their farm.
+- Lost a DVD+R DL disc when I was making the Zelda DVD, just because _ImgBurn_ complained the ISO was being used by an other process. Ridiculous.
+- Didn't get my _Xbox One X_, but I'll get it tomorrow (Monday.)
+- The _Xbox One X_ cost alot of money
+- I don't have a good laptop, but I don't feel like buying one either because I would use it so little. Read more here: [Laptops...](https://lambdan.se/laptops-20171117-i204) (don't worry, I won't quit)
+- Our internet upload speed isn't quite enough for hosting a Plex server and streaming to Twitch at the same time. For now I set Plex to limit itself to 6 Mbps, and I'll have to suffice with just 4 Mbps bitrate for streaming in OBS. Luckily, I don't stream very often.
+- MW2 on Xbox One BC is probably never gonna happen. This sucks, because I need to keep a _Xbox 360_ around.
+- Running a HLDS (CS 1.6) server on Linux is basically almost impossible, because there is a bug where the entire game won't download (and Valve is aware of it, and has been for years.) Doesn't really matter anyway, just wanted to try something.
+- I've had (and still have) a cold all week. Like phlegm, coughing, stuffed nose. Now it's pretty good, except my nose. It's stuffed periodically, like it clears up if I take nasal spray, but then after a couple of hours it's back. Very annoying. I've been able to work anyway and I haven't felt tired so it's not too bad, but yeah, annoying.
+
+Plans for Week 47:
+
+- Play the _Xbox One X_
+- Buy some games for it on Black Friday
+- Get fully rid of the cold

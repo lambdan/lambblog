@@ -1,0 +1,35 @@
+2016-12-15T20:20:00+01:00
+# Super Mario Run - First Impressions
+
+_original title was review but i realized i have way more thoughts about this game that i need to write down for a review_
+
+I played it for an hour, just rushing through the levels (Tour mode or whatever it's officially called), like I always do with Mario games, and here's my short review.
+
+Played on iPhone 7. I payed for the game with my own money.
+
+Pros:
+
++ Fun. The concept is simple to get into, but also hard to really understand properly
++ Music. I think it's the same songs from NSMB/NSMBU, but slightly remixed. I really liked them.
++ Looks good. As far as a phone game can go, it looks good
+
+Cons:
+
+- Not that many levels. They were polished though so I guess it justifies the $10
+- Slight performance issues. I played on an iPhone 7, and at times it felt like the game ran at 40-50 fps. At some points there were also some short stutters
+- Cheap deaths. Because you can only run in one direction, this causes some cheap deaths if you get fooled by the developers to jump for a block or coin or something
+- Not consistent/easy to tell which levels you are allowed to jump into a wall to turn around
+- Always online requirement. Personally I don't really mind this as it's rare nowadays when I don't have a internet connection, but I can definitively see the criticism.
+- Bowser fights are a joke. You can either:
+	- Try to run under him
+	- Try to jump over him
+	- Stand still and die
+	- To consistently win: get a mushroom and just run into him and abuse invincibility
+
+Whatever it's a phone game. But it's fun.
+
+Here are some screenshots:
+
+![ss1](http://lambdan.se/img/mariorun/IMG_0648.PNG)
+![ss2](http://lambdan.se/img/mariorun/IMG_0649.PNG)
+![ss3](http://lambdan.se/img/mariorun/IMG_0652.PNG)

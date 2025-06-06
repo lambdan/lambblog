@@ -1,0 +1,53 @@
+2017-02-17T15:56:00+01:00
+# AirPods
+
+Felt like blogging lately so let's talk about the AirPods, that I've had now since Christmas or whenever that was.
+
+I do not use the AirPods as much as one would have hoped. I use them when I am outside walking, usually to and from work. 
+For that they're great, and I wear a winter hat this time of year so I don't look weird.
+
+That's one thing we should get out of the way right now: they look weird. I don't wanna show a photo of me wearing them, but just do a Google Image-search for AirPods and you will find some photos of people wearing them. 
+I am not comfortable with the way it looks. It looks like you are wearing earrings. 
+Therefore, whenever I demo them to someone, I always tell them as I put them in: "oh and they look kinda funny when you wear them", which they usually reply "yeah" to.
+
+## "Apple Convenience"
+
+The AirPods function _precisely_ as advertised. When I got them I just flipped them open next to my iPhone and waited 3-5 seconds and then they showed up and paired.
+To see the battery I just flip the top open next to my iPhone. If I haven't done it in a long time, it takes a while the first time, maybe 5 seconds. But after that if I keep on repeatedly flipping the cover it's very responsive.
+
+And yes, like magic they also got paired with my Macbook and iPad.
+
+And speaking of convenience, it is very nice never having to worry about the battery life. I just put them in the case when I don't use them and I charge the case once a week. I would probably have to charge it more often if I used it more often, but I don't.
+
+![airpods in case](https://dl.dropboxusercontent.com/u/60071552/FullSizeRender.jpg)
+<p class="img-caption">Notice that they have gotten lint in them, which I don't understand how it's possible as the case is very tight.</p>
+
+## Audio Quality & Music Tests
+
+Audio quality wise, I like them. I'm not a expert in the field so I can't give details but they sound good to me. I usually listen to podcasts, and they sound great. The voices sound real and nice.
+
+Music I haven't listened to much using them, but I decided to try a couple songs now as I am writing this. Using my iPhone 7 to play them using the Plex app.
+
+First of, for trying the bass, I used the [Main Menu theme from Midtown Madness 2](https://www.youtube.com/watch?v=A04GAt5jsVQ) which is a __extremely__ bass heavy song. It's ridiculous. Anyway, it sounded great! Lots of bass. Sounded better than the _Kingston HyperX Cloud's_ I use with my desktop PC. 5/5 stars.
+
+Then I tried a bit more popular song, [Elle King - Ex's & Oh's](https://www.youtube.com/watch?v=0uLI6BnVh6w), and must say I was a little bit disappointed in the lack of bass. Maybe the Midtown Madness 2 song blew them out? But then the refrain came and it sounded pretty good again. So they get an OK here. 3/5 stars.
+
+After that I tried a song from a video game: [Terranigma's Hometown](https://www.youtube.com/watch?v=Czds4DG2upw). And it sounded so amazing it brought a tear to my eye, not kidding. That might be because of the song though. It sounded really good with the AirPods anyway. I also tried a few other songs from the game and they all sounded really great. 5/5 stars.
+
+Then I tried a song I've listened to a ton, [Metallica - The Unforgiven II](https://www.youtube.com/watch?v=G-Bn_kD6QN4) and it sounded okay. I think I prefer listening to it with my desktop headphones. 4/5 stars.
+
+These tests aren't scientific at all, but just some quick personal observations. I think the AirPods sound a lot better with bass heavy songs. Less bass heavy songs are better enjoyed elsewhere.
+
+One thing to note is that the AirPods __do not__ isolate outside noise at all. Which is also a nice thing, in a way, as you can wear both if you're walking and you can still hear the traffic around you with problem.
+
+## Why Dont I Use Them More Often?
+
+Basically, there are very few circumstances I prefer Bluetooth headphones: 
+
+- When I'm at my desk, I use the headset hooked up to my PC
+- When I'm in bed and use my iPad, I use the 3.5mm EarPods I have had hooked up to it for like a year now
+- When I'm at work I wear _Peltor Hearing Protection-headphones_ (I work in a very loud factory environment), and the AirPods do not comfortably fit under them. Also, I've stopped listening to podcasts/music at work recently as I find time going faster without listening to anything
+
+The only times I want Bluetooth headphones is when I am out and about, which is not very often.
+
+Overall, I am very happy with the AirPods. If you don't want to be isolated from outside noise, I think they are the best Bluetooth headphones, just because of all the convenient features.

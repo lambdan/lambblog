@@ -1,0 +1,28 @@
+2016-12-24T12:17:00+01:00
+# I Finally Have It
+
+Merry Christmas everyone who celebrates it today (the 24th.)
+
+I got my own gift, from myself, today and I am very happy that I finally have one. A 15-inch Retina MacBook Pro. This is a computer that I've been looking at for year, but never being practical for me to buy because of how much they cost.
+
+But earlier in the week, a pre-owned one showed up, with a maxed out i7 (2.6 GHz 4960HQ), 512 GB SSD and even with a dedicated GPU (750M), for a reachable price and I decided to get it. Mostly because of the 512 GB SSD - at that price it seemed like a steal.
+
+Anyway I have it now and I am writing this on it and I am loving it. 
+
+For being a pre-owned one, I am very impressed by how good shape it is in. I cannot notice anything that would indicate it's been used, except the MagSafe port has some marks on the inside of it, the bottom/underside of the computer has a scratch here and there, and the system report is reporting 500 cycles on the battery (yikes.)
+
+I am really impressed by it's performance. I haven't encountered anything that made it slow down yet.
+
+I did however try my Elgato capture card with it, and then I noticed that the fans came on and I realized it's because of the dedicated GPU activating. It got really damn hot and loud then. Which is understandable I guess.
+
+The keyboard is also really nice. As much as I would like to try those new butterfly key switches Apple has in their Magic Keyboard and the new Macbook's, I really like this old one too. They do feel a bit wobbly but I find them very comfortable.
+
+Right now I have Boot Camp Assistant running. I'm gonna try to install Windows 10 on here and install Steam and try some games. Not that I intend to play games on it, but it's good to know in case you go to a LAN party or something. 
+
+If, and only if, everything works out very well and this computer can do everything I need it to do, I will probably sell my desktop computer, in parts. 
+The only thing I'm gonna miss from my desktop computer is how good it was at transcoding blu-rays. I did try transcoding on laptop, and sure it works, but the fans spun up immediately and it just feels like torture. I'll just move the transcoding to my Plex server (or maybe I'll buy a Socket 1150 mITX motherboard and put my desktop computer's i7 in there).
+
+Anyway, I'll let you know how it works out. I am very happy to finally have the computer that I've been wanting for years. 
+
+Oh, and yeah, Retina has ruined me now. All other screens look like garbage.
+

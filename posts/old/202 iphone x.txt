@@ -1,0 +1,74 @@
+2017-11-10T23:51:00+01:00
+# Initial Thoughts on iPhone X
+
+When the Samsung S8 was shown I was very impressed and wanted it, but I held out and waited because I knew I wanted the iPhone version of that. And now I finally have it. Was it worth the money? If you ask most people - probably not. For me? We'll see. 
+
+It's worth noting that I bought one on eBay, for $100 over retail price - that's how much I wanted this, even though I flip-flopped alot on whether or not to get one. The only thing pushing me back was the price, and it has definitively been a rough week for my wallet (this phone + car service at authorized Subaru shop + unRAID server motherboard replacement and cache drive replacements... I should write about that too.)
+
+Anyway, here are some thoughts so far. I might do a full review later. But a phone is best judged after a couple of months of use - only then can you talk about battery and how it's been "out in the field."
+
+- Even though it is about the same physical size as my iPhone 7, it feels approximately 500x bigger. I don’t really like that. It feels like I'm using a Plus, even though it feels like the regular size in my pocket.
+- The all screen design looks super cool in photos, but in use you don’t really think about it and thus it’s not that big of a deal. 
+- The blue shift when not looking straight at the phone is definitively real and slightly annoying, especially in the dark. 
+- I don’t like that alarm, screen rotation lock and do not disturb etc icons are no longer in the status bar at all times. Ditch the margins/padding and just squeeze them in there, make them tiny. I hate having to pull down control center to see if I turned on my alarm or not.
+- Speaking of which, I hate that control center moved to the top right corner of the phone. Instead of using it all the time, I try to use it as little as often. 
+- [The screen is unresponsive in cold weather.](https://www.imore.com/iphone-x-cold-weather) I was affected by this today. I mean it works, but I had to press harder and twice for every action. Apparently they can fix this with software, but we’ll see. This is gonna be an issue for me if it can't be fixed, as it is pretty damn cold around here in the winter.
+- Sometimes when I put down the phone the screen turns on again immediately, until it sleeps a while later. I think this is because I accidentally tap it right after I have put it to sleep, or I trigger the *Raise to Wake* motion -- just seems like a waste of battery. I know I can disable both *Tap to Wake* and *Raise to Wake* but I don't wanna press the lock button to wake it up. Down the line I will probably adjust and not accidentally invoke them.
+- Reachability is disabled by default. I recommend enabling it (you need iOS >11.1). Makes it a little more possible to use control center.
+- I originally wanted the white/silver color, but the only one I could find on eBay was the Black (64 GB) so I had to resort to that, but it's not bad. I'm pretty sure I even prefer it, because the silver/white would probably "stick out" alot more. The black is very stealthy.
+
+## Face ID
+
+Face ID has been OK for me. I don’t really miss Touch ID, except...
+
+- 2nd gen Touch ID is much faster, mostly because of the swipe you have to do with Face ID. With Touch ID I just pressed the home button to wake up the phone, and when the screen had barely woken up I was in. With Face ID I hold up the phone, which usually wakes it up (I’m not a huge fan of *Raise to Wake*) and very shortly after the screen has woken up I see the lock symbol unlock, but then I still have to do a swipe. I wish it would just swipe up for me, so I could just bring out the phone, look at it, and shortly after I would see my apps.
+- Face ID seemed to work really bad in the morning when half my face was sunk down in the pillow with one of my eyes “gone” (I tend to, when I wake up, lie on my side with half my face down in the pillow and go through Twitter.) I had to use my passcode. With Touch ID this wasn’t a problem. (Yes I’m aware the problem is that half my head is buried in a pillow.)
+- I don't really like the nofications on lock screen obfuscation until it has authenticated you. I will probably disable that feature. All I wanna do is glance over at my phone to see what happened, I don't want to stare at it just to see who sent a snap.
+
+But despite all that, Face ID is really cool. I made a sound when my password magically appeared in password fields in Safari.
+
+And apparently it gets better over time, when it sees your face in more angles etc and I am pretty sure it has gotten faster since I first got it. 
+
+I heard someone say on Twitter that if you get a seemingly unexpected passcode entry you should enter your passcode, because that means it picked up a new angle and if you type in your passcode it will save that angle for later.
+
+So overall, it is a decent 2nd gen Touch ID replacement. It will probably be faster than Touch ID eventually, and then there's no looking back.
+
+## Notch
+
+I usually don't think about it and I think it's really impressive that the screen and apps bend around it, but as I said earlier, I really hate how they had to compromise the status bar because of it, and I know that in a couple of years this notch will be gone and it will look horribly outdated.
+
+In apps or on my home screen I don't really mind it sticking out either, unless you look at it, then it's bothersome. It's weird.
+
+I mean it is hideous if you look at it, but you will probably automatically ignore it, and then I am more pleased with this solution over something like the S8 which has tiny bezels at the top and bottom which looks outdated now that we have this.
+
+It's worth noting that if you watch a 2.35:1 aspect ratio movie, in Plex atleast, the notch will always cover part of the video. If you watch 16:9 you can pillarbox it and it's not in the way.
+
+## Apple Leather Folio
+
+Uhh... yeah. I consider it $99 wasted. But probably the best wallet case I’ve used. But all wallet cases are just crap. They add so much bulk and your phone is awkward to hold with it.
+
+# What Do I Like?
+
+You may have noticed that all of the things I have said so far are mostly bad things... so what do I actually like?
+
+- The screen. OLED just really pops and is very colorful. I have always liked how Android phones screens looked, and now I finally have that too. Theoretically it's also saving power, but I haven't really noticed that yet, but it is cool in theory.
+- The feel of it. It feels really damn heavy and sturdy, and the frame around it feels very premium. The buttons are super nice too. (Although, the buttons on my iPhone 7 became slightly dampened, to the point where my Volume Down didn't respond unless I pressed really hard on it, because they probably got dust in them, because I work in a pretty dusty environment. We'll see how the iPhone X holds up.)
+- The lack of a home button and the new multitasking gestures. While I still prefer the simple design of the home button, I, as a power user, prefer this system more. Swiping up to go home has so far been super responsive. I was worried that it would occasionally lag and make the whole phone feel unresponsive, but so far it has worked perfectly. I also love swiping between apps by doing like a half circle along the bottom from right to left. When the phone was first getting reviewed alot of people had considerations about the complexity of this, but I find the gestures super intuitives, and because of the new half-circle motion I pretty much never bring up the old multitask switcher. In fact, I pretty much never used to multitask using the old switcher - I just pressed home and picked the app. But now I am pretty often going between apps by swiping.
+- Face ID. It has flaws, but it's super cool.
+
+But... what about the camera? And the super fast A11 chip?
+
+Well, I was very happy with the camera and the performance in my iPhone 7 so I haven't really noticed anything different. I want to mess around with the portrait photo modes but I just don't have alot to photograph, so I can't.
+
+# Future Worries?
+
+Further down the line, what am I worried about with this phone?
+
+- The touch being unresponsive in cold weather. Again, they can apparently fix this through software but that remains to be seen.
+- The battery life. So far, I haven't been very impressed. I haven't ran out or anything, but I am still getting down to about 20% before I plug it in when I go to sleep. However, since I just got this phone it is still doing a lot of background stuff and syncing so I think it will just get better down the line. 
+- Will apps get updated in time? Just this year my bank finally updated for the 6/6+ screen sizes. How long will it take before they update for this screen?
+- The glass back. While I didn't crack the screen or ding my iPhone 7, even though I dropped it 3-4 times, I am worried that I will drop this phone **once** and the back will shatter. Although, thinking about it, back when I had my first iPhone, a 4S, I dropped it several times and the back never cracked. It was just the front that eventually cracked because it fell front face down on a rock.
+- Apple insisting on calling it iPhone *Ten* when everyone else says iPhone *Ex*. I mean if I was English speaking I could probably say iPhone *Ten*, but in Swedish it sounds really bad, so I just say *Ex* when I'm talking Swedish. Also what will happen next year if we get a iPhone 9, and then eventually iPhone 10? Or will we merge back to just one iPhone model, the X line? Or will we have iPhone 10 and and iPhone X - both pronounced identically?
+- OLED image retention. Even Apple themselves has said that it's normal and somewhat expected. I know I'm gonna lose my mind if I start seeing it. 
+
+I'll keep you posted. But in the meantime, I am just very happy to finally have this phone. Otherwise, if I don't have anything more to say about this phone on my blog, look forward to next year when I can do initial impressions on the.. iPhone X2? Because I'm getting that phone [for free](https://lambdan.se/relatively-20160908-i132) (relatively) I am pretty sure I will get one.

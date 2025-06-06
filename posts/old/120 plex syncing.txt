@@ -1,0 +1,81 @@
+2016-06-04T18:20:00+02:00
+# Plex Media Server & Syncing
+
+Ever synced something to your iPad or iPhone using Plex? Have you ever wondered where these temporary files are stored on your Plex Server, and how big the file sizes are and what bitrate they have?
+Well I was wondering that.
+
+Plex has an [support article][sa] which tells you why your Plex Server folder might be so big, stating that your synced content is temporarily cached in a certain folder. The temporary folder where synced stuff is stored is `~/Library/Caches/PlexMediaServer/Transcode/Sync/` on OS X for example.
+
+If we go into this folder, we will find more folders, seemingly randomly named. This appears to me to be folders for each device you are syncing to, one folder for my iPhone and one for my iPad.
+
+Inside those folders we get one randomly named folder for each item you sync. One folder per episode, one per song, one per movie, etc.
+Inside these folders are the media files that will be synced to your device.
+
+For video it seems to use the `.mp4` extension, and for music it seems to be using `.mp3`.
+
+Once it has converted a song or a video, it will then transfer the new file as soon as possible to your device, and then remove the temporary file from the server.
+
+Now for this experiment I synced 4 objects:
+
+- The song _Roar_ by _Katy Perry_ (320k, M4A) to my iPhone
+- 1 episode of *Friends* (1080p, MKV, AC3 5.1, external .srt subtitle) to my iPad
+- 1 episode of *Seinfeld* (576p, MP4, AAC Stereo, burned-in subtitle) to my iPad
+- 1 episode of *Watamote* (720p, MKV, AAC Stereo, ASS subtitle) to my iPhone
+
+Then I simply stated in the web interface what I wanted to sync to what device, and what quality.
+
+**I decided to go with 128k (Medium preset) for music, and 1.5 Mbps 480p (Low preset) for video.**
+
+Then I quit the Plex apps on both my iPhone and iPad so the content couldn't be moved to those devices, so the converted files would stay on the server so I could then download them to my own computer and analyze them.
+
+### Music
+
+Not much to say here. It's worth noting all metadata is stripped (for video too), so it stores Artist, Title, Album and other info in some database.
+
+Converted file size: 4.07 MB  
+Original file size: 7.62 MB
+
+[Mediainfo Output][song_output]
+
+### *Friends* Episode
+
+This one I was very curious about. I've noticed that Plex has lately started doing subtitles in a native format on iOS and I was curious how they did that. Now I know!
+
+They convert the `.srt` into `tx3g` and mux it into the `.mp4` container. For audio, they converted the AC3 5.1 384 kbps track into AAC Stereo 192 kbps.
+I'm not sure how they handle `.srt` subtitles when streaming media, but I'm guessing they are doing a Direct Stream (not Direct Play), where they simply just convert the `.srt` into `tx3g` and mux it into mp4.
+
+Converted file size: 168 MB  
+Original file size: 806 MB
+
+[Mediainfo Output][friends_output]
+
+### *Seinfeld* Episode
+
+This one isn't that interesting. Any iOS device could actually direct play the original, but I wanted them to be slightly smaller.
+
+Converted file size: 170 MB  
+Original file size: 209 MB
+
+[Mediainfo Output][sein_output]
+
+### *Watamote* Episode
+
+Anime subtitles has traditionally been a pain in the ass unless you're watching on a computer with VLC or MPC-HC. Plex decides to burn it in, which isn't surprising.
+Only devices I've been able to direct play anime is on my Raspberry Pi and regular computers.
+
+Converted file size: 92.5 MB  
+Original file size: 325 MB
+
+[Mediainfo Output][wata_output]
+
+## Other Observations
+
+- It seems to sync/convert multi-episode videos twice, i.e. files that are named for example `S02E01_E02.mp4`. I've asked Plex about this on Twitter and I'll update if I get an answer. Seems like a waste of space and CPU resources to me.
+- All the output has Lavf as writing library, in other words, it's ffmpeg
+
+[sa]: https://support.plex.tv/hc/en-us/articles/202529153-Why-is-my-Plex-Media-Server-directory-so-large
+[song_output]: https://dl.dropboxusercontent.com/u/60071552/blog%20pics/plex%20server%20tests/mp3_mediainfo.txt
+[friends_output]: https://dl.dropboxusercontent.com/u/60071552/blog%20pics/plex%20server%20tests/friends_info.txt
+[sein_output]: https://dl.dropboxusercontent.com/u/60071552/blog%20pics/plex%20server%20tests/seinfeld_mediainfo.txt
+[wata_output]: https://dl.dropboxusercontent.com/u/60071552/blog%20pics/plex%20server%20tests/watamote_mediainfo.txt
+

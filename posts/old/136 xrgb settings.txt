@@ -1,0 +1,28 @@
+2016-10-11T00:54:00+02:00
+# My XRGB-mini Settings
+
+First: hold down Safety button to restore default settings, then change HDMI resolution to 720p60. 
+
+# Progressive Sources (240p, 480p)
+
+	IMAGE_MODE: PICTURE
+	SCREEN_SET: STANDARD
+	COLOR_SET>SHARPNESS: 1
+	VISUAL_SET>AUTO_SCALER: GAME
+	SYNC_SET>SYNC_MODE: AUTO
+		SYNC_TIME: 100
+	SPECIAL>A/D_SET>MANUAL_A/D: ON
+			A/D LEVEL: 142 
+
+# Interlaced Sources (480i)
+Same as above, except... 
+
+	IMAGE_MODE: NATURAL
+	AUTO_SCALER: VIDEO
+
+# A/D Level
+Your A/D level might not be the same as mine. Use the [240p Test Suite](http://junkerhq.net/xrgb/index.php/240p_test_suite) to calibrate it, using *FirebrandX's* instructions: 
+
+> Lastly, it's become quite obvious that each person should ideally calibrate the A/D setting based on their own console for the given profile. The best way to do this is to use Artemio's 240p test suits; specifically the color bars test pattern. So for example on the Super NES, you'd load up the test pattern and adjust A/D until the top two green shades become just distinct from each other. This ensures maximum color range without crushing colors. 
+
+Make sure you do it. I had to crank mine up quite a bit but it made a big difference. 

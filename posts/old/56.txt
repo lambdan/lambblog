@@ -1,0 +1,17 @@
+2016-01-03T20:17:00+01:00
+# Week 53
+
+Happy new year!
+
+Hot:
+* Started using Crashplan. It's a really good Time Machine substitute for Windows.
+* Bought and played LEGO Star Wars: The Complete Saga on Steam. Really fun to play after having seen episode IV-VI. Played the prequels games instead of watching the movies.
+* Replaced the CPU Cooler and fans in my PC with a CM Hyper 212 EVO and Noctua fans. Really quiet now.
+* Plex on Xbox One is super awesome. I can control it entirely from my phone. 
+* Been ripping DVDs and encoding them using Don Melton's [video transcoding scripts](https://github.com/donmelton/video_transcoding]. I'm not sure if this is the best way to do it (files end up a tad bit larger than I want them to but I like using this script because it made the process alot easier/streamlined. I also listened o a podcast where he made an appearance and talked all about it: [Vector ep 22](http://www.imore.com/vector-22-don-melton-transcoding-video)
+
+Not:
+* Slept 2 hours the night after New Years Eve
+* The cheap Tesoro keyboard I bought is [very nice to type on](https://twitter.com/djs__/status/682995209995706368) but is super anal about what USB port its connected to. Considering throwing it away because of that.
+* I wanna start using headphones for watching TV late at night (the sound is alot better obviously since it doesn’t have to be so low), but I need to buy something to allow me to do that (either an iPad or wireless headphone thing.)
+

@@ -1,0 +1,90 @@
+2017-12-20T20:14:00+01:00
+# How I Rip My DVDs and Blu-Rays
+
+This is mostly just gonna be from memory, and without screenshots, because I can't stand how outdated the information in my old post is. However, that old post still might be more educational as it has screenshots and I explain more. 
+
+But afterall, it is called "How __I__ Rip DVDs and Blu-Rays"...
+
+I still use Plex, so almost everything I do is to satisfy Plex.
+
+This will just go through the stuff I use in general. Sometimes there are very specific cases which are just too many and too annoying to write about (like when I put the subtitles from a DVD version of a TV show into the 1080 Blu-Ray version by upscaling the DVD subtitles and changing the framerate) etc.
+
+So why do you wanna do this? There are many reasons!
+	- You wanna support the companies by buying their DVDs / Blu-Rays
+	- You want a nice physical collection, but you don't want to get up at 3am out of your nice and comfy bed to swap discs
+	- You want to stream the stuff to your phone from anywhere
+	- All the stuff you find online "lying around" is in bad quality and not the way you want it
+	- You want to use Plex
+	- and so on and so on. There are many reasons why I do this.
+
+![My Collection](https://i.imgur.com/PX1heKE.jpg)
+<figcaption>One of my Oculus Rift sensors.</figcaption>
+
+1. Set up MakeMKV
+	- MakeMKV and all its functionality is free as long as it's in beta
+	- In Settings, enable Expert Mode and set the default profile to FLAC. This will turn DTS-HD streams (that not many encoders can read properly) into FLAC streams (which are still lossless but many encoders can read properly)
+	- Also in settings, under the Video tab select SemiAuto and a destination with lots of room. Under Language, pick your preferred Language. Streams in that language (audio, subtitles etc) will automatically be picked then.
+	- I personally also edit the "Default selection rule" sometimes if I wanna do something special like pick multiple english tracks (because of audio commentary), but the default is fine usually.
+
+2. Use MakeMKV to turn your disc into a lossless MKV file
+	- Put your disc in and hit the big button in MakeMKV
+	- After your disc has been opened in MakeMKV, select the titles you want.
+		- For a movie, this will usually be easy because it's the longest track. 
+		- For a TV show, this can be super complex or super easy as some producers try to hide the episodes and mess around with the ordering, while some producers don't care at all and everything is nice and in order.
+		- You can google something like "(name of tv show) makemkv" and you might find someone who has done the work of figuring out what title corresponds to what
+	- Select what audio streams and subtitle streams you want.
+		- For a movie I usually just go with the English surround audio track, and the Swedish subtitle track.
+		- Nowadays I also go with the stereo English tack, which will usually be the audio commentary track.
+		- If it's a movie that I think children might watch, I also pick the Swedish audio track if available.
+		- For TV shows I basically do the same. 
+	- Hit the button in MakeMKV to start ripping the titles into lossless MKV files
+
+3. Label the stuff properly
+	- For movies, I just use the format `name of movie (year).ext`, like `Skyfall (2012).mkv`. I get year from IMDB.
+	- For TV shows...
+		- I just give them really fast sloppy names like `1x01.ext` or `s01e01.mkv`. Then I throw them into FileBot to get them to be `Seinfeld - S07E13 - The Seven.mkv`.
+		- For multipart episodes (i.e. two episodes in one single video) it depends...
+		- If it's a two part episode that was broadcast as two separate episodes, but now on DVD/Blu-Ray is a single episodes, I just list the first episode (like The Boyfriend in Seinfeld, I will just call it `Seinfeld - S03E17 - The Boyfriend.ext` instead of `Seinfeld - S03E17-E18 - The Boyfriend Part 1 and 2.ext`)
+			- This is because Plex will otherwise list it as individual epidoes S03E17 and S03E18, which I want, expect playing S03E18 will play the same video that I just watched in S03E17. So If I just list it as S03E17, it will just show up once (which makes it look like I am missing episode 18) but it will just play that video once. This is extra important if you are syncing a TV show if you're a Plex Pass member, as the same video will be synced and converted twice - EVEN THOUGH IT IS THE SAME EXACT VIDEO.
+		- If it's two separate episodes in one video file, I will...
+			- try to separate it if it is clearly two episodes. Like in My Name Is Earl this happened once, and I noticed because there was another intro in the middle, so I just split the file there using ffmpeg losslessly.
+			- keep it as it is if it's not clear where the episodes start and end, and not add them to my Plex library and just keep them lying around until I get the energy to figure it out. I just have one show that is like this, so it's not a huge problem.
+		- As for identifying what video is what episode, it depends...
+			- If it's a show I know, I can usually identify it very fast and just look up what episode number it corresponds to on TheTVDB and just give it a sloppy name like `1x01.ext` (which I then at the end throw into Filebot, as I said earlier)
+			- If it's a show I have ripped before, and I didn't change the framerate of it, [I have a script](https://github.com/lambdan/video_bla/tree/master/autolabel) (it's very rough) that matches episodes (that I have already labeled properly from the last time I ripped them) with the unlabeled new rips. This works like 90% well, because sometimes there are episodes that have identical lengths down to the hundredths of a second. But even then, for those episodes, I can usually remember of just figure out which episode is which of the ones that are left. And sometimes I can see that the 4th title from disc 1 has the same length as Episode 4 and Episode 24, so then I can just assume it is Episode 1 as it is from Disc 1.
+			- If it's a show I know nothing about, I figure it out by...
+				- looking at the characters clothes and scenes and see if they match with any of the thumbnails on TheTVDB
+				- hear a quote and google for it and see which episode it was said in
+				- compare length to the ones listed at Wikipedia, IMDB, etc. (This works pretty good for longer episodes, like Game of Thrones)
+				- see if the episode has the title of it in it or something else that is episode unique (like Futurama has some joke at the very beginning, Simpsons has the chalkboard and other gags at the very beginning)
+				- if it's a _Chuck Lorre_ show I look at his card at the very end and see what episode that card was in
+				- google and see if someone else has already done the investigation
+				- probably some other method im forgetting...
+
+4. Transcode the files to make them smaller without losing noticable quality
+	- I use [Don Melton's Video Transcoding scripts](https://github.com/donmelton/video_transcoding)
+		- I use [nightly HandbrakeCLI builds](https://handbrake.fr/nightly.php). Note that Don doesn't recommend it and it will be broken sometimes.
+		- I don't install it in Windows through the Unix on Windows subsystem thingy. I just install Ruby through [RubyInstaller](https://rubyinstaller.org/downloads/) and then I throw all the .exe files (ffmpeg, mp4v2 etc) into the `C:/Ruby22-x64/bin/` folder.
+			- I prefer this method as I install tons of command line stuff by throwing them in there (youtube-dl, svtplay-dl etc).
+	- I typically use these settings for almost everything: `--burn-subtitle 1 --audio-width all=surround --add-audio 2="Audio Commentary" --add-audio 3="Audio Commentary 2" --preset slow --output D:/Transcodes/`
+		- `--burn-subtitle 1` burns in the Swedish subtitle so my Plex server doesn't have to. I use this setting 99% of the time if it's a movie. But otherwise, regarding subtitles I also do this: 
+			- Sometimes I check if I can find a plain-text version of the subtitle on Subscene or OpenSubtitles and then I just use that instead
+			- I get the Swedish plain-text subtitle in some other way (sign up and pay for Netflix/HBO/Viaplay/etc and [take it from there](https://github.com/isaacbernat/netflix-to-srt) using the network sniffer in Chrome (seems very daunting and annoying at first, but after a couple of hundred you will become a pro), or get a DVD synced subtitle) and then sync it to a English plain-text subtitle which is in sync (which is almost always available). I use [Subtitle Edit](http://www.nikse.dk/subtitleedit/) and it's point-sync feature for this.
+			- I OCR scan the bitmap subtitle myself (I have only done this once and it was hell, for 236 episodes)
+		- `--audio-width all=surround` skips adding a Stereo track of the regular audio, but will still add a Stereo track if there is nothing better available. I use this setting in all of my transcodes.
+		- `--add-audio 2="Audio Commentary" --add-audio 3="Audio Commentary"` adds one or two audio commentary tracks if available. If there aren't any audio commentary tracks or just one, it doesn't error or anything so I leave these in. I will almost always use this setting, except if I have a movie/TV-show that has an additional Swedish audio track, then I will have to manually look over and see what's appropriate.
+		- `--preset slow` makes the encode take longer time (if you have a bad CPU) but have better compression (i.e. a 6000 kbps encode that was done with preset veryfast will look horrible, while a 6000 kbps encode that was done with preset slow will look fantastic). My Ryzen 1700X CPU gets around 30 fps with 1080p material with the slow preset so that's why I use it. With my old i7-4770K I only got 18 fps or so, so when I had that CPU I used preset medium instead. I also read somewhere where someone had tested all presets and found out that slow is better than medium, but anything slower than slow is effectively pointless. But don't go faster than medium, creates lots of visual artifacts. (If you are in a hurry or have a bad CPU, use the `--quick` setting)
+		- `--output D:/Transcodes/` should be obvious, but it just makes the output appear in my preferred folder.
+	- There are also some other settings that I use sometimes
+		- If it's a movie I will use `--crop detect` to remove black bars/letterboxing.
+		- Don's scripts defaults to `-H quality=1` which will make the quality essentially be "infinitely good" which will just throw huge bitrates at everything (which is then limited by the bitrate limits set). I sometimes use `-H quality=18` to get some more compression without noticable quality loss (because 18 is almost always indistinguishable) for stuff like cartoons etc, because there is no point in throwing infinite kbps bitrate at something cartoonish that barely moves, it's just like a waste of space that every second needs to get 6000 kbps, when 1500 would be enough. It's hard to explain.
+		- At that note, I sometimes disable his bitrate limits and just encode with the crf-scale. But this causes very inconsistent output sizes, as some movies/TV-shows just needs 6000 kbps at crf=18 to look good, while some (grainy stuff) requires 150000 kbps. But if the content isn't grainy I will almost always use this method instead of the limited bitrate way.
+		- I sometimes use `-H aencoder=opus` to make the output audio be in the OPUS codec instead of AC3/AAC. I've started doing this more and more for stuff that I don't watch very often/at all, such as Breaking Bad (I've already seen it) and the DVD versions of Friends (which is in AC3 surround but since it's alot of hours it's quite big because of that surround audio). So I just make them into 192 kbps OPUS which sounds indistinguishable from the original, while being very small in size. The reason why I don't do this for everything is that it's not direct played by many of my players. But eventually I might make all my audio into OPUS.
+		- If the video has no external or bundled subtitles (in other words, burned in or no subtitles) and both the audio and video are in compatible formats, I will use the `--mp4` option to make the output container a `.mp4`, because then the file is very compatible and my Apple TV can direct play it and show seek thumbnails. I still prefer the flexibility of `.mkv` so that's still my default, but if all moons align correctly I will use `.mp4`.
+		- Sometimes I will bump up the bitrate by using `--target 1080p=8000` because I sometimes feel uncomfortable with just 6000 kbps for 1080p, even though it usually is fine, especially with `--preset slow`.
+	- I usually run the transcodes through batch scripting and then leaving my computer on 24/7 for days or weeks.
+	- When it's finished, I jump through some videos here and there and make sure everything is fine.
+
+
+5. Then I just copy it into my Plex library and I'm done.
+	- I keep the original MakeMKV file if I have the space for it

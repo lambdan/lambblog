@@ -1,0 +1,132 @@
+2018-06-16T14:02:00+02:00
+# Analogue Super Nt - The Best Super Nintendo
+
+The _Analogue Super Nt_ is the best Super Nintendo.
+
+# Hardware
+
+The packaging and hardware on its own feel incredible: sturdy, has some weight to it and feels premium. 
+
+![Super Nt Console](https://i.imgur.com/qcfN43j.jpg)
+
+![Super Nt Size Comparison](https://i.imgur.com/WsWZloR.jpg)
+<figcaption>The console itself isn't much bigger than an american SNES cartridge</figcaption>
+
+You can hook it up by using all the included things in the box: HDMI cable (that isn't generic, it's Analogue branded), USB charger and the Micro USB cable. The USB Charger supports 110-240 V input, but it has a US/JP plug so it doesn't fit here in Europe. I just used a 5V 2.4A USB Charger I had lying around and it works great (The Super Nt wants 5V 2.0A).
+
+Of course you also need a controller. I went with an official PAL SNES controller that I've been using for a long time now. You can also use 8bitdo's retro controllers but I have mixed experiences with those so I didn't (my SNES Retro Receiver broke within a week of getting it and the controller does accidental diagnoals quite frequently.)
+
+# It's the inside that counts.
+
+It cannot be overstated that I am a huge kevtris fanboy. This man seems incredible with his knowledge on Nintendo hardware and FPGA's and everything in between.
+
+And it shows, because *when I am playing games on the Super Nt it doesn't feel like I am playing a clone console or an emulator*. It feels like I am playing a HDMI-equipped Super Nintendo: no input lag, super crisp video and super crisp audio. 
+
+<div class="video-container">
+<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/EiWY23N_gFE"></iframe>
+</div>
+
+# Settings
+
+I've configured mine to automatically boot the inserted cartridge, instead of going to the Super Nt menu.
+As far as other settings go, I use the settings outlined by the infamous _FirebrandX_ here: [Super Nt Settings for the Obsessive Compulsive](https://www.youtube.com/watch?v=Hr6KgNXXRxs). 
+
+![Earthbound at 5X](https://i.imgur.com/07JaWEM.png)
+![ALTTP at 5x](https://i.imgur.com/QFjXXjR.png)
+![SMW at 5x](https://i.imgur.com/lQd10Pf.png)
+
+**Controversially, for a speedrunner,** I actually run it in the Zero Delay buffer mode. What does this mean?
+Well, an original SNES runs at around 60.09 Hz, which is 0.09 Hz too much for the HDMI spec. 
+The Zero Delay mode fixes this by running slower, at 60.00 Hz which fits the HDMI specification. This means that you will lose like a second every 10 minutes or something miniscule like that. 
+To me, that's absolutely fine. 
+You can run the Super Nt in the original speed of 60.09 Hz but then you either get tearing or a frame of input lag, which I actually was planning to do but then I realized I couldn't tell a difference  between 60.00 and 60.09 Hz so I've stuck with the Zero Delay (60.00 Hz) mode.
+
+Another fun feature the Super Nt has is that you can make the power LED the same color as the center pixel of the screen. I tried this and it was pretty fun, especially with the Earthbound Giygas fight.
+
+# 4x vs 5x Scaling
+
+(This isn't really a Super Nt issue, as I dealt with the same headache with my Framemeister, but I haven't really brought it up before so I figured I'd do it now.)
+
+I haven't decided if I wanna run in 4x or 5x mode because both has it's drawbacks and in both cases they are disturbing.
+
+In 4x, you can see the whole game, but you get huge black borders all around the game screen.
+
+In 5x the game covers up the whole screen (apart from the sides, because we're not stretching to 16:9 here) but a little part of the top and bottom of the screen gets cropped out. Some will liken the cropping to playing on a CRT, which is a fair argument.
+
+Why is this? Well, it's simple math. The SNES outputs 240p.
+
+	240 * 3 = 720 (would be good for 720p)
+	240 * 4 = 960 (doesn't fill the height of 1080p)
+	240 * 5 = 1200 (is taller than 1080p)
+	
+In _Super Castlevania IV_ it's really noticable that 5x crops out part of the game:
+
+![SCIV at 4x](https://i.imgur.com/OnwgSLH.png)
+<figcaption>Castlevania 4 at 4x scaling</figcaption>
+
+![SCIV at 5x](https://i.imgur.com/w4Eu5I1.png)
+<figcaption>Castlevania 4 at 5x scaling. Note that the top of the item box is cropped out.</figcaption>
+
+But in Earthbound, it's not very noticable that anything is cropped:
+
+![EB at 4x](https://i.imgur.com/3fzdih5.png)
+<figcaption>Earthbound at 4x</figcaption>
+
+![EB at 5x](https://i.imgur.com/QlAGYE7.png)
+<figcaption>Earthbound at 5x. Nothing noticable is cropped out.</figcaption>
+
+But there is a third option to! 4.5x! And it's the default option of the Super Nt!
+
+	240 * 4.5 = 1080 (perfect for 1080p!!)
+	
+But this will make the image kind of weird, you see, because pixels will vary in height. They won't be uniform. Some pixels will be taller than others. __It's conceptually disturbing.__
+
+Can you tell a difference while playing? I can. 
+
+Will you? I don't know. 
+
+If you can't, then congratulations, you can fill out your whole 1080p screen without missing any of the game.
+
+You can read this [RetroRGB section](http://www.retrorgb.com/240p.html#upscaling) to read more about this, and why integer scaling should be prefered. 
+
+Ultimately, I run it in both 4x and 5x modes and I change between them frequently. It's very easy to do on the Super Nt. 4x is probably better, objectively.
+
+# Accuracy?
+
+There is one thing I can complain about, which is my only complaint I think: _the auto-region patching feature of the SD2SNES does not work._
+[Apparently](https://github.com/SmokeMonsterPacks/Super-NT-Jailbreak/issues/17#issuecomment-377052272) kevtris wants to fix it, but in the meantime I have to manually open the Super Nt menu and change region to PAL in order to play _Terranigma_. Which isn't a huge deal because it's not very often I play that game nowadays.
+But since the region patching works on a real Super Nintendo, and the Super Nt claims to be super accurate, I think it should've been fixed already. 
+
+Other than that, I haven't noticed anything different from my official SNES console.
+
+# Conclusion
+
+Overall, I really, really, really like the Super Nt. It's just a neat piece of hardware. And the video quality is noticably sharper to me, because there is no analog troll in the background. It's just digital.
+
+It's also worth noting that you can "jailbreak" it and run ROMs from a SD card. I haven't done this though because I already have the SD2SNES which already does it. Note though that you cannot run special chip games from a SD card, as the special chips are nowhere to be found. 
+
+Is it worth getting a Super Nt? It's entirely up to you.
+
+Objectively, for me, it probably wasn't. I play so little SNES and I already had a SNES JR/SNS-101 RGB modded that I ran through a Framemeister or OSSC, so most people would call me crazy for getting a Super Nt when I already have that setup.
+
+But you know what? I think it was worth it. 
+I find the video quality noticably better, because my OSSC could only run at 2x mode on my TV, and the Framemeister had weird colors and black levels. The Super Nt fixes both of that. 
+And it's so nice not having to deal with upscalers and SCART cables. 
+
+The Super Nt is the first step in my process of converting more and more consoles to HDMI. I have a HiDef NES AV Famicom on the way (which is even crazier and more stupid because I only play NES like once or twice per year), and a UltraHDMI N64 kit pre-ordered.
+
+I love the Super Nt... apart from that region patching thing but maybe that'll get fixed.
+
+If you want more coverage on the Super Nt, check these out:
+
+<div class="video-container">
+<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/d_OW_t9RXEM"></iframe>
+</div>
+
+<div class="video-container">
+<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/LOSQgBEf5ac"></iframe>
+</div>
+
+<div class="video-container">
+<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Px3sNvfRZ7s"></iframe>
+</div>

@@ -1,0 +1,9 @@
+2014-09-20T00:00:00+02:00
+# Steam In-home Streaming
+
+Steam In-home Streaming is something that you might be very skeptical to at first. Transferring inputs to a video game through LAN and getting a video & audio stream back is just weird.
+
+But when you plug in a PS3 Controller to a Mac Mini running OSX, having Steam being ran in Big Picture mode and the controller gets detected "and it just works", you know Valve is up to something.
+
+_/DJS_  
+

@@ -1,0 +1,23 @@
+2016-05-28T17:02:00+02:00
+# iPhone 4S as Webcam
+
+I wanted to stream some *osu!* and *TypeRacer*, but I wanted to show my hands while doing so, so I needed a webcam.
+
+I realized I had a *iPhone 4S* lying around, and then I remembered that I have in [the past](https://www.youtube.com/watch?v=K4IAImKDl4k) used it as a webcam.
+So I took the old phone out, teared my hair out over how slow it was, installed the free app Epoccam, and it was done!  On the PC (and I believe Mac too) you had to install some drivers from their website, and then it shows up as a webcam source in OBS.
+Here's what I ended up with:
+
+![tripod](https://pbs.twimg.com/media/CjjFsA5WEAAoMVo.jpg:orig)
+
+You can see it in action in this video, which is muted because I was playing Ozzy in the background.
+
+<div class="embed-responsive embed-responsive-16by9">
+<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/3MjaqLsVybg"></iframe>
+</div>
+<br><br>
+
+- The quality is good enough. I believe it's possible to get it in HD if you buy the HD version of the app.
+- There is slight latency/delay. It's not much that you will be bothered about it, but you can probably notice it.
+- This drains a lot of phone battery so I recommend keeping it plugged in to a wall charger (not your PC, as it will try to stream it over USB then, which works worse in my experience)
+
+Have fun.

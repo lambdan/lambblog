@@ -1,0 +1,7 @@
+2016-04-03T01:06:00+02:00
+# Windows XP Ninite fix (Installers not working, page not displaying in IE 6)
+
+I tried installing Windows XP on a old laptop today, and for some reason, [Ninite](https://ninite.com) installers would not work and IE 6 could not even visit ninite.com.  
+
+Solution: Install IE 8. You can download it [here](http://filehippo.com/download_internet_explorer_xp/).
+

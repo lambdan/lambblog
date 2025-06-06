@@ -1,0 +1,39 @@
+2014-06-20T00:00:00+02:00
+# 24 hours with the Macbook Air
+
+Had the Macbook Air now for a couple of hours. So far I am pleased with it. This morning I went portable (meaning i disconnected every cable) and just went around the house coding stuff. I was on the couch, my bed, dinner table, the floor, and on all places I was able to effectively write and test code.
+
+### Gaming
+
+I have also noticed that it is more powerful than my 2011 Mac Mini, atleast in gaming (not really noticing a big difference elsewhere). My Mini struggled to keep CS:GO (running in bootcamp) at around 59 fps. But so far I have not seen my Air drop below 60 fps, it tends to stick around 70-80 fps, sometimes around 100. But anything over 60 and I'm happy (keep in mind also that this was on deathmatch servers where there are 16 players, a competitive match only has 10, so it should be even better there.)
+
+SimCity 2013 also runs very nicely through Bootcamp. Not 60 fps smooth, but my old gaming PC couldn't do that either (really intense game once you have a city with over 200k inhabitants.)
+
+### OSX Spaces
+
+One of my concerns when opting for this 11" computer was the screen, it's only 11.6 inches big, with a resolution of 1366x768. The resolution didn't bother me (and it doens't now either) as 1366x768 over 11.6 inches sounded pretty damn good to me. But still, having big windows would be a problem I figured...
+
+Well, it isn't, thanks to OSX Spaces and Mission Control.
+By simply swiping up with three fingers I can get a quick glance over all windows and spaces (think of spaces as a 2nd virtual desktop), and quickly switch to the one I want.
+
+I can have Safari open full-screen in one space, 2 terminal windows in one, and then maybe Twitter and iTunes in another one. And then I just flick between them by swiping with three fingers, and it works great!
+
+I'm actually at a point where I prefer using the Air's keyboard and trackpad only, instead of using the traditional keyboard and mouse. I feel more productive, and it's more fun.
+
+I am however writing this with this traditional desktop setup, as looking down with your neck an entire day isn't good for you I'm thinking...
+
+## Pros and Cons
+
+That's pretty much the two big points I wanted to go through above, I might write more in a week or so when I've used it more. I'm just gonna end this with a pretty quick Pros and Cons list.
+
+### Pros
++ **All the things above**, mainly it being more powerful than my Mini, it's a great thing
++ **Battery is great**, I had like 4 hours left after 5 hours, which means that I had 9 hours from the start, which sounds right
++ **Lightweight and looks nice**, the lightweight part is great and looks nice is just a preference and doesn't make the computer automatically better, but I must say that it looks very nice. It's so thin and nicely crafted. I also wanna leave the keyboard backlight on just because it looks nice
++ **Quiet** Comparing to my Mac Mini which sounded like a jet engine when playing any game, this computer doesn't make a lot of noise at all. It's quiet for a laptop gaming I'd say.
+
+### Cons
++ **Screen gets blurry when smoothly scrolling**, I am farily sure this is a OSX issue, as I tried playing Super Meat Boy which is a pretty intense game FPS wise, and that game looked fine. But for some reason, when scrolling a page with black text on white background, the text gets super fuzzy and weird. I have already gotten used to this though, but it did annoy me as heck in the beginning, and I still can't really read text while scrolling.
++ **It has a battery**, weird huh? Having the battery as a con while it's a pro too? Well, the thing is that I will probably keep it plugged in the charger alot and that will disturb me, as I know it's not optimal to keep a battery plugged in all the time. This is gonna sit in the back of my head and nag me everytime I see 100% charged. #ocd 
+
+_/DJS_  

@@ -1,0 +1,18 @@
+2016-05-05T18:44:00+02:00
+# How to get audio in Plex Media Player on Raspberry Pi 2
+
+For some dumb reason they still haven't fixed this dumb bug...
+
+- SSH into your Pi. The username is _root_, password is _plex_.
+- Do these commands to open up config.txt in nano: `mount -o remount,rw /flash` and `nano /flash/config.txt`
+- Go to the bottom of config.txt and add this line: `hdmi_force_edid_audio=1`
+- Hit Ctrl X, then Y to save
+- Unmount and reboot: `mount -o remount,ro /flash` and `reboot`
+
+(If you have your SD card handy you can also just plug that into your PC and you will find config.txt in the root of it, just add `hdmi_force_edid_audio=1` to the bottom of that and save and it will have the same effect.)
+
+And that's it. Now I get Stereo, AC3 5.1 and DTS 5.1 over optical into my soundbar from my Pi 2 running PMP 1.1.1.
+
+Or you could just use Rasplex instead...
+
+<small>Footnote: for some dumb reason I couldn't use codeblocks. It just refused to, even though the preview in Atom was fine. I'm thinking it's Parsedown's fault.</small>

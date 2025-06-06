@@ -1,0 +1,99 @@
+2018-01-28T18:08:00+01:00
+# The Eagle Ryzes... And Flies Away
+
+I ordered some computer parts today:
+
+- Fractal Design Define C (case)
+- Noctua NH U14S (CPU cooler)
+- Intel i7 8700K (CPU)
+- Asus Rog Strix Z370-F (motherboard)
+
+The thing that's controversial about this, is that it wasn't long ago I built my Ryzen system. Judging from my receipts, it was at the very beginning of October 2017, just about 4 months ago at the time of writing this.
+
+So what happened?
+
+# My First Mistake
+
+The first mistake I made was that I bought Ryzen right before Coffee Lake was released. I remember thinking at the time "well, Intel hasn't changed much the last couple of times, why would they now..." - and as it turns out, they changed alot, and for the better.
+
+At the time, I was on the Ryzen hype train so when I looked at the performance charts, comparing the 1700X I had to the 8700K, I was like "meh" or "haha, 1700X is very very slightly better", and at the gaming performance charts I was like "hmm, the 1700X is almost worse than my i7-4770K". 
+
+Basically, had I known how good Coffee Lake was gonna be, I probably would've bought a Coffee Lake system back then. But on the other hand, the availability was very bad at the time and I wanted to build a new computer right then, so I would've had a hard time waiting.
+
+TLDR: I didn't wait for Coffee Lake.
+
+# My Second Mistake
+
+I had ran macOS on my machine, in other words, I had a Hackintosh. But I wasn't using it much, maybe once per month, so I figured I was sick of macOS and didn't wanna use it, which is true (I still think Windows 10 is better for me) but there are some aspects about macOS I really like and with the _iMac Pro_ coming out and it's hype train, I kinda wanted to run, or atleast have the possibility to run, macOS again.
+
+While it is somehow possible to run macOS with a Ryzen processor, through some hacked kernel or some ridiculous thing like that, I don't wanna have to jump through a million hoops.
+
+For a while I also debated building a Hackintosh Mac Mini (which I may still do, although the chances now are much much lower) but even then I would have to mess with multiple monitors and keyboards/mices, and yuck.
+
+TLDR: I thought I was done with Hackintoshing.
+
+-------------------
+
+As for the other parts (the case and the CPU cooler), I just wanted new ones. 
+
+My current computer case, a _Fractal Design Define R3_, is one I bought used from a friend many years ago, and before that he had obviously used it for a few years... so this case has some wear and tear and I'm just kinda sick of it.
+I mean yeah it works, it's pretty damn quiet, but I feel like my CPU and GPU could get better cooling if there wasn't all those HDD cages blocking up the intake fans.
+
+So I went with the _Fractal Design Define C_. While I have been wanting to go down to mITX, or atleast mATX, for a long long time, I basically came to the same conclusion: I can't.
+
+I want my internal capture card, I want the good cooling, I want it to be almost dead silent... these just aren't things you can do with mITX.
+You can almost do them with mATX, but from my research, the mATX cases are still pretty big.
+
+I recently also looked into the newly released _Fractal Design Define R6_, especially one with the tempered glass panel. That seems like a really hot (hot as in sexy) case, but it had a few problems for me: it's still very big and it's very expensive.
+
+The _Define C_ is smaller and costs effectively half of what the R6 does.
+
+The only downside of the _Define C_, which is also a upside, is that it doesn't have a 5.25"/ODD slot. I am one of the few persons in the world that still use the disc drive in my computer, to rip DVDs/Blu-Rays, but I have done testing in the past and I have a USB-SATA connector thingy, so I will just use that.
+Frankly, I only use the disc drive occasionally, so it should be fine. I kinda wanna look into getting a nice enclosure for it though so it's just not "lying around".
+
+~~I went with the non-windowed version of the Define C. The reason was that it's slightly cheaper, I won't have the LEDs from the inside of my computer shining up my room at night, and it should be slightly more quiet.~~
+~~I hope I won't regret this decision, but we shall see. Probably not the hardest task in the world to get a windowed panel afterwards if I really want it.~~
+I went for the tempered glass version afterall.
+
+## New CPU Cooler
+
+Ever since I started transcoding a lot of DVDs/Blu-Rays, I've been meaning to get a new CPU cooler, so that the CPU will run both cooler and quieter during the long amount of times that it does run at 100% usage, sometimes for weeks.
+
+For the last 2-3 years or something, I've been using the famous _Cooler Master Hyper 212 EVO_, but with the fan replaced by a _Noctua_ something, NF-P12 PWM or something like that. 
+And honestly, it's been great. It's not that loud during load, and it's silent when idling.
+
+But I've been wanting to get a Noctua CPU cooler for a long time so I figured I'm just gonna do it now.
+Ideally, I would've gone for the NH-D14 or NH-D15 but those are soooo huge that it just seems ridiculous to me, and I don't think I can access almost anything around my motherboard with those beasts on.
+The NH-U14S seemed like a better choice for me, except that it's probably gonna run slightly hotter than the NH-D14/D15.
+I think I'm gonna be happy with it, and I can use it for years to come.
+
+(I don't want to use water cooling or AIO solutions because I am afraid they will leak.)
+
+-----------
+
+So what will I do with my current system, namely the motherboard and CPU? (I will keep the RAM, because it's good RAM (G Skill FlareX 2x8 GB 3200 MHz))
+
+First, I will try to sell it, and I'm pretty sure I will manage to get it sold and cover maybe 40-50% of the expenses with this new build.
+
+If I don't manage to sell it, I will have a very overpowered Unraid/Plex server, and I'm gonna have to get a new motherboard that has atleast 6 SATA ports.
+
+We shall see. And I will probably make some benchmarks with x264 and x265 encoding and get those numbers on here.
+
+I hope AMD does well even though I am leaving them, because Intel seriously needs some competition. Coffee Lake is so great because AMD pushed them.
+
+I will probably have to be on Intel for the forseeable future, because of Hackintoshing.
+
+Oh, and before I forget. Here's a updated table showing how good the Ryzen 1700X was.
+
+|Computer|CPU|Avg. Transcode Speed|
+|----------|----|----------------|
+|12" Macbook, Early 2016|M3-6Y30|7.25 fps|
+|Mac Mini, Mid 2011|i5-2415m|8.03 fps|
+|My Plex Server, Late 2016|i3-6100|15.32 fps|
+|15" Retina Macbook Pro, Late 2013|i7-4960HQ|21.71 fps|
+|My Desktop PC, Early 2015|i7-4770K|26.66 fps|
+|My Desktop PC, Late 2017|Ryzen 1700X|53.33 fps|
+
+![Chart](https://i.imgur.com/E1nqkTf.png)
+
+(Handbrake x264 transcode of _Friends S05E21_, at 1080p with the medium-preset)

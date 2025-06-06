@@ -1,0 +1,96 @@
+2018-02-04T16:44:00+01:00
+# The Coffee Lake Build
+
+I got [the new parts][newparts], and I built the new computer, and I love it.
+I love how it looks, I love how silent it is, and I love that it's running on Intel again.
+
+[newparts]: https://lambdan.se/bye-ryzen-20180128-i209
+
+Building this PC was fun, but took a very long time because I wanted to think through what the best order to things were, and I wanted to route all cables cleanly since this is the first I am using that had a windowed side panel.
+
+The final part list is:
+
+|Part|Cost for this build (Swedish Kronor)|
+|----|----|
+|[Asus - ROG STRIX Z370-F GAMING ATX LGA1151 Motherboard](https://pcpartpicker.com/product/9bNypg/asus-rog-strix-z370-f-gaming-atx-lga1151-motherboard-strix-z370-f-gaming)|Bundled with CPU (5699:-)|
+|[Intel - Core i7-8700K 3.7GHz 6-Core Processor](https://pcpartpicker.com/product/sxDzK8/intel-core-i7-8700k-37ghz-6-core-processor-bx80684i78700k)|Bundled with Motherboard (5699:-)|
+|[G.Skill - Flare X Series 16GB (2 x 8GB) DDR4-3200 Memory](https://pcpartpicker.com/product/wX7CmG/gskill-flare-x-series-16gb-2-x-8gb-ddr4-3200-memory-f4-3200c14d-16gfx)|Already owned|
+|[Fractal Design - Define C TG ATX Mid Tower Case](https://pcpartpicker.com/product/rPPzK8/fractal-design-define-c-tg-atx-mid-tower-case-fd-ca-def-c-bk-tg)|1029:-|
+|[MSI - GeForce GTX 1080 Ti 11GB Founders Edition Video Card](https://pcpartpicker.com/product/6R98TW/msi-geforce-gtx-1080-ti-11gb-founders-edition-video-card-geforce-gtx-1080-ti-founders-edition)|Already owned|
+|[Fractal Design - Edison M 650W 80+ Gold Certified Semi-Modular ATX Power Supply](https://pcpartpicker.com/product/JHx9TW/fractal-design-power-supply-fdpsued1b650w)|Already owned|
+|[Noctua - NH-U14S 55.0 CFM CPU Cooler](https://pcpartpicker.com/product/DMjG3C/noctua-cpu-cooler-nhu14s)|695:-|
+|[Seagate - Desktop HDD 4TB 3.5" 5900RPM Internal Hard Drive](https://pcpartpicker.com/product/Ty6BD3/seagate-internal-hard-drive-st4000dm000)|Already owned|
+|[Western Digital - Black PCIe 256GB M.2-2280 Solid State Drive](https://pcpartpicker.com/product/DM7CmG/western-digital-black-pcie-256gb-m2-2280-solid-state-drive-wds256g1x0c)|Already owned|
+|[Crucial - MX300 750GB 2.5" Solid State Drive](https://pcpartpicker.com/product/NLs8TW/crucial-mx300-750gb-25-solid-state-drive-ct750mx300ssd1)|Already owned|
+|[Crucial - MX100 256GB 2.5" Solid State Drive](https://pcpartpicker.com/product/63V48d/crucial-internal-hard-drive-ct256mx100ssd1)|Already owned|
+|[StarTech.com PEXHDCAP60L Capture Card](https://www.startech.com/eu/AV/Converters/Video/HD-PCIe-capture-card-HDMI-VGA-DVI-CPNT-1080p-60FPS~PEXHDCAP60L)|Already owned|
+|[Noctua - NF-F12 PWM 55.0 CFM 120mm Fan](https://pcpartpicker.com/product/b2vRsY/noctua-case-fan-nff12pwm) (Rear)|Already owned|
+|2x [Noctua - NF-S12A PWM 120mm Fan](https://pcpartpicker.com/product/BgvRsY/noctua-case-fan-nfs12apwm) (Front)|Already owned|
+
+Peripherals (as of writing, changes frequently, probably):
+
+|Name|Cost for this Build (Swedish Kronor)|
+|-|-|
+|[Dell - S2716DG 27.0" 2560x1440 144Hz Monitor](https://pcpartpicker.com/product/BcTrxr/dell-monitor-s2716dg)|Already owned|
+|[Samsung - U24E590D 23.6" 3840x2160 60Hz Monitor](https://pcpartpicker.com/product/vsX2FT/samsung-monitor-u24e590d)|Already owned|
+|SteelSeries QcK+ Ninjas In Pyjamas (NIP) Mouse Pad|Already owned|
+|Topre Realforce 88UB Beige (Swedish Layout)|Already owned|
+|[Logitech - G403 Prodigy Wired Optical Mouse](https://pcpartpicker.com/product/yKhj4D/logitech-g403-prodigy-wired-optical-mouse-910-004796)|Already owned|
+|[Logitech - G533 7.1 Channel Headset](https://pcpartpicker.com/product/yPGj4D/logitech-g533-71-channel-headset-981-000632)|Already owned|
+
+So yes, the parts are quite expensive. But please note that I didn't buy all of this instantly. All of these parts have been collected over the years. I don't drop $3000 on a computer just like that. I re-use old parts.
+
+Some day I plan on writing on why monitors today sucks. There is nothing good out there. I want "Retina", G-Sync, IPS and good build quality. That basically doesn't exist. 
+
+# Photos
+
+![Finished Product](https://i.imgur.com/JG8FwRS.jpg)
+<figcaption>This is a pretty good picture of the finished product, except that I have replaced all the fans with Noctua's now (which you'll see further down) and I removed the warning sticker.</figcaption>
+
+![Sticker](https://i.imgur.com/c8bL1NB.jpg)
+<figcaption>I removed this sticker.</figcaption>
+
+![Back side](https://i.imgur.com/yJva3y1.jpg)
+<figcaption>Building the computer was fun until I turned it around and saw what a mess the backside was. I was afraid I wasn't gonna get the panel back on because if you look at the SATA Power connections for the SSDs, you can see that they bulge out quite a bit. But closing the panel was no problem at all.</figcaption>
+
+![Early Overclocking](https://i.imgur.com/ZYUEIVZ.jpg)
+<figcaption>One of the first pictures I took while overclocking to 5 GHz. Ultimately I don't run it at 5 GHz anymore though, it was a bit too hot (loud) for my liking.</figcaption>
+
+![Noctua Fans](https://i.imgur.com/IgKHbgx.jpg)
+<figcaption>Here's a picture where you can see that all fans are now entirely replaced by various Noctua models. And it is so quiet.</figcaption>
+
+
+# Performance
+
+Here's the infamous table. Updated.
+
+|Computer|CPU|Avg. Transcode Speed|
+|----------|----|----------------|
+|12" Macbook, Early 2016|M3-6Y30|7.25 fps|
+|Mac Mini, Mid 2011|i5-2415m|8.03 fps|
+|My Plex Server, Late 2016|i3-6100|15.32 fps|
+|15" Retina Macbook Pro, Late 2013|i7-4960HQ|21.71 fps|
+|My Desktop PC, Early 2015|i7-4770K|26.66 fps|
+|-|i7-8700K|50.81 fps|
+|My Desktop PC, Late 2017|Ryzen 1700X|53.33 fps|
+|**My Desktop PC, Early 2018**|i7-8700K @ 4.7 GHz OC|57.00 fps|
+|-|Ryzen 1700X @ 3.8 GHz OC|57.97 fps<sup>[1](#ryzenoc)</sup>|
+|-|i7-8700K @ 5.0 GHz (AVX Offset 3 = 4.7 GHz)|58.70 fps|
+
+(x264 transcode of _Friends S05E21_ using [Don Melton's Video Transcoding script][donmelton], at 1080p 6000 kbps with the medium-preset. AC3 audio passed through. The version of Handbrake and the script used is not always the same.)
+
+[donmelton]: https://github.com/donmelton/video_transcoding
+
+I overclocked my 8700K using this [YouTube video](https://www.youtube.com/watch?v=CoUtA7DKXhU), although I only watched the BIOS section. But it was nice and short. 
+
+Ultimately, my overclock is 4.7 GHz at 1.18 volts, with no AVX Offset.
+I am happy with this as it keeps the temperatures quite low (just above 30 C in idle, peaks around 75 C during load). Since the temperatures are so low the fans can run very quietly.
+
+<a name="ryzenOC"><sup>1. Re: The Ryzen Overclock</sup></a>
+This was a unstable overclock, and I did not actually run the same test. But I ran another one, where it saw a 8.7% performance increase, so this score is the not-overclocked speed (53.33 fps) multiplied by 1.087, which results in ~57.97 fps. This is not accurate and entirely fair, but should give you a ballpark idea of how the 1700X would've performed if I ran it overclocked.
+
+-----------------------
+
+(This post was inspired by Stammy´s great post on his [epic PC][stammy], I wanted to do something similar. Read his if you want actual and more explanations for normal people and clean pictures.)
+[stammy]: https://paulstamatiou.com/building-a-windows-10-lightroom-photo-editing-pc/
+

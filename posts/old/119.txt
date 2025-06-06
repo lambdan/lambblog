@@ -1,0 +1,25 @@
+2016-06-03T14:18:00+02:00
+# Offline TV Shows
+
+After yesterdays power out I realized I need to store some TV shows on my iPad or iPhone so that I can watch shows even when power is out. 
+
+Which TV shows would it be? Well that's an entirely different question, but for the time being I would pick Seinfeld, AVGN and Family Guy. They are shows that I can watch whenever, no matter what circumstances. Friends could potentially be added to that list, but haven't decided yet. 
+These aren't necessarily my favorite shows (except Seinfeld, and potentially Friends) but they are shows that I can always watch if I have nothing else to watch. 
+I would like to add Mythbusters to the list but there are so damn many episodes and they're long so it would likely take up too much space.
+
+While I don't travel a lot, you might wonder when I would use these offline TV shows? Well, I like watching TV shows to wind down before falling asleep, and it's kinda hard to do that without power, as my Plex Server, our NAS and my TV dies. 
+Both my iPad and iPhone are 64 GB models, both of which has plenty of space left (like 40-50 GB free), so storing the TV shows for offline viewing on those devices would be perfect.
+
+My first idea was to just use the built-in Videos app on iOS and use iTunes to sync, but I quickly realized how many limitations (no AC3, poor subtitle support, poor metadata support, poor video codec support, etc) that has and generally you don't wanna use iTunes unless you really have to (which would've been fine as I'm probably storing these for a long time, they'll likely never get removed.)
+
+Then I got the free VLC app, and yes, quite a nice app. It supports most if not all video and audio formats, subtitles and everything. You can easily sync videos to it via Wifi or download from a server, but there were 3 things I didn't like about using VLC for iOS:
+- Poor metadata support
+- No iPad PiP
+- Free app, and therefore has no incentive to stay around forever (it's already been [removed once](http://9to5mac.com/2011/01/07/vlc-for-ios-removed-from-the-app-store/))
+
+And then I realized I'm dumb. Plex! It's so obvious! Plex is what I should be using. It will sync perfectly fine with my existing library, will make sure the video (no matter what codec) will play on my device, and will make it super simple for me to manage. 
+
+So I signed up for Plex Pass [again](http://lambdan.se/87/plex-pass-review) (I paid for a year this time), as I now have a legitimate use for Plex Pass.
+
+Now I'll just have to listen my Mac Mini's jet plane fan for a week.
+

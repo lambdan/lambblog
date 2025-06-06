@@ -1,0 +1,17 @@
+2016-02-07T19:50:00+01:00
+# Week 5
+
+Solid week. Nothing to really complain about. 
+
+## Hot
+
+- Got my WeMo bulbs to work
+- Played a lot of PvP Destiny. Rift is a really fun game mode. 
+- Ordered all the seasons of Seinfeld that I was missing on DVD. 
+- Got to work a few days and had fun there. 
+
+## Not
+
+- To get the WeMo to work I had to create a wifi network on my Mac Mini. Apparently the WeMo doesn't like my router. 
+- WeMo works inconsistently. Sometimes it's instant, sometimes it's not. 
+- The NAS is down to 120 GB of free space. 

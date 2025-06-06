@@ -1,0 +1,167 @@
+2016-12-18T14:13:00+01:00
+# Streaming with OBS and Elgato HD60 S from macOS without Window Capturing
+
+_Update 14 Jun 2017:_ I've had alot of issues with this method so just don't do it. If you have a Avermedia capture card though, I might recommend doing this: [720p60 streaming with AverMedia Capture Card and OBS Studio on Mac](https://lambdan.se/index.php?entry=180-avermedia-mac-obs-streaming-2017-06-14)
+
+_Post updated Dec 24th: [update](#update)_
+
+One of the biggest reasons why I got an Elgato HD60 S, is because it is an external USB 3.0 card that can do 1080p60. The reason I want an external card is because I don't always wanna be locked down to a Desktop tower computer where I can have internal cards. My dream would be to someday only have a Macbook Pro as my only computer. And for that dream to be possible, I have to be able to stream from it with this capture card. 
+So for fun I decided to reboot into my macOS partition on my Hackintosh, and start experimenting.
+
+First of, I had to get USB 3.0 working on my Hackintosh. It was working before I upgraded Sierra so something along the upgrade broke it. I managed to fix it anyway (Install FakePCIID.kext, FakePCIID_XHCIMux.kext and USBInjectAll.kext, and also add a patch in your Clover configuration that changes the max USB port limit.)
+
+Once that was done I could download and install the [BETA Elgato HD60S Game Capture Software for Mac](https://help.elgato.com/customer/portal/articles/2420785-elgato-game-capture-hd60-s-and-upcoming-os-x-software) and so the basic capture card was working. But not great.
+First of, Elgato warns you that they need really high system requirements to be able to do 1080p60. Because I use a Hackintosh, I don't really blame them, but I can only do 720p30 (if you can do 1080p60 on a real Mac, like maybe a recent 5K iMac I would love to know). 720p30 is good enough for my purposes anyway, for now.
+
+Anyway, now I want this game feed in [OBS](https://obsproject.com). 
+First thing I tried was to just do a window capture, which works. Just crop out the GUI and it's decent. Performance wasn't great though and I got alot of dropped frames. I also didn't get audio as the Elgato doesn't present itself as a audio input device (like a microphone), and there is no good way to capture desktop audio in macOS.
+
+Something I've always been curious by in the Elgato software, is the streaming section. You can actually stream directly from their software without OBS. I don't wanna do this though, as I want to have a timer and such visible on my stream, and as far as I can tell, Elgato's software does not let you window capture and add it to your stream.
+
+But you are able to stream to a custom RTMP server from it, and I have heard for years that people are dumping their streams into a locally hosted RTMP server to be able to multistream to several streaming service at the same time. 
+I wanted a much simpler thing though: just stream game feed into a locally hosted RTMP feed, that I can then input into OBS. I figured this should grant me much better performance than Window Capturing.
+
+So here's how I did it:
+
+1) Install nginx, with the rtmp module. I did this by using [Homebrew](http://brew.sh), and then doing these commands (from https://github.com/thonatos/notes/blob/master/backend-notes/install-and-conf-nginx-with-rtmp-on-osx.md):
+
+	brew tap homebrew/nginx
+	brew options nginx-full
+	brew info nginx-full
+	brew install nginx-full --with-rtmp-module --with-debug
+
+The last line actually took a really long time to finish, so I had to do some `brew link` commands in the morning to make it work as my PC had rebooted. You can google how to do that if it happens for you (it shouldn't.)
+
+2) Edit the `nginx.conf` configuration file. I found it in `/usr/local/etc/nginx/nginx.conf`. You can just copy and paste my configuration:
+
+    #user  nobody;
+    worker_processes  1;
+
+    events {
+        worker_connections  1024;
+    }
+
+    http {
+        include       mime.types;
+        default_type  application/octet-stream;
+
+        sendfile        on;
+        keepalive_timeout  65;
+
+        server {
+            listen       8080;
+            server_name  localhost;
+
+        }
+    }
+
+    rtmp {
+        server {
+            listen 1935;
+            chunk_size 8192;
+
+            application raw {
+                live on;
+                meta copy;
+                
+            }
+
+
+        }
+    }
+
+(I haven't looked into much detail on what each setting does, so it is possible there is a really dumb setting that I am using. If you know of any improvements, let me know.)
+
+3) Run nginx by just typing `nginx` in a Terminal. Here are some other useful commands: `nginx -s reload` will make it restart/reload the config, and `nginx -s stop` will make it stop running.
+
+4) To verify nginx is working, open up a web browser and navigate to `http://localhost:8080`, you should see "Welcome to nginx!". If this doesn't happen, go back - something is wrong.
+
+5) In the Game Capture software, you now wanna hit the + sign next to the Account under Live Streaming, and select the rtmp option. Set it up like this, and also crank up the Bit Rate knob under Live Streaming:
+
+![Elgato RTMP config](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/Screen%20Shot%202016-12-18%20at%2014.10.43.png)
+
+(Change rtmp://localhost/__myapp__ to rtmp://localhost/__raw__)
+
+6) Hit the Green globe button at the bottom. This should start streaming. Once it's shining a very light green, your work here is done. The Elgato software is now streaming to your local RTMP server.
+
+7) Open up a video player, such as VLC, and try to open the network stream: `rtmp://localhost/raw`, you should be able to see your game feed:
+
+![VLC showing game feed](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/Screen%20Shot%202016-12-18%20at%2014.41.14.png)
+
+(In VLC you can go to Window > Media Information and hit the Codec and Statistics tabs to make sure you're getting 720p and the correct framerate and bitrate.)
+
+8) Open up OBS, and add a "VLC Video Source". Hit the little + sign to the right and select Path/URL and type in `rtmp://localhost/raw`. Should look something like this: 
+
+![OBS Video source](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/Screen%20Shot%202016-12-18%20at%2014.43.19.png)
+
+9) Voila. You now have a pretty good performance game feed in OBS, and you are also getting audio from the Elgato directly through the very same VLC source. You can now add whatever other sources you want to OBS, and start streaming.
+
+![OBS window](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/Screen%20Shot%202016-12-18%20at%2014.59.46.png)
+
+Here's a local recording I did of OBS, that I uploaded to YouTube, so you can get a feel for the quality: 
+<iframe src="https://www.youtube.com/embed/qvIAqqonjhk"></iframe>
+
+Now, for the bad parts:
+
+- There is a significant delay to the game feed in OBS. Around 3-5 seconds.
+- Sometimes the RTMP stream craps out and just shows gray or freezes. I am not sure what causes this, I am thinking it has something to do with the nginx configuration.
+- OBS over-saturates some colors, especially greens. Not sure why this is. It's not the RTMP streams fault as it looks OK if you play it directly in VLC. I tweeted about this issue: https://twitter.com/djs__/status/812450584355807233
+
+If I figure out solutions for these I will update this post.
+
+Oh, and I almost forgot, here is the mediainfo output of the RTMP stream Elgato is sending out:
+
+	General
+	Complete name                            : -1482066491.flv
+	Format                                   : Flash Video
+	File size                                : 24.8 MiB
+	Duration                                 : 30s 80ms
+	Overall bit rate mode                    : Variable
+	Overall bit rate                         : 6 907 Kbps
+
+	Video
+	Format                                   : AVC
+	Format/Info                              : Advanced Video Codec
+	Format profile                           : Baseline@L4
+	Format settings, CABAC                   : No
+	Format settings, ReFrames                : 1 frame
+	Format settings, GOP                     : M=1, N=60
+	Codec ID                                 : 7
+	Duration                                 : 29s 352ms
+	Bit rate mode                            : Variable
+	Maximum bit rate                         : 7 056 Kbps
+	Width                                    : 1 280 pixels
+	Height                                   : 720 pixels
+	Display aspect ratio                     : 16:9
+	Frame rate mode                          : Variable
+	Color space                              : YUV
+	Chroma subsampling                       : 4:2:0
+	Bit depth                                : 8 bits
+	Scan type                                : Progressive
+
+	Audio
+	Format                                   : AAC
+	Format/Info                              : Advanced Audio Codec
+	Format profile                           : LC
+	Codec ID                                 : 10
+	Duration                                 : 30s 80ms
+	Channel(s)                               : 2 channels
+	Channel positions                        : Front: L R
+	Sampling rate                            : 48.0 KHz
+	Compression mode                         : Lossy
+
+---------
+
+So there you go.
+
+While this works, I still highly recommend using Windows instead if possible. In there you can use Amarec with the capture card and get much higher qualtiy everywhere, both in recordings and for streaming. macOS streaming has come a long way, but it's still far behind Windows.
+
+--------
+<a name="update"></a>
+## Update Dec 24th 
+
+I have now gotten myself a 15" retina MacBook Pro which meets the requirements of Elgato, and yes indeed, it can capture 1080p60 just fine. I have not been able to output 1080p60 to OBS though. The screen just stays grey. 720p60 works ok.
+
+So if you want to capture 1080p60 on a Mac, the Elgato HD60 S can definitively do it.
+
+Streaming a 1080p60 source from Elgato is another question though. Not sure why I'm just getting a grey/green screen. I'll test some more later.

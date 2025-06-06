@@ -1,0 +1,71 @@
+2017-07-01T21:56:00+02:00
+# My Apple Pencil Review
+
+There are two versions of this review: [the original handwritten pdf](https://www.dropbox.com/s/u7rxcwyv1rtq1v5/Apple%20Pencil%20review.pdf?dl=0) (6.6 MB) or just scroll down to continue reading a version that I transcribed, so you don't have to deal with my handwriting.
+
+----------
+
+When the Apple Pencil was revealed, alot of people lost their minds. Alot of people dug up that clip from the original iPhone introduction where he said that if it has a stylus they "blew it."
+
+The Apple Pencil is much more than a stylus. I am not an artist or anything, but I still love using it.
+
+When I ordered it, I kind of regretted it immediately, but decided to keep the order, and eventually it showed up.
+
+So I started playing with it, and I wasn't that impressed at first.
+But then I decided to buy an app called [Procreate][procreate] and I very quickly fell in love.
+I had so much fun just drawing. Using [Procreate][procreate] made me realize that what app you use with the pencil has a huge effect on your experience. 
+
+So far my favorite for drawing is [Procreate][procreate], but [Linea][linea] is also very good.
+
+For writing I am currently using [Goodnotes][goodnotes] [<sup>1</sup>](#1). I also bought Notability which seems to be a very nice app, but I prefer [Goodnotes][goodnotes] for writing. 
+
+![Imgur](http://i.imgur.com/9Wlq688.jpg)
+<figcaption>Writing this review on my iPad Pro 10.5" with the Goodnotes app.</figcaption>
+
+I don't plan on writing much more than this with this pencil as my hand gets very crampy. But it's a good writing experience, that has the same pros and cons as writing with real pen and paper: it's fun but it hurts, and you can't move stuff around.
+
+Speaking of that, here's the first thing I created with [Procreate][procreate]: 
+
+![Imgur](http://i.imgur.com/xQ1P7ij.jpg)
+
+One super cool thing with [Procreate][procreate] is that it automatically creates a time lapse of your drawing, so you can see the time lapse of that drawing here: https://twitter.com/djs__/status/880901807735808000
+
+As for [Linea][linea] vs [Procreate][procreate], here's my simple comparison:
+
+![Imgur](http://i.imgur.com/StyEKSJ.png)
+
+If you just wanna try drawing with the Apple Pencil, use [Linea][linea]. If you seem to like it, get [Procreate][procreate] as well.
+
+Being able to erase by just using your finger in [Linea][linea] is a huge deal. Many times while writing this I have tried to do it, only to realize [Goodnotes][goodnotes] is not [Linea][linea].
+
+# Navigation
+
+You can also use the pencil to navigate around iOS, and I have really found that enjoyable.
+
+If I have the pencil nearby I prefer it to my fingers.
+
+However: you cannot do swipe-in motions such as opening the Control Center or Notification Center which is annoying.
+
+# Hardware
+
+* Battery is fine. We all know how ridiculous it looks when you stick it into the iPad to charge so we don't need to talk about that.
+
+* I think the body is a bit too glossy, which makes it a bit sweaty to hold after a while.
+
+* The cap is kinda loose on mine. I'm not sure if it's intended to be. It obviously stays there, but I can rock it around if I want to.
+
+# Final Thoughts
+
+The amount of fun I've had with this thing this weekend has already made it be worth the $100 or whatever it costs (the dollar fluctuates so much that it's hard for me to tell.)
+
+I just hope that I won't run out things to draw with it, because I really like it.
+
+Writing? Not so much... My hand hurts like hell, but that's a problem with pencils and me in general.
+
+<a name="1"><sup>1</sup></a> Because CGP Grey recommended it on an episode of [Cortex][cortex]
+
+[procreate]: https://itunes.apple.com/us/app/procreate-sketch-paint-create/id425073498?mt=8
+[linea]: https://itunes.apple.com/us/app/linea-sketch-simply/id1094770251?mt=8
+[goodnotes]: https://itunes.apple.com/se/app/goodnotes-4-notes-pdf/id778658393?mt=8
+[notability]: https://itunes.apple.com/se/app/notability/id360593530?mt=8
+[cortex]: https://www.relay.fm/cortex

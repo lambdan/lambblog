@@ -1,0 +1,52 @@
+2019-03-20T16:46:00+01:00
+# Thoughts on Google Stadia
+
+[_Google Stadia_ was announced yesterday](https://9to5google.com/2019/03/19/google-stadia-announced/) and I'm quite intrigued by it.
+
+![Stadia](https://www.nordichardware.se/wp-content/uploads/Google-Stadia-1.jpg)
+
+Yes, there have been similar services before it. Such as _OnLive_, and they never went anywhere.
+But since it's Google, I could see it going places. Unless they shut it down randomly, as they do with alot of their services. But they have the money and are willing to spend it on a ton of computing power, so maybe?
+
+I kinda like the idea of game streaming, if everything works perfectly.
+
+One example they gave is that they can do multiplayer on their local network. That would be nice. It sucks when you're playing with someone who has 400 ping and skips all over the place. If every computer was on the same local network, everyone would have very low or no ping to each other. That just sounds cool and the obvious way multiplayer should be done.
+
+Secondly, they mention that the consumer doesn't need to buy expensive graphics cards or game consoles as they'll just keep their datacenters updated. I kinda like that too. I hate buying something and then a couple of months later it's outdated. If I don't have to think about that, it would be nice. 
+
+Thirdly, if your games are in the cloud, you don't have to think about downloading updates or anything, or filling up your hard drive. That sounds extremely nice. There's nothing worse than wanting to play something all of a sudden, and then you gotta wait for updates.
+
+And finally, the convenience of it. You could play on seemingly any device, and you could start playing instantly after watching a YouTube video that made you interested in the game. 
+The _Nintendo Switch_ has been a great example of hybrid gaming. It's great both on a TV and as a portable.
+
+That's pretty much all the positive things I have to say about it, and they're all the obvious things.
+Now let's go negative and think of all the bad things:
+
+__Latency__ is the first obvious one. Obviously I won't be expecting 1ms response times, I think that will be impossible for the foreseeable future. I think we need special client hardware and some new technology or video codecs to make <10 ms possible. [The numbers I've seen](https://twitter.com/krisgraft/status/1108121139815964673) so far are around the 100s, which doesn't sound good.
+But, I think it's important to think of the convenience here. If the latency is high, but the convenience factor is also very high, it might be acceptable. 
+So I'd be completely down to play a single player game on this service casually. If I wanna play something competitive I'll stick to my own computer.
+
+Secondly, __you won't own the games__, just as all digital goods you buy. While they might show up in your library for a long time, maybe 10 years, something could happen that would make it disappear from there all of a sudden. Maybe Google feels like pulling the plug. 
+When you have the games physically it should be possible to play them, even 50 years in the future, as long as whatever you stick the game in still works.
+This is a big reason why I don't use Netflix or other similar services. Netflix could pull my favorite show all of a sudden and I'd be devastated. With my Blu-Rays and other copies I know I can always watch it.
+This also causes alot of complications for game preservation. It's highly unlikely we'll be able to download a local client for storage and preservation.
+
+Thirdly, is ofcourse _video quality_. Fundamentally this technology works by you sending controller inputs to a server, which then records the gameplay footage and sends it back to you. While streaming video quality is good for movies and TV shows, there's a huge difference between that and live games. 
+The video you find on Netflix are just 24 fps and have probably been encoded with some super datacenter for a couple of hours to get the maximum quality in as little file size as possible. And even then, I and many others can tell the difference between Netflix video streams and a local Blu-Ray. So even 24 fps content that has all the time in the world to compress, doesn't look as good as the local media. 
+
+So how are we gonna do be able to do live games? Ideally we want to see our inputs in just a couple of milliseconds. The video encode parameters have to be completely different and something will have to suffer to make it faster. Most likely video quality. Try encoding a video with the _x264_ presets `ultrafast` and `veryslow` - you'll get very different results.
+I don't really know why Google wants to brag about doing 4K HDR at this point. They should focus on 1080p with 60+ framerates and lower the latency instead.
+
+![4K Bragging](https://www.nordichardware.se/wp-content/uploads/Google-Stadia-8.jpg)
+
+This is why I think we need some fundamentally different technology. Games needs to be programmed to have the video framebuffer on the clients machine, but all the calculations are done on the server side or something. But this requires rewriting every video game ever made so I highly doubt that'll happen. I don't think basing it on video streaming is ever gonna be great enough. It might be good enough, but I don't think it'll ever be as great as running the game locally.
+
+I have tried Steam In-Home Streaming, and I think it works good enough. It's not great, but latency wise it's fine, playing with a controller. And it looks pretty good too. Not perfect, but good enough. But, this is on the local network where ping is basically non-existant and the bitrates can be up to 1000 Mbits. Even 10000 Mbits if you have 10 Gb ethernet.
+Streaming from a datacenter over the internet, with the rest of the world, is completely different.
+
+But apart from that, __I am cautiously optimistic.__
+
+I think if the convenience factor is good enough, it'll be worth the sacrifices. 
+I mean, it sounds neat being able to play a game instantly, instead of waiting for a console or Steam to startup, then buying the game, and then downloading the game, and then wait for the game to load.
+
+So when Stadia is available to try, I will absolutely try it. I'm looking forward to it.

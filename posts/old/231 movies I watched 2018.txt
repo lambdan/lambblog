@@ -1,0 +1,229 @@
+2019-01-06T14:47:00+01:00
+# Movies I Watched for the First Time in 2018
+
+I watched more movies in 2018 than I did the last 10 years combined. I'm just not a movie guy really. Atleast I wasn't. I just tend to get distracted after a while and want to do something else. So I prefer TV shows because they're usually around 20 minutes. 
+But this year I got a nice LG OLED TV which makes it really fun to watch movies on.
+
+That combined with the fact that my co-worker watches alot of movies and likes talking about them made me watch more. 
+
+Unfortunately, it wasn't really until the latter part of the year (look at the watched dates) that I really started watching alot. And those that I watched earlier in the year I can barely remember. I didn't make any notes as I had watched the movies. If I'm lucky I made one or two tweets instead, but they didn't say much. 
+So my notes are sparse to say the least. 
+
+For 2019 though, I have a note where I am writing thoughts down immediately after watching a movie, so it should be more interesting next year.
+
+I also made a Python script, [imdb_grid.py](https://gist.github.com/lambdan/403ddffa99ae3d1100fbb80bae589e34), that worked on the first try I'm proud to say, which creates this nice grid of movie posters:
+
+![Movies I Watched in 2018](https://lambdan.se/img/movies2018_alphabetical.png)
+
+(Grid updated 7 Apr 2019; sorted it, it was previously pseudorandom from the IMDB poster filenames.)
+
+-------------------------------------------
+
+# 6 Days to Air: The Making of South Park (2011)
+Watched: Feb 8
+
+Watched because the guys on [Cortex](https://www.relay.fm/cortex) mentioned it. I liked it. Really fascinating how fast they are.
+
+8/10
+
+# Star Wars: The Last Jedi (2017)
+Watched: Mar 10, Mar 31, April?
+
+It's about 1 hour too long, but I liked it anyway. It's not as bad as everyone says but it's definitely slow at times. Somehow I've managed to see it 3 times in a short period of time. 
+
+7/10
+
+# Good Morning, Vietnam (1987)
+Watched: May 9
+
+Watched to get the reference from _The Office_. And yeah, it was OK as I recall. I liked all the stuff when he was doing his job as the radio host. I did not like it when he was out doing other things.
+
+7/10
+
+# Mrs. Doubtfire (1993)
+Watched: Jun 1
+
+Now this is a funny movie. I really liked it. I remember the kitchen scene where he changes clothes back and forth. And something about wig flying out the window? It was funny.
+
+9/10
+
+# Friday (1995)
+Watched: Jun 8
+
+Watched because I wanted to see more of Ice Cube's acting, and yeah, it was OK. Some good memes and references. 
+I don't recall liking the ending. 
+BYE FELICIA!
+
+6/10
+
+# Baby Driver (2017)
+Watched: Aug 11
+
+Really cool movie. I liked all the parts about the music. The ending was kinda cheesy though, so, eh. And nice Subaru in the beginning, which was why my co-worker recommended it to me.
+
+7/10
+
+# Ready Player One (2018)
+Watched: Early October
+
+First movie I watched on my LG OLED TV, and boy did this movie suck. I hated it. It was so stupid.
+
+4/10
+
+# Jumanji: Welcome to the Jungle (2017)
+Watched: Early October
+
+I really liked it. It was fun. Ending was very cheesy but alright. Cool to see some video games. 
+
+It's a very nice looking movie. Bright and vivid colors.
+
+8/10
+
+# Blade Runner (1982)
+Watched: Oct 17
+
+This was a hella aesthetic movie. One of the best looking movies I've seen. Content wise it wasn't bad either. 
+
+7/10
+
+# Ocean's Eight (2018)
+Watched: Oct 19
+
+The opening, with Sandra Bullock being very clever, was cool. And the ending with the heist was cool and smart. But I disliked pretty much everything in the middle of the movie.
+
+6/10
+
+# Spider-Man: Homecoming (2017)
+Watched: Oct 20
+
+I really liked this movie when I watched it, giving it a 10/10 right away. But since then I can't even remember what it really was about, so I lowered my score. But yeah, great movie, really fun. Balanced between fun and serious superhero. I also really loved the Spider-Man PS4 game, so that might've had something to do with it.
+
+9/10
+
+# Long Shot (2017)
+Watched: Oct 24
+
+Neat story how _Curb Your Enthusiasm_ helped a man not be in prison for the rest of his life.
+
+7/10
+
+# Forgetting Sarah Marshall (2008)
+Watched: Nov 3
+
+I love Mila Kunis and Kristen Bell so how could I not watch this. 
+Actually, I watched it because it was recommened on [Top Four](https://www.relay.fm/topfour/43).
+
+7/10
+
+# Incredibles 2 (2018)
+Watched: Nov 3
+
+I waited so long for this and got my hopes really high up, and finally saw it. I thought it was pretty good. Not sure if it was what I had been waiting for, for 14 years, but I liked it. Not sure what they could've done better...
+
+8/10
+
+# The Way Way Back (2013)
+Watched: Nov 3
+
+This is a pleasant and nice movie. I think I might make it a point to rewatch it every summer or so. It's just nice and wholesome. Another [Top Four](https://www.relay.fm/topfour/43) recommendation. Kinda weird to see Steve Carell be an ass.
+
+7/10
+
+# Goodfellas (1990)
+Watched: Nov 4
+
+I had very high expectations for this, since I like _Sopranos_, and yeah it was good. I felt it was a bit slow and boring at times though. Very interesting that it's based on a real story. Happy to have seen it finally.
+
+8/10
+
+# Jurassic Park (1993)
+Watched: Nov 10
+
+I wrote about it here: [Jurassic Park (1993) in 4K Video Quality](https://lambdan.se/227-jurassic-park-4k) - basically, the special effects really stuck out to me. 
+> As for the movie itself, I enjoyed it! Like a 8.5/10 maybe. I would've liked more of the enjoyable ("holy heck, this is amazing") parts and less of the dinosaurs hunting people.
+
+8/10
+
+# First Blood (1982)
+Watched: Nov 11
+
+Really, really great movie. Loved every moment of Rambo being a hardcore killer. All the stuff in the jungle and with the helicopter, and blowing up the town. But then at the end it fell apart. One of the cleanest 4K resotrations I've seen.
+
+9/10
+
+# Rambo: First Blood Part II (1985)
+Watched: Nov 12
+
+Movie as a whole was worse than 1, like the first hour was terrible, but last 30 mins + ending was better.
+
+7/10
+
+# Rambo III (1988)
+Watched: Nov 14
+
+They shouldn't have made this. I can't even remember anything about it. I think this was the one where his captain was captured?
+
+4/10
+
+# The Matrix (1999)
+Watched: Nov 16
+
+This movie was a bit too over my head. I fell asleep at one point too. I should probably rewatch it. I'm not a Keanu Reeves fan.
+
+5/10
+
+# Jingle All The Way (1996)
+Watched: Nov 17
+
+Seeing Arnold in a comedy is hillarious, for the most part. 
+
+7/10
+
+# Wayne's World (1992)
+Watched: Nov 27
+
+I can see why this is a classic. Lots of fun memes, references and quotes. 90s time machine.
+
+7/10
+
+# Die Hard (1988)
+Watched: Dec 8, Dec 10, Dec 16, Dec 30
+
+Oh yeah, this is defintiively one of my new favorite movies of all time. I just love pretty much everything about it. The movie feels classy because of Hans Gruber. I love that it takes place in one building and that it's mostly about one person. Best christmas movie ever.
+
+If there is one thing I think is incredibly stupid, it's the whole feet thing. Like damn, just wrap some or clothes, cardboard, toilet paper, anything? Or take the small shoes and cut them up. Like damn.
+Oh, and Holly holding on to Hans at the end. Just stupid. 
+
+10/10
+
+# Solo (2018)
+Watched: Dec 23
+
+More or less got forced to watching it and no, I did not like it. How Hans and Chewie met was neat I guess. Very bland and mediocre otherwise. Emilia Clarke is cool though.
+
+5/10
+
+# Die Hard 2 (1990)
+Watched: Dec 24
+
+This is a hella cool movie. It's very ridiculous and over the top, but it was really fun to watch. I was laughing and thinking it's crazy. What I did not like at all was the bad guys. They were very uninteresting. The Yippie-Ki-Yay mother****er moment is fantastic. I really liked Holly in this movie too.
+
+8/10
+
+# Die Hard with a Vengeance (1995) 
+Watched: Dec 25
+
+No I did not like this at all. After 1 hour I wanted to abort. I just thought it was stupid as hell with all the Simon says crap. And I did not like Samuel L Jackson's character. He's supposed to be a bad ass. In this movie he was a wimp.
+
+5/10
+
+# The Terminator (1984)
+Watched: Dec 26
+
+In some ways I liked it alot more than Terminator 2, but then there was the Motel room scene which I really hated. Really aesthetic movie too at the club in the beginning. The police house shoot out was awesome too. As someone else said, Terminator 1 is a thriller, Terminator 2 is an action movie.
+
+9/10
+
+----------------------------
+
+Keep the change you filthy animal. And a happy new year!

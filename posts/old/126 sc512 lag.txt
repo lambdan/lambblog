@@ -1,0 +1,56 @@
+2016-07-29T18:41:00+02:00
+# Preliminary SC-512 Input Lag Testing
+
+Before we begin, the capture card I have is the _Startech PEXHDCAP60L_, but I call it _SC-512_, as that is shorter and sweeter and it is the same card as the _Micomsoft SC-512_, but without HDMI passthrough.
+
+This is the first blog post regarding the _SC-512_. This is a capture card I have recently acquired and I have some stuff to write about it. This is part 1, and it's about lag. Part 2 is gonna be a guide on how I got it working fine on Windows 10. Part 3 will probably be a final review.
+
+-------
+
+I am considering removing my _CRT_ and using the _Amarec preview_ as my new TV for retro gaming, simply to save some space.
+But one important factor to consider in such a case is input lag.
+
+Measuring this was kind of tricky. My first idea was just to split up the signal between my _CRT_ and _SC-512_, and then record it with my _iPhone's_ 240 FPS camera and play it in slow motion --- and I actually did that!
+
+![side by side lag test](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/IMG_0184.PNG)
+<p class="img-caption">Notice how the CRT is turning white but the Amarec Preview isn't. The CRT has less lag than the SC-512 in other words.</p>
+
+But I didn't really like it as it wasn't super obvious how much delay there was and I didnt' feel like doing the math. I also had problem doing this for a long time as my _Sync Strike_ seemingly doesnt like my Scart Splitter.
+
+So instead I grabbed the [_240p Test Suite_](http://junkerhq.net/xrgb/index.php/240p_test_suite) and put it on my _SD2SNES_ and then ran the _Manual Lag Tester_, with audio on and the timing random. I won't bother explaining how that works as you can read about it on [that page](http://junkerhq.net/xrgb/index.php/240p_test_suite#Manual_Lag_Test), but basically I ran it on my _CRT_, _HDTV_ and _SC-512_ (through the Amarec Preview) and after each test I ended up with a screen like this:
+
+![manual lag test results screen](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/amarec%2820160729-174941%29.PNG)
+<p class="img-caption">Manual Lag Test results screen</p>
+
+I did 5 of those tests on each device, and then calculated the average of those. Since one test is the average of 10, my test is really the average of 50 inputs, if I'm thinking straight.
+
+For each device, the _SNES_ was connected "purely", and what I mean by that is that there were no splitters or switchers involved, just the _SNES_ -> RGB CSync cable -> device.
+The one exception is of course the _SC-512_, where I require the _Sync Strike_ to essentially convert the RGB SCART to VGA. I'm not sure if the _Sync Strike_ adds a delay or not. My guess is that it does, but very very little.
+
+Another thing to think about is that I use _AmarecTV 3.10_ with the _SC-512_ to double the scan lines. This might also add some delay.
+
+
+Below is the table with the results. The general error is 1 frame, as described on the wiki page:
+
+> Of course the evaluation is dependent on reflexes and/or rhythm more than anything. The visual and audio cues are the more revealing aspects which the user should consider, of course the interactive factor can give an experienced player the hang of the system when testing it via different connections. Since a frame is around 16 ms (1000/60), that value must be considered the general error when using the test results.
+
+|Device|Frames of lag|ms of lag|
+|--------------------------|
+|CRT (15" Telefunken)|0.742 ± 1|12.37 ± 16.68|
+|SC-512 (Amarec Preview)|1.76 ± 1|29.35 ± 16.68|
+|HDTV (Samsung LE32A336)|2.442 ± 1|40.73 ± 16.68|
+
+[Raw Data](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/pexhdcpa%20lag.txt)
+
+So do these seem plausible? I think they do!
+
+If we remove 1 frame (the general error) from the _CRT_ test, we get less than zero frames of lag, which is probably true as _CRT_'s are generally considered lagless (there are some [exceptions](http://smashboards.com/threads/work-in-progress-perfect-setups-tv-monitor-console-capture-device.355292/page-7#post-21307864) though, but my _CRT_ is not one of them.)
+
+If we remove 1 frame from the _SC-512_ we get less than 1 frame, which fits in with the results I've read from other sources. We might also wanna  ± 4ms to it as that is the delay on my computer monitor (_Acer XB270HU_).
+
+And the _HDTV_ results seem fine. I can't remember where I read it, but I read somewhere that my TV is specced to have 32 ms of lag.
+
+So in essence, _CRT_ > _SC-512_ > _HDTV_.
+
+What does that mean? Well I'm gonna try playing some games through the preview and see how it goes. I have high hopes of removing the _CRT_ from my desk though.
+

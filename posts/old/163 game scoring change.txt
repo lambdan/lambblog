@@ -1,0 +1,65 @@
+2017-03-02T12:54:00+01:00
+# Changing My Game Scoring System
+
+Uptil now I have rated games on a scale from 1-5. I'm gonna switch to 1-10 as it is clear that some games I give 5/5 don't compete with other games I have given 5/5.
+
+I won't bother going back and changing my old posts (or maybe I will eventually), so here's a list of how scores have changed:
+
+[Games I Beat in 2014][2014]:
+
+- No scores given
+
+[Games I Beat in 2015][2015]:
+
+- Captain Toad Treasure Tracker: 5/5 → 8/10
+- Bioshock Infinite: 5/5 → 7.5/10
+- Half-Life: 3/5 → 6/10
+- Half-Life Blue Shift: 4/5 → 7/10
+- __GTA V: 5/5 → 10/10__
+- Bayonetta 2: 4/5 → 7/10
+- Moonwalker: 4/5 → 7/10
+- Zelda The Wind Waker HD: 4/5 → 7/10
+- Destiny: 5/5 → 8/10
+- Halo 1 (MCC): 3/5 → 7/10
+- Halo 2 (MCC): 3/5 → 5.5/10
+- Diablo 3 + RoS: 4/5 → 7.5/10
+- Banjo Kazooie: 4/5 → 7.5/10
+- Yoshi Wooly World: 3/5 → 5.5/10
+- F-ZERO (SNES): 4/5 → 7.5/10
+- Prison Architect: 4/5 → 7/10
+- Super Mario 3D World: 5/5 → 8.5/10
+- Metal Gear Zolid V Ground Zeroes: 4/5 → 6.5/10
+- GTA San Andreas (Xbox 360 remaster): 3/5 → 6/10
+- Halo 5: 3/5 → 6.5/10
+- Journey: 3/5 → 7/10
+- Fallout 4: 4/5 → 8/10
+- Undertale: 3/5 → 7/10
+- Metal Gear Solid V The Phantom Pain: 5/5 → 8.5/10
+- LEGO Star Wars The Complete Saga: 4/5 → 7.5/10
+
+[Games I Beat in 2016][2016]: 
+
+- Mega Man 3: 4/5 → 7.5/10
+- The Division: 3/5 → 6.5/10
+- GTA 4: 5/5 → 8.5/10
+- __Bloodborne: 5/5 → 10/10__
+- Firewatch: 4/5 → 7/10
+- Uncharted 4: 5/5 → 9/10
+- Donkey Kong Country: 5/5 → 9/10
+- Call of Duty Modern Warfare Remastered: 4/5 → 7.5/10
+- Call of Duty Infinite Warfare: 4/5 → 8/10
+- DOOM (2016): 4/5 → 8.5/10
+- Battlefield 1: 3/5 → 5/10
+- Titanfall 2: 4/5 → 9/10
+- Super Mario Run: 4/5 → 8/10
+
+2017 (so far):
+
+- [Terranigma][t]: 5/5 → 9/10
+- [Final Fantasy XV][ffxv]: 5/5 → 9.5/10
+
+[2014]: https://lambdan.se/index.php?entry=28-games-i-beat-2014-2014-12-29
+[2015]: https://lambdan.se/index.php?entry=54-2015games-2015-12-27
+[2016]: https://lambdan.se/index.php?entry=147-games-i-beat-2016-2016-12-29
+[t]: https://lambdan.se/index.php?entry=158-terranigma-2017-02-18
+[ffxv]: https://lambdan.se/index.php?entry=161-final-fantasy-xv-2017-02-26

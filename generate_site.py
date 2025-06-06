@@ -27,24 +27,20 @@ AUTHOR_EMAIL = 'david@lambdan.se' # these are in the footer
 AUTHOR_TWITTER = 'nadbmal' # no @
 SITE_STARTED_YEAR = 2012 # used for (c) in the footer
 
-IMAGE_SIZE_THRESHOLD = 300000 # (bytes) images smaller than this won't get a thumbnail
-THUMBNAIL_MAX_RESOLUTION = 1000,1000 # max resolution for thumbnails in each axis (aspect ratio is preserved)
-
 POSTS_DIR = './posts/'
-IMAGES_FOLDER = './images/'
-THUMBS_FOLDER = './images/thumbs/'
 INCLUDE_FOLDER = './includes/'
 OTHER_PAGES_FOLDER = './pages/'
 VALID_POST_EXTENSIONS = ['.txt', '.text.', '.md', '.markdown']
 
 STATS_WHITELISTED_CHARACTERS = set('abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ åäö ÅÄÖ')
+
+IMAGE_PREFIX = 'https://lambblog.s3.eu-north-1.amazonaws.com/'
 #####################################################################
 
 # handle arguments
 parser = ArgumentParser()
 parser.add_argument("--output-folder", '-o', action='store', dest='folder', help='generated website appears here (default: ./_output/')
 parser.add_argument("--root-url", '-url', action='store', dest='url', help='root url of website (example: https://lambdan.se/blog/)', required=True)
-parser.add_argument('--regenerate-thumbs', action="store_true", dest='regenThumbs', help="force re-generation of thumbnails", default=False)
 parser.add_argument('--verbose', '-v', action="store_true", dest='verbose', help="print alot of info", default=False)
 parser.add_argument('--skip-confirm', '-y', action="store_true", dest='skip_confrm', help="skip confirmation", default=False)
 parser.add_argument('--keep-old', '-k', action="store_true", dest='keep_old', help="keep old generation", default=False)
@@ -66,6 +62,19 @@ if not parsed.skip_confrm:
 		sys.exit(1)
 
 CSS_URL = SITE_ROOT_URL + CSS_FILE
+
+def md5str(text: str) -> str:
+	# returns md5 hash of a string
+	return hashlib.md5(text.encode('utf8')).hexdigest().lower()
+
+def mirrorImage(sourceUrl) -> str:
+	# TODO downloads source, uploads it to S3, and returns url
+	ext = os.path.splitext(sourceUrl)[1].lower()
+	if "_" in ext:
+		# remove weird extensions like .jpg_large
+		ext = ext.split("_")[0]
+	dest = md5str(sourceUrl) + ext
+	return IMAGE_PREFIX + dest
 
 def saveHTML(code, filepath):
 	try:
@@ -130,16 +139,18 @@ def generateFooter():
 
 if not parsed.keep_old:
 	if os.path.isdir(SITE_ROOT):
-		shutil.rmtree(SITE_ROOT)
+		# delete all files in SITE_ROOT, but not the actual folder
+		for f in os.listdir(SITE_ROOT):
+			filepath = os.path.join(SITE_ROOT, f)
+			if os.path.isfile(filepath):
+				if parsed.verbose: print("Deleting old file:", filepath)
+				os.remove(filepath)
+			elif os.path.isdir(filepath):
+				if parsed.verbose: print("Deleting old folder:", filepath)
+				shutil.rmtree(filepath)
 		os.makedirs(SITE_ROOT)
 	elif not os.path.isdir(SITE_ROOT):
 		os.makedirs(SITE_ROOT)
-
-	if not os.path.isdir(IMAGES_FOLDER):
-		os.makedirs(IMAGES_FOLDER)
-
-	if not os.path.isdir(THUMBS_FOLDER):
-		os.makedirs(THUMBS_FOLDER)
 
 input_files = []
 posts = []
@@ -212,105 +223,13 @@ for post in input_files: # post is fullpath to the text file
 	if len(images) > 0:
 		for image in images:
 			imgurl = image['src']
-			ext = os.path.splitext(imgurl)[1].lower()
+			mirrored = mirrorImage(imgurl)
 
-			# remove twitters weird :orig :large extensions
-			if 'jpeg:' in ext or 'jpg:' in ext:
-				ext = ".jpg"
-				if parsed.verbose: print ('correcting extension of', imgurl, 'to', ext)
-			elif 'png:' in ext:
-				ext = ".png"
-				if parsed.verbose: print ('correcting extension of', imgurl, 'to', ext)
+			# TODO make thumbnail?
 
-			# cursed old puush images
-			if ext == '':
-				if parsed.verbose: print (imgurl, "has no extension. assuming jpg")
-				ext = ".jpg"
-
-			# add a dot in case the extension doesnt come with one
-			if '.' not in ext:
-				ext = "." + ext
-
-			md5 = hashlib.md5(imgurl.encode("utf8")).hexdigest().lower()
-			mirror_img_filename = md5 + ext
-			mirror_img_filepath = os.path.join(IMAGES_FOLDER, mirror_img_filename)
-			if os.path.isfile(mirror_img_filepath):
-				if parsed.verbose: print ("Already mirrored:", imgurl, "(" + str(mirror_img_filepath) + ")")
-				destination = os.path.join(post_root, mirror_img_filename)
-				shutil.copy(mirror_img_filepath, destination)
-			else:
-				if parsed.verbose: print ("Picture not mirrored:", imgurl)
-				if parsed.verbose: print ("Attempting to mirror", imgurl, " --> ", mirror_img_filepath)
-				f = open(mirror_img_filepath, 'wb')
-				f.write(requests.get(imgurl).content)
-				f.close()
-				#f = open(mirror_img_filepath, 'r')
-				#if "puush could not be found" in f.read().lower(): # this is broken with python3
-				#	print ("error: image download failed: puush could not be found")
-				#	f.close()
-				#	os.remove(mirror_img_filepath)
-
-				if not os.path.isfile(mirror_img_filepath):
-					print ("ERROR WITH MIRRORING: Downloading image seems to have failed")
-					print ("Exiting...")
-					sys.exit(1)
-				else:
-					if parsed.verbose: print ("Success downloading image", imgurl, "-->", mirror_img_filepath)
-					destination = os.path.join(post_root, mirror_img_filename)
-					shutil.copy(mirror_img_filepath, destination)
-
-			mirror_img_size = os.path.getsize(mirror_img_filepath)
-			mirror_img_filename_thumb = md5 + ".thumb.jpg"
-			mirror_img_filepath_thumb = os.path.join(THUMBS_FOLDER, mirror_img_filename_thumb)
-
-			if ext == ".gif":
-				if parsed.verbose: print ('Skipping thumbnail for gif:', imgurl)
-				if os.path.isfile(mirror_img_filepath_thumb):
-					if parsed.verbose: print ('Deleting old GIF thumbnail because its not needed anymore:', mirror_img_filepath_thumb)
-					os.remove(mirror_img_filepath_thumb)
-				image['src'] = mirror_img_filename
-
-			elif mirror_img_size < IMAGE_SIZE_THRESHOLD:
-				if parsed.verbose: ('Skipping thumbnail because original is small enough:', imgurl, " - size:", mirror_img_size)
-				if os.path.isfile(mirror_img_filepath_thumb):
-					if parsed.verbose: print ('Deleting old thumbnail because its not needed anymore (original is already small enough):', mirror_img_filepath_thumb)
-					os.remove(mirror_img_filepath_thumb)
-				image['src'] = mirror_img_filename
-
-			else:
-				if os.path.isfile(mirror_img_filepath): # Check if mirror image exists, we generate thumbs from that so we need it
-
-					thumb_destination = os.path.join(post_root, mirror_img_filename_thumb) # Destination to where thumb is served for the website
-
-					if not os.path.isfile(mirror_img_filepath_thumb) or parsed.regenThumbs: # Thumbnail does not exist, we need to re-generate it OR force regen is on
-						if parsed.verbose: print ("Generating thumbnail for", imgurl, "-->", mirror_img_filepath_thumb)
-
-						im = Image.open(mirror_img_filepath) # Source image is the mirrored image
-						if not im.mode == 'RGB':
-							im = im.convert('RGB')
-						im.thumbnail((THUMBNAIL_MAX_RESOLUTION))
-						im.save(mirror_img_filepath_thumb, "JPEG")
-						if not os.path.isfile(mirror_img_filepath_thumb):
-							print ("ERROR WITH THUMBNAIL: creating thumbnail seems to have failed")
-							print ("Exiting...")
-							sys.exit(1)
-					else:
-						if parsed.verbose: print("Skipping thumbnail generation for", imgurl)
-
-					if parsed.verbose: print("Copying thumbnail", mirror_img_filepath_thumb, "-->", thumb_destination)
-					if not os.path.isfile(thumb_destination):
-						shutil.copy(mirror_img_filepath_thumb, thumb_destination) # Copy thumb to website
-					else:
-						if parsed.verbose: print("Nevermind... thumb already in destination")
-					image['src'] = mirror_img_filename_thumb
-
-				else:
-					print ("ERROR WITH THUMBNAIL: original file hasnt been downloaded so i cant create a thumbnail")
-					sys.exit(1)
-
-			image['src'] = SITE_ROOT_URL + post_url + '/' + image['src'] # disgusting hack for getting full urls in RSS
+			image['src'] = mirrored # TODO replace with thumbnail
 			image_urls.append(image['src']) # this will be used for front page
-			link_to_fullres = soup.new_tag('a', href=SITE_ROOT_URL + post_url + '/' + mirror_img_filename) # make the thumb clickable to get fullres
+			link_to_fullres = soup.new_tag('a', href=mirrored) # make the thumb clickable to get fullres
 			image.wrap(link_to_fullres)
 
 	html_output += str(soup)

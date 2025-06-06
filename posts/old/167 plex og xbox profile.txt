@@ -1,0 +1,93 @@
+2017-03-17T14:40:00+01:00
+# Plex Profile for Original Xbox running XBMC
+
+If you have a Plex server running on your network, with DLNA activated, and you have a Original Xbox running XBMC4Xbox, you can actually watch Plex from there.
+
+Here's the profile I cooked up:
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- Save this as "OG Xbox.xml" and put it in the "C:\Users\username\AppData\Local\Plex Media Server\Profiles\" folder (create the Profiles folder if one does not exist -->
+	<!-- Tested with XBMC4Xbox 3.5.3 and Plex Media Server 1.4.3.3433 -->
+	<!-- Twitter: @djs__ -->
+
+	<Client name="OG Xbox">
+	  <Identification>
+		<Header name="User-Agent" substring="(Xbox; http://www.xbmc.org)" />
+	  </Identification>
+	  
+	  
+	<TranscodeTargets>
+		<VideoProfile container="mkv" codec="h264" audioCodec="ac3">
+			<Setting name="VideoEncodeFlags" value="-profile:v baseline -x264opts level=3.0:no-cabac=1" />
+		</VideoProfile>
+		<MusicProfile container="mp3" codec="mp3" />
+		<PhotoProfile container="jpeg" />
+	</TranscodeTargets>
+
+	<DirectPlayProfiles>
+		<VideoProfile container="*" codec="mpeg4" audioCodec="ac3,mp3" />
+		<MusicProfile container="*" codec="mp3,aac,wmav2,pcm,ogg" />
+		<PhotoProfile container="jpeg,png,gif,bmp,tiff" />
+	</DirectPlayProfiles>
+
+	<CodecProfiles>
+		<VideoCodec name="h264">
+		<Limitations>
+			<UpperBound name="video.width" value="720" isRequired="true" />
+			<UpperBound name="video.height" value="480" isRequired="true" />
+			<UpperBound name="video.level" value="30" isRequired="true" />
+		</Limitations>
+		</VideoCodec>
+		
+		<VideoCodec name="mpeg4"> <!-- og xbox is actually quite capable of 1280x720 H263 -->
+		<Limitations>
+			<UpperBound name="video.width" value="1280" isRequired="true" />
+			<UpperBound name="video.height" value="720" isRequired="true" />
+		</Limitations>
+			
+		<VideoAudioCodec name="mp3">
+		  <Limitations>
+			<UpperBound name="audio.channels" value="2" isRequired="true" />
+		  </Limitations>
+		</VideoAudioCodec>
+		
+		<VideoAudioCodec name="ac3">
+		  <Limitations>
+			<UpperBound name="audio.channels" value="6" />
+		  </Limitations>
+		</VideoAudioCodec>
+
+		</VideoCodec>	
+	</CodecProfiles>
+
+	</Client>
+	
+To use it, save it as "OG Xbox.xml" and put it in `C:\Users\username\AppData\Local\Plex Media Server\Profiles\` (on Windows, figure it out on your own on other OSes) (create the Profiles folder if it does not exist.) 
+
+Let me run down quickly what it does:
+
+- Transcodes unsupported video to a Matroska container, with H264 video and AC3 Audio
+	- Matroska because XBMC supports it, and Matroska can contain anything, so it's just easier
+	- I would prefer to use MPEG4 instead of H264, but Plex's transcoder only encodes H264 and HEVC
+	- AC3 Audio because it's very easy for the Intel Pentium III to decode, or even better, you can pass it through to your receiver/soundbar
+	- H264 video is profile baseline, level 3.0 and has no cabac. This should fit the orange box for 720x480 on the [XBMC4Xbox Wiki](http://www.xbmc4xbox.org.uk/wiki/XBMC_Features_and_Supported_Formats#Xbox_supported_video_formats_and_resolutions)
+- Direct plays MPEG4 (XVID) with AC3 or MP3 Audio
+	- AAC audio could also work probably, but apparently that is kind of intense on the Pentium III to decode
+- Maximum resolution of H264 is 720x480, at Level 3.0
+	- I didn't wanna go down to 480x576 (which is green/100% supported on the [XBMC4Xbox Wiki](http://www.xbmc4xbox.org.uk/wiki/XBMC_Features_and_Supported_Formats#Xbox_supported_video_formats_and_resolutions)) but that seemed to be very low resolution
+- Maximum resolution of MPEG4 is 1280x720
+	- Which the Xbox actually handles quite well. As well as it handles H264 at 720x480
+	- Unfortunately, Plex does not encode MPEG4 so we cannot use this as a transcode target :(
+
+Other than that, pretty much all music formats and image formats are natively supported
+
+Known issues:
+	- Seeking does not work (I've tried a bunch of settings and suggestions I found online but nothing worked)
+	- All subtitles are burned in, even though XBMC can use SRT files and probably VOBSUB too. I tried passing through SRT files but XBMC didn't seem to pick them up (I'm guessing it has to do with XBMC4Xbox's DLNA implementation)
+
+Enjoy... I guess.
+
+I don't really recommend consuming media on the OG Xbox nowadays, as there are much better alternatives. But it's neat nonetheless to still atleast be able to use the OG Xbox for it.
+	
+
+	

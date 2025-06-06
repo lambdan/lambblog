@@ -1,0 +1,21 @@
+2016-01-17T21:20:00+01:00
+# Pretty much everything you need to know about the Famicom AV
+http://nerdlypleasures.blogspot.se/2014/10/famicom-av-issues-and-solutions.html
+
+Lots of good information on that page. I learned that my power supply isn't ideal for example:
+
+> The proper Famicom or Famicom AV power supply adapter is rated for 10v DC, 850mA, center tip negative.
+
+Mine is 9V, 1500 mA. Seems to work fine though. We'll see how it goes when I get my Everdrive.
+
+I was very disappointed to learn that the NES Zapper does not work with a Famicom AV though:
+
+> While the Famicom AV's controller sockets look identical to the NES's sockets, there is a difference between them.  The NES connects +5v, Ground, Clock, Latch/Output, D0, D3 & D4 on both ports.  The Famicom AV's ports leave out D3 and D4.  The standard controller only uses D0.  The Zapper (including workalikes like the Konami Laser Scope), Power Pad, Arkanoid VAUS Controller all rely on D3 and D4.
+
+However, the pins are present in the Famicom expansion port and there is a easy mod you can do to fix it:
+![mod](http://lambdan.se/img/famicommod.jpg)
+
+I might look into doing that (doesn't look complicated) if I wanna play Duck Hunt or Wild Gunman.
+
+I also learned that it outputs the same mono audio over both the red and white audio jacks, which is great because then I won't have to fiddle with that to get stereo sound on my stream.
+

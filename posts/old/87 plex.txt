@@ -1,0 +1,121 @@
+2016-04-05T12:13:00+02:00
+# Plex Pass Review
+
+As a big time Plex user I decided to finally get a month of Plex Pass to see how it is.
+
+Let's look at what you get first, and then we'll talk about some of them individually.
+
+Taken from [here](https://plex.tv/subscription/welcome) and [here](https://support.plex.tv/hc/en-us/articles/201751006-Plex-Pass-Feature-Overview)::
+
+- Trailers & Extras
+- Mobile Sync
+- Camera Upload
+- Cloud Sync
+- Gracenote Music Magic
+- Vevo Music Videos
+- Plex Home
+- Early Access
+- Free Apps
+- Plex Pass Members Only Forums
+- Supporting The Plex Team (unlisted)
+
+
+Let's go through a few of these and what I think of them.
+
+## The Features I Have No Use For
+
+Let's start with these.
+
+#### Trailers & Extras
+
+This feature automatically downloads trailers and extra material (such as interviews) to movies in your library, automatically.
+
+I haven't really figured out how to use it though as I can't seem to find the material, but honestly I don't care that much about Trailers or Extras.
+
+#### Camera Upload
+
+This feature would basically sync all the photos on your phone/computer/tablet to your Plex Server, which you could then use as a storage provider for your feature.
+
+I am very happy with iCloud Photo Library myself so I haven't tried it.
+
+#### Vevo Music Videos
+
+This feature would automatically download music videos for your music library, but it's not available everywhere (like Sweden), so I haven't been able to try it.
+
+#### Plex Home
+
+As I understand, the idea with Plex Home is that you can create "sub-accounts" of your main account. Like, let's say I have an account. Then I can create another account under my main account for my parents or a friend or something.
+
+Or I can also just create another "main account" for someone and invite them to my Plex Home, would have the same effect.
+
+The main idea behind this is that you can set up restrictions on which libraries that user can access. So if you have kids you could set up an account for them that only grants access to the Cartoons library for instance.
+
+## The Features I Might Use
+
+Obviously some of the items on the list are self-explanatory and I won't go into much detail on them: _Free Apps_ and _Plex Pass Members Only Forums_. These are nice bonuses to have.
+
+#### Mobile Sync
+
+This is probably the 2nd best feature for me.
+Let's say you travel alot with a tablet or phone, and you don't always have an internet connection available or you have limited bandwidth. Wouldn't it be nice if you could easily in advance sync Movies and TV Shows to your device so you could watch them offline? And this is exactly what Mobile Sync does, and it's very well implemented.
+
+First off, it's very easy to sync stuff. If you're on a Plex app you can just navigate to what movie/TV Show/TV Show Season/TV Episode you want to sync and just hit "sync", then you can pick what quality you want and you're done. Now you just wait.
+
+If you pick a season that you've partially watched, let's say you're watching Game of Thrones Season 3 and you have watched 5 episodes out of it, you can tick a little box to only sync unwatched episodes.
+
+![syncing only unwanted episodes in the web interface](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/plexpass/sync_unwatched_only.png)
+
+<p class="img-caption">Syncing only unwatched episodes in the Web Interface</p>
+
+Ofcourse when you return online, it will sync the watched status with your server, so the episodes you watched offline will show up as watched when you go online again.
+
+You can also do all this from a web browser on your PC and use filters that would for example do: "only sync movies made in 1990 that I haven't watched", and then pick your sync target and it will then start converting the media to a suitable format and then upload it your device when available.
+
+![choosing destiination](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/plexpass/sync_destination.png)
+
+<p class="img-caption">Choosing sync destination in the Web Interface</p>
+
+The syncing is very well implemented in the Web Interface aswell, as you can see progress and what content is synced to what device.
+
+![sync in progress](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/plexpass/during%20sync.png)
+
+<p class="img-caption">Sync in progress. You can see how it's going, what quality it's syncing for, and what is waiting.</p>
+
+![synced](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/plexpass/synced.png)
+
+<p class="img-caption">You can very easily see what content have been synced to what device.</p>
+
+I think the best thing about Mobile Sync is that it works with music too for your phone. So if you don't wanna use Spotify or iTunes Match you can just put your mp3s into Plex and then sync them to your phone for offline listening.
+
+#### Cloud Sync
+
+This kind of a neat feature. As with Mobile Sync, you hit Sync and select a destination which in this case is Cloud Sync (where you have set up a cloud host in your Plex Account, in my case its Dropbox). Your Plex Server will then convert the video to a suitable format and then upload it into Dropbox.
+
+If your Plex Server then goes offline, you can instead pick Cloud Sync as your server in your Plex App and you can then stream the synced content from Dropbox or wherever you uploaded it.
+
+The file does appear in Dropbox/Apps/PlexCloudSync/, so you can watch on your PC with a Dropbox client, but it's deep in folders and has an arbitrary file name so it's not super convenient.
+
+#### Gracenote Music Magic
+
+If you have a music library setup in Plex, it will use Gracenote to find out what song it is by "listening" to it so your music can be properly labeled even if your ID3 tags are messed up/non-existent. It will also download information about the artist, the album and so on.
+
+#### Early Access
+
+Early Access is just a fancy name for beta and is actually the reason why I got Plex Pass. I wanted to try out Plex Media Player, which is currently exclusive as a Plex Pass Preview, because I wanted to be able to direct play HEVC encoded videos on my Mac Mini, and indeed, PMP does do that. PMP was disappointing in many other ways though so I won't be using it for a while.
+
+So currently Early Access is kind of disappointing, but it might be good some days. I believe Chromecast support was exclusive to Early Access in the beginning.
+
+#### Supporting The Team
+
+This is the number 1 feature for me, if I were to stay a Plex Pass subscriber. I love Plex and I have used it for years now so I want to support the development team behind it.
+
+## Conclusion
+
+So, do I intend to stay a Plex Pass subscriber? Well. I'm not sure.
+
+While all these extra features are nice, they're not super necessary for me. If I was traveling more I would probably not hesitate to stay a Plex Pass member just for Mobile Sync.
+
+I'm not a fan of subscription services though so I don't wanna keep paying monthly or annually. When I have a bit more money to blow, I will probably get a lifetime subscription, just because I hate subscription fees and I want to support the development team.
+
+On the other hand it's a lot of money for a lifetime subscription and there are probably more necessary things I could buy for that. We'll see what I end up doing. I'm really not sure.
+

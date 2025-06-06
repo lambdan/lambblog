@@ -1,0 +1,59 @@
+2016-09-02T17:53:00+02:00
+# NESRGB
+
+Finally got my NES, well AV Famicom actually, RGB modded using the NESRGB chip. 
+
+![mm3](http://lambdan.se/d/NESRGBpalettes/1b.PNG)
+<p class="img-caption">Hard to believe this screenshot is not from an emulator</p>
+
+Getting this done was honestly not that hard. 
+First I ordered the chip from Tim's own webshop: http://etim.net.au/shop/shop.php
+
+About a week later I got it in the mail. Then I asked [_Japanspel_](http://www.japanspel.se/index.html) - a Swedish business that imports alot of retro games from Japan and also performs modding services, to install it for me.
+
+I sent it in to them and a while later, I got it back! The mod was very nicely done. My AV Famicom was in pretty damn great condition when I sent it in, and it returned that way too, except with a palette switch at the back. 
+The guy who did the mod actually emailed me and asked if I wanted the palette switch or not, so if you want your AVFC to look stock you can do it that way too.
+
+As I did the mod on an AV Famicom I can just use the very same SNES CSYNC RGB cable I bought from http://retrogamingcables.co.uk/ for this console as well. I believe if you perform the NESRGB mod on a front-loader NES you will need to use NeoGeo RGB cables?
+
+Anyway, now that I got it I have ofcourse recorded a bunch of test footage and I have also compared the palettes.
+
+## Palette Comparison
+
+Just like the pages I have for [Genesis Composite/Svideo/RGB Comparison][genny] and [Cheap RGB Cable vs More Expensive RGB Cable][cheapy] I have now set up a page where you can compare the NESRGB palettes.
+
+You can find it here: [NESRGB Palettes Comparison][palettes]
+
+For now they are called Palette A, B and C. I wanted to call them Top, Middle and Bottom first, as those are the positions on the physical palette switch, but that got messy. 
+
+From [Tim's website][timmy]:
+
+> User selectable palette. Three palettes available, I call them Natural, Improved, and Garish. The Natural palette has the same colours as the normal composite video output. It comes from the Nintendulator NES emulator. Improved is from the FCEUX emulator. There is more variety in the colours. Some games look significantly better with this one. Garish is also from the Nintendulator but it is a palette from the Nintendo Playchoice PPU. It's very colourful indeed. More of a curiosity than anything else. There is a fourth choice - if no palette is selected the NESRGB board will 'turn off' and just pass data through. This way the NES will output composite video as if the board was not installed at all.
+
+I'm pretty sure then A is Garish, B is Natural, and C is Improved. I prefer C for now but I think I might end up using B later on.
+
+## Gameplay Footage
+
+I recorded a few different games (using my Everdrive), and I tried different palettes. As I prefer Palette C at the moment, most of the games are recorded with that.
+
+Ofcourse YouTube re-encodes everything you upload to them, so quality isn't lossless but you get the idea. It's pretty damn nice.
+
+Palette A:
+- [Super C](https://www.youtube.com/watch?v=TLABi96Wi2c)
+
+Palette B:
+- [Castlevania](https://www.youtube.com/watch?v=HzLFTprfDos)
+
+Palette C:
+- [Kung Fu](https://www.youtube.com/watch?v=9XLsXE4_vs0)
+- [Mega Man 3](https://www.youtube.com/watch?v=aDJr4Kqoru4)
+- [Mr Gimmick](https://www.youtube.com/watch?v=gp0hIPavZqg)
+- [Ninja Gaiden](https://www.youtube.com/watch?v=RO0R5fqQteI)
+- [Simpsons - Bart Vs The Space Mutants](https://www.youtube.com/watch?v=rR6g65Xt6fk)
+
+Recording setup: Console --> Powered SCART Splitter --> Sync Strike --> PEXHDCAP60L (SC512) --> AmarecTV
+
+[genny]: http://lambdan.se/d/GenesisSvideoRGBComparison/
+[cheapy]: http://lambdan.se/d/CheapCableVSExpensiveCable/
+[palettes]: http://lambdan.se/d/NESRGBpalettes/
+[timmy]: http://etim.net.au/nesrgb/

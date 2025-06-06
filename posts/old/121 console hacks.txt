@@ -1,0 +1,92 @@
+2016-06-23T18:36:00+02:00
+# On Console Hacking...
+
+Yesterday I followed a guide and completely hacked my New 3DS (XL) and that marks my 9th console I've had that I've installed hacks on:
+
+- Multiple OG Xbox's (Modchips and Softmods)
+- Xbox 360 (flashed drive to play burned discs)
+- PS1 (Modchipped)
+- PS2 (Free McBoot)
+- Wii (Homebrew)
+- Wii U (technically I haven't installed any hack on it (web browser exploit), but I still consider it hacked)
+- Sega Dreamcast (technically no installed hack (you burn CD-R's in a particular way), but I still consider it hacked)
+- Sega Mega Drive/Genesis (can toggle region and video mode using [physical switches][smdmod], I use two switches though (one for NTSC/PAL, one for JAP/ENG))
+- Nintendo New 3DS XL (A9HL, Luma CFW)
+
+Honorable mention: Gamecube that we installed a ViperGC into circa 2005, but had no effect (the Cube kept on working fine but it was like the chip wasn't there (also, when we tried to flash the chip using the printer cable, the chip wasn't recognized by the PC either))
+
+Why do I do this? There's multiple reasons:
+
+- Capability to use/run more stuff
+- Capability to get more stuff
+- The people figuring these hacks out
+
+The first two points are nice, being able to play out-of-region games, getting stuff for free, sure.
+
+For the 3DS I actually had a semi-legitimate reason why: I digitally bought Animal Crossing New Leaf on my 2DS. I then sold the 2DS and to get it on my New 3DS I have to re-buy it, which I don't want to. Please Nintendo, get better at online services. Tie my purchases to some account that I can re-download how much I want, and also don't make me have to call you in order to unlink a NNID from a console I no longer have. Become more modern with the Internet stuff, please.
+
+But it's the last point that I really like: the people that figure these hacks out.
+
+How did someone figure out what points to solder on a Xbox motherboard and what chip that needs to go between there?
+
+How the hell did someone figure out you can write a malicious Twilight Princess save file that overflows and runs unsigned code from a SD card?
+
+How the hell did someone then figure out you can also do it in other games, such as most of the LEGO games?
+
+How did someone figure out you can burn CD-R's in a certain format that will cause the MIL-CD module of a Dreamcast to overflow and run games from burned discs?
+
+How did someone figure out you can exploit WebKit to run a seemingly malicious media file on a Wii U to run unsigned code from a SD card?
+
+How creative do you have to be to figure out that you can run low level ARM code on a coldboot on a 3DS by first downgrading it to 9.2, then downgrading it to 2.1 (which New 3DS never was susposed to run) to get a console-specific key that you can then use to install CFW which you can then update to the latest OS without bricking?
+
+It's these things that fascinate me. These people that figure all this out is awesome to me. I would love to be one of these exploit finders.
+
+Whenever I can, I try my best to understand how these exploits work. Most of the time I don't get them. Even though I am fairly good at programming and I have great knowledge of tech in general, I don't understand memory corruption, overflows (well I kinda get overflows, but I don't understand how they can be used to execute arbitrary code) and other things.
+
+One exploit I kind of understand is the Free McBoot PS2 stuff, using 007 Agent Under Fire as an entrypoint. The game basically keeps its levels in separate '.exe' files (it's not literally the Windows executable files, but think of them as such), so all you do is replace one of these levels '.exe' files with a file browser, then you get to a certain part of the game and you swap out the original game disc with a burned game disc (that has this level .exe replaced) as fast as you can and if you do it right when you start the next level it will start the file browser, from which you can run the Free McBoot installer from a USB stick, which installs stuff on a certain part of the Memory Card where the PS2 will look for system updates (which is what is being exploited.)
+
+One of my favorite reads is geohot's [writeup][geohot] of the evasi0n 7 jailbreak. While it's not about console hacking, I am equally fascinated by iOS jailbreaking. Geohot wrote it as if he was the jailbreak itself and it's quite amusing and easy to understand.
+
+## My 3DS Hacking Experience
+
+While I was hacking my 3DS I was thinking how the hell someone figured it out, because the process was so ridiculous (100s of steps), but it worked perfectly in the end.
+
+I wanted to write a summary of the process here, but I couldn't do it. There is no way in hell to summarize that [guide][guide]. It involved cloning back and forth, downgrading and upgrading, exploits here and there, console unique keys, yadda yadda.
+It was a really fun and exciting process but I cannot summarize it. Just read that guide and get a feel for it, and then thank god we have people that are this smart in this world.
+
+It looked very intimidating (because of all the steps) and took a long time (because of all the cloning), but honestly it wasn't that hard. I just made sure to read everything twice and think twice. I even had to improvise some parts as I only had a 4 GB SD card that filled up quickly with 1.8 GB NAND backups.
+
+The end result was great though and I totally recommend it. I didn't lose _any_ functionality.
+
+Here are some random pictures I took during the procedure, with some explanations:
+
+![bla](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/121/1.jpg)
+<p class="img-caption">First picture I took. It was after running the WebKit exploit on my stock 9.4 OS. Absolutely nothing special about it. Really.</p>
+
+![bla2](http://puu.sh/pDiGK/4d36e8a67d.jpg)
+<p class="img-caption">OoT 3D Hax successfully installed. Now my OoT 3D cartridge has a save file on it, which I can use to launch Homebrew on any OS.</p>
+
+![bla3](http://puu.sh/pDiMc/d30da42d31.jpg)
+<p class="img-caption">One of the many NAND dumps. It was these that made the procedure so long, but safe.</p>
+
+![bla4](http://puu.sh/pDiQK/1fdbb00f22.jpg)
+<p class="img-caption">I believe this was during the downgrade to 2.1.0, which New 3DS was never susposed to run.</p>
+
+![bla5](http://puu.sh/pDiV9/ab9141d878.jpg)
+<p class="img-caption">OTPHelper finished. I got the sense that this was the most "risky" part of the whole thing, so after this I felt that I was in the clear.</p>
+
+![bla6](http://puu.sh/pDiY5/427c644bd0.jpg)
+<p class="img-caption">Everything done and working. Trying out a game on the 3DS that I always wanted to try on it. Also watching the Belgium-Sweden match in the background, which I won some money on :)</p>
+
+For the record, I ordered a 32 GB SD Card today, it's working that good.
+
+------
+
+That's pretty much it. I was expecting this post to be longer as I was planning on summarizing the 3DS hacking procedure, but since I couldn't it ended up pretty short.
+
+Sorry I haven't blogged much lately. I've been working full-time and also further obsessed over _Friends_, I am in the process of importing all the DVDs from the states (I'm importing them two at a time to avoid import taxes). I also started playing Overwatch with a friend and that's pretty fun. I still don't like that game officially, but it's fun to play with friends.
+
+[smdmod]: https://mdpal60.net/regionmod "Mega Drive Single-Switch Region Mod"
+[geohot]: http://geohot.com/e7writeup.html
+[guide]: https://github.com/Plailect/Guide/wiki
+

@@ -1,0 +1,149 @@
+2017-02-18T17:33:00+01:00
+# Game Beaten: Terranigma 
+
+I rarely _really_ get into a game, but when I do I love those games, and one of these games is Terranigma, released in 1995 for the Japanese Super Famicom and in 1996 for the European Super Nintendo. It was not released in North America, which is why I believe this game is a bit unknown in mainstream circles. 
+
+![title screen](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/Terranigma/amarec%2820170214-120156%29.JPEG)
+
+I don't think it's been re-released on Virtual Console or other such platforms either.
+Personally I played the European version of the game on my SD2SNES in my Super Famicom. As my console is NTSC the game was sped up to fullspeed despite being a PAL 50Hz title. Anyway, it worked great.
+
+There is also a "NTSC Fix" patch, but I didn't play that version for long as I [discovered](https://www.youtube.com/watch?v=S_EQsbNaYEs) the menu was very buggy.
+
+So how did I hear of this game? 
+It was sometime in like 2008 or 2009, somewhere around there. I had just joined Facebook, and as all new Facebook members that are around 13 years old, you add literally everyone you ever heard of as friends.
+
+So I did, and I added one of my brothers friends. Eventually he posted a bunch of stuff about games and retro games. I think he posted on Facebook something like _"What is a man?"_, to which I commented _"A miserable little pile of secrets."_ and he replied back something like _"I like you, we will be good friends."_ 
+
+A few years later, I think around 2010-2011 we chatted privately about speedrunning and such things. I mentioned I had imported a NTSC N64 and was thinking of getting a NTSC SNES so we talked about stepdown converters and such. 
+Sometime after that, he mentioned that he had bought Terranigma, a game that I had never heard of. I asked what kind of game it was, and he said it was a very underrated RPG for the Super Nintendo. As I didn't like those games, I just ignored it.
+
+So here we are, a few years later. I was browsing through the roms on my SD2SNES one day as I was semi bored, and I found the "Terranigma NTSC Fix" ROM, and I wanted to test it to make sure it worked. But as I said earlier I noticed something wrong with the menu, so I played up to the same point in the European ROM and the menu issues weren't there. That day, I was also feeling like casually playing some SNES games. I had earlier that day played _Super Mario Kart_ for my first time, so I decided to play Terranigma a little further.
+
+Getting into Terranigma was very easy. The game is very straightforward in the beginning. You basically talk to some people, then open a box (which also turns out to be your menu system), and then get told to go and defeat the monsters in 5 Towers.
+
+![end of a tower](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/Terranigma/amarec%2820170211-203101%29.JPEG)
+
+The first tower isn't a problem, but already around Tower 2 or 3 (I can't remember which) you will wanna bring out the walkthrough. I used the one over at [Thonky](http://www.thonky.com/terranigma/). I don't think I could ever beat this game unless I had a walkthrough. There is a lot of non obvious stuff.
+
+It was in Tower 2 or 3 that you had to push some statues, and I didn't even realize you could push objects thing game. 
+
+Then in Tower 4 or 5, I couldn't even enter the Tower. I got in and but instantly got knocked out. Well as the walkthrough will tell you, you will have to go back to town and talk to someone, then sleep, and then talk to that person again and you get a cape that will let you enter the Tower without being knocked out.
+
+So yeah, use a walkthrough. It will make your life a whole lot easier. Does it count beating a game if you use a walkthrough? I don't know. I would say so. I had more fun using a walkthrough than not using one. Even if you could figure out what to do now during the linear parts, later on in the game it's gonna become very open and then you would have absolutely no idea what to do without a walkthrough.
+
+Anyway, after you have beaten the 5 Towers, the real game begins.
+
+![chapter 2](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/Terranigma/amarec%2820170212-002005%29.JPEG)
+
+Basically, the story is kind of involved and weird so I won't bother to even try explaining it. But to put simply, you need to re-create the world as we know it today. 
+And I think this is a really cute and fun idea for a story. To do this, we will defeat evil bosses and parasites, free birds, create towns and make the people invent stuff.
+
+First we resurrect all the flowers and green stuff.
+
+![flower ressurected](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/Terranigma/amarec%2820170212-143854%29.JPEG)
+<p class="img-caption">Hmm... this kind of reminds me of a pretty new game...</p>
+
+![meat eating flower](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/Terranigma/amarec%2820170212-144746%29.JPEG)
+
+Then we help the birds:
+
+![birds helped](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/Terranigma/amarec%2820170212-151335%29.JPEG)
+
+![on behalf of all birds](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/Terranigma/amarec%2820170212-151506%29.JPEG)
+
+Just imagine looking at these nice birds, and being able to talk to them, while hearing this [tune](https://www.youtube.com/watch?v=2sUJYtmS3Fw). This game's atmosphere is just amazing.
+
+![birds](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/Terranigma/amarec%2820170212-152213%29.JPEG)
+
+We also help the four-legged animals. We help a lion pass his exam among other things.
+The animals are in Africa, and the place they are in is called Zue. As much as I love the soundtrack of this game, [Zue has the worst track](https://www.youtube.com/watch?v=TnFQU29LHeM) in my opinion.
+
+Then we start getting into towns. Towns that we have in real life, but with other names. As humans now exist, we can no longer communicate with animals, which is kinda sad. It was fun hanging out with them.
+
+Most towns have an inn you can sleep & save in, a item shop, a MagiShop, and a bunch of smart people that will invent things.
+
+![inn](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/Terranigma/amarec%2820170212-213159%29.JPEG)
+
+Some of the things you help invent in this game are:
+
+- Hamburgers
+- Electricity (which also leads to TV, computers, etc)
+- Camera
+- Tinned Sardines
+- Airplanes
+
+![hamburgers](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/Terranigma/amarec%2820170217-214842%29.JPEG)
+
+You also help with international trading, getting the ball rolling there.
+
+As you help the people in the towns, the towns will eventually grow. Eventually you can even get your own apartment.
+
+As the adventure goes on, we even visited Sweden, which was fun.
+
+![storkolm](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/Terranigma/storkholm.jpg)
+
+Eventually we got our own boat, and now we can travel around the world freely.
+
+![boat](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/Terranigma/amarec%2820170217-012851%29.JPEG)
+
+![worldmap](http://fantasyanime.com/legacy/terran_worldmap.gif)
+
+Keep in mind that I'm skipping a lot of things we had to do to get here.
+We infiltrated a castle and put some poison in the food they were cooking there, we let a thief out of jail, we rescued Columbus, etc etc.
+
+Somewhere around here we also fight a boss called _Bloody Mary_. According to the walkthrough this is one of the hardest bosses, but in my opinion it was very easy. I think it's because I was able to chain a lot of dash attacks. Basically, if you run and attack, you will kinda slide/dash through with your weapon out. While doing so, you will inflict alot of damage, and also, you are invincible. So if you keep doing this eternally, you basically inflict a ton of damage and don't get hurt at all. 
+
+I think that because I was able to get a handle on this move very early on, I didn't have much trouble with this game at all. The only boss I died to, once, was the final boss, because I was doing something fundamentally wrong.
+
+> ## Visiting Quintet
+> 
+> Eventually we ended up in _Neotokio_, or as we call it, Tokyo.
+> Here one of the most fun things happened.
+> I walked around the town, searching for a Magirock that the walkthrough mentioned, and then I came across this trashcan that I tried interacting with.
+>
+> And indeed, a trash ghost appeared:
+> 
+> ![ghost](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/Terranigma/amarec%2820170217-182912%29.JPEG)
+>
+> And after we defeat it, the fun starts:
+>
+> ![quintet visit](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/Terranigma/quintet.png)
+> 
+> If it isn't obvious, _Quintet_ developed this game and this is an Easter Egg. In the Japanese version you can apparently play a Quiz game in their offices and win a Magirock.
+> I found it very funny.
+>
+> This message was very interesting to me though:
+>
+> ![mac message](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/Terranigma/amarec%2820170217-183206%29.JPEG)
+>
+> M*c? As in Mac? Apple Macs?
+
+Somewhere around here, we go down the sewers of a big city and rescue a little girl to get a starstone. Starstones are what we need to trigger the final part of the game. The girl is being chased by a lion, but as you may remember, we helped the lions earlier, and this lion happens to be the lion we helped pass an exam earlier. So we and the lion are good friends, and so the lion lets the girl go, and our mission is done.
+
+![nice lion](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/Terranigma/amarec%2820170217-221704%29.JPEG)
+
+As we are sailing around for starstones, you will sail around the continents a bunch. I want to bring up a little thing here: how the game truncates the continents' names. It looks really ugly.
+
+![continents](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/Terranigma/continents.jpg)
+
+I don't know if it's because of a technical reason or what. It seems to me they could fit in a few more characters there.
+My theory is that the allocation/memory for the continent names are based on how many characters they required in the Japanese version, and so here in the west they had to squeeze in the english names in that same allocation.
+
+Speaking of UI weirdness like this, I also wanna bring up how the game tells you how many of each item you have. They just append a number to the item name, no space, no parenthesis, nothing. Just `Itemname9`, instead of `Itemname (9)`. 
+
+![item weirdness](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/Terranigma/amarec%2820170217-225148%29.JPEG)
+
+![flying](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/Terranigma/amarec%2820170217-233014%29.JPEG)
+<p class="img-caption">Oh yeah, I forgot to mention that you help invent air travel too.</p>
+
+Once you have the starstones, you can start the final part of the game, Chapter 4.
+And this is where I will stop. I don't wanna discuss the ending. If you want to do so, there are plenty of people online doing it. It is very debatable.
+
+![the end](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/Terranigma/amarec%2820170218-005051%29.JPEG)
+
+Overall, I am very happy I played through this game. It's a solid 5/5 for me. 
+What's really nice about it is that it's a SNES game that I played through for reasons not being nostalgia.
+Like whenever I play ALTTP, Super Mario World, DKC or Super Castlevania IV, I do it for nostalgia - I played those games as a kid.
+
+Terranigma I didn't play as a kid. I only played it now because it is a damn good game.

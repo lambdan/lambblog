@@ -1,0 +1,85 @@
+2016-05-17T16:33:00+02:00
+# The Bright, Kauffman, Crane Logo
+
+Ah yes, the writers of _Friends_ had their own logo at the end of each episode. I didn't think much of it. When I watched the show on Netflix I didn't care about it. I just noticed it looked pretty and colorful.
+
+Then I got the Blu-rays and noticed it looked... not good... but oh well, no biggie. It's just a logo.
+
+![bad quality logo](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/brightkauffmancrane/friends%20s01e15.mkv.jpg)
+<p class="img-caption">Bad quality BKC logo that is present on most episodes from the Blu-rays</p>
+
+But then I got to Season 4 and was surprised at the end of an episode where the logo now looked crisp, it looked great!
+
+![high quality bright, kauffman, crane logo](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/brightkauffmancrane/friends%20s04e23.mkv.jpg)
+<p class="img-caption">High quality BKC logo, in this case from S04E23.</p>
+
+So I went ahead a couple of episodes and checked if it would now be this high quality logo for the rest of the show, but nope.
+I got past Season 4, apparently missed the ends of S05E24 and S06E15 and got to S07E03, and noticed something. It was the high quality logo again!
+
+Unfortunately I had to get up for work 4:30 in the morning, so I had to sleep, but I thought of it and decided to write a script to get to the bottom of it. I need to figure out which episodes has the high quality logo, and if possible, why?
+
+So I wrote the script: [BrightKauffmanCrane.py](https://github.com/lambdan/video_bla/blob/master/BrightKauffmanCrane.py) (it's pretty well documented, by my standards) and ran it and extracted all the logos:
+
+![all bkc logos extracted](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/brightkauffmancrane/Bright.png)
+
+So, here are the __Blu-ray episodes that have the high quality logo:__
+
+- S04E13 to E24
+- S05E24
+- S06E15
+- S07E03
+- S09E10
+
+Seemingly no pattern.
+
+So that's great and all. Now I know which blu-ray episodes have the high quality logo and which doesn't. But this almost raises more question than it answers... __Why only a few episodes?__ Presumably, the bad quality logo is from the original prints, so did it take them up to S04E13 to notice it and then decided to start replacing them? But then their boss came in and said that they're wasting money, and then the guy who did the other scattered episodes didn't get the memo and kept on replacing them with the high quality logo?
+
+
+## The Netflix Situation
+
+Here's the real mystery: __On Netflix, all the episodes have the high quality logo.__ 
+
+![netflix bkc logo](https://pbs.twimg.com/media/Ch94FaNU4AE6zij.jpg:large)
+<p class="img-caption">Netflix uses high quality logo in all episodes, in this case S01E06.</p>
+
+This perplexes me as Netflix seemingly uses the Blu-ray versions:
+
+- They're the 16:9, upscaled versions from the original 35mm prints
+- They're the broadcast versions <sup>[1](#myfootnote1)</sup>, i.e. not the extended/uncut versions that are on DVD<sup>[2](#myfootnote2)</sup>
+- [Netflix's Swedish subtitles has the same typo as my Blu-ray version has](https://twitter.com/djs__/status/724654495351902209)
+
+So what did Netflix do? Here are my theories, sorted from most likely to least likely:
+
+- __Netflix uses some other Blu-ray release.__ I live in Sweden, so I got the Scandinavian version (with Scandinavian subtitles). It is possible that the American region Blu-rays have the high quality logo on all episodes (if you have Friends on Blu-ray and you live in the states, would you please check and let me know?.) I tried looking at 2 Blu-ray rips I found online and both had the bad quality logo, I suppose it's possible both those rips were sourced from an European release.
+- __Netflix got a special version straight from WB, that is even higher quality than all Blu-ray releases.__ I have a hard time comparing visual quality between my Blu-rays and the Netflix episodes as it's impossible to watch Netflix on my PC in the highest possible quality 1080p, but I wouldn't be surprised if their version has less grain too (I could go on and on how grainy the Blu-rays are, it's ridiculous.)
+- __Netflix went in and changed them all themselves.__ I would consider doing it too if I knew how to script it/make it automatic. Theoretically all you need to do is get a still from the high quality logo, and then just overlay it on all episodes at the specified time.
+
+<div id="update"></div>
+
+__UPDATE August 7th 2016:__ I got a Viaplay account and saw that they had _Friends_ on there, so ofcourse I have investigated.
+
+Their versions are weird. They seem to be some kind of "WarnerTV" version.
+
+Season 1 through 5 is some kind of 4:3 NTSC TV rip it looks like. It's not the extended DVD versions as the voices are pitched higher and the episodes arent over 22 minutes.
+
+Season 6 through 10, however, is a 16:9 version. Initially, I thought this was just a plain Blu-ray version, as they have the bad quality BKC logo. But I then looked at one of the episodes that are susposed to have a good quality BKC logo and nope, it didn't have one.
+
+![viaplay bkc logo](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/viaplayfriends.PNG)
+<p class="img-caption">Bad quality BKC logo in S07E03, meaning this is not sourced from the same Blu-rays as I have</p>
+
+Unlike the Netflix version, the one scene that is cut in TOW In Barbados (see footnote 1 below), is not cut in Viaplay's version, so there's one upside.
+
+Sadly, all the episodes are watermarked by this WarnerTV logo, so here's my recommendation if you wanna stream the show legally and you're in Sweden:
+
+Use Netflix for every episode except TOW In Barbados.
+
+On the other hand, that one cut scene is not that much to care about (it's a phone call) so you can just use Netflix for all the episodes.
+
+---------
+
+So that's it. Another blog post dedicated to something about _Friends_! I am really obsessed with that show. Usually my mind fluctuates and changes interest/thing to obsess over every week or so, but _Friends_ has been obsessing me for over a month now. 
+
+##### Footnotes
+<a name="myfootnote1">1</a>: Except in _The One in Barbados, Part 1_. Netflix has an additional scene cut and it's really, really weird (the audio is kind of there for a split second). See Trivia section on [this page](http://friends.wikia.com/wiki/The_One_In_Barbados,_Part_1)
+
+<a name="myfootnote2">2</a>: I'm hoping to borrow my sister-in-laws' _Friends_ DVD set and rip them all some weekend when they come up here so I can enjoy the extended versions in good quality (really hard to find a good quality rip of the DVDs)

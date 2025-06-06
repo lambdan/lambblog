@@ -1,0 +1,12 @@
+2016-07-09T15:06:00+02:00
+# Post from Windows 3.1
+
+This is something I thought I would never do. 
+
+Well I don't think I can publish it from here, but atleast I can write the plain text files.
+If I found a sftp client or a ssh client I could publish it from here. 
+Taking a screenshot of this would probably be hard to do inside of 3.1 too.
+
+Written with Notepad version 3.1.
+
+![screenshot of notepad 3.1](http://puu.sh/pVIg3/f510c095da.png)

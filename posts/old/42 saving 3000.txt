@@ -1,0 +1,32 @@
+2015-09-26T00:00:00+02:00
+# Saving $3000
+
+Going for a i7 and a Gigabyte Z97-based motherboard, coupled with a NVIDIA card seems to have paid of:
+
+![About This Mac](http://lambdan.se/blog/content/42_specs.png)
+
+Getting this to run is not very hard, if you can survive the 2 first boots (where you don't have any accelerated graphics and everything is super laggy because there are no official OSX drivers for the GTX 970.)
+
+After the first 2 boots you can download and install drivers from NVIDIA's [website][] that are made for the Quadro-series, but also works for Maxwell cards (like the GTX 970.)
+
+After that everything is smooth. Even the 144 Hz on my Acer XB270HU is supported. GSync does not seem to work, but that's fine. I don't game in OSX anyway because that is always gonna be worse than on Windows (which I dual-boot.)
+
+What was particularly surprising was that I could plug in my USB Bluetooth stick, and immediately it started the wizard to add my Apple Wireless Keyboard (I'm writing this with that keyboard because my Model M is loud and it's late at night.)
+
+Ofcourse, there are some caveats with running OSX on unofficial hardware:
+
+- No iCloud, iMessage or any Apple service really
+- No App Store
+- Might suddenly Kernel Panic
+- Probably more...
+
+There are probably solutions to these, but I haven't looked into them. Only thing I would want is iCloud so I could sync my bookmarks in Safari and use the Photos app, but instead I run Photos on a official Mac Mini that downloads the photos and backs them up, and I just use Chrome instead of Safari and use it's bookmark syncing, having iCloud Control Panel running on another Windows computer.
+
+## The Bottomline
+
+I'm gonna try to run OSX on my main computer now for a couple of days. If it's stable and good I might full-time it. If I wanna play games I will just reboot into Windows by pressing F12 on my keyboard in the BIOS. 
+
+I don't know why, but I just like using OSX more than Windows. It's more fun to use and it's easier to relate to Apple people on Twitter talking about it.
+
+
+[website]: http://www.nvidia.com/download/driverResults.aspx/89538/

@@ -1,0 +1,23 @@
+2021-08-15T01:53:00+02:00
+# V appears more modest in the inventory preview after the half year montage ;)
+
+Last weekend, or whenever the hell it was, [I compiled all the Cyberpunk 2077 patch notes into one long list](https://lambdan.se/d/cyberpunk_patches/).
+
+Now, a week later or however long it's been, I remembered this line from version 1.05:
+
+> V appears more modest in the inventory preview after the half year montage ;)
+
+Having access to the GOG version locally I set out to figure out what they meant here and, poor naive me first thought it was something obscure and weird. I first tried it as female V but saw no difference. 
+
+Then I remembered you can also play as male V (I only played through the game once with male V and hated it... I just really didn't care for him at all...) and it was shortly thereafter I *got it*...
+
+Of course I had already patched the game to 1.05 so I had to uninstall it and re-install it again to get the 1.03 version (which seems to be the earliest you can get on PC but I'd love to be wrong there...)
+
+But after all that I could finally take this screenshot:
+
+![Oops](https://lambdan.se/d/cyberpunk_patches/105_modest_change/1.03%20censored.jpg)
+<figcaption>Uncensored version <a href="https://lambdan.se/d/cyberpunk_patches/105_modest_change/1.03.jpg">here</a>.</figcaption>
+
+Ah!
+
+Well, hopefully people who run across this patch note will google it and find this page and have their curiosity satisfied.

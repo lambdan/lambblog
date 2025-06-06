@@ -1,0 +1,23 @@
+2019-10-26T23:23:00+02:00
+# Original Windows XP 64-bit Wallpaper Download Link
+
+Here's the original Windows XP 64-bit wallpaper .bmp from a Windows XP Professional 64-bit Corporate Edition VM.
+
+It's 800x600.
+
+[Download](https://lambdan.se/img/Windows%20XP%20x64.bmp) (right click, save as)
+
+![Wallpaper](https://lambdan.se/img/WinXPX64.png)
+
+
+
+	CRC32: 6AF7E3B1
+	MD5: 7CB8F27BA6ECF4AC0B78D597BC0FAA94
+	SHA-1: 4934239F4C67AEC769E492B5FF8BDFC0750361B3
+
+### 2024 Update
+
+Alternatively, [here's a 2400x1800 version](https://lambdan.se/img/Windows%20XP%20x64%20Upscaled.png), upscaled with Pixelmator Pro.
+
+![Upscaled](https://lambdan.se/img/Windows%20XP%20x64%20Upscaled.png)
+

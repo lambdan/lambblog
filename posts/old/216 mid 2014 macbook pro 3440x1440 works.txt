@@ -1,0 +1,12 @@
+2018-04-13T18:24:00+02:00
+# Yes, Mid 2014 retina Macbook Pro works with 3440x1440 @ 60 Hz
+
+[Apple docs](https://support.apple.com/kb/SP703):
+
+> Dual display and video mirroring: Simultaneously supports full native resolution on the built-in display and up to 2560 by 1600 pixels on up to two external displays, both at millions of colors
+
+Makes you think that the mid-2014 can't drive a ultrawide 3440x1440 screen at 60 Hz, right?
+
+Wrong! It can run it. Flawlessly. No special cables or anything, just a good quality _Mini Displayport to Displayport cable_.
+
+![Proof](https://i.imgur.com/FZrkZqN.png)

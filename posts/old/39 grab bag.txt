@@ -1,0 +1,72 @@
+2015-09-23T00:00:00+02:00
+# Grab Bag
+
+I feel like writing right now (love clicking and clacking on my IBM Model M), so here is a grab bag of random things I want to write about right now.
+
+## Grab Bag
+
+The title for this post is from [Hypercritical][] episode [82][].
+They were discussing [John Siracusa][]'s [OSX Mountain Lion Review][], in which he had a section called [Grab Bag][] where he put stuff that wouldn't fit anywhere else in his review.
+I listened to this episode today at work [1].
+
+## Hello, hello, hello, hello, hello
+
+Whenever something isn't right at my computer, a application freezes or a folder shows up empty, I start singing the "Hello, hello, hello, hello" part from [Nirvana - Smells Like Teen Spirit][] in my head.
+It happened just now because the files from my NAS Dump folder (basically where all Downloads go before they are sorted) don't show up in the Windows Explorer
+
+## The S cycle
+
+The iPhone 6S seems nice. I read [John Gruber][]'s [review of it][] and it seems like a really cool phone. Sadly, I don't really have any good reasons to get one as my iPhone 6 Plus is perfectly fine and I have it on a 2 year contract (only another year to go!)
+This does impose a problem on me though. The next year, when my contract expires I'm probably gonna get a new phone, and the new iPhone then is gonna be the iPhone 7. As Gruber mentions in his review, the non-S phones show the new design, while the S-phones improve everything about the internals.
+I have always known this, but I now regret getting my 6 Plus when I did (when it was brand new). I got it then because the iPhone 5 I had at the time had terrible battery life and I had worked (at the same place as above), so I figured I'd treat myself a little something.
+
+So I'm gonna have to either:
+a) Get the iPhone 7
+b) Sell my 6 Plus and get the 6S [2] as soon as possible
+c) Use my 6 Plus for another 2 years and get the 7S
+
+## Music Situation
+
+While writing this I'm listening to music on my own initiative (what I mean by that is that I selected a song and hit Play) and it's been 15 days since last time according to my [Last.fm][].
+  
+![Last.fm history](http://lambdan.se/d/IDontListenToAlotOfMusic.PNG)
+
+This means that I really shouldn't subscribe to Apple Music or Spotify. I don't listen to music enough. I find podcasts alot more suitable to listen to while working. I'm gonna have to figure something out, because I really like being able to think of any song and just being a few taps away from playing it in Spotify (or a few words if I'm using Apple Music + Siri.)
+
+## Two and a Half Men
+
+Rewatching this show currently (the Charlie seasons only ofcourse [3]). This is probably somewhere between the 10 and 20th time I'm rewatching this show. Before I got into bulking TV shows digitally, all I had was these burned DVD discs of this show and I watched them in my Xbox 360, over and over and over. From that I know pretty much every episode inside out and I know what each character is about to say. But that's fine, I still love it.
+
+I should sometime write about me and rewatching TV shows. I pretty much only watch TV shows (and movies) that I have already seen.
+
+## IBM Model M review
+
+Pros:
++ Solid
++ Typing feels terrific
++ Old and cool
+
+Neutral:
+- No Windows key. When gaming this is a pro. When I want to open the Start Menu to search it's a con.
+
+
+Cons:
+- PS/2 connector (complicates when Hackintoshing)
+- Loud. It sounds better than MX Blue's though.
+- Limited KRO. I haven't ran into this yet, but I know that I sometime will and it's gonna bug me.
+
+[Hypercritical]: http://5by5.tv/hypercritical
+[82]: http://5by5.tv/hypercritical/82
+[John Siracusa]: http://twitter.com/siracusa
+[OSX Mountain Lion Review]: http://arstechnica.com/apple/2012/07/os-x-10-8/
+[Grab Bag]: http://arstechnica.com/apple/2012/07/os-x-10-8/19/#grab-bag
+[Nirvana - Smells Like Teen Spirit]: https://youtu.be/hTWKbfoikeg?t=42s
+[John Gruber]: https://twitter.com/gruber
+[review of it]: http://daringfireball.net/2015/09/the_iphones_6s
+[Last.fm]: http://www.last.fm/user/djs_
+
+# Footnotes
+
+1. Not comfortable with the word __work__ as I'm not officially employed. I just work whenever they are short staffed and I don't have anything else to do. I enjoy it though.
+2. I would probably get the regular sized 6S this time. The Plus is big and nice, but sometimes its too big and not nice because of it.
+3. Season 1 through 8, when Charlie Sheen was the main guy and not Ashton Kutcher. I've tried to watch the Kutcher seasons but I just can't get into it. It isn't the same show and the humor doesn't tickle me. I have watched the series finale though.

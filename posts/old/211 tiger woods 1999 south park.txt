@@ -1,0 +1,136 @@
+2018-02-09T23:08:00+01:00
+# Tiger Woods, South Park and Dummy Files
+
+![ZZDUMMY.DAT](https://i.imgur.com/t7rBcjG.jpg)
+
+For some reason I read the Wikipedia article about [_The Spirit of Christmas_](https://en.wikipedia.org/wiki/The_Spirit_of_Christmas_(short_film)), the South Park precursor. I think I got there because yesterday I watched [6 Days to Air](https://en.wikipedia.org/wiki/6_Days_to_Air) and so I read about the history of South Park and so on and so on. 
+
+Anyway, not alot of interesting stuff in there, except this thing:
+
+> It was also included in AVI format on Tiger Woods '99 for PlayStation. It is accessible from the game disc by PC. This was unauthorized and because of this, the game was recalled in January 1999 by Electronic Arts.
+
+Here's a article from IGN in 1999 about it: [Tiger Woods Game Pulled](http://www.ign.com/articles/1999/01/16/tiger-woods-game-pulled)
+
+Naturally I am very interested in stuff like this. Easter eggs, video games, South Park, video files, this is right up my alley. If you make a _venn diagram_ of my interests all those things would have a circle each and I would be in the middle.
+
+Anyway, I got myself a copy of the 1.0 version, and checked it out, and this video basically summarizes it in 30 seconds:
+
+<div class="video-container">
+<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/9fuPagOFYMk"></iframe>
+</div>
+
+As you can see, you can just open the `ZZDUMMY.DAT` file in your favorite media player, and you're watching _Jesus vs. Santa_. Amazing. And the quality is pretty okay, all things considered!
+
+# How Was It Discovered?
+
+I can't find a concrete release date for the game, but reviews for it came out in November and December 1998, so somewhere around there the game was released. 
+The fixed `ZZDUMMY.DAT` file in version 1.1 has a modification date of January 14th 1999, so the issue was discovered about 1-3 months after release.
+
+I found this [article](http://www.retrojunk.com/article/show/4508/the-tiger-woods-99-recall) which has a story:
+
+> A mother got her son a copy of the PlayStation version of Tiger Woods 99 for Christmas, not knowing that console games weren't playable on computers (unless if you use an emulator). The young boy put the CD-ROM in his computer and clicked on ZZDUMMY.DAT. He watched the video (which was the pilot of South Park "Jesus vs. Santa" as mentioned). After hearing all the profanity the video was loaded with, he told his mother. She complained to Electronic Arts/EA Sports.
+
+It just seems like a super random thing to me that a kid who doesn't know that his Playstation game won't play on a PC will open the up the file system and try to open up a file called `ZZDUMMY.DAT` in a video player. I just don't believe it. And I tried double clicking the file in a Windows 95 and 98 Virtual Machine, and neither operating system opens it by default in a video player. So the kid had to know he needed to open this random file in the media player. I just don't buy it.
+
+![Win98](https://i.imgur.com/z8DlJM9.png)
+<figcaption>By default, .dat-files aren't associated with a video player in Windows 98 (or 95, I tried.)</figcaption>
+
+![Windows 95](https://i.imgur.com/syXExUb.png)
+<figcaption>However, the file will play in both the Windows 95 and 98 default media player, if you get the random idea to try and opening the file in a media player. (Looks like very bad quality here because I don't have drivers for the Virtual Machine.)</figcaption>
+
+However, back in those days, it was quite common to put Dreamcast and PS1 discs in your computer or other audio players to listen to the soundtrack, so this might have been a factor for why someone would get the idea. But you still have the problem that you need to know to manually open up the dummy file in a video player.
+
+## My Own Theory
+
+My own idea on how this was discovered is that someone was gonna make a rip of the game (PS1 modchips were around), and looked to see if the dummy file was anything important, to see if it could be removed to save space (while the game is just around 150 MB and easily fits on a CD-R, it would be beneficial to save off 50 MB considering the internet connection speeds at the time). Seeing how this person is pretty computer savvy, considering he is gonna make a rip of the game and distribute it, I wouldn't be surprised if he tried opening the file in a hex editor to see if the file was anything important, but instead he noticed the video headers and was surprised.
+
+The only thing that that doesn't work out with this theory, is how EA was made aware of it. 
+If this was 2018, the pirate could've made a tweet announcing his amazing discovery, which would pick up wind and news articles would be written and then it would be patched.
+
+But this guy probably didn't do that. Maybe he/she wrote it in IRC to their pirate friends, but I don't think any of them would share it. 
+
+And I'm not sure how stuff was distributed back in these days, but I'm pretty sure torrents were not used, so I'm not sure if there is anywhere where release notes (NFO files) would be posted. But if there was, maybe he/she put in there "PS the ZZDUMMY file is interesting :)" and from there people were made known of it and eventually someone from EA picked up on it. 
+But on the other hand, the turn around time from release to the fixed file was somewhere around 1-3 months so it would have to be pretty fast. 
+
+So maybe the other theory is more likely afterall...
+
+# Why?
+
+From the same [article](http://www.retrojunk.com/article/show/4508/the-tiger-woods-99-recall): 
+
+> EA fired the employee who inserted the questionable video into the discs. When programming the disc, he/she did not know how to write a dummy file, so he/she found a video that was the pilot of South Park, changed it to a .DAT file, and renamed it to ZZDUMMY.
+
+While I find it hard to believe that a programmer couldn't write a dummy file, this theory seems to be the most likely.
+I found this [reddit comment](https://www.reddit.com/r/todayilearned/comments/2qm3tu/til_in_1999_ea_had_to_recall_100000_copies_of/cn7eniz/) (obviously I am a few years behind and also obvious: anyone can write that they work/worked somewhere):
+
+> I work at EA. The story I've heard about this is that they were just testing some disc space requirements, and used the South Park episode just to fill up the disc for testing purposes. But then they obviously forgot it was there and it shipped that way.
+
+That sounds reasonable. But I like to believe it was an intentional easter egg. 
+
+I feel like it is someone's job to go through every file on the disc to make sure everything is OK, and know why each file is there and what it is. Even if you just look at the directory, and have the date view enabled in Windows, the file sticks out, because it was last modified in 1996, while the other files are 1998 (and one of them is 1997.)
+On the other hand, it is a "DUMMY" file, so maybe the inspector just looked at it and thought everything was normal.
+
+Putting a dummy file on there makes sense to me though. I remember reading somewhere about another old game where someone had early on in development allocated some memory for nothing. This made the developers work with a very strict amount of RAM, and at the very end when they were gonna run out of memory, they could just remove that allocation someone had put in early on and immediately they had more breathing room.
+I think putting a pretty hefty dummy file on a CD has the same purpose. It could also be to bring to tracks further out (or further in, I don't remember if a CD starts from the inside or from the outside) on the physical disc to improve load times (I know some Dreamcast rips do this), but if this dummy was for that purpose it would be much bigger, because the game is just around 150 MB anyway.
+
+# Conclusion
+
+So what is the conclusion?
+
+Well nothing really. This is a thing that happened. It's very cool, and I think it's my new favorite easter egg of all time. 
+
+All we can do is speculate on why it happened...
+
+# Misc
+
+The MD5 hash of the 1.0 dummy file is: `e90d4683c62011a84c5b6f5d628e6428` - if you google it you should hopefully find this blog post, once it has been propagated by your search engine.
+
+Here's the output from `mediainfo` for 1.0 ZZDUMMY: 
+
+	General
+	Complete name                            : .\ZZDUMMY 1.0.DAT
+	Format                                   : QuickTime
+	Format/Info                              : Original Apple specifications
+	File size                                : 50.6 MiB
+	Duration                                 : 5 min 4 s
+	Overall bit rate                         : 1 393 kb/s
+	Encoded date                             : UTC 1996-12-16 02:45:10
+	Tagged date                              : UTC 1996-12-16 02:46:31
+	Writing library                          : Apple QuickTime
+	FileExtension_Invalid                    : mov qt
+	------------------------------------------------------------------------
+	Video
+	ID                                       : 1
+	Format                                   : Cinepak
+	Codec ID                                 : cvid
+	Duration                                 : 5 min 4 s
+	Duration_LastFrame                       : -33 ms
+	Bit rate                                 : 1 214 kb/s
+	Width                                    : 320 pixels
+	Height                                   : 240 pixels
+	Display aspect ratio                     : 4:3
+	Frame rate mode                          : Constant
+	Frame rate                               : 15.000 FPS
+	Bits/(Pixel*Frame)                       : 1.054
+	Stream size                              : 44.1 MiB (87%)
+	Language                                 : English
+	Encoded date                             : UTC 1996-12-16 01:27:33
+	Tagged date                              : UTC 1996-12-16 02:46:31
+	------------------------------------------------------------------------
+	Audio
+	ID                                       : 2
+	Format                                   : PCM
+	Format settings                          : Little / Unsigned
+	Codec ID                                 : raw 
+	Duration                                 : 5 min 4 s
+	Bit rate mode                            : Constant
+	Bit rate                                 : 176.4 kb/s
+	Channel(s)                               : 1 channel
+	Sampling rate                            : 22.3 kHz
+	Bit depth                                : 8 bits
+	Stream size                              : 6.47 MiB (13%)
+	Language                                 : English
+	Encoded date                             : UTC 1996-12-16 01:27:33
+	Tagged date                              : UTC 1996-12-16 02:46:31
+
+Interesting to me it is encoded in December 1996 (and the modification date is about the same time, so the file wasn't modified at all by the programmer who put it in.) I wonder if it's the original file/encode? It's so damn old.

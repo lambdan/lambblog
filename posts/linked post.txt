@@ -1,6 +1,0 @@
-23 April 2019, 16:55
-# This is a Linked Post
-http://example.com
-
-This post will link to http://example.com, and you can write about why here...
-Maybe it's a good post, maybe it's something controversial.

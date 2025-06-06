@@ -1,0 +1,129 @@
+2017-04-25T12:11:00+02:00
+# x264: CRF vs 2-pass
+
+x264 has 2 suggested modes of encoding video:
+
+- Constant Rate Factor (CRF)
+- Two-Pass ABR
+
+# CRF
+
+With CRF you specify a number between 0-51, where lower is better quality and higher is worse quality. A sane range is 15-25, or an even more sane range is 17-23.
+This will attempt to target a constant quality level throughout the video. 
+
+For example, if there is a scene where not much is going on, say a shot of 3 guys sitting in a sofa not doing much, it can turn down the bitrate a little bit without making a noticable drop in quality. 
+If there is a more "intense" shot, lets say a ship sailing in the night on wavy water, the bitrate will go up to not make a noticable drop in quality.
+CRF is generally the best way to encode video. More intense parts get more bits, and less intense parts get less bits, and it all evens out.
+
+One huge upside of CRF is that it only needs to run through the video once (one pass), which cuts down the time required to encode to almost half compared to 2-Pass ABR (it's not perfectly half as the first-pass of a 2-pass encode is faster, usually)
+
+The downside of CRF is that you can't really predict the filesize.
+
+Relatively recent, the [scene][scene] switched to using CRF, and they have strict [rules][scenerules] about which CRF values to use (generally they start at crf=18 for 720p content, and advise bumping up the number if the average bitrate exceeds a certain number.)
+
+You can notice this by looking at a TV show that's been on for a long time, and compare the filesizes of episodes.
+Here's the filesizes of _Family Guy Season 8_, encoded by some scenegroup back in 2009:
+
+	176M Family.Guy.S08E01
+	176M Family.Guy.S08E02
+	176M Family.Guy.S08E03
+	176M Family.Guy.S08E04
+	176M Family.Guy.S08E05
+	176M Family.Guy.S08E06
+
+As you can see, all episodes are around 175 MB. If you look at the [scenerules for TV 2007][2007rules] you can see why:
+
+	Shows 18:00-23:59 shall be 175MB
+
+Now whats the problem with this? Isn't consistency nice?
+Yes, it is. Consistency is very nice, but since these are torrents, we are wasting alot of peoples bandwidth and hard drive space on bits they dont need.
+
+Let's look at the filesizes of the current season of Family Guy, in SD quality, which are encoded accordingly to the current scenerules for SD TV:
+
+	68.51M	Family.Guy.S15E01
+	81.30M	Family.Guy.S15E02
+	82.51M	Family.Guy.S15E03
+	72.77M 	Family.Guy.S15E04
+	82.63M	Family.Guy.S15E05
+	80.38M	Family.Guy.S15E06
+
+The filesizes are dramatically smaller, and to add insult to injury, they are higher resolution (as they're 16:9 compared to Season 8 that was 4:3 (720x404 vs 512x384)).
+
+For fun, I re-encoded `Family.Guy.S08E01` with the current SD TV scenerules and the episode came out to be `86 MB`. Now this isn't exactly fair as I was encoding an already compressed video (so it had to compress the compression artifacts from the original encode), but it still came out to be less than 90 MB which is about what the current season lands at. 
+
+So what happened here? Technology happened. We got faster computers, we switched to the x264 encoder instead of XVID, and to AAC instead of MP3. But mainly, it's because of the CRF system. 
+
+You see, _Family Guy_ isn't a very intense show video wise. It's usually very still and not alot of motion. You don't need alot of bitrate to show that without quality loss.
+Compare it with _The Big Bang Theory_ which is also a 20 minute show, but live action and not animated - the latest episode comes in at _159.57 MB_.
+
+Okay, so now you see why CRF is great and why it should always be used... or should it?
+
+As you all know, I like _Friends_, and I have it on Blu-ray. It's an old show, shot on film, so it has a literal _ton_ of grain.
+Now, the thing with grain and CRF is that CRF goes nuts. It's trying to compress all of the pixels, but almost every pixel is a unique color because of the grain and because of that the bitrate skyrockets. 
+In fact, if you encode a 1080p Bluray _Friends_ episode at CRF 17, 18 and even 19 _the outcome will be larger than the source_. Around CRF 20 you can barely get a smaller file, and at around 21 you will get a significantly smaller file. 
+But then there is _TOW The Blackout_ episode, which is very dark (almost black) and super grainy. Even CRF 21 becomes larger than the original source for this episode.
+What I'm trying to get at, is that CRF isn't very useful with super grainy material, it's just inconsistent.
+
+So what do I do about my _Friends_ episodes? Well I have decided to go the other way.
+
+# 2-pass
+
+2-pass is how all encodes were done back in the days, with Divx and XviD and such. You specify a bitrate, and the encoder will output a video with that bitrate.
+You can do this in 1-pass. For example, when you stream from OBS to Twitch, you are using a constant bitrate (CBR), maybe 2000 kbps, which is "1-pass".
+
+2-pass does it much better, but much slower. It will go through the video once, looking at which scenes are more intense and which are less intense, and spit out a stats file for the 2nd pass to use. The 2nd pass will look at this stats file and see that some scenes require more bits and some scenes require less, and will balance it out to make sure the end video has the requested bitrate.
+
+Figuring out what bitrate you want depends on what you want to accomplish. Do you wanna have the same exact file size for all episodes? 
+Then you can calculate it. From the [ffmpeg wiki][ffmpegwiki]:
+
+> Your video is 10 minutes (600 seconds) long and an output of 200 MiB is desired. Since bitrate = file size / duration:  
+> `(200 MiB * 8192 [converts MiB to kBit]) / 600 seconds = ~2730 kBit/s total bitrate`  
+> `2730 - 128 kBit/s (desired audio bitrate) = 2602 kBit/s video bitrate`  
+
+You can also use sites like this one to calculate it, or see what file size you end up with if you use any bitrate: https://www.dr-lex.be/info-stuff/videocalc.html
+
+You can also just "wing it". Personally I do 8000 kbps for 1080p and 5000 kbps for 720p. I haven't decided on what to do with SD (480p) yet, but probably 2000 kbps, maybe 2300 kbps for 576p. 
+
+# x264 presets
+
+One thing that affects both CRF and 2-pass is what preset you use. 
+A faster preset will make the encode go faster but bitrates (size) will be higher. A slower preset will make the encode go much slower but compression will improve.
+
+Here's someone that did tests of each: http://blogs.motokado.com/yoshi/2011/06/25/comparison-of-x264-presets/
+
+Use the slowest one you can tolerate. Personally I use `slow` with my i7-4770K for movies and TV shows. For gameplay videos that I upload to YouTube I actually use `veryfast`, as I usually delete those from my HDD after they're uploaded, while my TV Shows and Movies I keep forever, and so I want their filesizes to be as small as possible. 
+Some 1080p scene releases use `veryslow` or `slower` but that is way too slow for me. 
+Honestly, `medium` is not bad either.
+
+If you wanna use something like `ultrafast`, you need to crank up the bitrate or CRF alot, otherwise the video will look horrible. I actually record my gameplay videos with `ultrafast and CRF 15` and I think it looks okay. At CRF 13 I can't tell any difference from lossless.
+
+# Denoising
+
+I will just touch on this briefly.
+
+There is a way to remove grain and noise from video, by denoising it. There are a couple of ways to do it as far as I know:
+
+- x264's nr parameter
+- hqdn3d
+- nlmeans
+
+But they all have the same problem, except nlmeans (that one has a different problem): to get a meaningful bitrate reduction you need to crank up the filters quite a bit, which in turn makes the resulting video look noticably worse than the source (smearing, ghosting, etc. Just imagine what it would look like if you started blending together pixels in motion). 
+They can be used without noticable artifacts if you use very low numbers, but then the bitrate saving is so minimal that it's not worth it.
+
+nlmeans is good, but takes a ridiculous amount of time to encode. It took my i7-4770K a whopping _14 hours_ to denoise one 720p episode of _Friends_ with nlmeans, but even then it had some very slight ghosting issues (could maybe be fixed with other numbers, but I haven't gotten around to it)
+
+# Conclusion
+
+So what was the point of all this? Well, I just wanted to say that I will probably start encoding videos following this system:
+
+- For videos with no/very little grain: use CRF as it shouldn't be too crazy
+- For videos with grain: use 2-pass as CRF is too unpredictable with grain
+
+And as always, if you're not crazy like me and just want it easy and don't wanna write your own ffmpeg wrappers and scripts, use [Handbrake][hb] and/or [video_transcoding][dm].
+
+[scene]: https://en.wikipedia.org/wiki/Warez_scene
+[scenerules]: https://scenerules.org/
+[2007rules]: https://scenerules.org/t.html?id=2007_TV.nfo
+[ffmpegwiki]: https://trac.ffmpeg.org/wiki/Encode/H.264
+[hb]: https://handbrake.fr/
+[dm]: https://github.com/donmelton/video_transcoding

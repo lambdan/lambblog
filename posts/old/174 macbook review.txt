@@ -1,0 +1,52 @@
+2017-05-06T00:51:00+02:00
+# 12" Macbook Review
+
+First some quick bullets:
+
+- You can read my thoughts on the keyboard here: [12" Macbook Keyboard][kb]. Not much has changed since, except that I am more used to it now. I don't hate it.
+- If you have the lid closed, and you plug it in to charge, you will hear a little sound, indicating that it is now charging. I don't know if other Macs does this, but it's neat. Good enough solution to not having a little light on the cable (although I would still prefer that.)
+- Hardcore performance, such as CPU performance and GPU performance isn't great and that is expected (see CPU performance chart further down.)
+- Trackpad is fine. Some people complain about it being fake ("Force Touch") but I don't mind it. I have it at the strongest setting with audible click enabled.
+- Speakers are very loud. I only dared going up to like 30%. Sounds pretty good too.
+- Haven't ran into any issues with only having 1 USB-C port. Only thing I ever plugged into it was power to charge, and I also tried my USB-C USB-A adapter dongle with a flash drive to know that the adapter worked (I actually got the adapter months ago, when Apple made them temporarily less expensive). We'll see if I run into any situations where I would need 2 USB ports simultaneously, but that is not now.
+- Speaking of charging through USB-C, I am not too happy with the bundled cable. I think it's a bit short and stiff (_giggity_).
+- There's something about the screen that I don't like. I think I would like it to be slightly larger. I run it in "1440x900" mode anyway, to get more space, at the cost of text being a bit smaller.
+- I tried charging it by using the _Nintendo Switch Pro Controller USB-C USB-A Cable_ with my USB Powerbank, but it didn't charge the battery. It seemed to run of it though (Power Source: Power Adapter in the Battery menu)
+- Speaking of battery, the battery is pretty okay. I don't think it's as good as it was in my _11" Macbook Air_, but it's alright. It charges really fast.
+
+Now let's ramble.
+
+![Common Habitat](http://i.imgur.com/XZ9XUgw.jpg)
+
+I love using this computer in bed/on the sofa, just chilling with it. Browsing and using Twitter. And I think it will be a great companion when I will soon be gone for 2 weeks.
+
+__But the best thing about this computer is that is has no fan.__ While this does make the computer slower, in theory, because it throttles down performance to reduce heat, I haven't noticed any slow down in my web browsing or other regular computer tasks. Obviously I notice the performance hit when transcoding video or something else that is intensive (see below), but not otherwise.
+
+There are so many applications in macOS that are unoptimized and make the fan go up. Syncing Dropbox, rapdily switching songs in Spotify, browsing your photos, having millions of tabs open, watching Twitch, etc. All of these would make all my previous Macs become audible. But this Macbook doesn't, it stays silent because it has no fans. It is physically impossible for it to be loud.
+
+The downside of that is ofcourse that the laptop becomes very hot in your lap, but I'll take that over noise any day (fans in Mac's are very loud. Jet Plane loud.)
+
+Another thing that I really like about the laptop, which is a very general thing, is how thin it is. It is just incredible. I know there are some even thinner ones in the PC market, but this is thin enough for me.
+
+I don't know what else to say. This feels like a better version of the 11" Macbook Air, which _was_ my favorite small laptop.
+(15" Retina Macbook Pro is my favorite laptop but it's not small.)
+
+# CPU Performance Table (6 May 2017)
+
+I figured I should devote an entire section for this, so that if I get another CPU in the future, I can just copy this entire section and add the new CPU to it.
+
+|Computer|CPU|Avg. Transcode Speed|
+|----------|----|----------------|
+|Mac Mini, Mid 2011|i5-2415m|8.03 fps|
+|My Plex Server, Late 2016|i3-6100|15.32 fps|
+|My Desktop PC, Early 2015|i7-4770K @ stock|26.66 fps|
+|15" Retina Macbook Pro, Late 2013|i7-4960HQ|21.71 fps|
+|12" Macbook, Early 2016|M3-6Y30|7.25 fps|
+
+
+- The table shows average transcode speeds of a 1080p Friends episode done in Handbrake, with the medium-speed x264-preset.
+- It's worth noting that I didn't bother letting the transcode finish on the 12" Macbook, I only let it run to about 30%, because I got tired of waiting (probably wouldn't make much of a difference.)
+- It's also worth noting that these scores aren't done on the exact same setup, Handbrake versions and such differ. But they should give you a ballpark.
+
+
+[kb]: https://lambdan.se/?entry=173-macbook-keyboard-2017-04-28

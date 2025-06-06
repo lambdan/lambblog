@@ -1,0 +1,23 @@
+2014-03-24T00:00:00+01:00
+# Using Parsedown
+
+If you are reading this, it means that [Parsedown](http://parsedown.org) is working!
+
+### What is Parsedown?  
+Parsedown is an Markdown parser, for PHP. Basically, I am writing this in an plain .txt that is in my dropbox, and then Parsedown parses that to what you are viewing. This is why the site takes a while to load, it needs to get parsed, and Dropbox needs to serve the .txt.  
+  
+### Why Markdown?  
+As much as I hate Markdown on my twitch profile, here it isn’t that bad. It’s alot better to write in Markdown than to manually think about inserting 
+```
+<h1>, <p>, <br>, etc. 
+```
+
+It’s just a hell of a lot more convenient. 
+
+### Outro
+
+Anyway, yay, now I have a working ”blogging platform”. Now I’m gonna set up the rss feed, maybe whip up a good CSS stylesheet, mess with width, and possibly a script that can generate the n.php files for me.  
+
+Until next time!  
+
+_/DJS_  

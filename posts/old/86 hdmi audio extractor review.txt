@@ -1,0 +1,59 @@
+2016-04-04T19:09:00+02:00
+# HDMI Audio Extractor from DealXtreme Compatibility & Review (Updated)
+
+A while back I bought [this](http://eud.dx.com/product/hdmi-to-hdmi-audio-hdmi-converter-black-844303195) little device, hoping to get 5.1 sound from all my HDMI devices into my soundbar. Now I got it, and here's what I think about it.
+
+## Build Quality & Setup
+
+![box](https://pbs.twimg.com/media/CfMUdGLWAAUHYgr.jpg)
+![inside](https://pbs.twimg.com/media/CfMUdGQWwAA-IRZ.jpg)
+
+The unit came in a nice little box well wrapped and packaged. The unit itself feels sturdy and solid.
+It comes with 2x Male RCA jacks to 1x Male 3.5mm and a USB-Micro USB cable, to supply 5V of power to the unit.
+
+Hooking it up was easy and I don't think I need to go into detail. I did have to hook up the micro USB cable so it would get additional power. It didn't seem to function otherwise.
+
+## Compatibility
+
+Ofcourse, there are millions of different sorts of these HDMI Audio Extractors. I picked this one from DX because I thought it seemed good and had gotten good reviews. Maybe others are better, maybe others are worse. I see consider everything you buy from China a lottery.
+
+My setup consists of:
+- Samsung 32" TV from 2006ish
+- Yamaha YSP-1400 Soundbar
+- Manual/Mechanical HDMI Switcher (4 in, 1 out)
+- Bunch of HDMI Sources
+
+For this unit, I have bunch of HDMI Sources going into the HDMI Switcher. The output from that switches goes into this Audio Extractor Unit HDMI In port. The optical (TOSLINK) goes into my soundbar, and the HDMI Out goes to my TV.
+
+To determine what format my devices was sending out I could easily just look at the LEDs on my soundbar.
+
+If DPL II (Dolby Pro Logic II), in other words Stereo, was being output, the DPL II light lights up on my soundbar:
+![dpl ii example](https://pbs.twimg.com/media/CfMZLx1WEAECten.jpg)
+
+If Dolby Digital 5.1 was being output, the Dolby/DTS would light up green:
+![dolby example](https://pbs.twimg.com/media/CfMadJwWsAI-hSv.jpg)
+
+If DTS 5.1 was being output, the same light would light up, but in red:
+![dts example](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/Fil%202016-04-04%2015%2031%2041.jpeg)
+
+Using these lights I can very easily determine what format was being output.
+
+[Initially](http://lambdan.se/img/hdmi.PNG) I thought compatibility was really bad, but there is a little slider on the unit where you can switch between 2.0, 5.1 and PASS. It turns out you need to set it to 5.1 for PS4 and Xbox One to work.
+
+Green = Works, Red = Doesn't work
+
+![compatibilty chart](http://lambdan.se/img/hdmi2.PNG)
+
+One common thing for all devices is that all the menus and such would only be in DPL II, which confused me at first. It wasn't until I started up GTA 4 on the PS3 I discovered that the unit is actually working.
+
+Another disappointing thing is that Plex Media Player, an as of now exclusive Plex Pass feature, completely failed on the 5.1. Only the old, and now open source, OpenPHT could handle it, albeit with a slight awkward audio hiccup during format change. I'm not sure why PMP couldn't do it, but I hope they'll fix it or maybe it's something on my end.
+
+Ofcourse, for all the devices and apps I tried to change settings where appropriate. Rasplex on the Raspberry Pi 2 for example I enabled AC3 and DTS compatible receiver, and same on OpenPHT and PMP on the Mac Mini.
+For PS4 I set audio output to HDMI and tried both Bitstream (DTS) and Bitstream (Dolby), both of which worked but I prefer Dolby (because it has a green light) so I picked that. On Xbox One I had to set HDMI Audio Output to Bitstream and then I could pick between DTS or Dolby there aswell.
+
+Hope this helps!
+
+### UPDATE (later that day...)
+
+I decided to mess around with it some more and I started trying out the different modes of the switch on the unit (2.0, 5.1 and PASS) and [initially](http://lambdan.se/img/hdmi.PNG) I had it set to PASS which resulted in poor compatibility with game consoles. I now set it to 5.1 and I get much better results. I have updated the compatiblity chart to reflect. So yes, I have to recommend this unit now.
+

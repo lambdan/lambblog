@@ -1,0 +1,58 @@
+2015-03-18T00:00:00+01:00
+# Is a fan that is twice as expensive also twice as good?
+
+## Background
+
+For months now, I have been cooling my CPU with a **Cooler Master Seidon 120V**. As the stock fan that came with it was horribly loud I removed it and replaced it with one of the fans that came with my computer case, a Fractal Design R3 (or maybe R2, not sure, I bought it pre-owned).
+
+Anyway, the fan that I took was this one:
+![The Fractal Design Fan](http://lambdan.se/d/CTB/fdspecs.JPG)
+
+After googling it, it turns out to be a [Fractal Design Silent Series 120mm](http://www.fractal-design.com/home/product/case-fans/discontinued-products/silent-series-120mm), a fan that costs **99 SEK** at Inet.se at the time of writing.
+
+One day I ordered a new PSU from Inet.se (Fractal Design Edison M 650W), and I decided to buy a new 120mm fan then for my radiator. So I went for the [Noctua NF-F12 PWM](http://www.noctua.at/main.php?show=productview&setlng=en&products_id=42), which costs **199 SEK** at Inet.se at the time of writing.
+
+For fun, I decided to benchmark my CPU temps with this current fan, so I can compare it to the Noctua one to see if it made any difference.
+
+## The Computer
+* Gigabyte GA-Z97P-D3
+* Intel i7-4770K @ 3.5GHz (Overclocked to 4.1GHz @ 1.15 V)
+* 2x4 GB Corsair Vengeance LP DDR3 1660MHz
+* ASUS R9 280 3GB DirectCUII TOP
+* Fractal Design Redefine R2/R3
+* Cooler Master Seidon 120V
+
+![cpuz](http://lambdan.se/d/CTB/4770k.png)
+
+I also have 2x 120mm fans in the front (in), and on at the top of the computer (out). The radiator is at the back of the computer with a fan blowing air from the inside of the computer outside (through the radiator).
+
+## The Tests
+
+* OCCT CPU test for 15 minutes
+* Prime95 Small FFTs until temp hits 100 C, or computer BSOD's
+
+I ran the tests with my Fractal Design fan, and then I ran them again when I got the Noctua fan. While I ran the tests I had HWMonitor (to measure temps) and CPUZ running (to see CPU freq and voltage). I then used the freeware utility [AutoScreenShot](http://www.theuds.com/autoscreenshot.php?lang=EN) to take a screenshot of my screen every X seconds (3 secs for prime95, 15 secs for OCCT). After having run the tests, I checked the screenshots to get temperature, frequency and fan RPM. I wrote these down in an [Excel document](http://lambdan.se/d/CTB/Cpu%20Temp%20Benchmarks.xlsx). 
+
+I did not take my room temperature into consideration during the tests. My room is usually around 21-22 C. This might cause some inaccuracies but I still think the results I got were because of the fans, not the room temperature. 
+
+## Results
+
+![occt](http://lambdan.se/d/CTB/occt.png)
+
+![prime95](http://lambdan.se/d/CTB/prime95.png)
+
+## Conclusion
+
+The Noctua fan beats the FD fan. It's not a huge difference, but it's an improvement. With the FD fan, Prime95 reached 100 C after 2 mins, while the Noctua fan kept going until 4:24 in, where the computer blue screened (I got a bad 4770k for overclocking I think, 4.1GHz @ 1.15 V should be easy), it never reached 100 C, it topped out on 97 C.
+
+It is worth noting that for the Noctua test, my computer did use a different PSU. I don't think this made any difference to the temperatures though. If anything, it made it worse as prime95 has made my computer BSOD alot more since I got it.
+
+So is a fan that is twice as expensive also twice as good? No, it isnt. It is better, but not by a huge margin.
+
+If you want to, check out the excel document. It has all the data, along with fan RPM. The CPU never throttled down from 4.1GHz so those numbers are a bit uneccessary, but oh well.  The Noctua fan had an PWM so that is why it increased it's speed.
+
+## Bonus photos
+
+![fdmount](http://lambdan.se/d/CTB/fdmount.JPG)
+
+![nocmount](http://lambdan.se/d/CTB/nocmount.JPG)

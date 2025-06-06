@@ -1,0 +1,35 @@
+2015-10-16T00:00:00+02:00
+# Goldeneye IL Stats
+
+I finally remembered to re-write the [very old script](http://lambdan.se/d/oldGoldeneye.zip) that I used to use for keeping track of how many attempts and how much time I spend on a IL.
+My old script was actually one of the very first "big things" that I ever programmed, therefore it was very bad.
+
+- Completely rewritten in Python
+  - Old one was Ruby which I don't know anymore. Python I know somewhat.
+- Can now import your times from [_The-Elite_](http://the-elite.net)
+  - You just enter your username and hit Enter
+- No longer needs to be restarted when adding times
+  - Old version required you to restart the script when you inputted a new level
+- Saves in one single JSON file (except the OBS .txt output.)
+  - JSON is easy to open in a editor to manually fix attempts and times if necessary, also makes it easy to port this script to the web.
+
+Download: [goldeneye.py](https://github.com/lambdan/goldeneye-ils/raw/master/goldeneye.py) (right-click, save as)
+
+[GitHub](https://github.com/lambdan/goldeneye-ils)
+
+### Windows
+  - Install [Python 2.7](https://www.python.org/downloads/) (later versions might also work but I have not tested and I do not intend to test)
+  - Download and put goldeneye.py in a folder
+  - Double-click goldeneye.py and follow its instructions
+  - Add a text source in OBS that uses obs.txt as a text file
+
+### OS X / Linux
+  - Download and put goldeneye.py in a folder
+  - Open a Terminal and `cd` to this folder and do `python goldeneye.py`
+  - Add a text source in OBS that uses obs.txt as a text file
+
+![sample](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/107.mp4_snapshot_01.06_%5B2017.02.08_16.16.37%5D.jpg)
+<p class="img-caption">Sample usage on a stream</p>
+
+![import](http://lambdan.se/blog/content/goldeneye_import.png)
+<p class="img-caption">Imported times from <i>The-Elite</i></p>

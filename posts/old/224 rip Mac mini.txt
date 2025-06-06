@@ -1,0 +1,25 @@
+2018-11-03T01:44:00+01:00
+# My First Mac 2012-2018
+
+Well, something really unexpected happened: My mid-2011 Mac Mini died. Outta nowhere.
+
+It was just sitting there, running [Pi-hole](https://pi-hole.net/) inside a VMWare VM. And all of a sudden I noticed the internet wasn’t working on anything. So I went to check the router and eventually I realized the power light on the Mac Mini wasn’t on.
+
+Soon after that I realized nothing happened when I clicked the power button, and all I could hear from the computer was a very quiet clicking sound, which I have no idea where it comes from because only mechanical thing in that computer is the CPU fan, and that was not moving. [I uploaded some clips to Twitter](https://twitter.com/nadbmal/status/1058487264597151744).
+
+So, it’s dead. My first Mac is dead. Honestly, that’s fine. I got it in 2012 and I used it as my main computer, and then somewhere around 2014 I started using it as my first Plex server and running the Plex Media Player app on it too to make it a HTPC essentially, for a year or two.
+Eventually it just sat around in my closet, only occasionally being brought out to create a *macOS* install USB for Hackintosh purposes. 
+And as mentioned, this last month or two it has been running Pi-hole (and iOS content caching server but that was more or less useless).
+
+I don’t really have much nostalgia for it. I never really liked it that much, because right after I got it they got a 2012 refresh so it was instantly old, so I didn’t really develop any emotions for it. I just remember working during the summer of 2012 and getting money. For some reason I had gotten into Apple stuff so I bought the cheapest Mac that was available. I also got 8 GB of RAM for it, which was easily user replacable (and officially supported) and I ran with those sticks for its entire life. Some years later I also got a SSD for it, which made a *huge* difference and made it usable until today.
+
+# Getting a New One?
+
+The irony in all this is ofcourse that this week Apple finally announced updated Mac Mini’s and they’re great.
+I won’t be getting one.
+
+Sure, I wouldn’t mind having one, but I think they’re too expensive. When I bought my Mac Mini in 2012 it was like $500 or something, really cheap. The new ones are about 2x more.
+
+And I really don’t need one. I went back to running Pi-hole on a Raspberry Pi 2.
+
+I just think it’s so funny and almost scary that the week Apple finally updated the Mac Mini, my Mac Mini died... is it a sign?

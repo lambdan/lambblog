@@ -1,0 +1,117 @@
+2017-03-25T14:44:00+01:00
+# Keyboard Collection (Updated: 7 Mar 2018)
+
+Here's my keyboard collection with a few words about each.
+I switch keyboard frequently so I won't bother listing here which one I am currently using, as I would have to go in every week and change it. 
+If you really wanna know you can ask me on Twitter.
+
+Also back here frequently as I will keep this page updated.
+
+# Currently Owned
+
+## Topre Realforce 88UB
+- 2018-
+- Honestly, it's very overpriced and overrated
+- However, it is probably the best "all-round" keyboard I've used. I can type on it for hours without being annoyed. I can game on it without being annoyed. It's not too quiet, it's not too loud. It's good all around.
+- Mostly bought it because a Swedish store had one left with the Swedish layout, so I couldn't resist
+![Topre Realforce 88UB](https://i.imgur.com/NLaYnof.jpg)
+
+## Apple Magic Keyboard 2
+- 2017-
+- Bought to use with iPad, I keep it in a [Studio Neat Canopy](https://www.studioneat.com/products/canopy)
+- Also works with Windows: https://lambdan.se/magic-keyboard-on-pc-20170704-i191
+![Apple Magic Keyboard 2](http://i.imgur.com/lAVG1Re.jpg)
+
+
+## Fnatic Gear Rush (MX Blue)
+- 2017-
+- Re-branded Func KB-460. Has backlight, media keys, 2 USB ports and included wrist rest (detachable) - alot for the low price. Feels pretty good too.
+![Fnatic Gear Rush](http://i.imgur.com/EYUlWtI.jpg)
+
+## Cherry G84-4100LCM
+- 2016-
+- Bought it for less than $3. Used it very briefly. Too compact layout.
+![Cherry G84-4100LCM](http://i.imgur.com/LrKFfbt.jpg)
+
+## IBM Model M
+- 2015-
+- Bought from the marketplace on Sweclockers. PS/2 connector. My favorite keyboard for typing. Terrible for gaming.
+![IBM Model M](http://i.imgur.com/F18z8kQ.jpg)
+
+## Apple Wired Keyboard
+- 2012-
+- My first "expensive" keyboard that I bought with my own money. Actually my second one of these, as I sold the first one, then regretted it and bought another one the week after. 
+- It's a very good keyboard, but it's a bit "boring" and some games that use the CAPS LOCK key won't work well.
+- Picture is of my 2013 battlestation
+![Apple Wired](http://i.imgur.com/p1PFM8x.jpg)
+
+# Previously Owned
+
+These have been sold, traded, given away or thrown out for various reasons.
+
+- Varmilo VA88M (MX Red)
+    - 2017-2018
+    - One of the best keyboards I've had, super solid build quality
+    - Unfortunately I was very annoyed by the keys not being "sunk in" and it just wasn't a very interesting keyboard, so I sold it
+    ![Varmilo VA88M](http://i.imgur.com/gnRflrC.jpg)
+
+- VORTEX Pok3r RGB (MX Brown)
+    - 2017-2018
+    - My first 60% keyboard
+    - 60% was very annoying for me because as it turns out, I use the function keys (namely F2) and the arrow keys a ton, so I didn't use it alot and sold it
+    ![Pok3r RGB](http://i.imgur.com/5j6petW.jpg)
+
+- CM Storm Novatouch
+    - 2016-2018
+    - I used to love this keyboard but ultimately it felt like a knockoff Topre Realforce, so I sold it
+    - Had one of the best spacebars I've ever used - didn't wobble at all
+    ![CM Storm Novatouch](http://i.imgur.com/taxIAea.jpg)
+
+- Tesoro Tizona G2N (Kailh Brown)
+	- 2016-2017
+	- Worst keyboard I've had
+	- The cable I got with it couldn't be connected to it, as the plastic around it was too thick to fit in the hole
+	- Had a DC Power input. Why?
+	- Once I got it connected to my PC it didn't work in all USB ports either
+- Tesoro Durandal G1N (MX Black)
+	- 2015-2017
+	- A very good keyboard, but looked a bit ugly
+- Das Keyboard Model S Ultimate (MX Blue)
+	- 2012-2017
+	- My first mechanical keyboard
+	- Started having issues where it didn't always work after I turned on my computer and required killing all power and waiting a while
+- Apple Wireless Keyboard
+	- 2015-2016
+	- Felt a bit flimsy since it isn't "solid" underneath
+- CM Storm QuickFire TK (MX Brown)
+	- 2015
+	- Interesting layout, but caused problems with games that used both numpad and arrow keys
+- Corsair K65 (MX Red)
+	- 2014
+	- First TKL keyboard
+	- Bought it just because I was playing a lot of osu! and wanted MX Red's
+	- Sold my Das Keyboard to my cousin once I got this, but ended up trading this keyboard with the Das because I missed it
+- Tranfor Keyboard
+	- 19XX-201X
+	- A very sturdy and heavy keyboard
+	- Not sure what switches it used, I remember making a thread on Geekhack or Deksthority about it (can't find the thread anymore)
+	- Not sure what happened to the keyboard, I kinda want it again. It might be around here somewhere...
+	- Recorded typing sound of it: https://www.youtube.com/watch?v=-X_YnJwQYgk
+- Microsoft Sidewinder X4
+	- 201X-201X
+	- A very good keyboard. If I had to go back to rubber dome I would probably get one of these.
+	- Traded it for a Samsung Galaxy 1, my first smartphone
+- Logitech UltraX Flat
+	- 20XX-201X
+	- Tore up a keycap when playing TD in Warcraft 3, and threw it away after that
+- Fujitsu Siemens KBPC
+	- 20XX-201X
+	- Not sure what happened to it, but I want a new one
+- Saitek Eclipse
+	- 2006-201X
+	- My brother bought it at Dreamhack Summer 2006
+	- I destroyed it playing Modern Warfare 2 when I called in a Emergency Airdrop that had amazing drops, but got killed by the enemy team before I could grab them
+- Various Logitech Rubber Dome keyboards
+	- 20XX-201X
+	- I really liked these at the time
+

@@ -1,0 +1,28 @@
+2016-05-13T16:35:00+02:00
+# Some more graphs about Friends blu-ray transcodes
+
+If you didn't have enough from my [previous post](http://lambdan.se/103/some-graphs-about-transcoding-friends-episodes-from-blu-ray) about this, here's more! I finished transcoding them again! This time using the `--small` preset in `transcode-video`. The file sizes are almost halved and honestly the quality isn't noticably worse.
+
+You'd think it would be, since I essentially sliced the bitrate in half, but nope. I can watch these just fine without complaining about the quality. The show is so god damn grainy anyway that it kind of looks bad to begin with.
+
+Some thoughts:
+
+- The `--quick` option drastically increased speed (as you can see in the graphs), and the file sizes didn't get much bigger for some reason. [Don told me](https://twitter.com/donmelton/status/728968862037762050) that there might be some quality loss though so I stopped using it pretty fast. I kept the episodes I did with it though just as a memento.
+- I thought I could hear the difference between AC3 384kbps and AC3 640kbps but nope. I can't. The reason I thought I did was because volume normalization, it made the sound crack in some areas, but turning down the volume just a bit helped a lot.
+- The space I save by doing this is quite nice, roughly 120 GB. While it might not sound like much in an age of 4 TB HDDs, it adds up. 120 GB is roughly 12 blu-ray movies or 2 DVD-quality TV shows.
+- `transcode-video` is faster in Windows than in OS X. In OS X I got roughly ~31 fps, while in Windows it would be around ~25 fps. Not sure why, it's the exact same computer.
+- I tried using some degrain filters but I ended up not using them. While they looked fine in screenshot comparions and watching them on my computer, something looked very weird with them when I watched them on my TV.
+
+Anyway, here's the graphs. I actually included the data from my previous transcodes/the default option, so you can compare.
+
+![transcode time](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/friends-big-transcodes/small/transcode%20time.png)
+<p class="img-caption">As you can see, `--small` is generally faster, especially combined with quick. Around Season 8-9 you can see it was way slower though. This was because of my PC doing other things (7zipping a bunch of stuff.)</p>
+
+![transcode fps](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/friends-big-transcodes/small/transcode%20speed.png)
+
+![bitrate](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/friends-big-transcodes/small/bitrate.png)
+
+![output file size](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/friends-big-transcodes/small/output%20size.png)
+<p class="img-caption">Almost half in size most of the time, which made it all worth it.</p>
+
+Now I think I'm done with transcoding Friends episodes for a long time, until I can get a hold of the DVDs and do those too (I want to as they have extended episodes.)

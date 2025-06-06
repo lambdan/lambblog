@@ -1,0 +1,56 @@
+2014-06-02T00:00:00+02:00
+# WWDC 2014 roundup
+
+The keynote was just finished and I am still kinda hyped about it, and still shaking. This was probably the best 2 hours I ever spent in front of my computer. For 2 hours, Apple just threw news in my face, and as a big Apple fanboy, this was awesome.
+
+I'm gonna try to write this blog post here, to summarize all the news, mainly for my own use as people IRL are gonna ask me what the news are and I know that I will miss something if I don't have it written down.
+
+## OSX Yosemite
+* New version of OSX
+* Re-designed, kind of flattenized as iOS 7 was  
+![bla](http://i.imgur.com/lkPXaVV.jpg)
+* Dark mode (darkened menu bars, etc.)
+* Notification center with Today view (like iOS 7)
+* Notification center with widgets
+* New Spotlight, can show stuff in Spotlight itself
+* Spotlight got a ton of stuff added but I don't care too much about them, they're nice though
+* Mail has Markup feature where you can draw on your mails if you wanna sign something, or direct someones eyes to something
+* Safari is now single barred
+* Safari address entry field can go to URLs, search and shows your most used sites
+* Free upgrade 
+* bunch of other stuff but these are the things I found most interesting
+
+## iOS 8
+* Quick-reply (R.I.P. big reason to jailbreak)  
+![bla](http://i.imgur.com/W6jNJhp.jpg)
+* "Quick-reply" also works with other apps, such as facebook, Calendar, etc.
+* App switcher shows most used contacts  
+![bla](http://i.imgur.com/8AQg5D4.jpg)
+* Mail (on iPad atleast), has a feature where you can "hide" the mail you are currently writing so you can check out another mail
+* Predictive keyboard  
+![bla](http://i.imgur.com/vy3Tdtf.jpg)
+* Leave group chats, mute group chats (this is a very awesome thing IMO)  
+![bla](http://i.imgur.com/cwnsDJW.jpg)
+* Easy to take selfies and record voice messages in Messages.app  
+![bla](http://i.imgur.com/M9UVscC.jpg)
+* Family Sharing. Imagine this: you have a kid who has his own iPhone, he wants to buy Minecraft. In order for him to do this (and use your credit card) you have to confirm it  
+![bla](http://i.imgur.com/eGfpDPC.jpg)
+* Photo editting features, too many for me to cover
+* Notification Center widgets (yes, widgets on iOS)
+* Apps can work with each other, kind of like "Open in"
+* Third-party keyboards (SwiftKey for iOS????)  
+![bla](http://i.imgur.com/WrrtSH5.jpg)
+* A TON OF NEW APIS FOR DEVELOPERS, they can now use TouchID, your health, etc.
+* Metal - some kind of API that makes processing in 3d Games 10x faster? (I didn't really understand this part, but I heard something about Frostbite on Mobile)
+
+## Continuity
+* You can reply to messages and answer to phone calls on your Mac, no need to touch your iPhone (this is awesome)
+* If you start writing an Mail on your iPhone, but feel like you need an actual keyboard, you can just hop on your Mac and the Mail you started writing will be right there waiting for you
+* iCloud Drive. Share files on all of your devices. Between apps. 
+* iCloud Drive gives you 20GB of storage for $0.99/month (really nice, I will probably use this)
+
+* and probably a bunch of stuff I missed
+
+I am really excited for this fall.
+
+_/DJS_  

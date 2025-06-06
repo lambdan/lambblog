@@ -1,0 +1,52 @@
+2016-06-24T18:56:00+02:00
+# Why I love Plex, and where it could improve
+
+Today Plex released version 1.0.0.2261, the first 1.0, of their Server application, and I thought I would celebrate them.
+
+The reasons I use Plex instead of say, Kodi, are very simple:
+
+- Only one place I need to manage metadata
+	- If I setup another device to view media on, say another phone, Raspberry Pi, Apple TV, all I do is sign into my Plex account. I don't need to pick Media folders on each player and select media agent.
+
+  - If I want to manually change the title or artwork of something I only need to do it once. I don't need to do it on every player.
+
+- I can listen/watch pretty much anywhere
+  - I can watch my content on my phone, iPad, Raspberry Pi, PS4, web browser, web browser on second computer. Everything syncs with the server so I can continue playing where I left.
+
+  - My local mp3 library is available everywhere. I recently switched to a Plex (Pass) music library, and it's been working great. Last.fm scrobbling and all. Last.fm is set up on my Plex account so I don't need to sign into Last.fm on all my playback devices.
+
+  - If there is a power out, I have offline synced a lot of TV shows to my iPad so I can watch there while the TV has no power. When power is back and my Mac Mini Plex Server is back on, what I watched offline will be synced.
+
+- I can share my content with friends and family
+  - I can manage who gets what
+
+  - My friend or family can be anywhere in the world, and it's securely transmitted
+
+I'm not saying Plex is perfect though. There are some areas where I think it could improve:
+
+- Kodi has a better Raspberry Pi client
+	- Plex Media Player has potential but so far it has been very buggy for me.
+
+- Kodi has more and better plugins
+	- Trakt.tv is semi-flaky on Plex, while on Kodi it's usually rock solid and tells you what it is doing (this is more up to the Trakt.tv plugin developers though)
+
+- Kodi has better automatic subtitles via OpenSubtitles integration
+	- To be fair though I don't trust automatic subtitles anyway, but it is a nice feature to have sometimes.
+
+- Plex doesn't handle re-watching TV shows that good
+	- If I want to get "watched markers" reset, I have to mark the show as unseen...
+	
+	- ...but then that also makes trakt.tv consider it unseen
+
+- Plex doesn't have a dedicated music player app for any platform
+	- I would love to have a dedicated music app for it on my phone so when I start it I immediately get to my music, and don't have to pick my Music library instead of Movie library
+
+	- I would also like a native music player app on Windows and OS X, running your music in a web browser window is not great
+
+- Plex on PS3 can't use a server which requires HTTPS, which is really weird
+	- I enforce HTTPS on my server so no one can use a PS3 to access my Plex shares
+
+
+These downsides are relatively minor though. It's really the first upside I mentioned, the one place to manage metadata, which is the biggest deal for me. It is so much more convenient for me, as I constantly reset and set up new devices back and forth.
+
+

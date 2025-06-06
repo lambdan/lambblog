@@ -1,0 +1,44 @@
+2020-06-16T21:06:00+02:00
+# Most Efficient Way to Watch Twitch in macOS
+
+I rarely use the Twitch website to watch streams.
+
+Instead I use my own little script called [whoislive](https://github.com/lambdan/whoislive) to see who is live, and then I watch it using [Streamlink](https://streamlink.github.io/). 
+
+And then, if I really wanna look at chat, I use IRC, specifically irssi. [Here's a quick little guide how to set up that](https://gist.github.com/lambdan/4d9ac5a63e56c6d1d9169f5b81de9dd6).
+
+What's interesting about streamlink is that it can just give you an URL to the video stream, so you can use practically any video player to watch it.
+
+I've been using [mpv](https://mpv.io/) which I like for its simplicity and minimalism, but I noticed my [2020 MBP](https://lambdan.se/blog/2020/06/08/going-from-a-2010-macbook-pro-to-a-2020-macbook-pro/) gets really hot doing so.
+
+So I started looking into alternatives. Most interesting to me was to use Apple's own Quicktime Player. Seeing as its theirs, it should be the most efficient for macOS... right?
+
+I did some quick tests. I just opened the stream in each player and looked at Acitivity Monitor for a while to see what kind of CPU and GPU usage I got, I figure lower is better.
+
+![Graph](https://lambdan.se/img/2020-06-16_21-02-26.038761.png)
+
+- Brave (Chrome) and Safari gets more CPU usage because they also see the chat, but it's still not bad. Thank god we don't use Flash anymore.
+- Quicktime and VLC are practically the same. Streamlink uses VLC by default. Quicktime gets some native OS bonuses though, like Picture-in-Picture, so might be worth using it for that.
+- IINA is probably good too, the numbers were kind of jumping so it might be the same as QT/VLC. It took a very long time to load up the stream in it though.
+- mpv uses a shocking amount of CPU and I don't really know why.
+
+I'm gonna start using Quicktime for Twitch I think. Here's a nice little line i put in my `.zshrc` to make it easier: 
+
+	ttvQT () { open -a "quicktime player" $(streamlink twitch.tv/$@ best --stream-url) ;}
+
+This way I just open up terminal and type in for example `ttvQT heyzeusherestoast` and boom, QT opens up with the stream:
+
+![QT](https://lambdan.se/img/2020-06-16_21-12-33.114895.png)
+
+And I can put QT into PiP to watch it while doing other stuff:
+
+![QT PiP](https://lambdan.se/img/2020-06-16_21-16-19.586433.png)
+<figcaption>The controls on the player goes away if you don't hover your mouse over it. I just wanted to show them for the screenshot.</figcaption>
+
+For fun I also looked at the Energy tab in Activity Monitor and looked at the "Energy Impact" metric for a couple of the players. I have no idea what that exactly is or how it's calculated, but I figure lower is better:
+
+![Energy Impact](https://lambdan.se/img/2020-06-17_19-10-47.286606.png)
+
+--------------------------------
+
+Updated 17 Jun: Added Energy Impact

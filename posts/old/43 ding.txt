@@ -1,0 +1,18 @@
+2015-09-28T00:00:00+02:00
+# Ding!
+
+If you have ever listened to [ATP][] there is a gag about a inserted "Ding!" sound each time someone mentions HFS+, the default file system for Mac OS X. John Siracusa, a host on the show, has also talked alot about this file system on one of his other podcasts, [Hypercritical][]. 
+
+Anyway, I didn't think much about these HFS+ rants, I just thought it was fun to listen to and I liked the "Ding!" gag. While listening to one of his many rants about it, I did pay a little attention to what he was saying, how HFS+ can, as time moves on, sometime somehow corrupt itself and it won't work as expected. 
+
+Well I experienced this today, when I tried to create another partition on my Macbook Air's SSD. 
+
+![The error](http://lambdan.se/blog/content/43_tweet.png)
+
+It errored, and wouldn't let me progress. I ran a Verify and Repair and those failed too. I could not do anything to the disk (except write and read data to/from it as usual from the OS X install I had.) 
+
+Anyway I removed the entire disk, making it 1 partition, then reinstalled OS X on it. Went with Mavericks [for fun][]. I was gonna restore from a Time Machine backup, but it failed too. 
+
+[ATP]: http://atp.fm
+[Hypercritical]: http://5by5.tv/hypercritical
+[for fun]: https://twitter.com/djs__/status/648577786010075136

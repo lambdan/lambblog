@@ -1,0 +1,19 @@
+2016-01-18T20:07:00+01:00
+# Some initial iPad impressions
+
+This is an interesting device to say the least, my first iPad. An iPad Air 2. 
+
+So far I'm quite happy with it. Not overly enthusiastic and not disappointed. I simply just like it. I really, really, like the Video PiP. Watching a tv show while browsing the web or reading Twitter (or even while playing Hearthstone apparently) is really sweet. (Obviously this has always been possible on a PC.)
+
+![PiP example](http://lambdan.se/img/Photo%20jan.%2018,%207%2053%2033%20em.png)
+
+As far as a portable productivity device goes we'll see. I'm not ready to sell my MacBook Air just yet. **This post is entirely done on this iPad though, typing on the onscreen keyboard.** The onscreen keyboard is so far surprisingly good, for simple text writing. I'm not doing many, or any, misstaps. 
+
+The speed is nice. Switching between apps using the four finger swipe is awesome, and going back into Safari without having to reload tabs is nice. Hopefully iOS 10 won't halt it. 
+
+I'm gonna try to do more and more tasks with it. I've already tried encoding videos through it (using ssh to control main PC), and I set up Irssi on my Mac Mini so irc is accessible through it as well using ssh. I've tried some VNC connections but I 
+probably need to buy that Screens app to experience it properly. I doubt I will do any coding on it though, mostly due to the "keyboard." 
+
+![typing on a iPad](http://lambdan.se/img/FullSizeRender.jpg)
+
+I'll keep you posted. 

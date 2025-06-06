@@ -1,0 +1,27 @@
+2017-09-08T23:09:00+02:00
+# Apple Magic Keyboard 2 for Gaming
+
+A while back I [told you](https://lambdan.se/blog/2017/07/04/does-the-apple-magic-keyboard-2-work-with-a-pc-over-usb/) that the _Apple Magic Keyboard 2_ works with Windows over USB.
+
+Then [_Stammy_](https://twitter.com/Stammy/status/904422731906560000), a fellow I follow on Twitter, posted his setup and I noticed he is using a Windows PC, with this keyboard, wirelessly. 
+So I decided to try it over Bluetooth, with the Belkin USB dongle I had lying around, and indeed it works.
+
+The reason I care about this, is because I am incredibly jealous of Stammy's setup, and many others. I love these super clean, minimalistic computer setups.
+Unfortunately, I don't think I will ever reach that state, because of all the stuff I need in order to capture gameplay from consoles, and just my general sloppiness of putting stuff wherever there is free room for it.
+
+Anyway, getting a good wireless keyboard is a good start to this. And I love the Apple Magic Keyboard 2, atleast aesthetically, so I wanna tell you how it is for gaming.
+
+As far as I can tell, and I have tried, there is no difference between using it over Bluetooth or over USB. It has the same pros and cons.
+
+It actually works pretty damn good in general As far as I can tell, there is no delay or anything. I tried playing the rhythm game _osu!_ and I had no problem with timing.
+I also used this [website](http://blog.seethis.link/scan-rate-estimator/) and messed around in it with this keyboard, both wired and wirelessly, and a wired mechanical keyboard, and the results were identical.
+The mechanical keyboard was 5 ms better (7 ms lowest, compared to 12 ms on the Apple keyboard) but I'm not even sure if that was latency, or just Cherry MX "bouncing" back faster. 
+Whatever, the keyboard does not have a noticable delay, is what I am getting at.
+
+Unfortunately, where this keyboard fails, is my simple "donut test". This is the second keyboard I have that fails this test (the other keyboard being the infamous _IBM Model M_). 
+
+My so called donut test, is simply trying to do a donut in any GTA game, by holding down W (forward), S (reverse) and either A or D (left/right). If you get a donut, your keyboard has better than 2 key roll over (2KRO). If your car just stands still, burning out your tires, your keyboard cannot do 2KRO, and it has failed the donut test.
+
+This is a bit unfortunate, as I had even started looking for wireless gaming mice and wireless headphones for my PC, but oh well...
+
+Maybe someday I'll have a clean desk. Need to start using one monitor first.

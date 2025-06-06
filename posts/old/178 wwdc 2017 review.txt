@@ -1,0 +1,50 @@
+2017-06-06T11:30:00+02:00
+# Thoughts on what Apple showed at WWDC 2017
+
+Haven't watched an Apple keynote in a while, so I decided to tune in to this one as my Twitter feed was going wild about it before it started.
+
+I don't remember the exact order and I didn't even care about all they talked about, so this will be far from complete, but I have some thoughts here and there and I think it's better than spewing out a ton of tweets.
+
+# Macs and macOS High Sierra
+
+- _High Sierra_ is a ridiculous name.
+- eGPU's are now officially supported? That is cool and I am very interested. Will keep an eye on it.
+- I wonder how loud the iMac is when running the VR demo?
+- Macbook Air still not dead
+
+As a recent Macbook 12" owner, I am not too upset about that I am now running a one year old version of it. 
+They only improved the CPU and they updated the keyboard to be version 2 of the butterfly switches, but I like the older ones too that mine has, so I don't mind.
+
+# iMac Pro
+
+- The iMac Pro seems hella nice. I would like one
+- That keyboard looks hella nice too, wish it was wired for easy PC compatibility though.
+- Sad that they insist on using AMD graphics chips. I would prefer Nvidia much, much more.
+- Starts at $4999, which in Sweden will probably be around $6500 or so, which is way too much for me. Maybe someday.
+
+# iOS 11
+
+- Native Screen Recording: you can now screen record, with or without external audio, right on your device. This is super cool.
+- New Control Center: apparently you can customize it alot more, and add whatever you want to it. Super cool. The UI looks kind of funky, but it probably doesn't take long to get used to.
+- Signal Bars are Back: I haven't seen anyone else talk about it, but the balls we've had since iOS 7 or whenever to measure signal strength are now back to being traditional bars. I kind of like the balls, but this is cool too.
+- Smarter Camera: as I understand, you can now apply a bunch of AI-assisted filters after the picture has been taken, in a fast and seemless fashion. We'll see how good it works in practice.
+- Do Not Disturb While Driving: Seems good, but I am afraid it might annoy passengers as they have to tap "I'm not driving" every time?
+
+# iPad
+
+I didn't really understand how the new multitasking UI worked, but I then saw this video in my YouTube recommendations which made it all clear: 
+
+<div class="video-container">
+<iframe class="embed-responsive-item" src="https://youtube.com/embed/3NlPU5dr9Qs"></iframe>
+</div>
+
+Seems to be pretty good and intuitive overall. I'll have to play around with it when I get it on my iPad this fall (if the iPad Mini 2 even supports that kind of multitasking, it's already kind of slow on iOS 10)
+
+Also, the new iPad's seem nice, with adaptive refresh rate up to 120 Hz as I understand it. I also read that it supports 24 Hz, which would be very cool as I primarily use mine for watching TV Shows. Maybe the Apple TV will get 24 Hz eventually?
+
+# HomePods
+
+As with all of these kind of devices, I am not interested. Also I can't listen to music through speakers in my home anyway - it's just awkward, the kind of music I listen to doesn't really work as house tunes.
+
+I also tried Apple Music again and it was awful.
+

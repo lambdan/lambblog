@@ -1,0 +1,112 @@
+2017-03-12T17:52:00+01:00
+# Converting Videos for Use with XBMC on Xbox
+
+For fun today, I decided to boot up my Original Xbox and play around with it.
+
+I wiped it completely, then put just the Microsoft Dashboard on there, along with _XBMC4Xbox 3.5.3_, and pretty much nothing else.
+
+I put some emulators on there, with roms, and some games as well, and then I decided to try playing some videos on there for old times sake. Back in the days, I used to watch pretty much all my videos on the Xbox using XBMC. I also used to bring it to school and we watched through the entirety of _That '70s Show_ and _The Big Bang Theory_ on it, in school. 
+
+Back in those days, the videos worked fine. They were in SD resolution, encoded with _XVID_ and usually had MP3 Stereo audio. 
+But nowadays, HD resolutions and _H264_ is more common, with AAC or AC3 audio.
+
+The Xbox doesn't have it as easy with these more modern formats. Afterall, it is just 64 MB of RAM and a Intel Pentium III running at 733 MHz in there.
+Most audio formats are fine, as far as I can tell, it plays MP3 just as well as it plays AAC or AC3.
+
+But the Xbox doesn't handle modern H264 video that well:
+
+- It handles SD resolution H264 very well, apart from very intense sections (you'll see below in the table.)
+- It handles 720p H264 very poorly/not at all. It is unwatchable basically.
+- It does however handle 720p MPEG4/XVID very well, apart from very intense sections (just like SD H264).
+- SD MPEG4/XVID is ofcourse perfect, as that is what was most used when the Xbox was more active.
+
+To come up with these concluisions, I made a very simple test. I used a Big Bang Theory episode from the newest season, which I acquired both a SD and HD resolution scene encode of. These scene encodes follow the official [scenerules](https://scenerules.org), which uses H264.
+
+From these scene encodes, I then encoded MPEG4 versions, using `ffmpeg`, with this command:
+
+`ffmpeg -i input.mkv -ac 2 -c:v mpeg4 -vtag xvid -q:v 4 -c:a mp3 -q:a 5 -c:s copy output.mkv`
+
+Let me explain this command real quick:
+
+- `-i input.mkv` specifies input video file
+- `-ac 2 -c:a mp3 -q:a 5` specifies 2 audio channels (downmixes surround to stereo), encode audio with MP3, `-q:a 5` specifies quality for the MP3 encoder (which in this case is VBR between 120-150 kbps I believe)
+- `-c:v mpeg4 -vtag xvid -q:v 4` specifies mpeg4 as video codec and `-q:v 4`sets the video quality to a pretty high quality (0 is highest, 31 is lowest I think). I'm actually not sure what `-vtag xvid` does, but every MPEG4 ffmepg example I saw online used it so I use it too
+- `-c:s copy` - copies subtitle tracks if there are any, and this is why I want the output to be Matroska as it supports any subtitle format
+- `output.mkv` specifies output file
+
+> 
+> ## Sidenote about MP4 and MKV files
+> __One thing we need to clear up__ is that MPEG4 video is not the same as video files that end in `.mp4`. 
+> `.mp4` is merely only a container. `.mp4` files usually contain H264 video.
+> What we want is videos encoded with MPEG4 or Xvid or DivX, aka H263. What container they are in does not matter, `.avi, .mkv and .mp4` is all valid for H263, along with some other video containers probably.
+> 
+> As a sidenote, on the topic of video containers, XBMC on Xbox handles Matroska `.mkv` files just fine. Modern Apple devices like iPhones and Apple TV does not, and require converting them to MP4 or M4V files. Although the MKV files might contain valid H264 video as these devices support, they simply don't know how to read MKV files.
+> 
+> (If you use Plex, Plex will just direct stream them which is a very fast process and does not require CPU intensive converting, as it just takes out the parts that make up the MKV file and put them in a MP4 file, as long as those parts are supported in a MP4 file.)
+> 
+> Matroska is objectively the best video container as it supports anything. Any kind of audio, any kind of video, and kind of subtitles: it does not care. Only downside is device compatibility but honestly that's not an issue unless you wanna natively import videos on your iPhone using iTunes.
+> 
+> Another nice thing about MKV, is when you are creating them. If you specify a MKV file as output in `ffmpeg` or _Handbrake_, you can actually open up that MKV file immediately in a video player like VLC and you can watch it right away, as it is being transcoded. Obviously you cannot jump forward into the movie though, as that part probably hasn't been transcoded yet. 
+> If you use a MP4 file as output, you cannot live preview it during transcoding, and all video players will just say that it is damaged.
+
+Okay, once I had these encodes, I then transferred them to my Xbox over FTP, then loaded up them up in XBMC and looked at them.
+
+To get a objective number of how well the Xbox was able to play these videos, I hit the _Black button_ and looked at the CPU Usage.
+
+First, lets just look at a __random part of the episode__, where not much is going on, as usual:
+
+|Resolution|Codec|CPU Usage%|
+|-----------|------|-----------|
+|SD|MPEG4|[34.73](https://lambdan.se/d/xbmc4xbox/mpeg4-sd.JPEG)|
+|SD|H264|[66.13](https://lambdan.se/d/xbmc4xbox/scene-sd.JPEG)|
+|720p (HD)|MPEG4|[68.11](https://lambdan.se/d/xbmc4xbox/mpeg4-hd.JPEG)|
+|720p (HD)|H264|[100.00](https://lambdan.se/d/xbmc4xbox/scene-hd.JPEG)|
+
+Obviously, SD MPEG4 is not a problem, and even 720p MPEG4 works well, which I find very impressive as it is just a Intel Pentium III in there! 
+So if you have the Component cables, feel free to put your Xbox in 720p mode and watch it on your HD CRT or HDTV with Component inputs.
+
+But take a look at the SD H264 numbers - it is basically the same as 720p MPEG4. So what does this mean?
+Well, obviously, the Xbox doesn't have a chance with 720p H264. H264 is just way too hard on the Xbox.
+
+I find it quite fascinating that the same device can play something in HD resolution as well as it can play something in SD resolution when its encode suits the device.
+
+Secondly, __lets look at the intro__. The intro of _The Big Bang Theory_ is pretty damn intense, as it bascially flickers and causes epilepsy.
+
+|Resolution|Codec|CPU Usage%|
+|-----------|------|-----------|
+|SD|MPEG4|[61.10](https://lambdan.se/d/xbmc4xbox/intro-sd-mpeg4.JPEG)|
+|SD|H264|[100.00](https://lambdan.se/d/xbmc4xbox/scene-sd-intro.JPEG)|
+|720p (HD)|MPEG4|[100.00](https://lambdan.se/d/xbmc4xbox/mpeg4-intro-hd.JPEG)|
+
+As you can see, SD MPEG4 is no problem, but H264 is too complicated for the Xbox and as a result the Intro vill appear stuttery on your Xbox.
+I did not bother trying the Intro in the HD H264 version as it obviously wouldn't work when HD MPEG4 couldn't do it either.
+
+But remember: the intro is very intensive and HD MPEG4 worked fine in "slower" parts, as you can see further above. This intro is an extreme case.
+
+------
+
+So there you have it. You wanna watch videos on your OG Xbox? Then you should convert them to H263/MPEG4/Xvid/DivX/whatever you wanna call it.
+
+There are many tools to do this. For maximum nostalgia you would probably install a Xvid encoder and set the target file size to 700 MB and use a 2-pass encode.
+
+I prefer using `ffmpeg` though as it's available basically everywhere. Here's a simple command to convert __any video__ to SD MPEG4, that is very Xbox compatible:
+
+`ffmpeg -i %1 -ac 2 -c:v mpeg4 -vtag xvid -q:v 4 -c:a mp3 -q:a 5 -vf scale=-1:404 -sws_flags lanczos -c:s copy output.mkv`
+
+If you want to, you can remove the `-vf scale=-1:404` part. This will prevent downscaling the video. Personally I just use 480p with my Xbox, so having 720p is not worth it. 404p is kind of odd, but if you look at many modern SD scene releases of TV shows, you will see that they are very often 404p.
+
+If you wanna downscale a 1080p or 2160p video to 720p you can change it to `-vf scale=-1:720` and it will downscale it to 720p. The `-1` maintains aspect ratio, but this might cause issues as some numbers are not divisible by 2, so you might have to manually specify a number instead (that is divisible by 2).
+
+If you want to increase speed when downscaling, you can also remove `-sws_flags lanczos` which will make ffmpeg use a Bicubic algorithm for downscaling, which is fater than Lanczos, but slightly worse quality.
+
+You can also remove the audio parts (`-c:a mp3 -q:a 5 -ac 2`) and replace it with something else. You could remove `-c:a mp3` to encode AAC or Vorbis instead. You could change `-q:a 5` to `-b:a 160k` to make a constant bitrate encode of 160 kbps. You could remove all of it and just change it to `-c:a copy` to just copy over the audio as it is. The Xbox seems very capable of playing audio, even AC3 Surround and such.
+
+You can check the [XBMC4Xbox Wiki](http://www.xbmc4xbox.org.uk/wiki/XBMC_Features_and_Supported_Formats#Xbox_supported_video_formats_and_resolutions) to see what video formats are supported, and how well they are supported.
+
+## Why Would You Do This?
+
+I don't know really. Nowadays, in my opinion, playing media on the original Xbox is not that convenient. It was a huge deal back in the days, when hooking up a PC to your TV was not that easy to do.
+
+I did all this research, mostly for fun, but I might also put all episodes of Friends or Seinfeld or something on there, in case my Plex Server + backup of it dies... however, unlikely that is.
+
+I love the original Xbox, even though I don't like playing games on it.

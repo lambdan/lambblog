@@ -1,0 +1,13 @@
+2017-07-01T15:13:00+02:00
+# The Emoji for Linked Posts
+https://emojipedia.org/round-pushpin/
+
+I have added linked posts functionality to lambblog again.
+Look out for this emoji: 📍
+
+I decided to add the functionality again as most of these kind of blogs have the functionality, and I sometimes feel like I need to provide some commentary on some stuff I find online.
+
+I have also added support for it in the [JSON Feed](https://lambdan.se/feed.json) and the [RSS Feed](https://lambdan.se/rss), however, in the RSS feed there is no permalink to my blog, the URLs in there just go to the external URL.
+However, in the JSON Feed, linked blogs are natively supported so `url` points to my blog, and `external_url` points to the external URL.
+
+Have fun!

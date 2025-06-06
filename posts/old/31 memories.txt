@@ -1,0 +1,63 @@
+2015-03-04T00:00:00+01:00
+# Good old memories
+I just got out of the sauna/shower, and for some reason, while in there, I started thinking of old memories I had of using comptuers and PCs pre 2005 or so. Probably because I tweeted this right before I went in:
+winrar is so nice to use the first 30 days— djs (@djs__) March 4, 2015
+I'm gonna try to put them in chronological order, but I cannot guarantee that they are. Most memories involve something of that period (like Halo 2 in 2004) so I can probably use those to aid me. 
+I'm not gonna write down every memory I have, but i'm gonna write down those that I think might be most interesting and maybe funny. I'm not gonna put any gaming memories in here, probably saving those for another post as I have alot of those. In this post im trying to focus on computer and hardware stuff. For example, there is a little bit about Xbox gaming, but as it was about FTPing I consider it computer stuff.
+In case you arent aware, I am born in January 1996. Keep that in mind as you read these.
+## ~2003 - Reinstalling Windows ME
+I remember my cousin (who is 9 years older than me) coming over to reformat and reinstall Windows ME on our computer. This was a time where formatting a hard drive took forever (there was no quick format), so we watched the movie [Evil (2003)](http://www.imdb.com/title/tt0338309/) while doing it. It finished late at night (I remember my mom telling me to go to bed) but the next day I woke up, it was fixed and the computer worked fine again!
+I cannot remember why my brother didn't do this. I'm guessing he was on a trip or something. 
+We actually used Windows ME for a long while. I dont think it was until 2004 we started using Windows XP...
+## ~2003 - Going from 56k to 10mbit fiber
+I remember this day like it was yester day. It was warm and sunny outside (probably june/july, I dont think I had school). A van and some guy shows up to our house and asks me (because I was outside, wasn't a nerd quite yet) where my dad or mom is. I point him inside and she starts talking to my mom. I follow him around to the back of our house and saw him taking out a drill and started drilling into my brothers room.
+First hole he drilled got a bit ugly/off-center, so he made another one (this first hole still exists and my dad is still not happy about it). Once he was through he put the green fiber wire my brother and dad had dug down earlier (yeah, it must have been summer as they digged) through the wall. Once inside, he connected it into a box (kind of a modem I guess) that makes that fiber wire into a standard CAT-6 plug, that we still use today. After that he left.
+Some hours later my brother came home from school and he got super excited. We had just gone from 56k to 10/10 fiber. I have a very strong memory of this, as we had tried to download the Majoras Mask rom (which took forever over 56k) but eventually ended in a corrupted download. Now on the fiber, it went in a few seconds and both of our jaws dropped. This was amazing. 
+(I don't think we played it though as we had the original game on the real deal)
+## ~2003 - FAT32 file size limitation
+Did you know that FAT32 has a file size limitation of 4 GB? I do. 
+We learned this when we had acquired some DVD movie (usually around 4.7 GB) split across .rar files. And we were so confused when WinRAR errored saying that it can't unpack it. So my brother googled it or something and we pierced a command into our heads:
+    
+    convert c: /fs:ntfs
+
+This converted the file system into NTFS.
+## ~2003 - BitTornado
+This window is pierced into my mind.
+![alt text](https://dl.dropboxusercontent.com/u/60071552/bittornado-22.jpg)
+After that we used BitLord, BitComet, Azureus (idk spelling), and finally uTorrent. Before torrents we used DC++, oDC and Kazaa. All of which were terrible (although, I do have some good memories of searching for hubs on DC)
+## ~2003 - First time using IRC
+For some reason, I have no idea why, my cousin had installed mIRC and nbs-irc on our computer. Anyway, curious as I was I started it and started messing around.
+I haven't used mIRC in a while, so I dont remember exactly, but there is a window where you can pick popular servers and popular channels so I did that to get into a swedish channel. Once I was in there I felt like a hacker (because my cousin had set a black background & lime text theme). 
+Because I had no idea how IRC worked, I clicked on the names to the right and started PMing some random dude. He told me where I lived (thanks to IP/hostname lookup), and I was super super spooked. So spooked I told my mom and she told me never to go there again.
+## ~2003 - Daemon Tools?
+Me and my brother, or my cousin, did not know of anything like Daemon Tools/Virtual Clonedrive. So whenever we had grabbed an ISO or .BIN & .CUE files, we burned it to discs and then plopped the disc back in to read them (alot of discs were wasted this way, especially when I didnt know how to burn an image properly (I dragged and dropped the files onto the disc, oops)).
+Later this year my brother started gymnasium (high school pretty much) and some friend there told him of Daemon Tools. Amazing piece of software.
+## ~2004 - My brothers new computer
+I remember coming into the house, hearing my brother talking on the telephone. Shortly after he said that he had asked our uncle to build a new computer. Later that week it arrived and it blew our minds. It was a Pentium 4 2.8GHz, 1GB ram, 80GB hdd, Geforce Ti 4400. My brother played Prince of Persia: Sands of Time and Far Cry (1) on it (so it's probably around early 2004). One particular memory I have of this computer was that our uncle set up Norton Ghost on it. I think we only used it once and never used it again.
+## ~2004 - >Not FTPing games to original Xbox
+For some reason, me and my brother had not realized that you could FTP games over to the Xbox hard drive and play them from there, so we burned discs.
+I remember one instance where my brother had bought a 5 pack of DVD. He gave 2 of those to me, and 3 of those to himself. His game picks were: Halo 2, Jade Empire and Fable. Mine were Juiced and TH: American Wasteland.
+It was later next year we discovered FTPing capabilities for games and got a bigger hard drive for it (Slayers 2.7 disc is another memory). I think the first game we played from the hard drive was POP: The Two Thrones (released December 2005). Ironically, that game had a bad rip so it didnt work very well, so we blamed the hard drive loading and kept on using discs for a while.
+## ~2005 - ViperGC modchip for Gamecube
+Judging from when Metroid Prime 2: Echoes was released (nov 2004) and my birthday being in January, this was around feburary 2005 I would say. My brother had asked me what I wanted for my birthday, and I had no idea. So he suggested this way for us to play free gamecube games on our gamecube and I went with that.
+So he got the ViperGC modchip. I remember my brother melting a BIC pen to make a triwing screwdriver. my dad soldered it in, we plugged in the gamecube again, it worked!
+Well, the gamecube worked. The modchip did absolutely nothing. Prior to this we had put Echoes on a disc but that was just a waste as our gamecube didnt read backup discs. 
+We think that it had something to do with the flashing step (the chip came blank, you had to flash in a BIOS on it) but we could never fix it. It's sad.
+That gamecube is thrown away anyway. Sad sad sad.
+## ~2005 - Discovering my friends PS2 is modchipped
+Star Wars Episode III was the new hot movie, and the video game looked awesome. Me and my friend were looking at a ton of screenshots of it (watching gameplay videos wasn't really a thing for us). For some reason I had acquired a ISO of it for the PS2 version.
+Somewhere around this time, I noticed that some of my friends PS2 games looked really cheap and weird (no cases, just a printed out cover and printed label on disc it seemed like), so I asked him what the deal was with that and he said that he had bought those games in Thailand, and that his sisters boyfriend that sent in his PS2 to a company to modify it to play those.
+Sure enough, there was a sticker for this company (chipper.se) on the back of the PS2. I had known Chipper from our ViperGC days, so I figured his PS2 was modchipped.
+We burned the disc with the ISO and put it in his PS2. And it booted... but then died shortly after.
+We started trouble shooting and I, for some reason, tried burning the disc at a much lower speed (compared to 48x or whatever), and it worked great! Following that time alot of games were burnt and played, so much that he had to replace the laser once.
+## ~2005 - I learn very basics of HTML
+My brother was taking a HTML class in school. As I was super attached to my brother I watched him do his HTML homework, seeing what he was typing and trying to understand it.
+Once he left the computer to go to a friend or something, I decided to try myself.
+My first website probably (probably = 99% sure) looked something like this:
+
+    <font color="lime">
+    *text*
+    
+Sadly I can't remember what I wrote instead of *text*, probably something like my name. Anyway, when my brother came home I showed him it and he was super impressed. He started showing me more and more stuff, which resulted in me doing my own school website in notepad.exe (instead of PowerPage or whatever it was called). My teacher was also impressed.
+## Ending
+I'm sure I missed a ton of good memories. I plan on writing another one for gaming memories. Let's just say that I learned a ton of computer stuff in my childhood and that I owe alot of it to my brother. 

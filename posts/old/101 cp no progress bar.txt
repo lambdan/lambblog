@@ -1,0 +1,9 @@
+2016-05-05T15:41:00+02:00
+# Why doesn't cp have a progress bar like wget?
+http://unix.stackexchange.com/a/15658
+
+Decided to look this up when I was copying a couple of gigabytes of files to my NAS using the `cp` command.
+
+The main idea is that in Unix you only want messages if something goes wrong. Which is fine. But I found this extra interesting:
+
+> The practical reason is that in unix's very early days, there still were teleprinters; that is, the output from programs would be printed on paper, and you don't want to print progress bars.

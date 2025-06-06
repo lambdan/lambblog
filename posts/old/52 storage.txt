@@ -1,0 +1,43 @@
+2015-12-20T00:26:00+01:00
+# Storage
+
+Here’s what I do for storage for my digital life.
+
+### My main rig
+
+In my main rig I have two SSDs and 2 HDDs:
+
+- __SSD 1: 120 GB Kingston V300 SSDNow__ - this is the disk that I run OS X from/on. It’s formatted as HFS+. It is backed up through Time Machine. This is the first disk my computer boots (as it has Clover on it, where I pick which OS to boot.)
+
+- __SSD 2: 250 GB Crucial BX100__ - this is the disk that I run Windows from/on. It’s formatted as NTFS. It also stores most of the games I play in Windows. This disk does not get backed up.
+
+- __HDD 1: 500 GB Toshiba 5400rpm__ - this is the disk that I call “Windows Storage”. It’s formatted as NTFS. It stores some games in Windows that I cant afford to put on the SSD, and some other random stuff which I use in Windows (like stream recordings.) This disk does not get backed up.
+
+- __HDD 2: 1 TB WD Green__ - this is the disk that I call “Green”. It’s formatted in exFAT, so both Windows and OS X can use it. On it I keep my entire music library so I can listen to my music from both Windows and OS X. It also has a Dump folder on it, where I usually point my torrent clients. It also stores the one game that I play in OS X: World of Warcraft (for Windows it’s stored in HDD 1.) This disk does not get backed up, except the Music folder which I manually copy-paste onto the NAS occasionally.
+
+### NAS
+
+In our NAS we have one disk internally, and two external drives.
+
+- __HDD 1: 4 TB WD Red__ - this disk is basically everything. It has all our pictures, media, games, important documents, etc. It gets backed up every night to one of the external drives.
+
+- __Ext 1: 4 TB Seagate__ - this is the drive that the main disk is backed up to.
+
+- __Ext 2: 500 GB Hitachi in a cheap enclosure__ - this is my Time Machine drive. All computers running OS X gets backed up to this (each of the OS X computers only have 120 GB drives so 500 GB is plenty.)
+
+### Mac Mini
+
+In my Mac Mini I only have a single 120 GB Samsung EVO 840 SSD. The only things ran on this disk is OS X, Plex Server and Plex Home Theater. Quite overkill, but it’s quiet. It gets backed up through Time Machine.
+
+### Macbook Air
+
+My Macbook Air only has a 120 GB SSD in it, so it also gets backed up through Time Machine.
+
+## Closing Words
+
+I’m not a huge fan of backup, maybe it’s because I never had significant data loss. The main reasons I do it on the machines running OS X is because it’s made so simple by Time Machine. You just pick a drive and hit OK, and you never have to touch it again. I also do it on my NAS because I would hate to lose all the media I have collected over the years. 
+
+But I don’t see the point of doing it on something like my Windows drive. On there I only have games, all of which can be re-acquired through Steam, and Steam also backs up save files for most games (except GTA V). 
+
+I am interested in [Backblaze](https://www.backblaze.com “Backblaze”) though. As soon as they support backing up an entire NAS without some weird iSCSI workaround, I’m probably gonna try them.
+

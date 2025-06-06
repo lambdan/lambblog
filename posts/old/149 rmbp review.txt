@@ -1,0 +1,33 @@
+2017-01-06T21:22:00+01:00
+# rMBP Thoughts
+
+Since I posted some [thoughts][razer] about that Razer laptop yesterday (well, last night) I guess I should do some thoughts on the christmas gift [I got for myself][blogpost] aswell.
+
+Simply put, this is an amazing laptop. And that's what you should expect when you pay a lot of cash for a laptop made by Apple, even if it's 3 years old.
+
+Specs wise I am very happy with it. Video transcodes are fast enough and I can even do some light gaming. Hell, even _GTA V_ ran OK. I was running it at 60 fps with medium settings at 720p, until it thermal throttled (or something similar, FPS started jumping between 30 and 60 all of a sudden.)
+
+![gtav on this](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/IMG_0708.jpg)
+<p class="img-caption">Notice that it says 60 FPS in the corner</p>
+
+**The display is awesome too.** I initally wrote that Retina ruined all other screens for me, which is part true. The monitor I use for my PC, a 27" 1440p display, is so far back/far away from me that it doesn't really bother me there. But for instance the 1366x768 panel that was on my old 13" laptop now looks unusable.
+
+Initially I didn't wanna run the display at the native 2x resolution (2880x1800, 1440x900 effectively). It looked way too comically big. However, this is actually the resolution I am using it in right now, writing this while lying in bed. I call it my bed resolution. If I use the computer at a desk I run it at the 1920x1200 mode which makes everything very tiny and I have to be kinda close to see everything properly. 
+While I can also use that resolution in bed, it's a tad too hard on the eyes when you are laid back and just wanna chill.
+
+I don't like the 1680x1050 mode though. That was actually the first mode I settled on when I got the computer now but I can't really use it now. It's like not good for anything and the text looks slightly blurry with it. In both 1440x900 and 1920x1200 I find the text crisp.
+
+Keyboard is fine. I hit 160 WPM with it on TypeRacer. The trackpad is nice and responsive, and very clicky too. Very satisfying. 
+
+**Will it replace my Desktop computer?**
+Unfortunately no.
+As much as I would like to, it's just not practical today. My desktop PC is so much better at so many things: playing games (I've gone back to the _PC Master Race_), streaming, recording, transcoding videos, not thermal throttling, file manipulation over the network, etc.
+
+I will just keep using this rMBP as a laptop. A very overpriced and awesome laptop.
+
+If my desktop PC were to die though, I could give it a fair shot again. For now though, I can't give up my desktop PC. 
+
+It's not the laptop -- it's me.
+
+[razer]: http://lambdan.se/index.php?entry=148-razer-triple-monitor-laptop-2017-01-06
+[blogpost]: http://lambdan.se/index.php?entry=144-i-finally-have-it-2016-12-24

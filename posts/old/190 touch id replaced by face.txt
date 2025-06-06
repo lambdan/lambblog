@@ -1,0 +1,21 @@
+2017-07-03T22:37:00+02:00
+# Bloomberg: iPhone 8 will replace Touch ID with 3D facial detection...
+https://9to5mac.com/2017/07/03/iphone-8-touch-id-3d-face-detection/
+
+I think the keyword here is **testing**. Notice that the title is iPhone 8 *will replace* Touch ID with face detection, and that the text itself says *testing*: 
+
+> Bloomberg reports that Apple is currently **testing** using 3D facial detection as a replacement for Touch ID fingerprint authentication.
+
+(I added the emphasis.)
+
+Either way, I will for now hope that they won't replace Touch ID because I really love it. It's so fast, works reliably, and is convenient and works everywhere all the time. 
+And most importantly, it doesn't feel awkward to use. 
+It's one of my favorite features with the iPhone 7 (and 6s (and 2017 iPad Pro's.))
+
+I guess facial recognition could work too if it's as polished as Touch ID, and I'm fairly sure Apple wouldn't ship it if it wasn't better. 
+
+***
+
+The article also mentions that ProMotion/120 Hz might be coming to the iPhones, which I don't feel strongly about either way. I have it on my iPad and it isn't that big of a deal - I am still able to use 60 Hz displays (like my phone) without being too annoyed. 
+
+It's a more striking difference at first but once you're used to it it's not that big of a deal. 

@@ -1,0 +1,45 @@
+2016-05-07T20:26:00+02:00
+# Migrations
+
+Today I spent a lot of time migrating data back and forth. It started with me wanting to remove the 1 TB SSHD I had in my PS4, and putting back in a regular HDD in there. Why? Well I don't play the PS4 enough and I don't have a lot f games for it, so the 1 TB SSHD was just being wasted in there.
+
+So I used the PS4 Backup/System Restore to backup all my stuff to an external drive, then I opened it up, took the SSHD out, shoved a regular HDD in there, then I just restored the data back and it was done. It's actually super simple to do and if you wanna know more exactly on how to replace the HDD in a PS4, Sony has a [page](https://support.us.playstation.com/articles/en_US/KC_Article/Upgrade-PS4-HDD/) on it.
+
+So now I had a 1 TB SSHD free, what was I going to do with it? Well, I figured I'd shove it in my PC. I needed more space there, and I want semi-fast space for those times when I play something. And I also wanted my OS X install to go on a bigger SSD. 120 GB isn't quite enough for OS X with a local photo library.
+
+My current Windows 10 install was at my Cruical BX100 250 GB SSD, but I figured I could move it to the 120 GB SSD OS X was using. Basically I wanted to flip it so OS X was on my 250 GB SSD, and Windows was on my 120 GB SSD. So how do you that?
+Well, my procedure was:
+
+- Clone old Windows SSD to a temporary drive
+- Clone OS X SSD to Windows's old SSD, and reinstall bootloader
+- Clone the temporary storage back to the new Windows SSD
+
+In my case I actually had another 120 GB SSD lying around that I used for temporary storage, to make things faster.
+
+Now all this is fine and simple. Even if you have a Hackintosh with a custom bootloader. There was only one semi-difficult part: How do I migrate a SSD that is 250 GB to a SSD that is only 120 GB?
+
+Well, basically these are the steps to it:
+
+- Remove stuff on the bigger SSD so you're down to <120 GB (I went down to 90 GB)
+- Use _Gparted_ to shrink the bigger SSD into a partition that is smaller than the target SSD (I used 100 GB)
+- Run `chkdsk` in Windows and let it "repair" its shrunken drive
+- Use _Clonezilla_ to clone the "bigger" SSD to the "smaller" SSD, and use the `icds` option to make it ignore the size difference
+- Run Windows from the new SSD and extend the partition in Disk Management to use the whole rest of the disk
+
+It sounds kinda easy, but I had a lot of trouble improvising it, until I found this [great guide](http://www.seanwingert.com/blogs/clonezilla-clone-bigger-smaller-drive-eg-ssd) which was short, right to the point and worked.
+
+But anyway, now it's all done and I have it exactly like I want it:
+
+- 250 GB SSD: Macintosh SSD (HFS+), with Clover bootloader
+- 120 GB SSD: Windows SSD (NTFS)
+- 1 TB SSHD: Storage & Games Library (exFAT)
+- 1 TB HDD: Storage (exFAT)
+
+__Q: Why didn't you just format and re-install both OSes, or at least Windows?__
+There was a time when I formatted and re-installed Windows on my computer multiple times a week, several times a day, for fun. It was a hobby of mine to try out custom Windows XP ISOs and compare them.
+Now, I don't have the energy for it. I just don't wanna bother with booting from USB, installing drivers, re-installing all the stuff ([although that is very easy](http://ninite.com)), re-configure everything as I want it, etc etc. 
+I probably have a ton of command line tools installed that I don't even remember but I would miss when I would need them.
+My Windows 10 is also on a Education license and I don't wanna risk having to call Microsoft to potentially re-activate it if I needed.
+
+For OS X I just don't want to. It works well, my Hackintosh is amazing, and everything works, and everything is where I want it to be. It's the greatest Mac I've ever had. 
+While it would be pretty trivial to re-install it, since I use Clover, I just don't want to. 

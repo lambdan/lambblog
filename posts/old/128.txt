@@ -1,0 +1,18 @@
+2016-07-31T14:57:00+02:00
+# SC-512 Input Delay: Part 2
+
+I decided to measure input delay again. This time I could use my Scart Splitter without the Sync Strike complaining (I had to use the external PSU for it) and then I could just take my iPhone's 240 fps camera and record both screens and then just take a still from that video.
+
+The picture pretty much sums it up.
+
+![lagtests](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/lagtests.jpg)
+
+It's worth noting that the laptop I used output 1366x768 over the HDMI as it couldnt downscale 1080p onto it's own display. Therefore the HDMI view on the Amarec preview is letterboxed.
+
+_Update 8 minutes later:_ Thanks to _Google Photos_ I was able to do a search for 'TV' and find this old comparison I did between my HDTV and CRT. This is a Composite source. Since _240p Test Suites_ measures the last digit as frames (not milliseconds like this time code video I played on Raspberry Pi), we have to convert the 70 milliseconds to frames: 4.19 frames.
+![hdtv lag](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/52EDFD3A-4FBD-4B54-AAAB-F844B748AB1D.JPG)
+
+_Update 10 minutes after previous update:_ GV-USB 2. Composite Source.
+![gvusb2](https://pbs.twimg.com/media/CosigD_WEAAaHl1.jpg:large)
+
+

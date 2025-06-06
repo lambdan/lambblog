@@ -1,0 +1,30 @@
+2017-02-19T13:39:00+01:00
+# PEXHDCAP60L Happiness
+
+I've had a lot of struggles with this capture card. I was planning on returning it, and actually got in touch with the support, but I decided to keep it anyway and just use a Elgato HD 60 S in the mean time, for like 3-4 months.
+Then one day, I decided to try using this card again and it has been working amazing, so I wanna write up how I have it set up.
+
+- Driver: Use 1.1.0.142.5
+	- [Download from Edenal's Google Drive](https://drive.google.com/drive/u/0/folders/0B5EWxszNBGpHV0hGRVUySF9QbzA) "v143 driver March 2015 1.1.0.142.zip"
+	- [Direct Download](https://drive.google.com/open?id=0B5EWxszNBGpHdHQ1OFBQLU1lbEU) 
+	- If the links stop working, let me know, I have a local copy of it I can re-upload
+	- This is the driver I've used the most and seems to be the most stable for me. Works on Windows 10 64-bit.
+	- I have not tested RGB capturing with it recently, but I wanna say I have done it before (before I got my XRGB-mini) and it worked
+
+- Amarec: Use 3.10
+	- [Download](http://cgi.geocities.jp/amarectv/cgi-bin/kz_dl_counter.cgi?http://www.amarectv.com/download/amarectv310.zip)
+	- If the link stops working, let me know, I have a local copy of it I can re-upload
+
+Use these settings for the device and set up these presets in Amarec (you can also add more presets if you like, and you probably should if you capture 240p/480p):
+
+![pexhdcap60l device settings](https://dl.dropboxusercontent.com/u/60071552/pexhdcap_device_settings.png)
+
+![amarec presets](https://dl.dropboxusercontent.com/u/60071552/pexhdcap_presets.png)
+
+- If you wanna capture NES/SNES, you might wanna change the `fps=59.94` to `fps=60.10` (because NES/SNES runs a bit faster than standard 60Hz). 
+- This also works even if you use a XRGB-mini (if `SYNC_SET`is set to `AUTO`, which yes, the PEXHDCAP60L suports, atleast in 720p. I think capturing 1080p60.10 was what broke mine temporarily.)
+- In the status bar of Amarec, near "View", you can see what framerate your console is outputting.
+- Personally I don't bother and just capture it in 59.94, just because I don't want two presets: 1 for NES/SNES and one for all other consoles that run at 59.94.
+
+Oh, and the PEXHDCAP60L is basically the same thing as a Micomsoft SC-512, so these steps should work for that card too.
+

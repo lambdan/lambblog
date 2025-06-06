@@ -1,0 +1,49 @@
+2018-04-06T23:00:00+02:00
+# All MacBook Pro's Currently Suck
+
+Yes, here's yet another person jumping on the hate train. This is not an original thought.
+
+I got a Macbook Pro again. A retina 13" from mid 2014. 
+Yes, a 2014 machine in 2018. 
+
+Why?
+Simple. All Macbook Pro's suck at the moment. Either way you lose.
+
+The current line up of 2016/2017 models have flaws: **faulty keyboards** and **no regular USB ports**. Now you can say whatever you want about USB-C and how great it is, which it kinda is, but at the moment it is very annoying to have a dongle for everything. 
+	- For this 2014 model, the only dongle I might want is a Gigabit Ethernet dongle. It already has 2 regular USB ports and HDMI which is great.
+	- While I pretty much never plug anything in into my laptops (apart from power obviously) it is annoying and stressful having to think about brining a dongle with you, just incase you need it.
+	- Also, Magsafe is much nicer than a stiff USB-C cable. It's so nice to have a indicator light too.
+
+For the keyboard, there have been a ton of reports where keys stop working when tiny particles of dust, crumbs, dirt get stuck under the keys. 
+Also the feel of the keyboard is controversial too, but I personally don't mind it (I had a 12" Macbook and quite liked it.)
+
+Now, while I bought a older model that has more ports and a proven reliable keyboard, it also has some big flaws.
+
+For one thing, it's old, used, slower and the battery is old. The particular model I got is a 2.6 GHz i5, 8 GB RAM and 256 GB SSD. The battery had 248 cycles on it when I got it (the first thing I checked), which isn't great, but also not horrible for a laptop (for a phone it would be very bad.)
+
+The CPU and RAM is fine for my purposes. It's a basically a fancy Twitter machine.
+
+Another thing is that it doesn't support external high resolution displays properly. It can only do up to like 1440p @ 60 Hz. For 4K it can only do it @ 30 Hz, which causes a sharp and pretty but laggy experience on the external display (which isn't horrible, but pretty horrible.)
+
+But apart from that, it's pretty great.
+
+So what do you choose?
+
+A brand new model:
+	- faster
+	- maybe faulty keyboard
+	- a bunch of dongles
+
+or an older model:
+	- slower
+	- has a proven reliable keyboard
+	- has USB and HDMI built-in
+
+I went with the latter because the speed wasn't a concern.
+But eitherway, you lose.
+
+Let's hope Apple will fix the situation eventually. 
+
+But even if they fix the keyboard situation I doubt they will add USB ports back which still makes these older models more appealing, atleast to me.
+
+Read this too: [The best laptop ever made](https://marco.org/2017/11/14/best-laptop-ever)

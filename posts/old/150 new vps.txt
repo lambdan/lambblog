@@ -1,0 +1,23 @@
+2017-01-07T03:30:00+01:00
+# New VPS
+
+_Update a few hours later:_
+I think everything is done now, as far as this website goes atleast. I still have some other pages to set up, but my blog seems to be functioning 100%.
+
+---------
+
+I have gotten a new VPS so lambdan.se might be shaky while I set everything up.
+
+As far as the VPS goes, I've upgraded quite a bit. I've gone from $25/year to $5/month.
+My old VPS had: 
+- 128 MB Ram
+- Intel Xeon E5335 @ 999 MHz
+- 5 GB HDD
+- Ubuntu 12.04.5 LTS (and seemingly no way to update as 128 MB RAM was too little apparently)
+
+The new one has:
+
+- 512 MB RAM
+- _QEMU Virtual CPU_ at 2.3 GHz (some VM thing I guess)
+- 20 GB HDD 
+- Ubuntu 16.04 LTS

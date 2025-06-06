@@ -1,0 +1,50 @@
+2016-07-16T12:09:00+02:00
+# Everdrive 64 and Speedrunning
+
+I did some timing and framecounts to see how much slower/faster using an Everdrive 64 (v3) compared to real cartridge is when speedrunning.
+
+The Everdrive 64 is different from the other Everdrives in that it cannot reset to game, it only resets to menu. I'm not sure why this is? I know ED64 v2 requires resetting to menu before powering off to save your data, but v3 doesn't need that, so I'm not sure if the OS simply isn't updated or if there is some hardware limitation.
+
+The only two games I tried was _Mario 64_ and _OoT_. Simply because I think both of these are kind of different compared to other traditional speedgames, because you reset a lot in these during runs (savewarps in _OoT_) and you also save a lot (most players save after every star in _Mario 64_).
+If you are interested in some other game let me know and I'll time that too if I feel like it.
+
+All the times listed below are the averages of three times. You can see my raw data here: [asdasdsadsad.txt](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/asdasdsadsad.txt)
+
+# Mario 64 Resets
+People going for WR like to power their N64 off and on instead of just using the reset button to save a second.
+
+Therefore, I timed both a normal reset and power cycle on the real cart, and on the ED I timed from pressing Start on the menu (to start the pre-loaded ROM) and also a _"real reset"_, where I simply pressed Reset in game and mashed start to get through the ED menu as fast as possible.
+
+|Mario 64 Resets|Time|
+|-|-|
+| Real Cartridge (Power on) | 2.4633 sec |
+| Real Cartridge (Reset) | 2.6667 sec |
+| Everdrive (Start from menu) | 2.83 sec |
+| Everdrive ("Real reset") | 6.19 sec |
+
+Conclusion: _Real Cartridge Power On_, like the world records do, is obviously the fastest. But I am personally fine with losing 0.2 sec over a _real cartridge reset_ using my Everdrive, because of convenience.
+
+# Mario 64 Saves
+
+This one I was worried about because it could add up to a lot of time over the course of a run. Recently I've seen more and more people going for the "Continue, don't save" option to save some miniscule amounts of times, which add up over the course of the run.
+
+But I am happy to report that the difference between a real cart and the Everdrive is basically none, probably down to the margin of error.
+
+| Mario 64 Saves | Time |
+|----------------|-----------|
+| Real Cartridge | 10.84 sec |
+| Everdrive v3 | 10.85 sec |
+
+Conclusion: if we assume these averages are 100% correct, and you lose 0.01 for each save on the Everdrive, over the course of a 70 Star run that is 0.7 seconds you lose, which to me is fine. I lose more time just getting dust or missing a jump.
+
+# Ocarina of Time Resets
+
+In most _OoT_ speedruns you will reset a couple of times to savewarp.
+
+| OoT Resets | Time |
+|----------------|----------|
+| Real Cartridge | 3.4 sec |
+| Everdrive v3 | 12.5 sec |
+
+Conclusion: you will lose roughly 10 seconds every savewarp if you use the Everdrive. I'm keeping my OoT (J) 1.0 cartridge.
+

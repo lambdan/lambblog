@@ -1,0 +1,22 @@
+2016-04-03T01:05:00+02:00
+# Advent 1315Nordic Drivers for Windows XP 32-bit
+
+I had to google alot to find these, so I have decided to compile and mirror them nicely here:
+
+Package with all the drivers reuploaded here: [My Nextcloud](https://nc.lambdan.se/index.php/s/mNZoGqLgq4QjmYc)
+
+Should that URL stop working just get in touch with me and I'll re-upload it. I have it stored locally.
+I don't have the laptop anymore so I can't test if they still work, but I think they should?
+
+- Audio Realtek HDA - run WDM_R274.exe
+- Ethernet SiS - use Device Manger and make it look in WinXP2K folder
+- VGA SiS Mirage 3 - run Setup.exe, make sure to set resolution to 1280x800 in Display Properties afterwards (it defaults to 1024x768)
+- WLAN Realtek RTL8187B - use Device Manager and make it look in Wlan/RTL8187B/WinXP folder. Also remember to activate the WLAN module by pressing Fn + F10. This needs to be done every time you shut down.
+
+Enjoy!
+
+![device manager without errors](https://dl.dropboxusercontent.com/u/60071552/advent1315/devicemanager.PNG)
+
+---------------------------------------------------
+
+Update 2020-05-17: Reuploaded package with all the drivers

@@ -1,0 +1,10 @@
+2017-01-15T01:30:00+01:00
+# HTTPS
+
+I finally got HTTPS running on my website, thanks to *Let's Encrypt*. 
+I've wanted to use their service months ago or whenever it was first opened up for use, but I couldn't get it running on my old VPS, because of many reasons probably. 
+
+Well anyway now I got it running very fast and simple without any issue. 
+Or well, I had to move out all my *VirtualHosts* that I had in a single configuration file (`000-default.conf`) and make them have individual configurations files in Apache's sites-available folder, but after that it went without a hitch. 
+
+Enjoy? I guess? 

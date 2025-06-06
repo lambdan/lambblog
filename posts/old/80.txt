@@ -1,0 +1,27 @@
+2016-03-13T20:31:00+01:00
+# Week 10
+
+I love video games.
+
+## Hot
+
+- Took two classes/lectures you need in order to start working on getting a drivers license
+- Got my new keyboard, CM Storm Novatouch TKL (Topre switches basically) and I like it alot
+- Moved around some furniture again so now I have a really nice IKEA Expedit setup for my TV, which fits the consoles I want to fit (I could fit all of them, but I don't need them all out. Would be a pain in the ass to hook up all of them etc.)
+![ikea expedit setup](http://lambdan.se/img/expedit1.JPG)
+![desk](http://lambdan.se/img/expedit2.JPG)
+
+- The Division, Starcraft 2, GTA 4 (PS3), MGS 4 are all fun. Lots of video games to play at the moment.
+- Had a nice little LAN party with a friend, we played a ton of Starcraft 2 Archon mode which is really fun and I'd like to say we are pretty decent at it
+- I'm still fascinated by the PS3. Having alot of fun playing it when I can't play on my PC (like right now it's transcoding videos.)
+- Started playing Call of Duty 2 on 360 on Veteran difficulty. Not that fun but okay. You can see it was made in a simpler time. To get 1000 G all you have to do is beat the game on Veteran.
+- [Diablo 2 got a patch to work on modern OSes!](http://arstechnica.com/gaming/2016/03/16-years-later-blizzard-is-still-patching-diablo-ii/) I'm not a huge fan of Diablo 2 but stuff like this is fun when it happens.
+- Got my Cherry MX switch tester. Surprisingly I did not like MX Green. I'll probably do a whole post about it someday.
+![cherry mx tester](https://pbs.twimg.com/media/CdQy9afWEAAq2YC.jpg:large)
+
+- Got the replacement Gas Cylinder for my DXRacer. Seems to be working so far.
+
+## Not
+
+- Not sure what to do with HTPC. I kinda wanna build one from scratch but it's a pretty bad market atm as the only graphics card that supports 4K and x265 is the GTX 960 as I understand it, and that's quite the investment just for watching TV. Probably gonna end up running Plex on my Raspberry Pi 2, it works pretty well. I need a good remote though.
+- Woodpecker is back in town. It starts pecking around 7 AM and it wakes me up.

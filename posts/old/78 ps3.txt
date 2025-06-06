@@ -1,0 +1,173 @@
+2016-03-05T19:23:00+01:00
+# Playstation 3
+
+I just wanna write about the PS3. There is something about this console that I am mesmerized by.
+
+This post is gonna be very messy and unorganized, mostly ramblings. But afterall, this blog is called "Ramblings By DJS" so it shouldn't be surprising.
+
+I think it's a really cool console. Somehow, it feels so different from it's competitors, the Wii and especially the Xbox 360. Sure, we can go back to 2006 and be weirded out by it's ridiculous price or the SIXAXIS controller, but I find the console weird and cool nowdays too.
+
+In many ways, it's not a game console. It can do a ton of stuff.
+Here's a PS3 feature list that I compiled, in no particular order:
+
+- Play games such as Demon's Souls, The Last of Us and GTA 5
+- Play blu-rays
+- Run Linux ([prior to CECH-2000 console revisions and OS 3.21](https://www.playstation.com/ps3-openplatform/))
+- Run [Folding@home](https://folding.stanford.edu/) [1] (not possible anymore)
+- [Be used as a super computer](http://phys.org/news/2010-12-air-playstation-3s-supercomputer.html)
+- Play PS1 games
+- Play PS2 games from disc in upscaled 1080p natively (prior to Slim model only, the original model basically had a PS2 inside of it)
+- Play PS2 games downloaded from the PS Store (all models)
+- Use DLNA to stream media (Plex etc.)
+- Watch Netflix, YouTube etc.
+- Output [24p](https://en.wikipedia.org/wiki/24p)
+- Browse the web (you can also hook up a keyboard and mouse)
+- Use Bluetooth for microphones and keyboards etc.
+- Use PS4 controllers (vice versa does not work)
+- Play online for free
+- Change a ton of settings related to video & audio output and video playback (24p, upscaling, dynamic range control, [yadda](http://manuals.playstation.net/document/en/ps3/current/settings/videooutput.html) [yadda](http://manuals.playstation.net/document/en/ps3/current/settings/bdsettings.html))
+- Use the same cords as your PS1 and PS2
+- Use custom themes in the XMB/Dashboard, you can make them yourself or download them
+
+A lot of these aren't special today, but keep in mind this was __released__ in 2006 - __10 years ago__.
+
+## Blu-rays, yadda yadda
+
+At the time of release, it was a very affordable Blu-ray people, and [people still use it for that](http://www.avsforum.com/forum/29-what-s-your-system-configuration/). At the time of writing this, people still have them in their home theatre setups.
+
+I have tried playing blu-rays on it too, and it works fine. I did find it a bit slow compared to the PS4, discs took longer time to start up and so on, but it worked fine once it was going. I watched Home Alone with commentary on it for example.
+
+Apart from Blu-Rays (and obviously DVDs), the PS3 can also play media from USB devices (good ol' FAT32) and stream media over the DLNA protocol. Back in the days, PS3 Media Server was super popular, and might still be, but hasn't been updated since fall 2013. I've tried this functionality today by using Plex (locally) and it's okay. It plays your standard x264 AAC Stereo videos just fine, but for most other stuff your DLNA Server is gonna have to transcode.
+
+## Hardware
+
+It's a rounded low profile black box generally, but let's make a little list of high points:
+
+- Can use PS1 and PS2 cords (FAT model has a different power plug though, not the standard 2 pin one)
+- Replacable HDD (all models)
+- Controller has built-in rechargable (over USB) battery
+- HDMI & OPTICAL Out
+- Quiet (as long as you're not playing a game, in my experience)
+- Gigabit ethernet
+
+Now I wanna give a special shoutout to the original PS3 that had __4 USB PORTS__ on the front, along with a bunch of memory card slots that no one uses today.
+
+![ps3 fat front](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/ps3/front_open_big.jpg)
+
+The original 60 GB model cost $600, and Sony took a lost on that. For each PS3 sold, they lost a bit of money. They were hoping to make it up in game sales (they thought the PS3 would dominate and sell alot of games, coming from the high of the PS2), but it ended up not doing so (if you are interested in these kind of facts, Adam Koralik's console retrospectives are great videos, and you should watch them, here's a link to the PS3 one: [link](https://www.youtube.com/watch?v=NuYonZaiV8k)). 
+
+Therefore, future models stripped ports and most notably, the native PS2 backwards compatibility, and thus the __Slim__ model was made. This is the model I currently have.
+
+![ps3 slim](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/ps3/ps3_slim_640_ars.jpg)
+
+It's probably the best version, as the original fat model is known to overheat and simply not work. It's matte so it's not gonna get finger prints and you still slide in discs.
+
+There is also a __Super Slim__ model. Personally, I don't like that model. It's small and quiet, but I don't like it's slide door to insert discs and it feels very plastic. This was the first PS3 I owned before I sold it (and bought this Slim one a few months later.)
+
+![ps3 super slim](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/ps3/81FfKsSkLoL._SL1500_.jpg)
+
+One neat thing about the Super Slim is that you can get a really cheap version of it with just 12 GB of flash storage, but you can throw in any 2.5" HDD you have lying around and voila, more space and you saved money. Officially you need to get a little metal mount to slide in there, but I've mounted one with duct tape and some left over cable stumps, just to make it secure and steady.
+
+### Controller
+
+First of, there are two _different_ controllers. The original SIXAXIS, and the Dualshock 3. They are basically identical, but the Dualshock 3 has rumble/vibration, and more motion control capabilities.
+
+Personally I like this controller. I really like it for third person games especially. For FPS it's okay, but sometimes the sticks are too easy to move. I do like it more than the Xbox 360 controller though. As I said earlier, the PS3 controller has a built-in rechargable battery and you can also easily hook it up to your PC and use it there, or even emulate it as a Xbox 360 controller and use it in any modern game on the PC.
+
+### Games, particularly compilations and HD-remakes
+
+As the PS2 was a huge hit, the PS3 got some compilations and HD-remakes of popular PS2 games and non-PS2 games, such as Kingdom Hearts 1.5 and 2.5, Metal Gear Solid The Legacy Collection, Ico and Shadow of the Collossus, all of which I wanna get at some point.
+
+The PS3 was also home to some exclusives, like MGS 4, Demon's Souls, 3D Dot Game Heroes, Naughty Dog-games, and [many others](https://en.wikipedia.org/wiki/Category:PlayStation_3-only_games)...
+
+I think the PS3 exclusives are interesting - it's like they are targetted to the japanese and niche genres.
+
+## Other Cool Stuff
+
+- GeoHot got sued by Sony for hacking into the PS3. [He made a rap song about it](https://www.youtube.com/watch?v=9iUvuaChDEg).
+- The original fat PS3 used the Spider-Man font
+![spiderman](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/ps3/PS3-Where-Did-I-See-That-Writing-Before-2.jpg)
+
+- An old Macworld [article](http://www.macworld.com/article/1053516/24things.html) is pretty fun to read nowadays, especially this one bit:
+![macworld](https://dl.dropboxusercontent.com/u/60071552/blog%20pics/ps3/macworld.PNG)
+
+
+
+
+## The Bad Things
+
+As cool as I think this console is, and I believe it is my favorite console of that generation (that doesn't mean I enjoyed playing games on it the most though, I just like the console itself alot), it has flaws, and it mostly comes down to one flaw.
+
+### Slow
+
+It's very slow. Even though it's Cell processor is conceptually powerful, it doesn't work out in practice. Everything except booting up the console and navigating the XMB/Dashboard feels slow. The Playstation Store is slow, some games runs slow, using the XMB in-game is slow, starting a blu-ray is slow, navigating a DLNA server is slow, using the web browser is slow, yadda yadda.
+
+I think most of these problems are because of the 256 MB RAM, it fills up fast. Did you know that the PS3 originally didn't have trophies or a in-game XMB? Yeah, this was added in afterwards and the RAM really took a hit because of it.
+
+Some games are slow too but it depends. I tried GTA V and it ran like absolute garbage, but I didn't have that experience when I originally played it in 2013 so it's probably because I'm used to the 60 fps PC version now.
+
+Games like Call of Duty Modern Warfare 2 runs great. Demon's Souls runs great. Motorstorm Apocalypse runs great. Ni No Kuni runs great.
+
+But in general, it got the worse port compared to the Xbox 360. GTA 4 is a famous example of this. On the PS3 it kind of has this motion blur thing going on, and it looks alot muddier because it runs at a lower resolution (I think 600p, I can't remember exactly, while the Xbox 360 version ran at 720p).
+
+In COD MW2 it was a different story though. ~~The PS3 version ran at 1080p60 and the Xbox 360 at 720p60.~~ _UPDATE: COD MW2 ran at 600p on both X360 and PS3. [Source](http://www.pcgameshardware.com/aid,691432/Call-of-Duty-Modern-Warfare-2-on-consoles-with-600p-only/News/)._  
+
+GTA V ran at 720p on both consoles, but the 360 generally had 1-2 FPS advantages. The PS3 had a tiny bit better graphics though in some instances, and the 360 had some texture streaming issues occasionally. Let's just say GTA V is pretty even between them.
+
+An infamous example of a terrible PS3 port is Bayonetta. The PS3 version very often runs at half the framerate of the Xbox 360 version. Platinum Games themselves said that they weren't happy with the port, saying they didn't know how to properly code for the PS3 at the time.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/du0eEWddqVQ" frameborder="0" allowfullscreen></iframe>
+
+
+I think the best example of how slow this console is is the Playstaion Store though. Just starting it up takes forever, and once you're in there it feels like the UI is running at 5 FPS. I don't even need to go into more detail on it, just try it and you will see. 
+
+Another thing I don't understand with downloading games from the PS Store, is that if you wanna perform the download in the background, you have to hit a button "Download in background", and then you need to wait like 2 minutes, and then it's downloading in the background. I don't understand why this is. I'm guessing it's related to the Cell processor, like it has to move the thread that is downloading the game or something. I have no clue, all I know is that it's very slow. And if that's not enough, after it has been downloaded in the background, you need to install it too, which takes a long time aswell (depending on how big the game is). 
+Compare this to the 360, where you select a game to download, then you can just hit the Xbox Guide button to go back to doing whatever you want, and after a while you get a notification that your game is done! No need to install or anything. Patching PS3 games are the same, first they need to download and then they need to install, while the 360 makes this one process. The PS3 is just so slow when it comes to acquiring digital stuff.
+
+Viewing trophies is also very slow. On the 360, navigating your achievements was pretty much instant and very fluid. On the PS3 it has to sync and then load icons and ugh. Not a great experience.
+
+### Cheaters Online
+
+As great as it is that you could play online with this console for free (no Playstation Plus required or Xbox Live Gold required), it did become a problem when cheaters arrived. Sure, people cheated on 360 too but when you aren't paying for playing online, your likelihood to cheat is probably much higher.
+
+Combine this with how open and vulnerable the PS3 was (CFW and what not), the Online experience is not that great, especially nowadays in certain Call of Duty games.
+
+I think some games solved this later on by including these so called "Online Passes". I got one with The Last of Us (that I never activated), but as I understood it you activated that code and you could play online. So if you're banned, they ban that code and you need to make a new PSN account and get a new online pass to play online again.
+Pretty smart system, however mildly inconvenient.
+
+### Guitar Hero on the PS3
+
+It's pretty funny that I even bring this up, but it's something that has stuck to me. I have never played Guitar Hero or Rock Band on the PS3, but I remember being close to doing it once, but we were stopped, because you needed to connect a little dongle to your PS3 and pair it with the guitar.
+
+It was so long ago that I barely remember it, but I just remember that we weren't able to play and it left a sour taste in my mouth about Guitar Hero on the PS3.
+
+I did some quick googling and saw that there are a few articles about this: [here](http://www.1up.com/news/guitar-hero-iii-ps3-wireless) and [here](http://www.rbgrn.net/content/36-guitar-hero-iii-on-ps3-has-severe-playability-issues) so I guess it was not just we that experienced this.
+
+## Bringing it Back Around
+
+So how can I consider this my favorite console of the seventh generation, even though I had a much easier time writing about the bad things than I did writing the good things?
+
+Basically, I think the PS3 is a really cool console, conceptually and theoretically, and I like its history alot more, but in practice I very rarely used it or use it. I wanna use it more, but there's nothing for me there now. Playing media is better on the PS4 since I mostly use Plex, and the PS4 having a 3.5mm port in its controller so I can use headphones at night is a good feature.
+
+The games are generally worse on the PS3 than on other platforms. There are a ton of exclusive JRPGs and similar games on it that I know I should play, but truth be told, I don't enjoy those games particularly much. I wanna enjoy them, but I don't.
+
+I think the PS3 console itself, is much more interesting than the Wii or 360. Those consoles are very boring. Thinking about it, all of these consoles are pretty boring. I spent most of my time playing the Wii, but not Wii games, I played mostly Gamecube and NES/SNES/N64 games on it. 360 was my console of choice at the time, because my friends and brother had it, and it was much less expensive, but I didn't play alot on it. I just played Call of Duty for a few months on it, and some GTA 4 when it was relevant.
+
+The 360 you just hooked up, and played games on it and had a good time playing those games, they worked great. The Wii you hooked up, and played Wii Sports until you were bored of it, then you realize all the other games on it are kind of boring (except the Mario Galaxy series!!!) and are terrible ports (Black Ops on Wii is quite the experience). Outside of gaming, you can't do much stuff on those consoles, unless you hack them.
+
+The PS3 on the other hand is very neat. While it's not possible today, I find it super neat that people used to run Linux on them, fold proteines, and use them in super computer clusters. I look at the 360 and I just think it's a loud, ugly console that play games. The PS3 I look at and think about the time geohot got sued, folding@home, Linux, and it's ridiculous Cell processor, and I enjoy those stories. Sure, there are some stories about the 360 too, but I can't remember any fun ones, all I remember are the RROD stories (PS3 also had it's fair share of YLOD problems, but I think that story is much less talked about today). The Wii is kind of interesting too if you look at the Homebrew scene, and how it formed, but other than that it's boring. The Wii itself is a terrible console if you don't hack it.
+
+The current console generation is kind of boring too, the PS4 being the most boring. It plays games the best, but it's hardware is pretty boring, although small and neat. The Xbox One hardware I really hate, mostly because I got a bad package that has a fan that makes a bad sound and a controller that clicks when I rotate the stick. I also like the PS4 more as you can replace the HDD in it, while on the Xbox One you can use external HDDs. I prefer the PS4 approach more.
+
+The Wii U is easily the console I've had most fun playing on this generation, and it's hardware is really solid. It's probably the most fun console hardware from this generation to think about too, considering it's rendering a picture on both your tv and the gamepad, with very little/no latency. I just don't understand how it's possible. I wish it had a ethernet port though, I've had some minor issues with Wifi.
+
+Okay, I got sidetracked now, but basically (how many times have I said basically now?) I think the PS3 is the coolest out of the 360, Wii and PS3. In practice I didn't have a great experience using it, but in theory I love the console. Every time I turn on the PS3 I like it, until I start playing some game I have played before on some other platform, or use the PS Store.
+
+I think I'm gonna try playing through GTA 4 TBOGT on it now. I would also like to play through Demon's Souls, but it's too hard. Ni No Kuni is also interesting, maybe I'll give it another shot. But first, I'm gonna take out the 500 GB HDD I have in a enclosure and put it in my PS3 so I can fit the free PS Plus games.
+
+#### Footnotes
+
+(The Markdown parser [I use](http://parsedown.org/) doesnt support footnotes, or maybe it isn't even the Markdown spec, so I have to do it kinda ugly like this.)
+
+##### [1]
+I remember when SDA wanted to get into Folding@home, and [nate gave the tip](https://forum.speeddemosarchive.com/post/sda_foldinghome_team.html) about using a PS3 for it. I remember thinking it was cool, but I never got to try it.
+

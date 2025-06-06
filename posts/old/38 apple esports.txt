@@ -1,0 +1,43 @@
+2015-09-05T00:00:00+02:00
+# Apple sponsoring a esports team?
+
+Late at night I got this idea in my head and had some fun with it.
+I tweeted most of my thoughts out, but I'm gonna rewrite them and explain them better in this post.
+
+## Background
+
+Apple seems to be liking games more and more as of recently. They opened up a @AppStoreGames account on Twitter, and the potential new Apple TV is [rumored](http://www.theverge.com/2015/9/3/9256577/apple-twitter-gaming-feed) to play games.
+So assuming Apple really likes games and want's to get into the business, what would happen if they sponsored a esports team?
+Their products would get publicity (not that they need any more), and they could promote new products.
+
+Here's another thing: Every major competitive esports game runs on OSX: League of Legends, Counter-Strike Global Offensive, Dota 2, Starcraft 2 (do people still play that?), Hearthstone, World of Warcraft. Even if they don't run on OSX, they could use VMs or bootcamp to run them in Windows (even Apple uses Windows in [production](https://twitter.com/tim_cook/status/474935247335743489) so it's not unthinkable.)
+OS X 10.11 El Capitan is getting Metal, which is basically a replacement for OpenGL which should increase game performance under OSX.
+
+## Gear
+
+Below are my ideas of which products they would make the players use. Let's pretend they would sponsor a CSGO team.
+
+* __Computers__: Mac Pros with Thunderbolt Displays or 5K iMacs
+The Mac Pro with it's dual AMD cards would probably make the most sense for gaming, combined with a Thunderbolt Display with 2560x1440 resolution and IPS panel.
+The 5k iMac would also be interesting as it would be very portable (1 device + keyboard & mouse), and they could probably brag about the resolution.
+
+* __Keyboards__: TBA Apple Wireless or Wired keyboard with butterfly switches
+They would need to make a new keyboard with these switches (the ones that are in the Macbook One), so they could market the extremely short key travel on them for superior response time.
+Not sure if wired or wireless.
+
+* __Mice__: Magic Mouse or some TBA Force Touch mouse
+Seeing professional CSGO players with a Magic Mouse would be interesting. I don't think they would use the old wired mouse.
+I do also see a possibility for a new mouse using Force Touch which they can market in some weird way.
+Players using pinch-to-zoom on the Magic Mouse for scoping with a sniper rifle would be fun to see.
+
+* __Headphones__: Beats
+Apple bought Beats, so they have a variety of headphones at their disposal. They also have a very iconic look, so they would be easily recognizable.
+If the players need to use external ear protection, Apple always has their white earbuds.
+
+* __Mousepads__: None
+
+## Closing
+
+The odds of Apple entering the esports business are very slim to none. But it is a fun thought experiment.
+
+Apple has alot of money. Let's pretend they buy up fnatic and force them to use Apple products. Would be fun to see if fnatic would still be as successful.
