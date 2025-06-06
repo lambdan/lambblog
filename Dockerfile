@@ -1,6 +1,6 @@
 FROM python:3.7 AS build
 
-RUN pip install \
+RUN pip install -q \
     markdown2==2.4.8 \
     PyRSS2Gen==1.1 \
     beautifulsoup4==4.13.4 \
@@ -23,7 +23,7 @@ ARG AWS_ACCESS_KEY_ID
 ARG AWS_SECRET_ACCESS_KEY
 ARG BASE_URL="http://localhost:80/"
 
-RUN python3 generate_site.py -url "${BASE_URL}" -y -v --s3-bucket "lambblog" --s3-region "eu-north-1"
+RUN python3 generate_site.py -url "${BASE_URL}" -y --s3-bucket "lambblog" --s3-region "eu-north-1"
 
 FROM nginx:alpine AS final
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
