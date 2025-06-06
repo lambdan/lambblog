@@ -19,14 +19,13 @@ import pytz
 script_run_time = datetime.now()
 
 ########################### Settings ################################
-SITE_TITLE = 'lambdan.se'
+SITE_TITLE = 'djs blog'
 SITE_TITLE_SUFFIX = ' - ' + SITE_TITLE # at the end of every <title>
 
 CSS_FILE = 'css-oled-2022.css' # should be in the root of ./includes/
 
 AUTHOR_NAME = 'djs'
 AUTHOR_EMAIL = 'david@lambdan.se' # these are in the footer
-AUTHOR_TWITTER = 'nadbmal' # no @
 SITE_STARTED_YEAR = 2012 # used for (c) in the footer
 
 POSTS_DIR = './posts/'
@@ -197,7 +196,7 @@ def generateHeader(page_title, css_class):
 	output += '<br>'
 	output += '<a href="' + SITE_ROOT_URL + 'archive">Archive</a> • '
 	output += '<a href="' + SITE_ROOT_URL + 'stats">Stats</a> • '
-	output += '<a href="' + SITE_ROOT_URL + 'misc">Misc</a> • '
+	#output += '<a href="' + SITE_ROOT_URL + 'misc">Misc</a> • '
 	output += '<a href="' + SITE_ROOT_URL + 'about">About</a> '
 	output += '</p>'
 	output += '</div>'
