@@ -20,8 +20,9 @@ COPY ./generate_site.py /build/generate_site.py
 
 ARG AWS_ACCESS_KEY_ID
 ARG AWS_SECRET_ACCESS_KEY
+ARG BASE_URL="http://localhost:80/"
 
-RUN python3 generate_site.py -url http://localhost:80/ -y -v --s3-bucket lambblog --s3-region eu-north-1
+RUN python3 generate_site.py -url "${BASE_URL}" -y -v --s3-bucket "lambblog" --s3-region "eu-north-1"
 
 FROM nginx:alpine AS final
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf

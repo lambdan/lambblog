@@ -19,7 +19,7 @@ import pytz
 script_run_time = datetime.now()
 
 ########################### Settings ################################
-SITE_TITLE = 'djs blog'
+SITE_TITLE = 'djs scribbles'
 SITE_TITLE_SUFFIX = ' - ' + SITE_TITLE # at the end of every <title>
 
 CSS_FILE = 'css-oled-2022.css' # should be in the root of ./includes/
