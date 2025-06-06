@@ -8,6 +8,7 @@ RUN pip3 install python-dateutil==2.9.0
 RUN pip3 install tqdm==4.67.1
 RUN pip3 install requests==2.31.0
 RUN pip3 install pillow==9.5.0
+RUN pip install boto3==1.33.13
 
 WORKDIR /build
 
@@ -16,11 +17,14 @@ COPY ./includes /build/includes
 COPY ./pages /build/pages
 COPY ./generate_site.py /build/generate_site.py
 
-RUN python3 generate_site.py -url http://localhost:80/ -y -v
+ARG AWS_ACCESS_KEY_ID
+ARG AWS_SECRET_ACCESS_KEY
+
+RUN python3 generate_site.py -url http://localhost:80/ -y -v --s3-bucket lambblog --s3-region eu-north-1
 
 FROM nginx:alpine AS final
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /build/_output /html
 
 
-# python3.7 generate_site.py -url https://lambdan.se/blog/ && ./push_to_live.sh
+

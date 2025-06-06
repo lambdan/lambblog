@@ -13,6 +13,7 @@ from collections import Counter
 from argparse import ArgumentParser
 from tqdm import tqdm
 import PyRSS2Gen
+import boto3
 
 script_run_time = datetime.now()
 
@@ -33,13 +34,13 @@ OTHER_PAGES_FOLDER = './pages/'
 VALID_POST_EXTENSIONS = ['.txt', '.text.', '.md', '.markdown']
 
 STATS_WHITELISTED_CHARACTERS = set('abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ åäö ÅÄÖ')
-
-IMAGE_PREFIX = 'https://lambblog.s3.eu-north-1.amazonaws.com/'
 #####################################################################
 
 # handle arguments
 parser = ArgumentParser()
 parser.add_argument("--output-folder", '-o', action='store', dest='folder', help='generated website appears here (default: ./_output/')
+parser.add_argument("--s3-bucket", '-b', required=True, action='store', dest='s3bucket', help='S3 bucket to upload images')
+parser.add_argument("--s3-region", '-r', required=True, action='store', dest='s3region', help='S3 region to use (eg eu-north-1)')
 parser.add_argument("--root-url", '-url', action='store', dest='url', help='root url of website (example: https://lambdan.se/blog/)', required=True)
 parser.add_argument('--verbose', '-v', action="store_true", dest='verbose', help="print alot of info", default=False)
 parser.add_argument('--skip-confirm', '-y', action="store_true", dest='skip_confrm', help="skip confirmation", default=False)
@@ -51,6 +52,8 @@ if not parsed.folder:
 else:
 	SITE_ROOT = parsed.folder
 
+S3_BUCKET = parsed.s3bucket
+S3_REGION = parsed.s3region
 SITE_ROOT_URL = parsed.url
 # TODO: make sure they are valid
 print ("Output folder:", SITE_ROOT)
@@ -63,18 +66,64 @@ if not parsed.skip_confrm:
 
 CSS_URL = SITE_ROOT_URL + CSS_FILE
 
+BOTO3_SESSION = boto3.Session(
+	region_name=S3_REGION
+)
+BOTO3_S3_CLIENT = BOTO3_SESSION.client('s3')
+S3_EXISTING_KEYS = {}
+
+def s3_list_all_keys(bucket_name, prefix=''):
+    keys = []
+    paginator = BOTO3_S3_CLIENT.get_paginator('list_objects_v2')
+    page_iterator = paginator.paginate(Bucket=bucket_name, Prefix=prefix)
+
+    for page in page_iterator:
+        if 'Contents' in page:
+            keys.extend(obj['Key'] for obj in page['Contents'])
+
+    return set(keys)  # use set for fast lookup
+
+def s3_file_exists(bucket, key) -> bool:
+	# check if a file exists in S3 bucket
+	if bucket not in S3_EXISTING_KEYS:
+		# fetch all keys in the bucket if not already done
+		S3_EXISTING_KEYS[bucket] = s3_list_all_keys(bucket)
+	return key in S3_EXISTING_KEYS[bucket]
+
 def md5str(text: str) -> str:
 	# returns md5 hash of a string
 	return hashlib.md5(text.encode('utf8')).hexdigest().lower()
 
+def getImageExtension(url: str) -> str:
+	# returns .ext
+	ext = os.path.splitext(url)[1].lower()
+	if ext in ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg']:
+		return ext
+	if ext == '.jpeg':
+		return '.jpg'
+	if url.endswith(':orig'):
+		return getImageExtension(url[:-5]) # remove :orig and try again
+	if url.endswith(':large'):
+		return getImageExtension(url[:-7])
+	if ext == ".jpg_large":
+		return '.jpg'
+	if "format=jpg" in url:
+		return '.jpg'
+	if "format=png" in url:
+		return '.png'
+	if ext == ".jp": # idk wtf this is 
+		return '.jpg'
+	raise Exception("Unknown image extension in URL: " + url)
+
 def mirrorImage(sourceUrl) -> str:
-	# TODO downloads source, uploads it to S3, and returns url
-	ext = os.path.splitext(sourceUrl)[1].lower()
-	if "_" in ext:
-		# remove weird extensions like .jpg_large
-		ext = ext.split("_")[0]
-	dest = md5str(sourceUrl) + ext
-	return IMAGE_PREFIX + dest
+	ext = getImageExtension(sourceUrl)
+	dest_filename = md5str(sourceUrl) + ext
+	final_url = f"https://{S3_BUCKET}.s3.{S3_REGION}.amazonaws.com/{dest_filename}"
+	if s3_file_exists(S3_BUCKET, dest_filename):
+		return final_url
+	print("Mirroring image:", sourceUrl, "to", final_url)
+	# TODO: download and upload
+	raise Exception("Need to mirror", sourceUrl)
 
 def saveHTML(code, filepath):
 	try:
