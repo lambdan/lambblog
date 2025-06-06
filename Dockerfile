@@ -9,6 +9,7 @@ RUN pip3 install tqdm==4.67.1
 RUN pip3 install requests==2.31.0
 RUN pip3 install pillow==9.5.0
 RUN pip install boto3==1.33.13
+RUN pip install pytz==2025.2
 
 WORKDIR /build
 

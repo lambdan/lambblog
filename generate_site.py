@@ -3,7 +3,7 @@
 import markdown2
 from bs4 import BeautifulSoup
 from slugify import slugify
-from dateutil.parser import parse
+from dateutil import parser as date_parser
 import os, shutil, sys, hashlib, time, requests, re
 from datetime import datetime
 from PIL import Image
@@ -14,6 +14,7 @@ from argparse import ArgumentParser
 from tqdm import tqdm
 import PyRSS2Gen
 import boto3
+import pytz
 
 script_run_time = datetime.now()
 
@@ -39,6 +40,7 @@ STATS_WHITELISTED_CHARACTERS = set('abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQ
 # handle arguments
 parser = ArgumentParser()
 parser.add_argument("--output-folder", '-o', action='store', dest='folder', help='generated website appears here (default: ./_output/')
+parser.add_argument("--timezone", '-tz', action='store', dest='timezone', help='set timezone for dates (default: Europe/Stockholm)', default='Europe/Stockholm')
 parser.add_argument("--s3-bucket", '-b', required=True, action='store', dest='s3bucket', help='S3 bucket to upload images')
 parser.add_argument("--s3-region", '-r', required=True, action='store', dest='s3region', help='S3 region to use (eg eu-north-1)')
 parser.add_argument("--root-url", '-url', action='store', dest='url', help='root url of website (example: https://lambdan.se/blog/)', required=True)
@@ -51,6 +53,7 @@ SITE_ROOT = parsed.folder if parsed.folder else './_output/'
 
 S3_BUCKET = parsed.s3bucket
 S3_REGION = parsed.s3region
+TIMEZONE = pytz.timezone(parsed.timezone)
 SITE_ROOT_URL = parsed.url
 # TODO: make sure they are valid
 print ("Output folder:", SITE_ROOT)
@@ -231,13 +234,9 @@ for post in input_files: # post is fullpath to the text file
 	if parsed.verbose: print("Processing:", post)
 
 	f = open(post, 'r', encoding="utf8")
-	try:
-		date = parse(f.readline(), fuzzy=True) # 1st line, date
-	except Exception as e:
-		print ("ERROR WITH", post)
-		print ("Couldnt parse a date, you probably forgot to put a date at the very top of the file:", e)
-		print ("Exiting...")
-		sys.exit(1)
+	date = date_parser.parse(f.readline().rstrip()) # first line, date
+	assert date.tzinfo is not None, "Date must have timezone info"
+	date = date.astimezone(TIMEZONE)
 	title = f.readline().rstrip() # 2nd line, title
 	title = title[2:].rstrip()
 	third_line = f.readline() # 3rd line, possibly a link
@@ -269,7 +268,9 @@ for post in input_files: # post is fullpath to the text file
 		html_output += '<h1 class="article_title">' + title + '</h1>'
 	if parsed.verbose: print('Linked post:', isLinked)
 
-	html_output += '<h2 class="article_date">' + date.strftime('%a %d %b %Y, %H:%M') + '</h2>'
+	#html_output += '<h2 class="article_date">' + date.strftime('%a %d %b %Y, %H:%M') + '</h2>'
+	# show time zone in hover
+	html_output += f'<h2 class="article_date" title="{date.tzinfo}"><a href="{post_url}">{date.strftime("%a %d %b %Y, %H:%M")}</a></h2>'
 
 	# body text
 	markdown_body = markdown2.markdown(body_text, extras=["strike", "tables"])
