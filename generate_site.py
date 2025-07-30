@@ -129,10 +129,16 @@ def contentTypeOfFile(filepath: str) -> str:
 		raise Exception("Unknown file extension for content type: " + filepath)
 
 def mirrorImage(sourceUrl) -> str:
+	url_start = f"https://{S3_BUCKET}.s3.{S3_REGION}.amazonaws.com"
+	if sourceUrl.startswith(url_start):
+		print("Source URL is already on S3, returning early:", sourceUrl)
+		# already there, just return the URL
+		return sourceUrl
 	ext = getImageExtension(sourceUrl)
 	dest_filename = md5str(sourceUrl) + ext
-	final_url = f"https://{S3_BUCKET}.s3.{S3_REGION}.amazonaws.com/{dest_filename}"
+	final_url = f"{url_start}/{dest_filename}"
 	if s3_file_exists(S3_BUCKET, dest_filename):
+		print("Image already exists in S3, returning URL:", final_url)
 		return final_url
 	print("Mirroring image:", sourceUrl, "to", final_url)
 	download = requests.get(sourceUrl, stream=True)
