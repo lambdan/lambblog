@@ -1,3 +1,9 @@
+# Archived 2025-08-02
+
+I switched to using Ghost.
+
+-------------------------------------------
+
 # lambblog
 
 Build and run Docker locally:
